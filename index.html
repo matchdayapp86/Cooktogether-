@@ -568,6 +568,9 @@ body.picker-open{overflow:hidden}
 .ready-meat-note summary{cursor:pointer;font-size:13px;font-weight:750;line-height:1.5;min-height:30px}
 .ready-meat-note p{font-size:13px;line-height:1.65;margin:8px 0;color:#355b4c}
 .ready-meat-note a{font-size:12px;color:#195d46;text-underline-offset:2px}
+
+/* Compact three-choice home: keep the opening screen focused on actions. */
+.simple-home{max-width:760px;margin:0 auto;padding:clamp(16px,3vw,34px) 0 16px}.simple-home-intro{text-align:center;margin:0 0 22px}.simple-home-intro h1{font-size:clamp(1.75rem,4vw,2.4rem);margin:6px 0 7px}.simple-home-intro p{margin:0;font-size:14px}.simple-home-options{display:grid;gap:12px}.simple-home-option{display:flex;align-items:center;gap:16px;width:100%;text-align:left;background:#fff;border:1px solid #dfe9df;border-radius:17px;padding:18px 20px;color:#194939;box-shadow:0 3px 12px rgba(34,57,44,.035);min-height:88px}.simple-home-option:active{transform:scale(.995)}.simple-home-icon{font-size:29px;line-height:1}.simple-home-copy{display:grid;gap:3px;flex:1}.simple-home-copy strong{font-size:18px}.simple-home-copy small{font-size:12px;color:#677c70}.simple-home-arrow{font-size:23px}.simple-home-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}.simple-home-links button{border:0;background:transparent;color:#225c4d;text-decoration:underline;text-underline-offset:3px;padding:8px;font-size:13px;font-weight:650}@media(max-width:600px){.simple-home{padding:6px 0 10px}.simple-home-intro{margin-bottom:18px}.simple-home-option{min-height:80px;padding:13px 15px}.simple-home-copy strong{font-size:17px}.simple-home-links{margin-top:10px}}
 </style>
   <title>Cook Together v0.26 — Your household kitchen</title>
 </head>
@@ -15490,20 +15493,16 @@ window.COOK_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sat
     const c=document.getElementById('school-count');if(c)c.textContent=n+' '+(n===1?'lesson':'lessons')+' · Tap one to learn';
   }
   function renderHome(){
-    const p=plannedEntries();const total=plannedCost();const budget=Math.max(1,Number(state.budget)||85);
-    const featured=['tomato-pasta','chicken-fajitas','chickpea-curry'].map(recipeById);
-    return `<section class="hero"><div class="hero-copy"><div class="eyebrow">WELCOME TO YOUR KITCHEN ✦</div><h1>Good meals.<br>Better together.</h1><p>Plan delicious dinners, keep the budget in check and turn your menu into one easy shopping list.</p>${btn('Plan this week '+ic('arrow'),'go-planner','','btn btn-orange')}</div><div class="hero-art" aria-hidden="true">🥘</div></section>
-    <section class="tonight-home-banner"><div><div class="eyebrow">NEW · YOUR PANTRY KNOWS</div><h2>What can we cook tonight?</h2><p>Discover meals from what you already have, see what you're missing, and let everyone pick their favourite.</p></div>${btn('See dinner ideas →','go-tonight','','btn btn-primary')}</section>
-    <section class="school-home-callout"><span class="school-home-emoji" aria-hidden="true">👩‍🍳</span><div><span class="eyebrow">BUILD KITCHEN CONFIDENCE</span><h2>Cooking School</h2><p>Learn practical techniques and food-safety basics. Short lessons backed by published sources.</p></div>${btn('Explore skills →','go-school','','btn btn-primary')}</section>
-    <section class="grid stats-grid" aria-label="Kitchen summary">
-      <div class="stat-card"><div><small>Meals planned</small><strong>${p.length} <span style="font-size:13px;color:#8a9b90">/ 7</span></strong><p>Evenings sorted</p></div><div class="stat-icon">${ic('calendar')}</div></div>
-      <div class="stat-card"><div><small>Shopping items</small><strong>${shoppingTotal()}</strong><p>${shoppingDone()} bought · awaiting pantry</p></div><div class="stat-icon">${ic('cart')}</div></div>
-      <div class="stat-card"><div><small>Estimated dinners</small><strong>${planPrice()}</strong><p>Of ${pounds(budget)} budget</p></div><div class="stat-icon">${ic('cash')}</div></div>
-    </section>
-    <section class="grid two-col" style="margin-bottom:30px"><div class="surface"><div class="section-heading"><h2>This week's menu</h2>${btn('View full week →','go-planner','','btn btn-plain btn-sm')}</div><div class="compact-days">${(p.length?p.slice(0,4):[{day:'Monday',id:null}]).map(x=>{const r=recipeById(x.id);return `<div class="compact-day" ${r?`data-action="recipe" data-id="${esc(r.id)}" tabindex="0" role="group" aria-label="Open ${esc(r.title)} recipe"`:``}><span class="compact-day-label">${esc(x.day.slice(0,3))}</span><span class="compact-day-img">${r?r.emoji:'🍽️'}</span><span style="flex:1;min-width:0"><strong>${r?esc(r.title):'Nothing planned yet'}</strong><small style="display:block">${r?(state.cooked?.[x.day]?'✓ Cooked · ':'')+r.time+' min · '+x.servings+' portions':'Pick your first meal'}</small></span><button data-action="${r?'recipe':'go-recipes'}" ${r?'data-id="'+r.id+'"':''}>${r?'View':'Add'} →</button></div>`}).join('')}</div>${p.length>4?`<p class="subline" style="margin:13px 0 0">+ ${p.length-4} more meals planned</p>`:''}</div>
-      <div class="surface"><div class="section-heading"><h2>Your food budget</h2></div><div class="eyebrow" style="margin-bottom:5px">ESTIMATED PLANNED DINNERS</div><div class="budget-big">${planPrice()}</div><div class="budget-sub">out of ${pounds(budget)} weekly target</div><div class="progress-track"><div class="progress-fill" style="width:${Math.min(100,total/budget*100)}%;background:${total>budget?'#eaa17f':''}"></div></div><div class="budget-detail"><span>${Math.round(total/budget*100)}% of target</span><strong>${total>budget?pounds(total-budget)+' over':pounds(budget-total)+' remaining'}</strong></div><div class="divider"></div><div class="help-callout"><strong>🌱 Good to know</strong><br>Budget figures cover only planned recipes and are rough examples—not live supermarket prices or a full weekly food shop.</div></div>
-    </section>
-    <section><div class="section-heading"><h2>What's cooking?</h2>${btn('Browse all recipes →','go-recipes','','btn btn-plain btn-sm')}</div><div class="recipes-grid">${featured.map(recipeCard).join('')}</div></section>`;
+    const p=plannedEntries();
+    return `<section class="simple-home" aria-label="Cook Together home">
+      <div class="simple-home-intro"><span class="eyebrow">WELCOME TO COOK TOGETHER</span><h1>What shall we do today?</h1><p>Choose where to start. Everything else is just a tap away.</p></div>
+      <div class="simple-home-options">
+        <button class="simple-home-option" data-action="go-recipes"><span class="simple-home-icon" aria-hidden="true">🍲</span><span class="simple-home-copy"><strong>Find a meal</strong><small>Browse recipes and cook along</small></span><span class="simple-home-arrow" aria-hidden="true">→</span></button>
+        <button class="simple-home-option" data-action="go-planner"><span class="simple-home-icon" aria-hidden="true">📅</span><span class="simple-home-copy"><strong>Plan meals</strong><small>${p.length ? p.length+' meals planned this week' : 'Choose meals for the week'}</small></span><span class="simple-home-arrow" aria-hidden="true">→</span></button>
+        <button class="simple-home-option" data-action="go-shopping"><span class="simple-home-icon" aria-hidden="true">🛒</span><span class="simple-home-copy"><strong>Shopping & pantry</strong><small>See what you need from the shops</small></span><span class="simple-home-arrow" aria-hidden="true">→</span></button>
+      </div>
+      <div class="simple-home-links"><button data-action="go-tonight">Cook from my pantry →</button><button data-action="go-school">Cooking School →</button></div>
+    </section>`;
   }
   function mealSection(r){return r.mealType||'Dinner';}
   function categoryMatch(r,category){
