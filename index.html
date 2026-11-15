@@ -584,7 +584,7 @@ body.picker-open{overflow:hidden}
       <div class="workspace-caption">YOUR SPACE</div>
       <div class="household-switch"><span class="household-avatar">🏡</span><span><strong>Our kitchen</strong><small>Family workspace</small></span><span class="switch-chev">⌄</span></div>
       <nav id="desktop-nav" class="nav-list"></nav>
-      <div class="sidebar-bottom"><div class="sidebar-help"><span class="spark">✦</span><strong>Little moments, big memories.</strong><p>Less “what's for dinner?”, more time together.</p></div><div class="version">Cook Together · Original v0.29.0</div></div>
+      <div class="sidebar-bottom"><div class="sidebar-help"><span class="spark">✦</span><strong>Little moments, big memories.</strong><p>Less “what's for dinner?”, more time together.</p></div><div class="version">Cook Together · Original v0.29.1</div></div>
     </aside>
     <div class="main-shell">
       <header class="topbar"><div class="topbar-left"><span class="mobile-brand">✳ cook together<span>.</span></span><span class="breadcrumb" id="breadcrumb">Your kitchen</span></div><div class="topbar-right"><span class="save-indicator"><span class="save-dot"></span> Saved on this device</span><button class="top-avatar" data-page="household" title="Your household" aria-label="Household settings">CT</button></div></header>
@@ -935,21 +935,21 @@ window.COOK_RECIPES = [
         "instructions": "Return both batches of lamb and their juices to the pan. Add the stock and Worcestershire sauce. Bring to a gentle simmer and leave uncovered for 12–15 minutes, stirring occasionally."
       },
       {
-        "title": "Cook peas and check the filling",
+        "title": "Cook the peas in the filling",
         "uses": [
           "peas",
           "lamb-mince"
         ],
         "skills": [
-          "probe"
+          "simmer"
         ],
-        "check": "Peas are hot through and the mince has met the temperature-and-time check.",
+        "check": "Peas are cooked and the filling is steaming hot throughout. You do not need a separate thermometer check here; check the centre of the finished pie after baking.",
         "tools": [
           "Frying pan",
-          "Clean food thermometer"
+          "Heatproof spoon"
         ],
         "sourceStage": 3,
-        "instructions": "Stir in the peas and cook for at least 3 minutes, or longer if their packet requires it. Check the lamb mixture is thoroughly cooked: use a clean probe in the centre for 75°C maintained for 30 seconds."
+        "instructions": "Stir in the peas and keep the filling at a gentle simmer for at least 3 minutes, or longer if the pea packet requires it. Make sure the peas are hot through and the lamb filling is steaming hot throughout, then assemble the pie and put it straight into the oven while hot."
       },
       {
         "title": "Add the mash topping",
@@ -974,14 +974,15 @@ window.COOK_RECIPES = [
         "skills": [
           "roast"
         ],
-        "check": "The centre is thoroughly hot; a golden top alone is not enough.",
+        "check": "The filling is steaming hot in the middle as well as at the edges. A golden potato topping alone does not show that the centre is hot enough.",
         "tools": [
           "Oven",
           "Dry oven gloves",
-          "Clean food thermometer"
+          "Clean spoon"
         ],
         "sourceStage": 4,
-        "instructions": "Bake at 200°C fan for 20–25 minutes, until the top is golden and filling bubbles around the edges. Check the centre of the assembled pie is piping hot, using a clean probe if needed."
+        "instructions": "Bake at 200°C fan for 20–25 minutes, until the top is golden and filling bubbles around the edges. Before serving, carefully open the centre of the pie with a clean spoon and check that the filling is steaming hot all the way through, not just at the edges. If the centre is not hot enough, continue baking and check again.",
+        "optionalTemperatureCheck": true
       },
       {
         "title": "Rest, then serve",
@@ -34998,6 +34999,7 @@ function renderBeginnerTask(r,index){
  ${t.check?`<div class="beginner-check"><strong>Check before moving on</strong><p>${esc(scaledInstruction(t.check,r,guideServings))}</p></div>`:''}
  ${reminders.length?`<div class="beginner-reminder-buttons"><h4>Optional check reminders</h4>${reminders.map(o=>`<button type="button" class="btn btn-sm" data-action="beginner-start-timer" data-seconds="${o.seconds}" data-task-index="${index}">⏱ ${o.range?'Check at ':''}${esc(o.label)}${o.range?' (range '+esc(o.rangeLabel)+')':''}</button>`).join('')}<small>Start when this cooking or waiting period actually begins. A reminder does not mean the food is done.</small></div>`:''}
  ${/pack(?:et)?|according to/i.test(text)&&/cook|boil|noodle|pasta|rice|pea|gnocchi/i.test(text)?`<div class="beginner-packet-timer"><label for="beginner-packet-minutes">Reminder from your packet (minutes)</label><input type="number" id="beginner-packet-minutes" min="0.5" max="180" step="0.5" inputmode="decimal" placeholder="Read packet"><button type="button" class="btn btn-sm" data-action="beginner-packet-timer" data-task-index="${index}">Start reminder</button><small>Use your packet’s cooking time, including any adjustment stated in this task.</small></div>`:''}
+ ${t.optionalTemperatureCheck?`<details class="beginner-sources"><summary>Optional: check with a thermometer</summary><p>A clean food thermometer can confirm the centre is hot enough. Put the probe into the filling at the centre, avoiding the dish. One FSA combination is 75°C maintained for 30 seconds; another is 70°C for 2 minutes. This is the food’s centre temperature, not an oven setting. If it has not reached the target, continue baking and check again with a clean probe.</p><a href="https://www.food.gov.uk/safety-hygiene/cooking-your-food" target="_blank" rel="noopener noreferrer">FSA cooking advice ↗</a></details>`:''}
  ${beginnerIngredientRows(r,t,guideServings)}
  <section class="beginner-equipment"><h4>Equipment for this task</h4><ul>${t.tools.map(tool=>`<li>${esc(tool)}</li>`).join('')}</ul></section>
  ${instructions.some(i=>i.source)?`<details class="beginner-sources"><summary>Technique references</summary>${[...new Set(instructions.map(i=>i.source).filter(Boolean))].map(url=>`<p><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Published technique ↗</a></p>`).join('')}</details>`:''}</section>`;
@@ -35672,6 +35674,7 @@ function ingredientPreparationHelp(r,i,portions){
     return p;
   }
   function openCookAlong(id,day){
+    guidePrepReviewKey=null;guidePrepScrollTop=0;
     const r=recipeById(id);if(!r)return;
     const planned=day&&state.plan[day]?.id===id?day:null;
     guideId=id;guideDay=planned;
@@ -36107,24 +36110,38 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     </div>`;
   }
 
+  let guidePrepReviewKey=null,guidePrepScrollTop=0;
+  function isReviewingGuidePrep(){return !!guideId&&guidePrepReviewKey===guideStorageKey();}
+  function reviewGuidePrep(){
+    if(!guideId||guideProgress().step<1||isReviewingGuidePrep())return;
+    guidePrepScrollTop=document.getElementById('guide-scroller')?.scrollTop||0;
+    guidePrepReviewKey=guideStorageKey();renderCookAlong();
+  }
+  function resumeGuideFromPrep(){
+    if(!isReviewingGuidePrep())return;
+    const scrollTop=guidePrepScrollTop;guidePrepReviewKey=null;guidePrepScrollTop=0;renderCookAlong();
+    const scroller=document.getElementById('guide-scroller');if(scroller)scroller.scrollTop=scrollTop;
+  }
   function renderCookAlong(){
     renderGlobalBeginnerTimers();
     const r=recipeById(guideId);if(!r)return;
-    const p=guideProgress();const n=guideTaskCount(r);const step=p.step,finished=step===n+1;
-    const progress=finished?100:Math.round(Math.max(0,step-1)/n*100);
+    const p=guideProgress();const n=guideTaskCount(r),reviewing=isReviewingGuidePrep();const step=reviewing?0:p.step,finished=!reviewing&&step===n+1;
+    const progress=finished?100:Math.round(Math.max(0,p.step-1)/n*100);
     const completed=p.checked.filter(i=>i>=0&&i<r.ingredients.length).length;
     const checklist=`<section class="guide-ingredients" aria-labelledby="guide-ingredients-title"><h4 id="guide-ingredients-title">Ingredient quantities (${completed}/${r.ingredients.length} checked)</h4><p>Check amounts whenever needed. Tick items to keep track; Pantry stock will not change.</p><div class="guide-checklist">${r.ingredients.map((i,k)=>{const yes=p.checked.includes(k);return `<label class="guide-check ${yes?'is-done':''}"><input type="checkbox" data-action="guide-check" data-index="${k}" ${yes?'checked':''}><span><b>${esc(i[1])}</b><small>${ingredientAmount(i[2]*guideServings/r.servings,i[3])}</small></span></label>`}).join('')}</div></section>`;
     const content=step===0?prepDisplay(r,guideServings,p.checked):finished?`<div class="guide-stage-label">YOU'VE REACHED THE FINAL STEP</div><div class="guide-step-card"><span class="guide-step-icon" aria-hidden="true">🎉</span><h3>Your recipe is ready to check!</h3><p class="guide-step-text">Review your dish, check it's fully cooked and safe to serve, and enjoy it together.</p><p class="guide-step-hint">You've completed the instructions. Now review what you really used so Pantry can update accurately.</p></div><div class="guide-finish-actions"><button type="button" class="btn btn-primary" data-action="guide-mark-cooked">✓ ${(guideDay&&state.cooked?.[guideDay])||(!guideDay&&state.standaloneCooked?.[guideProgress().sessionId])?'Review or correct amounts':'Review ingredients &amp; update Pantry'}</button><button class="btn" type="button" data-action="guide-back-recipe">Leave feedback or view the full recipe</button><button type="button" class="guide-soft-button" data-action="guide-restart">Cook it again from the start</button></div>`
       :`${renderBeginnerTask(r,step-1)}${step===n?`<div class="guide-safety-final"><strong>Before serving:</strong> ${esc(r.safety?.cooking||'Check this food is cooked through before serving.')}</div>`:''}<div class="guide-tools"><button type="button" class="guide-soft-button" data-action="guide-toggle-ingredients" aria-expanded="${guideShowIngredients}">${guideShowIngredients?'Hide':'Show'} all ingredients &amp; amounts</button></div>${guideShowIngredients?checklist:''}`;
-    document.getElementById('modal-root').innerHTML=`<div class="modal-overlay guide-overlay" id="guide-backdrop"><section class="guide-shell" role="dialog" aria-modal="true" aria-labelledby="guide-title"><header class="guide-header"><div class="guide-header-main"><button class="guide-back" type="button" data-action="guide-back-recipe">← Recipe</button><button class="guide-close" type="button" data-action="guide-close" aria-label="Close cooking guide">×</button></div><div class="guide-kicker">COOK TOGETHER · GUIDED COOKING</div><h2 id="guide-title">${r.emoji} ${esc(r.title)}</h2><div class="guide-meta"><span>⏱ About ${r.time} min total</span><span>${guideServings} ${r.fixedBatch?'pieces per batch':'portions'}</span>${guideDay?`<span>${esc(guideDay)}'s planned recipe</span>`:''}</div><div class="guide-track" role="progressbar" aria-label="Recipe progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}"><div class="guide-fill" style="width:${progress}%"></div></div><div class="guide-progress-label" aria-live="polite">${finished?'All steps viewed':step===0?'Get ready':`Task ${step} of ${n}`}${step>=1&&!finished?' <button type="button" class="guide-prep-shortcut" data-action="guide-prep">Review prep</button>':''}</div></header><div class="guide-scroller" id="guide-scroller">${renderBeginnerTimers()}${p.updatedInstructions&&step===0?'<p class="beginner-update-note">This guide has been rewritten. Review Get Ready before continuing; your meal plan and cooked records are unchanged.</p>':''}${content}<details class="focus-fine-print"><summary>Recipe notes &amp; limitations</summary><p>Measure loose ingredients with kitchen scales or ask the butcher or shop to weigh them. Check allergens with the seller and follow UK food-safety guidance. These recipes remain development recipes and require physical testing.</p></details></div><footer class="guide-footer"><button type="button" class="btn" data-action="guide-previous" ${step===0?'disabled':''}>← Back</button>${finished?`<button type="button" class="btn btn-primary" data-action="guide-back-recipe">✓ Back to recipe</button>`:`<button type="button" class="btn btn-primary" data-action="guide-next">${step===0?'Start first task →':step===n?'Finish guide →':'Next task →'}</button>`}</footer></section></div>`;
+    document.getElementById('modal-root').innerHTML=`<div class="modal-overlay guide-overlay" id="guide-backdrop"><section class="guide-shell" role="dialog" aria-modal="true" aria-labelledby="guide-title"><header class="guide-header"><div class="guide-header-main"><button class="guide-back" type="button" data-action="guide-back-recipe">← Recipe</button><button class="guide-close" type="button" data-action="guide-close" aria-label="Close cooking guide">×</button></div><div class="guide-kicker">COOK TOGETHER · GUIDED COOKING</div><h2 id="guide-title">${r.emoji} ${esc(r.title)}</h2><div class="guide-meta"><span>⏱ About ${r.time} min total</span><span>${guideServings} ${r.fixedBatch?'pieces per batch':'portions'}</span>${guideDay?`<span>${esc(guideDay)}'s planned recipe</span>`:''}</div><div class="guide-track" role="progressbar" aria-label="Recipe progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}"><div class="guide-fill" style="width:${progress}%"></div></div><div class="guide-progress-label" aria-live="polite">${reviewing?`Reviewing prep · task ${p.step} saved`:finished?'All steps viewed':step===0?'Get ready':`Task ${step} of ${n}`}${reviewing?` <button type="button" class="guide-prep-shortcut" data-action="guide-resume-prep">Return to task ${p.step}</button>`:step>=1&&!finished?' <button type="button" class="guide-prep-shortcut" data-action="guide-prep">Review prep</button>':''}</div></header><div class="guide-scroller" id="guide-scroller">${renderBeginnerTimers()}${p.updatedInstructions&&step===0?'<p class="beginner-update-note">This guide has been rewritten. Review Get Ready before continuing; your meal plan and cooked records are unchanged.</p>':''}${content}<details class="focus-fine-print"><summary>Recipe notes &amp; limitations</summary><p>Measure loose ingredients with kitchen scales or ask the butcher or shop to weigh them. Check allergens with the seller and follow UK food-safety guidance. These recipes remain development recipes and require physical testing.</p></details></div><footer class="guide-footer">${reviewing?`<button type="button" class="btn btn-primary" style="width:100%;grid-column:1 / -1" data-action="guide-resume-prep">← Return to task ${p.step}</button>`:`<button type="button" class="btn" data-action="guide-previous" ${step===0?'disabled':''}>← Back</button>${finished?`<button type="button" class="btn btn-primary" data-action="guide-back-recipe">✓ Back to recipe</button>`:`<button type="button" class="btn btn-primary" data-action="guide-next">${step===0?'Start first task →':step===n?'Finish guide →':'Next task →'}</button>`}`}</footer></section></div>`;
     document.getElementById('guide-title')?.setAttribute('tabindex','-1');document.getElementById('guide-title')?.focus({preventScroll:true});
   }
   function guideMove(offset){
     if(!guideId)return;
+    if(isReviewingGuidePrep()){resumeGuideFromPrep();return;}
     const r=recipeById(guideId),p=guideProgress(),step=Math.max(0,Math.min(guideTaskCount(r)+1,p.step+offset));
     if(step===p.step)return;if(p.step===0&&step===1)p.prepVisitedV22=true;p.step=step;save();renderCookAlong();
   }
   function exitGuide(toRecipe=true){
+    guidePrepReviewKey=null;guidePrepScrollTop=0;
     const id=guideId,day=guideDay;guideId=null;guideDay=null;document.body.classList.remove('guide-open');
     if(toRecipe&&id)showRecipe(id,day);else closeModal();
   }
@@ -36207,7 +36224,7 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     if(restoreFocus&&pickerPreviousFocus?.isConnected)pickerPreviousFocus.focus({preventScroll:true});
     pickerPreviousFocus=null;
   }
-  function closeModal(){guideId=null;guideDay=null;document.body.classList.remove('guide-open');modalRecipe=null;document.getElementById('modal-root').innerHTML='';renderGlobalBeginnerTimers();}
+  function closeModal(){guidePrepReviewKey=null;guidePrepScrollTop=0;guideId=null;guideDay=null;document.body.classList.remove('guide-open');modalRecipe=null;document.getElementById('modal-root').innerHTML='';renderGlobalBeginnerTimers();}
   function toggleFav(id){const ix=state.favorites.indexOf(id);if(ix>=0)state.favorites.splice(ix,1);else state.favorites.push(id);save();render();toast(ix>=0?'Removed from favourites':'Saved to favourites')}
   function shoppingText(){const list=['Cook Together — Still to buy',''];const items=toBuyIngredients();for(const aisle of [...new Set(items.map(x=>x.aisle))].sort()){list.push(aisle+':');items.filter(x=>x.aisle===aisle).forEach(i=>list.push('[ ] '+i.name+' — '+ingredientAmount(i.qty,i.unit)));list.push('')}const extras=state.manual.filter(m=>!m.checked);if(extras.length){list.push('Extras:');extras.forEach(m=>list.push('[ ] '+m.name+(m.qty?' — '+m.qty:'')));}if(!items.length&&!extras.length)list.push('Nothing left to buy.');list.push('','Review product amounts, dietary suitability and prices on the retailer website.');return list.join('\n')}
   function planText(){return ['Cook Together — Our weekly dinners','',...DAYS.map(d=>{const p=state.plan[d];const r=p&&recipeById(p.id);return d+': '+(r?r.title+' ('+p.servings+' portions)':'Not planned')}),'','Estimated dinner total: '+planPrice(),'Indicative budget: '+pounds(state.budget),'Demo prices only.'].join('\n')}
@@ -36233,7 +36250,8 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     if(act==='beginner-stop-timer'){beginnerTimers=beginnerTimers.filter(t=>t.id!==el.dataset.timerId);saveBeginnerTimers();if(guideId)renderCookAlong();else renderGlobalBeginnerTimers();return}
     if(act==='guide-start'){openCookAlong(id,day);return}
     if(act==='guide-close'||act==='guide-back-recipe'){exitGuide(true);return}
-    if(act==='guide-prep'){const p=guideProgress();p.step=0;save();renderCookAlong();return}
+    if(act==='guide-prep'){reviewGuidePrep();return}
+    if(act==='guide-resume-prep'){resumeGuideFromPrep();return}
     if(act==='guide-next'){guideMove(1);return}
     if(act==='guide-previous'){guideMove(-1);return}
     if(act==='focus-help-done'){const root=ev.target.closest('.guide-scroller');const help=ev.target.closest('.focus-help');if(help)help.open=false;root?.querySelector('#guide-current-instruction')?.scrollIntoView({behavior:'smooth',block:'start'});return}
