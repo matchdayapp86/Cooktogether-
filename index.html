@@ -574,6 +574,9 @@ body.picker-open{overflow:hidden}
 .beginner-home{max-width:650px;margin:15px auto 30px}.beginner-home h1{font-size:clamp(1.8rem,5vw,2.5rem);margin-bottom:12px}.beginner-home-choices{display:grid;gap:13px;margin:25px 0}.beginner-home-choice{display:flex;align-items:center;gap:16px;width:100%;padding:22px;text-align:left;border:1px solid #dbe6dd;border-radius:18px;background:#fff;color:#234e3d}.beginner-home-choice>span:first-child{font-size:30px}.beginner-home-choice strong,.beginner-home-choice small{display:block}.beginner-home-choice strong{font-size:18px}.beginner-home-choice small{font-size:13px;color:#64776c;margin-top:5px}.beginner-home-choice b{margin-left:auto}.beginner-home-secondary{display:flex;flex-wrap:wrap;gap:8px}.beginner-task{background:#fff;border:1px solid #dbe7dd;border-radius:17px;padding:22px}.beginner-task h3{font-size:23px;line-height:1.3;margin:7px 0 18px}.beginner-task h4{font-size:14px;margin:18px 0 8px;color:#244e3d}.beginner-do .guide-step-text{font-size:18px;line-height:1.65}.beginner-how{background:#f3f7f1;padding:1px 16px 9px;border-radius:12px;margin:18px 0}.beginner-how section>strong{display:block;font-size:14px;margin-top:12px}.beginner-how ol{padding-left:22px;margin:8px 0 14px;display:grid;gap:10px;font-size:15px;line-height:1.6;color:#304e3c}.beginner-check{border-left:4px solid #5a9271;background:#f0f7ee;padding:12px 14px;margin:16px 0}.beginner-check p{margin:6px 0 0;color:#365542;font-size:15px}.beginner-heat{display:inline-block;background:#fff2df;border-radius:8px;padding:6px 10px;font-size:13px;color:#80572f}.beginner-amounts p{font-size:12px;line-height:1.55;margin-bottom:9px}.beginner-amounts ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}.beginner-amounts li{display:flex;gap:15px;justify-content:space-between;border-bottom:1px solid #edf1eb;padding:6px 0;font-size:13px}.beginner-amounts li span{white-space:nowrap}.beginner-equipment{margin-top:14px;font-size:13px}.beginner-equipment ul{padding-left:19px;margin:6px 0}.beginner-sources,.beginner-prep-help{font-size:13px;margin-top:12px}.beginner-sources summary,.beginner-prep-help summary{cursor:pointer;color:#27614a}.beginner-ready-item{margin-bottom:10px}.beginner-ready-item .ready-ingredient{margin-bottom:0}.beginner-prep-help{padding:10px 12px;background:#f1f6ef;border-radius:10px}.beginner-prep-help ol{padding-left:20px;display:grid;gap:8px;line-height:1.6}.beginner-reminder-buttons{display:flex;flex-wrap:wrap;gap:8px}.beginner-reminder-buttons h4{flex-basis:100%;margin-bottom:0}.beginner-reminder-buttons small{flex-basis:100%;color:#69796e;line-height:1.5}.beginner-timers{background:#fff8e9;border:1px solid #e7d8ad;border-radius:12px;padding:12px;margin-bottom:16px;font-size:13px}.beginner-timers>small{display:block;margin-top:9px;color:#76684a}.beginner-running-timer{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #eee1c4}.beginner-running-timer span{flex:1;min-width:0}.beginner-running-timer output{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}.beginner-running-timer button{border:0;background:transparent;font-size:22px;padding:4px}.timer-due{color:#a2462f}.beginner-update-note{font-size:13px;background:#fff3d8;padding:12px;border-radius:10px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 @media(max-width:480px){.beginner-task{padding:17px 15px}.beginner-task h3{font-size:21px}.beginner-home-choice{padding:17px 14px}.beginner-home-choice strong{font-size:17px}.beginner-how{padding:1px 12px 7px}}
 
+
+/* Named timers remain above the scrolling cooking task. */
+#guide-timer-rack{flex-shrink:0;max-height:28dvh;overflow:auto}#guide-timer-rack:empty{display:none}#guide-timer-rack .beginner-timers{margin:0;border-radius:0;border-left:0;border-right:0;padding:9px 16px}.beginner-timer-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.beginner-running-timer{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:9px 0}.beginner-timer-label strong,.beginner-timer-label small{display:block}.beginner-timer-label strong{font-size:13px}.beginner-timer-label small{font-size:11px;color:#69745e;margin-top:3px}.beginner-running-timer output{font-size:19px;align-self:center}.beginner-timer-controls{grid-column:1/-1;display:flex;gap:7px;flex-wrap:wrap}.beginner-timer-controls button{font-size:13px;padding:7px 10px;min-height:36px;border:1px solid #c6cbb9;background:white;border-radius:8px;color:#244c3d}.beginner-timer-controls .beginner-timer-stop{margin-left:auto;background:#174a42;color:white}.beginner-running-timer.timer-due{background:#fff0de;border-radius:8px;padding:9px;color:#923d1d}#beginner-global-timers{max-height:45dvh;overflow:auto;z-index:1100}.beginner-timers>small{font-size:11px;line-height:1.4}
 </style>
   <title>Cook Together v0.26 — Your household kitchen</title>
 </head>
@@ -584,7 +587,7 @@ body.picker-open{overflow:hidden}
       <div class="workspace-caption">YOUR SPACE</div>
       <div class="household-switch"><span class="household-avatar">🏡</span><span><strong>Our kitchen</strong><small>Family workspace</small></span><span class="switch-chev">⌄</span></div>
       <nav id="desktop-nav" class="nav-list"></nav>
-      <div class="sidebar-bottom"><div class="sidebar-help"><span class="spark">✦</span><strong>Little moments, big memories.</strong><p>Less “what's for dinner?”, more time together.</p></div><div class="version">Cook Together · Original v0.29.1</div></div>
+      <div class="sidebar-bottom"><div class="sidebar-help"><span class="spark">✦</span><strong>Little moments, big memories.</strong><p>Less “what's for dinner?”, more time together.</p></div><div class="version">Cook Together · Original v0.29.2</div></div>
     </aside>
     <div class="main-shell">
       <header class="topbar"><div class="topbar-left"><span class="mobile-brand">✳ cook together<span>.</span></span><span class="breadcrumb" id="breadcrumb">Your kitchen</span></div><div class="topbar-right"><span class="save-indicator"><span class="save-dot"></span> Saved on this device</span><button class="top-avatar" data-page="household" title="Your household" aria-label="Household settings">CT</button></div></header>
@@ -34961,13 +34964,54 @@ function reminderOptions(text){
 const BEGINNER_TIMER_KEY='cookTogetherBeginnerReminders29';
 let beginnerTimers=[];
 try{const raw=JSON.parse(localStorage.getItem(BEGINNER_TIMER_KEY)||'[]');if(Array.isArray(raw))beginnerTimers=raw.filter(t=>t&&typeof t.id==='string'&&typeof t.recipeId==='string'&&typeof t.title==='string'&&Number.isFinite(t.deadline)&&t.deadline>Date.now()-86400000&&t.deadline<Date.now()+86400000).slice(0,12);}catch{}
+let beginnerAudio=null;
+const beginnerAlarmNodes=new Map();
+let announcedBeginnerTimers=new Set(beginnerTimers.filter(t=>t.alertedAt===t.deadline).map(t=>t.id));
 function saveBeginnerTimers(){try{localStorage.setItem(BEGINNER_TIMER_KEY,JSON.stringify(beginnerTimers));}catch{}}
+function armBeginnerAudio(){
+ try{
+  const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;
+  if(!beginnerAudio||beginnerAudio.state==='closed')beginnerAudio=new Audio();
+  if(beginnerAudio.state!=='running')beginnerAudio.resume().then(refreshBeginnerTimerPanels).catch(refreshBeginnerTimerPanels);
+ }catch{} 
+}
+function stopBeginnerAlarm(id){
+ const nodes=beginnerAlarmNodes.get(id)||[];for(const node of nodes){try{node.stop();}catch{}try{node.disconnect();}catch{}}
+ beginnerAlarmNodes.delete(id);
+}
+function playBeginnerAlarm(id){
+ stopBeginnerAlarm(id);
+ if(!beginnerAudio||beginnerAudio.state!=='running')return false;
+ try{
+  const nodes=[];beginnerAlarmNodes.set(id,nodes);
+  for(let ding=0;ding<3;ding++){
+   const at=beginnerAudio.currentTime+0.03+ding*0.8;
+   const osc=beginnerAudio.createOscillator(),gain=beginnerAudio.createGain();
+   osc.type='sine';osc.frequency.setValueAtTime(1046.5,at);
+   gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(0.3,at+0.012);gain.gain.exponentialRampToValueAtTime(0.001,at+0.65);
+   osc.connect(gain);gain.connect(beginnerAudio.destination);nodes.push(osc);
+   osc.onended=()=>{try{osc.disconnect();gain.disconnect();}catch{}if(beginnerAlarmNodes.get(id)===nodes&&osc===nodes[nodes.length-1])beginnerAlarmNodes.delete(id);};
+   osc.start(at);osc.stop(at+0.7);
+  }
+  return true;
+ }catch{stopBeginnerAlarm(id);return false;}
+}
 function startBeginnerTimer(r,task,index,seconds){
  if(!Number.isFinite(seconds)||seconds<1||seconds>86400)return;
- const id=r.id+'|'+index+'|'+seconds;announcedBeginnerTimers.delete(id);
+ armBeginnerAudio();
+ const id=r.id+'|'+index+'|'+seconds;stopBeginnerAlarm(id);announcedBeginnerTimers.delete(id);
  beginnerTimers=beginnerTimers.filter(t=>t.id!==id);
- beginnerTimers.push({id,recipeId:r.id,title:task.title.slice(0,100),deadline:Date.now()+seconds*1000});
- beginnerTimers=beginnerTimers.slice(-12);saveBeginnerTimers();renderCookAlong();
+ beginnerTimers.push({id,recipeId:r.id,recipeTitle:r.title.slice(0,100),title:task.title.slice(0,100),deadline:Date.now()+seconds*1000});
+ for(const t of beginnerTimers.slice(0,-12))stopBeginnerAlarm(t.id);
+ beginnerTimers=beginnerTimers.slice(-12);saveBeginnerTimers();refreshBeginnerTimerPanels();
+}
+function extendBeginnerTimer(id,minutes){
+ const t=beginnerTimers.find(t=>t.id===id);if(!t||![1,2,3].includes(minutes))return;
+ armBeginnerAudio();stopBeginnerAlarm(id);t.deadline=Math.max(Date.now(),t.deadline)+minutes*60000;
+ delete t.alertedAt;announcedBeginnerTimers.delete(id);saveBeginnerTimers();refreshBeginnerTimerPanels();
+}
+function dismissBeginnerTimer(id){
+ stopBeginnerAlarm(id);beginnerTimers=beginnerTimers.filter(t=>t.id!==id);announcedBeginnerTimers.delete(id);saveBeginnerTimers();refreshBeginnerTimerPanels();
 }
 function timerText(t,now=Date.now()){
  const left=Math.max(0,Math.ceil((t.deadline-now)/1000));if(!left)return 'Time to check';
@@ -34976,13 +35020,25 @@ function timerText(t,now=Date.now()){
 }
 function renderBeginnerTimers(){
  if(!beginnerTimers.length)return '';
- return `<aside class="beginner-timers" aria-label="Your cooking reminders"><strong>Cooking reminders</strong>${beginnerTimers.map(t=>`<div class="beginner-running-timer"><span>${esc(t.title)}</span><output data-beginner-deadline="${t.deadline}" aria-label="Time remaining">${timerText(t)}</output><button type="button" data-action="beginner-stop-timer" data-timer-id="${esc(t.id)}" aria-label="Dismiss reminder for ${esc(t.title)}">×</button></div>`).join('')}<small>Check the food when a reminder ends. Keep this page open; background alerts are not guaranteed.</small><span id="beginner-timer-announcement" class="sr-only" role="status" aria-live="polite"></span></aside>`;
+ const soundReady=beginnerAudio&&beginnerAudio.state==='running';
+ return `<aside class="beginner-timers" aria-label="Your cooking reminders"><div class="beginner-timer-heading"><strong>Cooking reminders</strong><button type="button" class="btn btn-sm" data-action="beginner-test-alarm">Test alarm</button></div>${beginnerTimers.map(t=>`<section class="beginner-running-timer ${t.deadline<=Date.now()?'timer-due':''}" data-timer-card="${esc(t.id)}" aria-label="Timer: ${esc(t.title)}"><div class="beginner-timer-label"><strong>${esc(t.title)}</strong><small>${esc(t.recipeTitle||recipeById(t.recipeId)?.title||'Cooking timer')}</small></div><output data-beginner-timer="${esc(t.id)}" aria-label="Time remaining for ${esc(t.title)}">${timerText(t)}</output><div class="beginner-timer-controls">${[1,2,3].map(m=>`<button type="button" data-action="beginner-extend-timer" data-timer-id="${esc(t.id)}" data-minutes="${m}" aria-label="Add ${m} ${m===1?'minute':'minutes'} to ${esc(t.title)}">+${m} min</button>`).join('')}<button type="button" class="beginner-timer-stop" data-action="beginner-stop-timer" data-timer-id="${esc(t.id)}" aria-label="Stop timer for ${esc(t.title)}">Stop</button></div></section>`).join('')}<small>${soundReady?'Three-ding alarm enabled.':'Tap Test alarm to enable and check sound.'} Keep this page open and your sound on. Alerts may be delayed while your phone is locked or this page is in the background. Check the food when a timer ends.</small><span id="beginner-timer-announcement" class="sr-only" role="status" aria-live="assertive"></span></aside>`;
 }
-let announcedBeginnerTimers=new Set();
-setInterval(()=>{
- document.querySelectorAll('[data-beginner-deadline]').forEach(el=>{const deadline=Number(el.dataset.beginnerDeadline),t=beginnerTimers.find(t=>t.deadline===deadline);if(!t)return;el.textContent=timerText(t);el.classList.toggle('timer-due',t.deadline<=Date.now());
- if(t.deadline<=Date.now()&&!announcedBeginnerTimers.has(t.id)){announcedBeginnerTimers.add(t.id);const a=document.getElementById('beginner-timer-announcement');if(a)a.textContent='Time to check: '+t.title;}});
-},1000);
+function refreshBeginnerTimerPanels(){
+ const rack=document.getElementById('guide-timer-rack');if(rack)rack.innerHTML=renderBeginnerTimers();
+ renderGlobalBeginnerTimers();
+}
+function tickBeginnerTimers(){
+ const now=Date.now();let changed=false;const due=[];
+ for(const t of beginnerTimers){
+  if(t.deadline<=now&&!announcedBeginnerTimers.has(t.id)){
+   announcedBeginnerTimers.add(t.id);t.alertedAt=t.deadline;changed=true;due.push(t.title);playBeginnerAlarm(t.id);
+  }
+ }
+ if(changed){saveBeginnerTimers();refreshBeginnerTimerPanels();const a=document.getElementById('beginner-timer-announcement');if(a)a.textContent='Time to check: '+due.join('; ');}
+ document.querySelectorAll('[data-beginner-timer]').forEach(el=>{const t=beginnerTimers.find(t=>t.id===el.dataset.beginnerTimer);if(t)el.textContent=timerText(t,now);});
+}
+setInterval(tickBeginnerTimers,500);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')tickBeginnerTimers();});
 function beginnerIngredientRows(r,task,portions){
  const keys=task.uses||[];const items=keys.map(k=>r.ingredients.find(i=>i[0]===k)).filter(Boolean);
  if(!items.length)return '';
@@ -36131,7 +36187,7 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     const checklist=`<section class="guide-ingredients" aria-labelledby="guide-ingredients-title"><h4 id="guide-ingredients-title">Ingredient quantities (${completed}/${r.ingredients.length} checked)</h4><p>Check amounts whenever needed. Tick items to keep track; Pantry stock will not change.</p><div class="guide-checklist">${r.ingredients.map((i,k)=>{const yes=p.checked.includes(k);return `<label class="guide-check ${yes?'is-done':''}"><input type="checkbox" data-action="guide-check" data-index="${k}" ${yes?'checked':''}><span><b>${esc(i[1])}</b><small>${ingredientAmount(i[2]*guideServings/r.servings,i[3])}</small></span></label>`}).join('')}</div></section>`;
     const content=step===0?prepDisplay(r,guideServings,p.checked):finished?`<div class="guide-stage-label">YOU'VE REACHED THE FINAL STEP</div><div class="guide-step-card"><span class="guide-step-icon" aria-hidden="true">🎉</span><h3>Your recipe is ready to check!</h3><p class="guide-step-text">Review your dish, check it's fully cooked and safe to serve, and enjoy it together.</p><p class="guide-step-hint">You've completed the instructions. Now review what you really used so Pantry can update accurately.</p></div><div class="guide-finish-actions"><button type="button" class="btn btn-primary" data-action="guide-mark-cooked">✓ ${(guideDay&&state.cooked?.[guideDay])||(!guideDay&&state.standaloneCooked?.[guideProgress().sessionId])?'Review or correct amounts':'Review ingredients &amp; update Pantry'}</button><button class="btn" type="button" data-action="guide-back-recipe">Leave feedback or view the full recipe</button><button type="button" class="guide-soft-button" data-action="guide-restart">Cook it again from the start</button></div>`
       :`${renderBeginnerTask(r,step-1)}${step===n?`<div class="guide-safety-final"><strong>Before serving:</strong> ${esc(r.safety?.cooking||'Check this food is cooked through before serving.')}</div>`:''}<div class="guide-tools"><button type="button" class="guide-soft-button" data-action="guide-toggle-ingredients" aria-expanded="${guideShowIngredients}">${guideShowIngredients?'Hide':'Show'} all ingredients &amp; amounts</button></div>${guideShowIngredients?checklist:''}`;
-    document.getElementById('modal-root').innerHTML=`<div class="modal-overlay guide-overlay" id="guide-backdrop"><section class="guide-shell" role="dialog" aria-modal="true" aria-labelledby="guide-title"><header class="guide-header"><div class="guide-header-main"><button class="guide-back" type="button" data-action="guide-back-recipe">← Recipe</button><button class="guide-close" type="button" data-action="guide-close" aria-label="Close cooking guide">×</button></div><div class="guide-kicker">COOK TOGETHER · GUIDED COOKING</div><h2 id="guide-title">${r.emoji} ${esc(r.title)}</h2><div class="guide-meta"><span>⏱ About ${r.time} min total</span><span>${guideServings} ${r.fixedBatch?'pieces per batch':'portions'}</span>${guideDay?`<span>${esc(guideDay)}'s planned recipe</span>`:''}</div><div class="guide-track" role="progressbar" aria-label="Recipe progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}"><div class="guide-fill" style="width:${progress}%"></div></div><div class="guide-progress-label" aria-live="polite">${reviewing?`Reviewing prep · task ${p.step} saved`:finished?'All steps viewed':step===0?'Get ready':`Task ${step} of ${n}`}${reviewing?` <button type="button" class="guide-prep-shortcut" data-action="guide-resume-prep">Return to task ${p.step}</button>`:step>=1&&!finished?' <button type="button" class="guide-prep-shortcut" data-action="guide-prep">Review prep</button>':''}</div></header><div class="guide-scroller" id="guide-scroller">${renderBeginnerTimers()}${p.updatedInstructions&&step===0?'<p class="beginner-update-note">This guide has been rewritten. Review Get Ready before continuing; your meal plan and cooked records are unchanged.</p>':''}${content}<details class="focus-fine-print"><summary>Recipe notes &amp; limitations</summary><p>Measure loose ingredients with kitchen scales or ask the butcher or shop to weigh them. Check allergens with the seller and follow UK food-safety guidance. These recipes remain development recipes and require physical testing.</p></details></div><footer class="guide-footer">${reviewing?`<button type="button" class="btn btn-primary" style="width:100%;grid-column:1 / -1" data-action="guide-resume-prep">← Return to task ${p.step}</button>`:`<button type="button" class="btn" data-action="guide-previous" ${step===0?'disabled':''}>← Back</button>${finished?`<button type="button" class="btn btn-primary" data-action="guide-back-recipe">✓ Back to recipe</button>`:`<button type="button" class="btn btn-primary" data-action="guide-next">${step===0?'Start first task →':step===n?'Finish guide →':'Next task →'}</button>`}`}</footer></section></div>`;
+    document.getElementById('modal-root').innerHTML=`<div class="modal-overlay guide-overlay" id="guide-backdrop"><section class="guide-shell" role="dialog" aria-modal="true" aria-labelledby="guide-title"><header class="guide-header"><div class="guide-header-main"><button class="guide-back" type="button" data-action="guide-back-recipe">← Recipe</button><button class="guide-close" type="button" data-action="guide-close" aria-label="Close cooking guide">×</button></div><div class="guide-kicker">COOK TOGETHER · GUIDED COOKING</div><h2 id="guide-title">${r.emoji} ${esc(r.title)}</h2><div class="guide-meta"><span>⏱ About ${r.time} min total</span><span>${guideServings} ${r.fixedBatch?'pieces per batch':'portions'}</span>${guideDay?`<span>${esc(guideDay)}'s planned recipe</span>`:''}</div><div class="guide-track" role="progressbar" aria-label="Recipe progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}"><div class="guide-fill" style="width:${progress}%"></div></div><div class="guide-progress-label" aria-live="polite">${reviewing?`Reviewing prep · task ${p.step} saved`:finished?'All steps viewed':step===0?'Get ready':`Task ${step} of ${n}`}${reviewing?` <button type="button" class="guide-prep-shortcut" data-action="guide-resume-prep">Return to task ${p.step}</button>`:step>=1&&!finished?' <button type="button" class="guide-prep-shortcut" data-action="guide-prep">Review prep</button>':''}</div></header><div id="guide-timer-rack">${renderBeginnerTimers()}</div><div class="guide-scroller" id="guide-scroller">${p.updatedInstructions&&step===0?'<p class="beginner-update-note">This guide has been rewritten. Review Get Ready before continuing; your meal plan and cooked records are unchanged.</p>':''}${content}<details class="focus-fine-print"><summary>Recipe notes &amp; limitations</summary><p>Measure loose ingredients with kitchen scales or ask the butcher or shop to weigh them. Check allergens with the seller and follow UK food-safety guidance. These recipes remain development recipes and require physical testing.</p></details></div><footer class="guide-footer">${reviewing?`<button type="button" class="btn btn-primary" style="width:100%;grid-column:1 / -1" data-action="guide-resume-prep">← Return to task ${p.step}</button>`:`<button type="button" class="btn" data-action="guide-previous" ${step===0?'disabled':''}>← Back</button>${finished?`<button type="button" class="btn btn-primary" data-action="guide-back-recipe">✓ Back to recipe</button>`:`<button type="button" class="btn btn-primary" data-action="guide-next">${step===0?'Start first task →':step===n?'Finish guide →':'Next task →'}</button>`}`}</footer></section></div>`;
     document.getElementById('guide-title')?.setAttribute('tabindex','-1');document.getElementById('guide-title')?.focus({preventScroll:true});
   }
   function guideMove(offset){
@@ -36247,7 +36303,9 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     if(act==='home-stock'){document.getElementById('modal-root').innerHTML=`<div class="modal-overlay" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="stock-choice-title"><button type="button" class="modal-x" data-action="close-modal" aria-label="Close">×</button><div class="modal-body"><h2 id="stock-choice-title">Shopping &amp; pantry</h2><div class="beginner-home-choices">${btn('🛒 Shopping list','go-shopping','','btn btn-primary')}${btn('🥕 My pantry','go-pantry','','btn')}</div></div></section></div>`;document.querySelector('.modal-x')?.focus();return}
     if(act==='beginner-start-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),seconds=Number(el.dataset.seconds);if(task&&index===guideProgress().step-1&&reminderOptions(scaledInstruction(task.instructions,r,guideServings)).some(o=>o.seconds===seconds))startBeginnerTimer(r,task,index,seconds);return}
     if(act==='beginner-packet-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),minutes=Number(document.getElementById('beginner-packet-minutes')?.value);if(!task||index!==guideProgress().step-1)return;if(!Number.isFinite(minutes)||minutes<0.5||minutes>180){toast('Enter your packet time between 0.5 and 180 minutes');return}startBeginnerTimer(r,task,index,minutes*60);return}
-    if(act==='beginner-stop-timer'){beginnerTimers=beginnerTimers.filter(t=>t.id!==el.dataset.timerId);saveBeginnerTimers();if(guideId)renderCookAlong();else renderGlobalBeginnerTimers();return}
+    if(act==='beginner-stop-timer'){dismissBeginnerTimer(el.dataset.timerId);return}
+    if(act==='beginner-extend-timer'){extendBeginnerTimer(el.dataset.timerId,Number(el.dataset.minutes));return}
+    if(act==='beginner-test-alarm'){armBeginnerAudio();if(beginnerAudio){Promise.resolve(beginnerAudio.state==='running'?null:beginnerAudio.resume()).then(()=>{playBeginnerAlarm('test-alarm');refreshBeginnerTimerPanels();}).catch(()=>toast('Sound is blocked. Check your browser sound settings.'));}else toast('Sound is unavailable in this browser');return}
     if(act==='guide-start'){openCookAlong(id,day);return}
     if(act==='guide-close'||act==='guide-back-recipe'){exitGuide(true);return}
     if(act==='guide-prep'){reviewGuidePrep();return}
