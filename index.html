@@ -588,7 +588,7 @@ body.picker-open{overflow:hidden}
       <div class="workspace-caption">YOUR SPACE</div>
       <div class="household-switch"><span class="household-avatar">🏡</span><span><strong>Our kitchen</strong><small>Family workspace</small></span><span class="switch-chev">⌄</span></div>
       <nav id="desktop-nav" class="nav-list"></nav>
-      <div class="sidebar-bottom"><div class="sidebar-help"><span class="spark">✦</span><strong>Little moments, big memories.</strong><p>Less “what's for dinner?”, more time together.</p></div><div class="version">Cook Together · Original v0.29.5</div></div>
+      <div class="sidebar-bottom"><div class="sidebar-help"><span class="spark">✦</span><strong>Little moments, big memories.</strong><p>Less “what's for dinner?”, more time together.</p></div><div class="version">Cook Together · Original v0.29.6</div></div>
     </aside>
     <div class="main-shell">
       <header class="topbar"><div class="topbar-left"><span class="mobile-brand">✳ cook together<span>.</span></span><span class="breadcrumb" id="breadcrumb">Your kitchen</span></div><div class="topbar-right"><span class="save-indicator"><span class="save-dot"></span> Saved on this device</span><button class="top-avatar" data-page="household" title="Your household" aria-label="Household settings">CT</button></div></header>
@@ -35554,7 +35554,7 @@ function ingredientPreparationHelp(r,i,portions){
   }
   function mealSection(r){return r.mealType||'Dinner';}
   function categoryMatch(r,category){
-    if(category==='Vegetarian')return r.category==='Vegetarian'||r.category==='Vegan'||r.tags.includes('Vegan');
+    if(category==='Vegetarian')return mealSection(r)!=='Bakery'&&(r.category==='Vegetarian'||r.category==='Vegan'||r.tags.includes('Vegan'));
     if(category==='Vegan')return r.category==='Vegan'||r.tags.includes('Vegan');
     return r.category===category;
   }
