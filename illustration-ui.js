@@ -66,7 +66,7 @@
     }
     // Reviewed continuations: the food or performed action is named in the preceding task.
     const continuations={
-      'shepherds-pie:5':['brown-mince'],'shepherds-pie:6':['brown-mince'],'shepherds-pie:8':['mash'],
+      'shepherds-pie:5':['brown-mince'],'shepherds-pie:6':['brown-mince'],'shepherds-pie:8':['mash'],'shepherds-pie:9':['soften'],
       'chicken-roast:1':['potato-prep'],'chicken-fajitas:2':['slice-onion','pepper-strips'],
       'beef-pepper-skillet:2':['slice-onion','pepper-strips','grate','garlic'],
       'creamy-chicken-mushroom:0':['potato-prep','potato-boil'],

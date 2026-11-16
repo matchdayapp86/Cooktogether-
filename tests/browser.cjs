@@ -73,6 +73,10 @@ const hooks=`window.cookTest={
  await page.locator('#recipe-view-portions').selectOption('2');
  await page.locator('[data-action="guide-start"]').click();
  assert.equal(await page.evaluate(()=>cookTest.getProgress().step),5);
+ // The vegetable-cooking continuation shows softening, without a repeated chopping lesson.
+ await page.evaluate(()=>cookTest.open('shepherds-pie',9));
+ assert.equal(await page.locator('.beginner-task [data-illustration="soften"]').count(),1);
+ assert.equal(await page.locator('.beginner-task [data-illustration="dice"]').count(),0);
  // Named timers, compact bar, expiry, extensions, and stop.
  await page.evaluate(()=>cookTest.open('shepherds-pie',3));
  await page.locator('[data-action="beginner-start-timer"]').first().click();

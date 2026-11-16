@@ -56,6 +56,7 @@ const cases = [
  ['Knead the dough for 8 minutes.',['knead']],
  ['Do not knead soda bread.',[]]
 ];
+assert.deepEqual([...select('Turn the frying-pan heat down to medium. Add the onion and carrots to the pan used for the lamb. Cook for 6–8 minutes, stirring across the base, until the onion softens.',{recipeId:'shepherds-pie',taskIndex:9})],['soften']);
 for (const [text, expected] of cases) assert.deepEqual([...select(text)].sort(),expected.sort(),text);
 for (const [ingredient,note,key] of [
  ['red onion','Peel and grate finely.','grate'],
