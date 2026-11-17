@@ -4,7 +4,7 @@
    sources are pairing references, NOT imported/copyrighted instructions. */
 window.COOK_OPTIONAL_SAUCES = Object.freeze({
   "chicken-roast": {
-    name:"Lemon, honey & mustard sauce", minutes:5,
+    name:"Lemon, honey & mustard sauce", minutes:5, afterTask:10, timingCue:"Make this 5-minute sauce during the chicken's final glazing period, before resting and serving. Keep raw-chicken marinade out of the saucepan.",
     why:"The original honey glaze caramelises on the chicken; make a separate pourable sauce for the plate.",
     ingredients:[["Chicken stock (extra)",200,"ml"],["Dijon mustard (extra)",1,"tsp"],["Honey (extra)",1,"tsp"],["Lemon juice (extra)",10,"ml"],["Cornflour",1,"tsp"]],
     steps:[
@@ -18,7 +18,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.bbcgoodfood.com/recipes/honey-mustard-sauce","https://www.bbcgoodfood.com/recipes/roast-chicken-roots-lemon-poppy-seed-sauce","https://www.recipetineats.com/honey-mustard-chicken/"]
   },
   "greek-lamb-traybake": {
-    name:"Garlic, lemon & oregano yoghurt", minutes:3,
+    name:"Garlic, lemon & oregano yoghurt", minutes:3, afterTask:10, timingCue:"Make the yoghurt sauce in a clean bowl while the fully cooked lamb rests; do not combine with raw-lamb juices.",
     why:"A cool, tangy yoghurt sauce offsets the roasted lamb, garlic, oregano and potatoes.",
     ingredients:[["Plain Greek-style yoghurt",150,"g"],["Lemon juice (extra)",15,"ml"],["Garlic clove (extra)",1,"cloves"],["Dried oregano (extra)",0.5,"tsp"]],
     steps:[
@@ -31,7 +31,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.bbcgoodfood.com/recipes/garlic-yogurt","https://www.bbcgoodfood.com/recipes/greek-tzatziki","https://www.themediterraneandish.com/greek-chicken-souvlaki-recipe-tzatziki/"]
   },
   "dinner-sausage-veg-traybake": {
-    name:"Quick onion gravy", minutes:15,
+    name:"Quick onion gravy", minutes:15, afterTask:10, timingCue:"Start the 30–35 minute roasting timer now. Make onion gravy while sausages roast, then return to check doneness; turn sausages and vegetables halfway through.",
     why:"A mild savoury gravy suits roasted sausages, potatoes and peppers without softening them in the oven.",
     ingredients:[["Onion (extra)",1,"whole"],["Olive oil (extra)",1,"tbsp"],["Plain flour",1,"tbsp"],["Vegetable stock",250,"ml"]],
     steps:[
@@ -45,7 +45,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.bbcgoodfood.com/recipes/sausages-quick-onion-gravy","https://www.bbcgoodfood.com/recipes/bangers-n-mash-with-onion-gravy","https://www.deliaonline.com/recipes/occasions/christmas/christmas-stuffings-and-sauces/onion-gravy"]
   },
   "pork-schnitzel-potatoes": {
-    name:"Lemon & caper butter", minutes:3,
+    name:"Lemon & caper butter", minutes:3, afterTask:7, timingCue:"Make this butter sauce immediately before serving, after preparing the potatoes and peas, keeping the crispy coating intact.",
     why:"Sharp lemon and capers balance the crisp breadcrumb coating; offer it on the side to keep it crunchy.",
     ingredients:[["Unsalted butter (extra)",30,"g"],["Capers, drained",1,"tbsp"],["Lemon juice (extra)",15,"ml"]],
     steps:[
@@ -58,7 +58,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.bbcgoodfood.com/recipes/pork-schnitzel-with-lemon-caper-butter"]
   },
   "tuna-pea-fishcakes": {
-    name:"Easy lemon tartare-style sauce", minutes:4,
+    name:"Easy lemon tartare-style sauce", minutes:4, afterTask:5, timingCue:"Make this cold sauce while shaped fishcakes chill, BEFORE handling raw egg to coat them. Keep the sauce refrigerated until serving.",
     why:"A cool lemony dip suits crisp fishcakes and brings moisture to the plate.",
     ingredients:[["Mayonnaise",60,"g"],["Gherkins",30,"g"],["Lemon juice",10,"ml"],["Dried dill",0.5,"tsp"]],
     steps:[
@@ -71,7 +71,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.bbcgoodfood.com/recipes/fish-cakes-tartare-sauce","https://www.bbcgoodfood.com/recipes/feelgood-fish-cakes","https://www.greatbritishchefs.com/recipes/homemade-tartare-sauce-recipe"]
   },
   "beef-burgers-wedges": {
-    name:"Creamy burger sauce", minutes:3,
+    name:"Creamy burger sauce", minutes:3, afterTask:2, timingCue:"Make burger sauce with clean equipment before touching raw beef. Chill the sauce until assembling the cooked burgers.",
     why:"A tangy spread works with juicy burgers and crisp wedges instead of adding liquid to the frying pan.",
     ingredients:[["Mayonnaise",60,"g"],["Tomato ketchup (extra)",30,"g"],["American mustard",1,"tsp"],["Gherkins",25,"g"]],
     steps:[
@@ -84,7 +84,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.bbcgoodfood.com/recipes/classic-burger-sauce","https://www.bbcgoodfood.com/recipes/burger-bowl"]
   },
   "mushroom-spinach-wellingtons": {
-    name:"Vegetarian onion gravy", minutes:15,
+    name:"Vegetarian onion gravy", minutes:15, afterTask:12, timingCue:"Start the 25–30 minute baking timer now. Make vegetarian gravy while the wellingtons bake; then return to check and rest them.",
     why:"The pastry wellingtons are deliberately crisp; spoon rich gravy alongside rather than over the top.",
     ingredients:[["Onion",1,"whole"],["Olive oil (extra)",1,"tbsp"],["Plain flour",1,"tbsp"],["Vegetable stock (vegetarian)",300,"ml"]],
     steps:[
@@ -98,7 +98,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.bbcgoodfood.com/recipes/next-level-vegan-wellington-with-gravy","https://www.bbcgoodfood.com/recipes/collection/gravy-recipes","https://www.greatbritishchefs.com/how-to-cook/how-to-make-vegetarian-gravy"]
   },
   "beef-pepper-skillet": {
-    name:"Teriyaki & lime noodle sauce", minutes:4,
+    name:"Teriyaki & lime noodle sauce", minutes:4, afterTask:4, timingCue:"Make this sauce before removing beef from the fridge. Set it aside separately, and rewarm gently just before serving if needed.",
     why:"The beef and garlic noodles are lightly coated in the original method. A separate teriyaki-lime sauce gives an optional saucier finish without changing the stir-fry.",
     ingredients:[["Teriyaki sauce (extra)",2,"tbsp"],["Lime juice (extra)",15,"ml"],["Cornflour",1,"tsp"]],
     steps:[
@@ -112,7 +112,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.justonecookbook.com/teriyaki-sauce/","https://www.recipetineats.com/teriyaki-beef-stir-fry/"]
   },
   "beef-sesame-rice": {
-    name:"Light ginger-sesame drizzle", minutes:4,
+    name:"Light ginger-sesame drizzle", minutes:4, afterTask:3, timingCue:"Mix this drizzle before starting the beef frying steps so you can serve the rice bowls promptly.",
     why:"A light drizzle gives the rice extra moisture without soaking the browned beef or masking its existing soy-honey glaze.",
     ingredients:[["Reduced-salt soy sauce (extra)",1,"tbsp"],["Honey (extra)",1,"tsp"],["Sesame oil (extra)",0.5,"tsp"],["Cornflour",1,"tsp"]],
     steps:[
@@ -125,7 +125,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.justonecookbook.com/yakiniku-sauce/","https://www.justonecookbook.com/teriyaki-sauce/"]
   },
   "breakfast-avocado-burritos": {
-    name:"Lime & smoked paprika yoghurt", minutes:3,
+    name:"Lime & smoked paprika yoghurt", minutes:3, afterTask:1, timingCue:"Mix the yoghurt sauce before cooking eggs, keeping it chilled until you fill the burritos.",
     why:"Cooling citrus yoghurt works with chipotle eggs and avocado; serving it inside the wrap avoids a messy extra pan sauce.",
     ingredients:[["Plain yoghurt",120,"g"],["Lime juice",10,"ml"],["Smoked paprika",0.25,"tsp"]],
     steps:[
@@ -138,7 +138,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.bbcgoodfood.com/recipes/kebab-shop-yogurt-garlic-sauce"]
   },
   "breakfast-pepper-potato-hash": {
-    name:"Smoky lemon yoghurt", minutes:3,
+    name:"Smoky lemon yoghurt", minutes:3, afterTask:9, timingCue:"Start the 7–12 minute oven timer first, then make this yoghurt sauce while the eggs set. Return to check the eggs are cooked.",
     why:"A cool, lightly smoky spoonable sauce balances the golden potatoes, peppers, feta and eggs.",
     ingredients:[["Greek yoghurt",160,"g"],["Lemon juice",15,"ml"],["Smoked paprika (extra)",0.25,"tsp"]],
     steps:[
@@ -151,7 +151,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.recipetineats.com/lemon-yogurt-sauce/"]
   },
   "breakfast-potato-spinach-frittata": {
-    name:"Fresh herby tomato salsa", minutes:5,
+    name:"Fresh herby tomato salsa", minutes:5, afterTask:7, timingCue:"Start the 12–18 minute baking timer first, then make salsa while the frittata bakes. Return to check the centre.",
     why:"A fresh chopped salsa adds brightness to rich cheese-and-potato frittata without making the eggs watery during cooking.",
     ingredients:[["Cherry tomatoes (extra)",200,"g"],["Lemon juice",5,"ml"],["Olive oil (extra)",1,"tsp"],["Dried oregano",0.5,"tsp"]],
     steps:[
@@ -164,7 +164,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.jamieoliver.com/recipes/vegetables/classic-tomato-salsa/"]
   },
   "lunch-lemon-chickpea-couscous": {
-    name:"Creamy lemon tahini drizzle", minutes:4,
+    name:"Creamy lemon tahini drizzle", minutes:4, afterTask:11, timingCue:"Mix the tahini drizzle after tossing the couscous, just before tasting and serving.",
     why:"A nutty pourable dressing complements lemon and chickpeas for people who want a creamier couscous bowl.",
     ingredients:[["Tahini",2,"tbsp"],["Lemon juice (extra)",15,"ml"],["Ground cumin",0.25,"tsp"]],
     steps:[
@@ -177,7 +177,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     sources:["https://www.themediterraneandish.com/tahini-sauce-recipe-how-to-make-tahini/"]
   },
   "bakery-apple-crumble": {
-    name:"Warm vanilla custard", minutes:5,
+    name:"Warm vanilla custard", minutes:5, afterTask:8, timingCue:"Warm the custard as the baked crumble rests for 10 minutes, immediately before serving.",
     why:"Warm custard is a familiar accompaniment to apple crumble, keeping the crisp topping intact until the moment it is served.",
     ingredients:[["Ready-made vanilla custard",500,"ml"]],
     steps:[
