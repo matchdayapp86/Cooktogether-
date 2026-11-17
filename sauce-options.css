@@ -26,3 +26,8 @@
 .plan-sauce-buttons{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:20px}
 .plan-sauce-buttons .btn{min-height:44px}
 @media(max-width:480px){.plan-sauce-modal{width:min(96vw,540px)}.plan-sauce-buttons{flex-direction:column-reverse}.plan-sauce-buttons .btn{width:100%}}
+
+/* Reminder on the exact main cooking task immediately before an optional sauce. */
+.guide-sauce-timing{margin:16px 0;padding:13px 14px;border:1px solid #cbdccd;border-left:4px solid #277c51;border-radius:12px;background:#f4f9f3;line-height:1.55}
+.guide-sauce-timing strong{display:block;margin-bottom:5px;color:#174a42;font-size:.93rem}
+.guide-sauce-timing p{margin:0;color:#385347;font-size:.87rem}
