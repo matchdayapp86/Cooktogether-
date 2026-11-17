@@ -27,7 +27,7 @@ for(const [id,s] of Object.entries(sauces)){
 }
 
 const recipeStart=html.indexOf('window.COOK_RECIPES = ')+ 'window.COOK_RECIPES = '.length;
-const recipeEnd=html.indexOf(';'+'\\n'+'window.COOK_LEGACY_RECIPES',recipeStart);
+const recipeEnd=html.indexOf(';'+String.fromCharCode(10)+'window.COOK_LEGACY_RECIPES',recipeStart);
 assert(recipeStart>0&&recipeEnd>recipeStart,'Cannot audit primary recipes');
 const recipes=JSON.parse(html.slice(recipeStart,recipeEnd));
 assert.equal(recipes.length,116,'Recipe inventory changed; refresh the audit');
