@@ -5,7 +5,7 @@
 (() => {
   const catalog = window.COOK_ILLUSTRATIONS;
   // Only approved full-colour guides can appear; legacy SVG diagrams are intentionally hidden.
-  const approvedImages = Object.freeze({"dice":"dice","garlic":"garlic-knife","pepper-dice":"pepper-dice","potato-prep":"potato-prep","carrot-slice":"carrot-slice","mushroom-slice":"mushroom-slice","chicken-cube":"chicken-cube","beef-strips":"beef-strips","potato-wedges":"potato-wedges","broccoli-florets":"broccoli-florets"});
+  const approvedImages = Object.freeze(Object.assign({"dice":"dice","garlic":"garlic-knife","pepper-dice":"pepper-dice","potato-prep":"potato-prep","carrot-slice":"carrot-slice","mushroom-slice":"mushroom-slice","chicken-cube":"chicken-cube","beef-strips":"beef-strips","potato-wedges":"potato-wedges","broccoli-florets":"broccoli-florets"}, window.COOK_ILLUSTRATION_IMAGES||{}));
   const imageSrc = key => approvedImages[key] ? `assets/techniques/${approvedImages[key]}.webp` : null;
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function select(instruction, context = {}) {

@@ -580,7 +580,7 @@ body.picker-open{overflow:hidden}
 .filters-row .filter-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;max-width:100%;min-width:0;width:100%;padding:3px 0 8px;scrollbar-width:thin;scrollbar-color:#b6c9bb transparent;overscroll-behavior-x:contain}.filters-row .filter-btn{flex:0 0 auto;white-space:nowrap}.picker-top{min-width:0}.picker-scroll{position:relative;z-index:0}
 </style>
   <title>Cook Together v0.26 — Your household kitchen</title>
-<link rel="stylesheet" href="illustrations.css?v=20261117">
+<link rel="stylesheet" href="illustrations.css?v=20261117c">
 </head>
 <body>
   <div class="layout">
@@ -600,8 +600,10 @@ body.picker-open{overflow:hidden}
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation"></nav>
   <div id="modal-root"></div><div id="beginner-global-timers"></div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script src="assets/techniques/catalog.js?v=20261117"></script>
-<script src="illustration-ui.js?v=20261117"></script>
+<script src="assets/techniques/catalog.js?v=20261117c"></script>
+<script src="assets/techniques/catalog-extra.js?v=20261117c"></script>
+<script src="illustration-ui.js?v=20261117c"></script>
+<script src="illustration-action-matching.js?v=20261117c"></script>
 <script>
 // Cook Together v0.4 · independently authored development recipes; NOT yet kitchen-tested. All costs illustrative.
 window.COOK_RECIPES = [
@@ -35523,14 +35525,16 @@ function ingredientPreparationHelp(r,i,portions){
     'temperatures':['probe'],'poultry':['probe']
   };
   const schoolTechniqueGroups={
-    'Knife & prep skills':['slice-onion','onion-wedges','spring-onion','grate','garlic','garlic-chop','pepper-prep','pepper-strips','pepper-dice','potato-prep','carrot-slice','mushroom-slice','chicken-cube','beef-strips','potato-wedges','broccoli-florets'],
+    'Knife & prep skills':["slice-onion","onion-wedges","spring-onion","grate","garlic","garlic-chop","pepper-prep","pepper-strips","pepper-dice","potato-prep","carrot-slice","mushroom-slice","chicken-cube","beef-strips","potato-wedges","broccoli-florets","carrot-batons","carrot-dice","ginger-grate","herbs-chop","leeks-prep","potato-slices","aubergine-cube","butternut-squash","cauliflower-florets","chicken-strips","courgette-half-moons","halloumi-slice","tofu-cube","tomato-dice","tomato-slice","apple-slice","avocado-prep","banana-slice","celery-prep","cherry-tomatoes-halved","chicken-shred-cooked","courgette-dice","cucumber-dice","cucumber-ribbons","leafy-greens-shred","apple-dice","cucumber-quarter","tomato-wedges","dice-mushrooms","peel-carrot","cube-paneer-or-feta"],
     'Hob & timings':['potato-boil','noodles','mash','soften','brown-mince','brown-pieces','mushrooms','spinach','roast'],
-    'Sauces & oils':['simmer','reduce','whisk','fold','knead']
+    'Sauces & oils':['simmer','reduce'],
+    'Baking & mixing':['whisk','fold','knead','line-baking-tin','rub-butter-into-flour','cream-butter-sugar'],
+    'Food preparation':['boiled-egg-peel','beans-drain-rinse']
   };
   for(const [category,keys] of Object.entries(schoolTechniqueGroups))for(const key of keys){
     const info=CookIllustrations.catalog[key],technique=BEGINNER_TECHNIQUES[key]||BEGINNER_TECHNIQUES[{'garlic-chop':'garlic','pepper-prep':'pepper','pepper-strips':'pepper','pepper-dice':'pepper'}[key]];
     const id='action-'+key;
-    COOKING_SCHOOL_LESSONS.push({id,category,icon:'👩‍🍳',title:info.title,duration:'2-minute read',intro:info.steps.join(' · '),steps:['garlic','garlic-chop','pepper-prep'].includes(key)?info.steps:(technique?.actions||info.steps),result:info.note,source:technique?.source?'Published technique reference':category==='Knife & prep skills'?'BDA · Peeling and chopping':'FSA · Cooking your food',url:technique?.source||(category==='Knife & prep skills'?'https://www.bda.uk.com/food-health/cooking-at-home/top-tips/correct-peeling-and-chopping-techniques.html':SAFETY_FSA_URL)});
+    COOKING_SCHOOL_LESSONS.push({id,category,icon:'👩‍🍳',title:info.title,duration:'2-minute read',intro:info.steps.join(' · '),steps:CookIllustrations.imageSrc(key)?info.steps:(technique?.actions||info.steps),result:info.note,source:technique?.source?'Published technique reference':category==='Knife & prep skills'?'BDA · Peeling and chopping':'',url:technique?.source||(category==='Knife & prep skills'?'https://www.bda.uk.com/food-health/cooking-at-home/top-tips/correct-peeling-and-chopping-techniques.html':'')});
     SCHOOL_ILLUSTRATIONS[id]=[key];
   }
   let schoolFilter='All', schoolSearch='';
@@ -35539,6 +35543,8 @@ function ingredientPreparationHelp(r,i,portions){
     {name:'Getting started',icon:'🧺',description:'Get organised before turning on the hob.',ids:['before-you-cook']},
     {name:'Knife & prep skills',icon:'🔪',description:'Prepare vegetables and use basic tools safely.',ids:['knife-basics','chop-onions']},
     {name:'Hob & timings',icon:'🍝',description:'Understand pasta, rice and cooking times.',ids:['pasta','rice']},
+    {name:'Baking & mixing',icon:'🥣',description:'Whisk, fold, knead and prepare baking tins.',ids:[]},
+    {name:'Food preparation',icon:'🥚',description:'Simple food handling and preparation techniques.',ids:[]},
     {name:'Sauces & oils',icon:'🫒',description:'Make a sauce and choose oils for cooking.',ids:['white-sauce','choosing-oils']},
     {name:'Food safety & storage',icon:'🛡️',description:'Cook, store and handle food safely.',ids:['raw-food','temperatures','poultry','leftovers','date-labels','allergens']}
   ];
@@ -35548,7 +35554,7 @@ function ingredientPreparationHelp(r,i,portions){
     const q=schoolSearch.trim().toLocaleLowerCase('en-GB');
     return COOKING_SCHOOL_LESSONS.filter(l=>(schoolFilter==='All'||schoolCategory(l)===schoolFilter)&&(!q||[l.title,l.intro,schoolCategory(l),l.steps.join(' ')].join(' ').toLocaleLowerCase('en-GB').includes(q)));
   }
-  function schoolLessonCard(l){return `<details class="school-lesson" id="lesson-${esc(l.id)}"><summary><span class="school-icon" aria-hidden="true">${l.icon}</span><span class="school-summary-main"><small>${esc(schoolCategory(l))} · ${esc(l.duration)}</small><strong>${esc(l.title)}</strong><span>${esc(l.intro)}</span></span><span class="school-chevron" aria-hidden="true">⌄</span></summary><div class="school-lesson-body">${CookIllustrations.render(SCHOOL_ILLUSTRATIONS[l.id]||[])}<h3>Try it step by step</h3><ol>${l.steps.map(v=>`<li>${esc(v)}</li>`).join('')}</ol><div class="school-outcome"><strong>What to look for</strong><p>${esc(l.result)}</p></div><a class="school-source" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">Read the source: ${esc(l.source)} ↗</a></div></details>`;}
+  function schoolLessonCard(l){return `<details class="school-lesson" id="lesson-${esc(l.id)}"><summary><span class="school-icon" aria-hidden="true">${l.icon}</span><span class="school-summary-main"><small>${esc(schoolCategory(l))} · ${esc(l.duration)}</small><strong>${esc(l.title)}</strong><span>${esc(l.intro)}</span></span><span class="school-chevron" aria-hidden="true">⌄</span></summary><div class="school-lesson-body">${CookIllustrations.render(SCHOOL_ILLUSTRATIONS[l.id]||[])}<h3>Try it step by step</h3><ol>${l.steps.map(v=>`<li>${esc(v)}</li>`).join('')}</ol><div class="school-outcome"><strong>What to look for</strong><p>${esc(l.result)}</p></div>${l.url?`<a class="school-source" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">Read the source: ${esc(l.source)} ↗</a>`:""}</div></details>`;}
   function schoolResults(){
     const lessons=matchedSchoolLessons();
     if(!lessons.length)return '<div class="empty-state"><h3>No lessons found</h3><p>Try another search or select All categories.</p></div>';

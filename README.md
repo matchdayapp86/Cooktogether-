@@ -4,10 +4,12 @@ Static cooking app served from `main` by GitHub Pages. Open `index.html` through
 
 ## Instructional illustrations
 
-The same authored illustration catalog appears beside performed prep/cooking actions and in Cooking School. Previews open in a native modal dialog with written equivalents, keyboard focus handling and Escape dismissal. They do not change recipe progress, portions or pantry stock.
+The approved illustrated instruction cards appear beside performed prep/cooking actions and in Cooking School. The Get Ready and Cook Along selectors use the same action-level matching; merely mentioning a prepared ingredient does not trigger artwork. Previews open in a native modal dialog with written equivalents, keyboard focus handling and Escape dismissal. They do not change recipe progress, portions or pantry stock.
 
-- `illustration-ui.js`: action selection, explicit continuation records, compact previews and enlargement.
-- `assets/techniques/*.webp`: ten approved individual illustrated guides, optimised for mobile. Legacy SVG diagrams remain in the repository for historical reference but are no longer displayed.
+- `illustration-ui.js`: core action selection, compact previews and enlargement.
+- `illustration-action-matching.js`: additional action-specific matching, disambiguation (such as ginger versus cheese grating), and suppression of mismatched old continuation hints.
+- `assets/techniques/catalog-extra.js`: the remaining approved Work artwork captions and image assignments.
+- `assets/techniques/*.webp`: 54 individual images: 10 previously installed, 44 newly added. The alternative `slice-carrot-rounds.webp` is stored but intentionally not displayed alongside the existing carrot-slicing image, leaving 53 active image techniques. Legacy SVG diagrams remain in the repository for historical reference but are no longer displayed.
 - `illustrations.css`: responsive previews and zoom dialog.
 - `index.html`: Get Ready instructions, task integration and School lessons.
 
@@ -26,4 +28,12 @@ node tests/browser.cjs http://127.0.0.1:8000
 
 `CHROMIUM_PATH` overrides `/usr/bin/chromium`. Browser test screenshots and the complete task/prep placement audit go to `/tmp/cooktogether-tests` (override with `COOK_TEST_ARTIFACTS`). Tests inject inspection hooks into a browser response; no test hooks are shipped in the app.
 
-The browser checks render all 1,192 tasks and inspect all 1,081 ingredient prep notes. They exercise portion scaling, prep checkboxes/review, illustration dismissal and focus, saved progress, timer expiry/extensions/stop, favourites, meal planning, shopping purchases, pantry updates, School search/categories, asset decoding and 320/360/390/768/1280px layouts. Chromium viewport emulation does not replace testing on physical iOS/Android devices or a kitchen trial.
+The browser checks render the current cooking tasks and inspect the ingredient prep notes. They exercise portion scaling, prep checkboxes/review, illustration dismissal and focus, saved progress, timer expiry/extensions/stop, favourites, meal planning, shopping purchases, pantry updates, School search/categories, asset decoding and 320/360/390/768/1280px layouts. Chromium viewport emulation does not replace testing on physical iOS/Android devices or a kitchen trial.
+
+## Illustration integration, 17 November 2026
+
+- Get Ready uses the named ingredient and its actual prep note. Cook Along uses the task's performed action. Cooking School provides a dedicated technique lesson, including a separate Baking & mixing section.
+- If a task does not have a matching approved illustration, it retains written guidance; never fall back to the obsolete SVG placeholders.
+- A screenshot or illustration is not a food-safety or doneness check; follow written food-safety instructions.
+- Original six-panel Work sheets were split into separate WebP assets and linked to technique keys. Image files are not to be repeated merely because an ingredient is mentioned.
+- `tests/illustrations.cjs` checks active image assets and action matching; `tests/browser.cjs` additionally checks the UI in Chromium when Playwright is installed.

@@ -5,19 +5,19 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const sandbox = {window: {}, document: {addEventListener(){}}};
 vm.createContext(sandbox);
-for (const name of ['assets/techniques/catalog.js','illustration-ui.js']) vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),sandbox);
+for (const name of ['assets/techniques/catalog.js','assets/techniques/catalog-extra.js','illustration-ui.js','illustration-action-matching.js']) vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),sandbox);
 const {select,catalog,render,imageSrc} = sandbox.window.CookIllustrations;
 const cases = [
  ['Peel and finely dice the onion.',['dice']],
  ['Dice onion and season with pepper.',['dice']],
- ['Slice tomatoes and add onion.',[]],
+ ['Slice tomatoes and add onion.',['tomato-slice']],
  ['Wash potatoes and cut carrots.',[]],
  ['Finely dice half the red onion.',['dice']],
- ['Grate or finely mince the red onion.',['grate']],
+ ['Grate or finely mince the red onion.',[]],
  ['Slice peppers and onion.',['slice-onion','pepper-strips']],
  ['Slice onions into wedges and courgette into thick half-moons.',['onion-wedges']],
  ['Quarter red onions and add them to the tray.',['onion-wedges']],
- ['Slice cucumber into thin ribbons and spring onions into rings.',['spring-onion']],
+ ['Slice cucumber into thin ribbons and spring onions into rings.',['spring-onion','cucumber-ribbons']],
  ['Turn to medium; soften diced onion and pepper for 6–8 minutes.',['soften']],
  ['Add finely chopped onion and carrots to the pan.',[]],
  ['Mix beef, finely diced onion and egg briefly.',[]],
@@ -59,7 +59,6 @@ const cases = [
 assert.deepEqual([...select('Turn the frying-pan heat down to medium. Add the onion and carrots to the pan used for the lamb. Cook for 6–8 minutes, stirring across the base, until the onion softens.',{recipeId:'shepherds-pie',taskIndex:9})],['soften']);
 for (const [text, expected] of cases) assert.deepEqual([...select(text)].sort(),expected.sort(),text);
 for (const [ingredient,note,key] of [
- ['red onion','Peel and grate finely.','grate'],
  ['onion','Peel and dice finely.','dice'],
  ['onion','Peel and slice very thinly.','slice-onion'],
  ['red onion','Peel and cut into eight wedges.','onion-wedges'],
@@ -67,7 +66,8 @@ for (const [ingredient,note,key] of [
  ['garlic','Peel and finely chop.','garlic-chop']
 ]) assert(select(note,{ingredient}).includes(key),ingredient+': '+note);
 for (const [key,info] of Object.entries(catalog)) assert.equal(info.steps.length,3,key);
-const approved=['dice','garlic','pepper-dice','potato-prep','carrot-slice','mushroom-slice','chicken-cube','beef-strips','potato-wedges','broccoli-florets'];
+const approved=Object.keys(catalog).filter(key=>imageSrc(key));
+assert.equal(approved.length,53,'all approved illustration types available');
 for(const key of approved){
  const src=imageSrc(key);
  assert(src && src.endsWith('.webp'),key+' approved WebP file');
@@ -89,4 +89,34 @@ for(const [instruction,ctx,key] of [
 ]) assert(select(instruction,ctx).includes(key),instruction);
 assert(!select('Add cooked chicken cubes to the pan.').includes('chicken-cube'));
 assert(!select('Add sliced carrots and chopped mushrooms to the pan.').includes('carrot-slice'));
-console.log(`${cases.length} existing action cases plus approved full-colour image and matching checks passed.`);
+
+const additional=[
+ ['Dice carrots into small cubes','carrot-dice'],['Cut carrot into batons','carrot-batons'],['Peel the carrot','peel-carrot'],
+ ['Grate fresh ginger','ginger-grate'],['Chop fresh parsley','herbs-chop'],['Slice leeks','leeks-prep'],
+ ['Slice potatoes into rounds','potato-slices'],['Cut aubergine into cubes','aubergine-cube'],
+ ['Drain and rinse canned beans','beans-drain-rinse'],['Cube butternut squash','butternut-squash'],
+ ['Cut cauliflower into florets','cauliflower-florets'],['Slice chicken breast into strips','chicken-strips'],
+ ['Slice courgette into half-moons','courgette-half-moons'],['Slice halloumi','halloumi-slice'],
+ ['Cube firm tofu','tofu-cube'],['Dice tomatoes','tomato-dice'],['Slice tomatoes into rounds','tomato-slice'],
+ ['Cut tomatoes into wedges','tomato-wedges'],['Slice apples','apple-slice'],['Prepare avocado','avocado-prep'],
+ ['Slice banana','banana-slice'],['Trim celery','celery-prep'],['Halve cherry tomatoes','cherry-tomatoes-halved'],
+ ['Shred cooked chicken','chicken-shred-cooked'],['Dice courgette','courgette-dice'],['Dice cucumber','cucumber-dice'],
+ ['Make cucumber ribbons','cucumber-ribbons'],['Shred cabbage into thin strips','leafy-greens-shred'],
+ ['Dice apple','apple-dice'],['Peel the hard-boiled egg','boiled-egg-peel'],
+ ['Cream butter and sugar','cream-butter-sugar'],['Quarter cucumber','cucumber-quarter'],
+ ['Rub butter into flour','rub-butter-into-flour'],['Line the baking tin with parchment','line-baking-tin'],
+ ['Dice mushrooms','dice-mushrooms'],['Cube feta','cube-paneer-or-feta']
+];
+for(const [action,key] of additional)assert(select(action).includes(key),action+': '+key);
+for(const [action,key] of [
+ ['Add diced tomatoes and grated cheese','tomato-dice'],
+ ['Add pre-cut chicken strips to the pan','chicken-strips'],
+ ['Add chopped herbs and sliced onions','herbs-chop'],
+ ['Grate fresh ginger','grate'],
+ ['Grate the red onion','grate'],
+ ['Slice silken tofu','tofu-cube'],
+ ['Add sliced carrots to the pan','carrot-slice']
+])assert(!select(action).includes(key),'wrong artwork on '+action);
+assert.equal(imageSrc('slice-carrot-rounds'),null,'duplicate carrot illustration not displayed');
+console.log(cases.length+' base cases, '+additional.length+' new matches, 7 false-positive guards and '+approved.length+' WebP guides passed.');
+

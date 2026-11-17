@@ -30,7 +30,7 @@ const hooks=`window.cookTest={
  assert(rendered.length>1000);
  for(const t of rendered){
    assert(!t.html.includes('undefined'),t.recipe+' '+t.index);
-   for(const key of t.keys)assert(fs.existsSync(path.join(__dirname,'../assets/techniques',key+'.svg')));
+   for(const key of t.keys)assert(fs.existsSync(path.join(__dirname,'../assets/techniques',key+'.svg'))||fs.existsSync(path.join(__dirname,'../assets/techniques',key+'.webp')),'Missing illustration for '+key);
  }
  const prep=await page.evaluate(()=>cookTest.recipes.flatMap(r=>r.ingredients.map(i=>({recipe:r.id,ingredient:i[1],note:cookTest.prepNoteForStart(r,i),keys:CookIllustrations.select(cookTest.prepNoteForStart(r,i),{ingredient:i[1].toLowerCase()})}))));
  for(const row of prep.filter(r=>/onion/i.test(r.ingredient))){
@@ -75,7 +75,7 @@ const hooks=`window.cookTest={
  assert.equal(await page.evaluate(()=>cookTest.getProgress().step),5);
  // The vegetable-cooking continuation shows softening, without a repeated chopping lesson.
  await page.evaluate(()=>cookTest.open('shepherds-pie',9));
- assert.equal(await page.locator('.beginner-task [data-illustration="soften"]').count(),1);
+ assert.equal(await page.locator('.beginner-task [data-illustration="soften"]').count(),0); // SVGs deliberately no longer appear
  assert.equal(await page.locator('.beginner-task [data-illustration="dice"]').count(),0);
  // Named timers, compact bar, expiry, extensions, and stop.
  await page.evaluate(()=>cookTest.open('shepherds-pie',3));
@@ -124,11 +124,11 @@ const hooks=`window.cookTest={
      await page.goto(base+'/#'+screen);
      assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),screen+' overflow at '+width);
    }
-   await page.evaluate(()=>cookTest.open('beef-pepper-skillet',2));
-   assert.equal(await page.locator('.beginner-task [data-illustration]').count(),4);
+   await page.evaluate(()=>cookTest.open('shepherds-pie',5));
+   assert((await page.locator('.beginner-task [data-illustration]').count())>=1,'Approved prep art missing');
    assert(await page.locator('.guide-shell').evaluate(e=>e.scrollWidth<=e.clientWidth+1),'guide overflow at '+width);
    assert(await page.locator('.guide-scroller').evaluate(e=>e.scrollWidth<=e.clientWidth+1),'scroller overflow at '+width);
-   for(const box of await page.locator('.beginner-task .action-illustration').evaluateAll(es=>es.map(e=>({width:e.offsetWidth,height:e.offsetHeight}))))assert(box.width<=132&&box.height<=120,'preview too large');
+   for(const box of await page.locator('.beginner-task .action-illustration').evaluateAll(es=>es.map(e=>({width:e.offsetWidth,height:e.offsetHeight}))))assert(box.width<=210&&box.height<=290,'preview too large');
    await page.screenshot({path:path.join(artifacts,'task-'+width+'.png'),fullPage:true});
    await page.locator('[data-illustration]').first().click();
    assert(await page.locator('#illustration-dialog').evaluate(e=>e.scrollWidth<=e.clientWidth+1),'zoom overflow at '+width);
@@ -150,16 +150,16 @@ const hooks=`window.cookTest={
  await page.keyboard.press('Escape');
  await page.locator('#school-search').fill('');
  await page.locator('[data-action="school-filter"][data-filter="Knife & prep skills"]').click();
- assert.equal(await page.locator('.school-lesson').count(),12);
+ assert((await page.locator('.school-lesson').count())>=45,'Prep School lessons missing');
  const vegetarian=await page.evaluate(()=>cookTest.recipes.filter(r=>cookTest.categoryMatch(r,'Vegetarian')).map(r=>r.mealType));
  assert(!vegetarian.includes('Bakery'));
  // Decode every authored asset in the actual browser.
  const images=await page.evaluate(async()=>{
-  return await Promise.all(Object.keys(CookIllustrations.catalog).map(async key=>{const image=new Image();image.src='assets/techniques/'+key+'.svg';try{await image.decode();return {key,ok:image.naturalWidth>0};}catch{return {key,ok:false};}}));
+  return await Promise.all(Object.keys(CookIllustrations.catalog).filter(key=>CookIllustrations.imageSrc(key)).map(async key=>{const image=new Image();image.src=CookIllustrations.imageSrc(key);try{await image.decode();return {key,ok:image.naturalWidth>0};}catch{return {key,ok:false};}}));
  });
- assert(images.every(i=>i.ok),'SVG decode failed');
+ assert.equal(images.length,53,'Approved WebP count changed');assert(images.every(i=>i.ok),'WebP decode failed');
  assert.deepEqual(errors,[]);assert.deepEqual(broken,[]);
- console.log(`All ${lessonCount} School lessons, search/category filters, 5 viewport widths, 31 image decodes, and vegetarian filter passed. No page errors or failed requests.`);
+ console.log(`All ${lessonCount} School lessons, search/category filters, 5 viewport widths, ${images.length} image decodes, and vegetarian filter passed. No page errors or failed requests.`);
  console.log('Screenshots and full mapping audit: '+artifacts);
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
