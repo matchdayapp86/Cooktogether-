@@ -36399,7 +36399,7 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
       <div class="ready-list-header"><h4>Gather your ingredients</h4><span>${checked.length} of ${recipe.ingredients.length} checked</span></div>
       <p class="ready-explainer">Amounts are for <strong>${portions} ${portions===1?'person':'people'}</strong>. Tick as you gather. These preparation instructions match this meal. Prepare the vegetables now; take raw meat or fish from the fridge close to its preparation or cooking step, not to warm it to room temperature.</p>
       <div class="ready-ingredients">${items}</div>
-      ${recipe.optionalSauce?`<section class="ready-important" aria-label="Optional sauce choice"><strong>🍽️ ${esc(recipe.optionalSauce.title)}</strong><p>This is an optional addition, not a change to the main recipe. ${esc(recipe.optionalSauce.note)}</p><button type="button" class="btn ${state.cookAlong?.[guideStorageKey()]?.sauce?"btn-primary":""}" data-action="guide-sauce-toggle" aria-pressed="${!!state.cookAlong?.[guideStorageKey()]?.sauce}">${state.cookAlong?.[guideStorageKey()]?.sauce?"✓ Sauce selected — tap to skip":"Yes, add the sauce stage"}</button><p><strong>Extra sauce ingredients (for ${portions} portions):</strong></p><ul>${recipe.optionalSauce.ingredients.map(i=>`<li>${esc(i[1])}: ${ingredientAmount(i[2]*portions/recipe.servings,i[3])}</li>`).join("")}</ul><p>These extras are not in the automatic shopping list or Pantry deduction. Check your cupboard before starting. ${esc(recipe.optionalSauce.status)}</p></section>`:""}
+      ${recipe.optionalSauce?`<section class="ready-important" aria-label="Optional sauce choice"><strong>🍽️ ${esc(recipe.optionalSauce.title)}</strong><p>This is an optional addition, not a change to the main recipe. ${esc(recipe.optionalSauce.note)}</p><button type="button" class="btn ${state.cookAlong?.[guideStorageKey()]?.sauce?"btn-primary":""}" data-action="guide-sauce-toggle" aria-pressed="${!!state.cookAlong?.[guideStorageKey()]?.sauce}">${state.cookAlong?.[guideStorageKey()]?.sauce?"✓ Sauce selected — tap to skip":"Yes, add the sauce stage"}</button>${state.cookAlong?.[guideStorageKey()]?.sauce?`<button type="button" class="btn btn-sm" data-action="guide-sauce-shopping" style="margin-left:8px">${state.manual.some(m=>m.id.startsWith("sauce-"+guideStorageKey().replace(/[^a-z0-9-]/gi,"-")+"-"))?"✓ Extras in shopping list (tap to refresh)":"Add sauce extras to Shopping"}</button>`:""}<p><strong>Extra sauce ingredients (for ${portions} portions):</strong></p><ul>${recipe.optionalSauce.ingredients.map(i=>`<li>${esc(i[1])}: ${ingredientAmount(i[2]*portions/recipe.servings,i[3])}</li>`).join("")}</ul><p>These extras are not automatically included in the meal plan shopping list or Pantry deduction. Add them to Shopping if needed, or check your cupboard. ${esc(recipe.optionalSauce.status)}</p></section>`:""}
       ${recipe.ingredients.some(i=>i[4]==='Meat & fish')?`<details class="ready-meat-note"><summary>${meatHelpTitle}</summary><p>${meatHelpText}</p><a href="https://www.food.gov.uk/safety-hygiene/chilling" target="_blank" rel="noopener noreferrer">FSA chilling advice ↗</a></details>`:''}
       <div class="ready-important"><strong>Before you begin</strong><p>Check product allergens, use-by dates and storage instructions. Wash hands before cooking and after touching raw meat. Use a separate clean surface for ready-to-eat food. Do not wash raw meat or poultry.</p><a href="https://www.food.gov.uk/safety-hygiene/avoiding-cross-contamination" target="_blank" rel="noopener noreferrer">FSA hygiene guidance ↗</a></div>
       <p class="ready-final-note">You can return here using Back from Step 1. Each cooking task shows its instructions and relevant technique help. Preparation help above opens separately.</p>
@@ -36557,6 +36557,20 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     if(act==='beginner-enable-notifications'){enableBeginnerNotifications();return}
     if(act==='beginner-test-alarm'){armBeginnerAudio();if(beginnerAudio){Promise.resolve(beginnerAudio.state==='running'?null:beginnerAudio.resume()).then(()=>{playBeginnerAlarm('test-alarm');refreshBeginnerTimerPanels();}).catch(()=>toast('Sound is blocked. Check your browser sound settings.'));}else toast('Sound is unavailable in this browser');return}
     if(act==='guide-sauce-toggle'){if(!recipeById(guideId)?.optionalSauce)return;const p=guideProgress();if(p.step!==0){toast('Choose the sauce at Get Ready before cooking.');return;}p.sauce=!p.sauce;save();renderCookAlong();return;}
+    if(act==='guide-sauce-shopping'){
+      const r=recipeById(guideId),p=guideProgress();
+      if(!r?.optionalSauce||!p.sauce)return;
+      const prefix='sauce-'+guideStorageKey().replace(/[^a-z0-9-]/gi,'-')+'-';
+      r.optionalSauce.ingredients.forEach((ingredient,index)=>{
+        const key=prefix+index;
+        const qty=ingredientAmount(ingredient[2]*guideServings/r.servings,ingredient[3]).slice(0,30);
+        const existing=state.manual.find(item=>item.id===key);
+        if(existing){if(!existing.checked)existing.qty=qty;return;}
+        state.manual.push({id:key,name:ingredient[1].slice(0,65),qty,checked:false});
+      });
+      save();renderCookAlong();toast('Sauce ingredients added to Shopping');
+      return;
+    }
     if(act==='guide-start'){openCookAlong(id,day);return}
     if(act==='guide-close'||act==='guide-back-recipe'){exitGuide(true);return}
     if(act==='guide-prep'){reviewGuidePrep();return}
