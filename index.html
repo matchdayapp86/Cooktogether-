@@ -578,6 +578,13 @@ body.picker-open{overflow:hidden}
 /* Compact timer bar keeps task instructions available, regardless of timer count. */
 #guide-timer-rack{flex:0 0 auto;max-height:none;overflow:visible;min-height:0}#guide-timer-rack .beginner-timers,#beginner-global-timers .beginner-timers{padding:0;margin:0;display:flex;flex-direction:column;max-height:40dvh;overflow:hidden}#beginner-global-timers{max-height:none;overflow:visible}#guide-timer-rack .beginner-timers{border-radius:0}.beginner-timer-bar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:10px;width:100%;flex-shrink:0;min-height:56px;box-sizing:border-box;border:0;background:#fff8e9;color:#244c3d;padding:8px 14px;text-align:left;font:inherit}.beginner-timer-summary{min-width:0;display:grid;gap:2px}.beginner-timer-summary strong{font-size:12px}.beginner-timer-summary>span{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.beginner-timer-bar output{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}.beginner-timer-view{font-size:12px;font-weight:800;white-space:nowrap;text-decoration:underline}.beginner-timer-bar.timer-due{background:#ffebd6;color:#923d1d}.beginner-timer-details{min-height:0;max-height:min(30dvh,260px);overflow-y:auto;overscroll-behavior:contain;padding:10px 14px;border-top:1px solid #e7d8ad}.beginner-timer-sound-note{font-size:11px;line-height:1.45;margin:10px 0 0;color:#76684a}.beginner-timer-details .beginner-timer-controls button{min-height:40px}
 .filters-row .filter-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;max-width:100%;min-width:0;width:100%;padding:3px 0 8px;scrollbar-width:thin;scrollbar-color:#b6c9bb transparent;overscroll-behavior-x:contain}.filters-row .filter-btn{flex:0 0 auto;white-space:nowrap}.picker-top{min-width:0}.picker-scroll{position:relative;z-index:0}
+
+.beginner-timer-settings{display:grid;gap:7px;padding:11px 12px;margin:9px 0 12px;border:1px solid #d6e5d8;background:#f6faf5;border-radius:12px}
+.beginner-timer-settings label{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#275941;font-size:13px;font-weight:750}
+.beginner-timer-settings input[type=range]{width:100%;min-height:36px;accent-color:#207453;cursor:pointer}
+.beginner-phone-alerts{font-size:11px;color:#53745f;line-height:1.4}
+.beginner-phone-alerts small{display:block}
+.beginner-phone-alerts .btn{white-space:normal;text-align:center;max-width:100%}
 </style>
   <title>Cook Together v0.26 — Your household kitchen</title>
 <link rel="stylesheet" href="illustrations.css?v=20261117e">
@@ -2428,7 +2435,7 @@ window.COOK_RECIPES = [
     "theme": "sunshine",
     "time": 55,
     "servings": 4,
-    "cost": 15.0,
+    "cost": 15,
     "description": "Caramelised mustard chicken thighs with crisp-edged potatoes, sweet carrots and red onion.",
     "tags": [
       "One tray",
@@ -2512,8 +2519,8 @@ window.COOK_RECIPES = [
     "steps": [
       "Heat oven to 200°C fan. Chop potatoes into 2 cm chunks and carrots into slim batons. Toss with half the oil, thyme and a pinch of salt; spread on a large tray.",
       "Roast vegetables for 20 minutes, turning once. Meanwhile mix wholegrain mustard, honey, crushed garlic, lemon juice and the remaining oil.",
-      "Before touching the raw chicken, pour half the glaze into a separate bowl for the final brushing; use a clean brush later. Pat the thighs dry, coat in the other half, and discard any marinade or utensils that touched raw chicken. Quarter red onions and add them to the tray with the chicken, leaving space around each piece.",
-      "Roast another 20–25 minutes, until chicken is thoroughly cooked and vegetables have browned, turning vegetables once. Brush remaining glaze on chicken for the last 5 minutes only.",
+      "Before handling the raw chicken, pour half of the prepared honey-mustard glaze into a separate clean bowl and set it aside for brushing on during the final 5 minutes of roasting. Leave the other half of the glaze in the original mixing bowl. Pat the chicken thighs dry with kitchen paper, then use a spoon or separate brush to coat every thigh evenly with the glaze left in the original bowl. Discard any leftover glaze or utensils that touched the raw chicken. Peel and quarter the red onions, keeping some root attached, then add the onion wedges and the chicken to the tray, leaving space between the pieces.",
+      "Roast another 20–25 minutes, until chicken is thoroughly cooked and vegetables have browned, turning vegetables once. Brush with the reserved clean glaze during the final 5 minutes using a clean brush; do not return a brush that touched chicken to the reserved bowl.",
       "Rest chicken 3 minutes. Squeeze over a little lemon and spoon the tray juices onto the vegetables. If the chicken is cooked before the potatoes crisp, remove chicken and finish vegetables separately."
     ],
     "flavour": "Start the potatoes first, then glaze the chicken near the end so the honey colours rather than burns.",
@@ -2539,8 +2546,8 @@ window.COOK_RECIPES = [
     "methodBeforeBeginner": [
       "Heat oven to 200°C fan. Chop potatoes into 2 cm chunks and carrots into slim batons. Toss with half the oil, thyme and a pinch of salt; spread on a large tray.",
       "Roast vegetables for 20 minutes, turning once. Meanwhile mix wholegrain mustard, honey, crushed garlic, lemon juice and the remaining oil.",
-      "Before touching the raw chicken, pour half the glaze into a separate bowl for the final brushing; use a clean brush later. Pat the thighs dry, coat in the other half, and discard any marinade or utensils that touched raw chicken. Quarter red onions and add them to the tray with the chicken, leaving space around each piece.",
-      "Roast another 20–25 minutes, until chicken is thoroughly cooked and vegetables have browned, turning vegetables once. Brush remaining glaze on chicken for the last 5 minutes only.",
+      "Before handling the raw chicken, pour half of the prepared honey-mustard glaze into a separate clean bowl and set it aside for brushing on during the final 5 minutes of roasting. Leave the other half of the glaze in the original mixing bowl. Pat the chicken thighs dry with kitchen paper, then use a spoon or separate brush to coat every thigh evenly with the glaze left in the original bowl. Discard any leftover glaze or utensils that touched the raw chicken. Peel and quarter the red onions, keeping some root attached, then add the onion wedges and the chicken to the tray, leaving space between the pieces.",
+      "Roast another 20–25 minutes, until chicken is thoroughly cooked and vegetables have browned, turning vegetables once. Brush with the reserved clean glaze during the final 5 minutes using a clean brush; do not return a brush that touched chicken to the reserved bowl.",
       "Rest chicken 3 minutes. Squeeze over a little lemon and spoon the tray juices onto the vegetables. If the chicken is cooked before the potatoes crisp, remove chicken and finish vegetables separately."
     ],
     "instructionVersion": 29,
@@ -2577,7 +2584,8 @@ window.COOK_RECIPES = [
       {
         "title": "Toss with half the oil, thyme and a pinch of salt",
         "uses": [
-          "olive-oil"
+          "olive-oil",
+          "dried-thyme"
         ],
         "skills": [
           "mix"
@@ -2594,11 +2602,8 @@ window.COOK_RECIPES = [
       {
         "title": "Roast vegetables for 20 minutes, turning once",
         "uses": [
-          "mustard",
-          "honey",
-          "olive-oil",
-          "garlic",
-          "lemon"
+          "potatoes",
+          "carrots"
         ],
         "skills": [
           "roast"
@@ -2633,42 +2638,49 @@ window.COOK_RECIPES = [
         "instructions": "Meanwhile mix wholegrain mustard, honey, crushed garlic, lemon juice and the remaining oil."
       },
       {
-        "title": "Before touching the raw chicken, pour half the glaze into a…",
+        "title": "Reserve half the honey-mustard glaze in a clean bowl",
         "uses": [
-          "chicken-thighs"
+          "mustard",
+          "honey",
+          "garlic",
+          "lemon",
+          "olive-oil"
         ],
         "skills": [],
-        "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
+        "check": "Half of the honey-mustard glaze is in a separate clean bowl for the final 5 minutes. The other half remains in the original bowl to coat raw chicken.",
         "tools": [
           "Pastry brush",
           "Cookware already in use"
         ],
         "sourceStage": 2,
-        "instructions": "Before touching the raw chicken, pour half the glaze into a separate bowl for the final brushing; use a clean brush later."
+        "instructions": "Before touching the raw chicken, transfer half the honey-mustard glaze into a separate clean bowl and keep it aside for the final 5 minutes of roasting. Leave the other half in the original mixing bowl to coat the raw chicken; do not put a brush used on raw chicken into the reserved glaze."
       },
       {
-        "title": "Pat the thighs dry, coat in the other half, and discard any…",
+        "title": "Coat chicken thighs with the glaze in the original bowl",
         "uses": [
-          "chicken-thighs"
+          "chicken-thighs",
+          "mustard",
+          "honey"
         ],
         "skills": [
           "pat-dry"
         ],
-        "check": "Visible surface moisture has been blotted away without contaminating clean food or equipment.",
+        "check": "Both sides of every chicken thigh are evenly coated with glaze from the original mixing bowl. The reserved clean glaze has not touched raw chicken.",
         "tools": [
           "Kitchen paper",
           "Separate raw-food surface"
         ],
         "sourceStage": 2,
-        "instructions": "Pat the thighs dry, coat in the other half, and discard any marinade or utensils that touched raw chicken."
+        "instructions": "Pat the chicken thighs dry with kitchen paper. Using a spoon or brush kept for raw chicken only, spread the honey-mustard glaze remaining in the ORIGINAL mixing bowl over both sides of each thigh. This is the half you did not reserve in the clean bowl. Discard any leftover glaze that touched raw chicken and clean the utensils and surface."
       },
       {
         "title": "Quarter red onions and add them to the tray with the chicken,…",
         "uses": [
+          "red-onion",
           "chicken-thighs"
         ],
         "skills": [],
-        "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
+        "check": "The red onion wedges are beside the chicken on the tray, with space between the pieces.",
         "tools": [
           "Non-slip board",
           "Knife"
@@ -2679,7 +2691,10 @@ window.COOK_RECIPES = [
       {
         "title": "Roast another 20–25 minutes, until chicken is thoroughly…",
         "uses": [
-          "chicken-thighs"
+          "chicken-thighs",
+          "potatoes",
+          "carrots",
+          "red-onion"
         ],
         "skills": [
           "roast"
@@ -2693,9 +2708,11 @@ window.COOK_RECIPES = [
         "instructions": "Roast another 20–25 minutes, until chicken is thoroughly cooked and vegetables have browned, turning vegetables once."
       },
       {
-        "title": "Brush remaining glaze on chicken for the last 5 minutes only",
+        "title": "Brush with the reserved clean glaze for the final 5 minutes",
         "uses": [
-          "chicken-thighs"
+          "chicken-thighs",
+          "mustard",
+          "honey"
         ],
         "skills": [],
         "check": "The glaze has been applied only for the final cooking period stated; continue to watch for burning.",
@@ -2704,7 +2721,7 @@ window.COOK_RECIPES = [
           "Cookware already in use"
         ],
         "sourceStage": 3,
-        "instructions": "Brush remaining glaze on chicken for the last 5 minutes only."
+        "instructions": "During the last 5 minutes of roasting, use a clean brush to coat the chicken with the honey-mustard glaze you set aside in the separate clean bowl before handling raw chicken. Never dip a brush that touched the chicken back into the reserved bowl; keep roasting until the chicken is thoroughly cooked."
       },
       {
         "title": "Rest chicken 3 minutes",
@@ -34985,6 +35002,13 @@ const BEGINNER_TIMER_KEY='cookTogetherBeginnerReminders29';
 let beginnerTimers=[];
 try{const raw=JSON.parse(localStorage.getItem(BEGINNER_TIMER_KEY)||'[]');if(Array.isArray(raw))beginnerTimers=raw.filter(t=>t&&typeof t.id==='string'&&typeof t.recipeId==='string'&&typeof t.title==='string'&&Number.isFinite(t.deadline)&&t.deadline>Date.now()-86400000&&t.deadline<Date.now()+86400000).slice(0,12);}catch{}
 let beginnerAudio=null;
+const BEGINNER_VOLUME_KEY='cookTogetherBeginnerAlarmVolume1';
+let beginnerAlarmVolume=75;
+try{
+ const v=localStorage.getItem(BEGINNER_VOLUME_KEY);
+ if(v!==null&&Number.isFinite(Number(v))) beginnerAlarmVolume=Math.max(0,Math.min(100,Number(v)));
+}catch{}
+let beginnerLastAlarmAt=0;
 let beginnerTimersExpanded=false;
 const beginnerAlarmNodes=new Map();
 let announcedBeginnerTimers=new Set(beginnerTimers.filter(t=>t.alertedAt===t.deadline).map(t=>t.id));
@@ -34996,20 +35020,59 @@ function armBeginnerAudio(){
   if(beginnerAudio.state!=='running')beginnerAudio.resume().then(refreshBeginnerTimerPanels).catch(refreshBeginnerTimerPanels);
  }catch{} 
 }
+function beginnerNotificationCapable(){
+ return !!(window.isSecureContext&&'Notification' in window&&'serviceWorker' in navigator);
+}
+function enableBeginnerNotifications(){
+ if(!beginnerNotificationCapable()){toast('Phone notifications need HTTPS and a compatible browser.');return;}
+ // Permission is requested directly from this tap: never prompt when the page loads.
+ const permission=window.Notification.permission==='granted'?Promise.resolve('granted'):window.Notification.requestPermission();
+ Promise.resolve(permission).then(result=>{
+   if(result!=='granted'){toast('Phone notifications were not enabled.');refreshBeginnerTimerPanels();return;}
+   return navigator.serviceWorker.register('./timer-alert-sw.js').then(()=>{
+     toast('Phone notifications enabled where supported. They may still be delayed when the phone is locked.');
+     refreshBeginnerTimerPanels();
+   });
+ }).catch(()=>toast('Phone notification setup failed. Keep a system timer as a backup.'));
+}
+function notifyDueBeginnerTimers(due){
+ if(!due.length||!beginnerNotificationCapable()||window.Notification.permission!=='granted')return;
+ navigator.serviceWorker.register('./timer-alert-sw.js').then(reg=>{
+   for(const t of due){
+     reg.showNotification('CookTogether — Time to check!',{
+       body:(t.recipeTitle||'Cooking timer')+': '+t.title,
+       tag:'cooktogether-timer-'+t.id,
+       renotify:true,
+       data:{recipeId:t.recipeId},
+       vibrate:[220,110,220]
+     }).catch(()=>{});
+   }
+ }).catch(()=>{});
+}
+function closeBeginnerNotification(id){
+ if(!beginnerNotificationCapable()||window.Notification.permission!=='granted')return;
+ navigator.serviceWorker.getRegistration('./').then(reg=>reg?.getNotifications({tag:'cooktogether-timer-'+id})).then(list=>list?.forEach(n=>n.close())).catch(()=>{});
+}
+function stopDueAlarmIfAllStopped(){
+ if(beginnerTimers.every(t=>t.deadline>Date.now())){
+   stopBeginnerAlarm('__due-reminders');
+   beginnerLastAlarmAt=0;
+ }
+}
 function stopBeginnerAlarm(id){
  const nodes=beginnerAlarmNodes.get(id)||[];for(const node of nodes){try{node.stop();}catch{}try{node.disconnect();}catch{}}
  beginnerAlarmNodes.delete(id);
 }
 function playBeginnerAlarm(id){
  stopBeginnerAlarm(id);
- if(!beginnerAudio||beginnerAudio.state!=='running')return false;
+ if(!beginnerAudio||beginnerAudio.state!=='running'||beginnerAlarmVolume<=0)return false;
  try{
   const nodes=[];beginnerAlarmNodes.set(id,nodes);
   for(let ding=0;ding<3;ding++){
    const at=beginnerAudio.currentTime+0.03+ding*0.8;
    const osc=beginnerAudio.createOscillator(),gain=beginnerAudio.createGain();
-   osc.type='sine';osc.frequency.setValueAtTime(1046.5,at);
-   gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(0.3,at+0.012);gain.gain.exponentialRampToValueAtTime(0.001,at+0.65);
+   osc.type='triangle';osc.frequency.setValueAtTime([880,1046.5,1318.5][ding],at);
+   gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(0.8*beginnerAlarmVolume/100,at+0.012);gain.gain.exponentialRampToValueAtTime(0.001,at+0.65);
    osc.connect(gain);gain.connect(beginnerAudio.destination);nodes.push(osc);
    osc.onended=()=>{try{osc.disconnect();gain.disconnect();}catch{}if(beginnerAlarmNodes.get(id)===nodes&&osc===nodes[nodes.length-1])beginnerAlarmNodes.delete(id);};
    osc.start(at);osc.stop(at+0.7);
@@ -35022,22 +35085,22 @@ function startBeginnerTimer(r,task,index,seconds){
  armBeginnerAudio();
  const now=Date.now(),turn=vegetableTurnReminder(r,task,seconds);
  const add=(id,title,duration)=>{
-  stopBeginnerAlarm(id);announcedBeginnerTimers.delete(id);
+  stopBeginnerAlarm(id);closeBeginnerNotification(id);announcedBeginnerTimers.delete(id);
   beginnerTimers=beginnerTimers.filter(t=>t.id!==id);
   beginnerTimers.push({id,recipeId:r.id,recipeTitle:r.title.slice(0,100),title:title.slice(0,100),deadline:now+duration*1000});
  };
  add(r.id+'|'+index+'|'+seconds,turn?'Check the traybake — continue cooking if needed':task.title,seconds);
  if(turn)add(r.id+'|'+index+'|'+seconds+'|turn',turn.title,turn.seconds);
  for(const t of beginnerTimers.slice(0,-12))stopBeginnerAlarm(t.id);
- beginnerTimers=beginnerTimers.slice(-12);saveBeginnerTimers();refreshBeginnerTimerPanels();
+ beginnerTimers=beginnerTimers.slice(-12);saveBeginnerTimers();stopDueAlarmIfAllStopped();refreshBeginnerTimerPanels();
 }
 function extendBeginnerTimer(id,minutes){
  const t=beginnerTimers.find(t=>t.id===id);if(!t||![1,2,3].includes(minutes))return;
- armBeginnerAudio();stopBeginnerAlarm(id);t.deadline=Math.max(Date.now(),t.deadline)+minutes*60000;
- delete t.alertedAt;announcedBeginnerTimers.delete(id);saveBeginnerTimers();refreshBeginnerTimerPanels();
+ armBeginnerAudio();stopBeginnerAlarm(id);closeBeginnerNotification(id);t.deadline=Math.max(Date.now(),t.deadline)+minutes*60000;
+ delete t.alertedAt;announcedBeginnerTimers.delete(id);saveBeginnerTimers();stopDueAlarmIfAllStopped();refreshBeginnerTimerPanels();
 }
 function dismissBeginnerTimer(id){
- stopBeginnerAlarm(id);beginnerTimers=beginnerTimers.filter(t=>t.id!==id);announcedBeginnerTimers.delete(id);if(!beginnerTimers.length)beginnerTimersExpanded=false;saveBeginnerTimers();refreshBeginnerTimerPanels();
+ stopBeginnerAlarm(id);closeBeginnerNotification(id);beginnerTimers=beginnerTimers.filter(t=>t.id!==id);announcedBeginnerTimers.delete(id);if(!beginnerTimers.length)beginnerTimersExpanded=false;saveBeginnerTimers();stopDueAlarmIfAllStopped();refreshBeginnerTimerPanels();
 }
 function timerText(t,now=Date.now()){
  const left=Math.max(0,Math.ceil((t.deadline-now)/1000));if(!left)return 'Time to check';
@@ -35052,7 +35115,12 @@ function renderBeginnerTimers(){
  const next=nextBeginnerTimer(),now=Date.now(),due=beginnerTimers.filter(t=>t.deadline<=now).length;
  const soundReady=beginnerAudio&&beginnerAudio.state==='running';
  const count=due?`${due} to check · ${beginnerTimers.length} timer${beginnerTimers.length===1?'':'s'}`:`${beginnerTimers.length} timer${beginnerTimers.length===1?'':'s'}`;
- return `<aside class="beginner-timers" aria-label="Your cooking reminders"><button type="button" class="beginner-timer-bar ${due?'timer-due':''}" data-action="beginner-toggle-timers" aria-expanded="${beginnerTimersExpanded}" aria-controls="beginner-timer-details" aria-label="${beginnerTimersExpanded?'Hide':'View'} cooking timers"><span class="beginner-timer-summary"><strong>⏱ ${count}</strong><span title="${esc(next.title)}">${esc(next.title)}</span></span><output data-beginner-timer="${esc(next.id)}" aria-label="Time remaining for ${esc(next.title)}">${timerText(next,now)}</output><span class="beginner-timer-view">${beginnerTimersExpanded?'Close ↑':'View ↓'}</span></button>${beginnerTimersExpanded?`<div id="beginner-timer-details" class="beginner-timer-details"><div class="beginner-timer-heading"><strong>Cooking reminders</strong><button type="button" class="btn btn-sm" data-action="beginner-test-alarm">Test alarm</button></div>${[...beginnerTimers].sort((a,b)=>a.deadline-b.deadline).map(t=>`<section class="beginner-running-timer ${t.deadline<=now?'timer-due':''}" data-timer-card="${esc(t.id)}" aria-label="Timer: ${esc(t.title)}"><div class="beginner-timer-label"><strong>${esc(t.title)}</strong><small>${esc(t.recipeTitle||recipeById(t.recipeId)?.title||'Cooking timer')}</small></div><output data-beginner-timer="${esc(t.id)}" aria-label="Time remaining for ${esc(t.title)}">${timerText(t,now)}</output><div class="beginner-timer-controls">${[1,2,3].map(m=>`<button type="button" data-action="beginner-extend-timer" data-timer-id="${esc(t.id)}" data-minutes="${m}" aria-label="Add ${m} ${m===1?'minute':'minutes'} to ${esc(t.title)}">+${m} min</button>`).join('')}<button type="button" class="beginner-timer-stop" data-action="beginner-stop-timer" data-timer-id="${esc(t.id)}" aria-label="Stop timer for ${esc(t.title)}">Stop</button></div></section>`).join('')}<p class="beginner-timer-sound-note">${soundReady?'Three-ding alarm enabled.':'Tap Test alarm to enable and check sound.'} Keep this page open and your sound on. Alerts may be delayed while your phone is locked or this page is in the background. Check the food when a timer ends.</p></div>`:''}<span id="beginner-timer-announcement" class="sr-only" role="status" aria-live="assertive"></span></aside>`;
+  const notifyControls=beginnerNotificationCapable()
+    ? (window.Notification.permission==='granted' ? '<small>✓ Phone notifications enabled (best effort)</small>' :
+       window.Notification.permission==='denied' ? '<small>Phone alerts blocked in browser settings</small>' :
+       '<button type="button" class="btn btn-sm" data-action="beginner-enable-notifications">Enable phone notifications</button>')
+    : '<small>Phone notifications unavailable in this browser</small>';
+ return `<aside class="beginner-timers" aria-label="Your cooking reminders"><button type="button" class="beginner-timer-bar ${due?'timer-due':''}" data-action="beginner-toggle-timers" aria-expanded="${beginnerTimersExpanded}" aria-controls="beginner-timer-details" aria-label="${beginnerTimersExpanded?'Hide':'View'} cooking timers"><span class="beginner-timer-summary"><strong>⏱ ${count}</strong><span title="${esc(next.title)}">${esc(next.title)}</span></span><output data-beginner-timer="${esc(next.id)}" aria-label="Time remaining for ${esc(next.title)}">${timerText(next,now)}</output><span class="beginner-timer-view">${beginnerTimersExpanded?'Close ↑':'View ↓'}</span></button>${beginnerTimersExpanded?`<div id="beginner-timer-details" class="beginner-timer-details"><div class="beginner-timer-heading"><strong>Cooking reminders</strong><button type="button" class="btn btn-sm" data-action="beginner-test-alarm">Test alarm</button></div><div class="beginner-timer-settings"><label for="beginner-alarm-volume">🔊 Alarm volume <strong id="beginner-alarm-volume-value">${beginnerAlarmVolume}%</strong></label><input type="range" id="beginner-alarm-volume" min="0" max="100" step="5" value="${beginnerAlarmVolume}" aria-label="Cooking alarm volume"><div class="beginner-phone-alerts">${notifyControls}</div></div>${[...beginnerTimers].sort((a,b)=>a.deadline-b.deadline).map(t=>`<section class="beginner-running-timer ${t.deadline<=now?'timer-due':''}" data-timer-card="${esc(t.id)}" aria-label="Timer: ${esc(t.title)}"><div class="beginner-timer-label"><strong>${esc(t.title)}</strong><small>${esc(t.recipeTitle||recipeById(t.recipeId)?.title||'Cooking timer')}</small></div><output data-beginner-timer="${esc(t.id)}" aria-label="Time remaining for ${esc(t.title)}">${timerText(t,now)}</output><div class="beginner-timer-controls">${[1,2,3].map(m=>`<button type="button" data-action="beginner-extend-timer" data-timer-id="${esc(t.id)}" data-minutes="${m}" aria-label="Add ${m} ${m===1?'minute':'minutes'} to ${esc(t.title)}">+${m} min</button>`).join('')}<button type="button" class="beginner-timer-stop" data-action="beginner-stop-timer" data-timer-id="${esc(t.id)}" aria-label="Stop timer for ${esc(t.title)}">Stop</button></div></section>`).join('')}<p class="beginner-timer-sound-note">${soundReady?'Three-ding alarm enabled.':'Tap Test alarm to enable and check sound.'} Use Test alarm and turn up your phone's media volume too. The three-note alarm repeats until stopped while the browser permits it. Phone notifications are optional and may be delayed or missed while the page is in the background, closed or the phone is locked; use your phone's Clock app for a dependable backup.</p></div>`:''}<span id="beginner-timer-announcement" class="sr-only" role="status" aria-live="assertive"></span></aside>`;
 }
 function refreshBeginnerTimerPanels(){
  const active=document.activeElement,action=active?.dataset?.action,timerId=active?.dataset?.timerId,minutes=active?.dataset?.minutes;
@@ -35067,17 +35135,41 @@ function refreshBeginnerTimerPanels(){
  }
 }
 function tickBeginnerTimers(){
- const now=Date.now();let changed=false;const due=[];
+ const now=Date.now(),due=[],newlyDue=[];
  for(const t of beginnerTimers){
   if(t.deadline<=now&&!announcedBeginnerTimers.has(t.id)){
-   announcedBeginnerTimers.add(t.id);t.alertedAt=t.deadline;changed=true;due.push(t.title);playBeginnerAlarm(t.id);
+   announcedBeginnerTimers.add(t.id);t.alertedAt=t.deadline;due.push(t.title);newlyDue.push(t);
   }
  }
- if(changed){saveBeginnerTimers();refreshBeginnerTimerPanels();const a=document.getElementById('beginner-timer-announcement');if(a)a.textContent='Time to check: '+due.join('; ');}
- document.querySelectorAll('[data-beginner-timer]').forEach(el=>{const t=beginnerTimers.find(t=>t.id===el.dataset.beginnerTimer);if(t)el.textContent=timerText(t,now);});
+ if(newlyDue.length&&document.visibilityState==='hidden')notifyDueBeginnerTimers(newlyDue);
+ if(newlyDue.length){
+   saveBeginnerTimers();refreshBeginnerTimerPanels();
+   const a=document.getElementById('beginner-timer-announcement');
+   if(a)a.textContent='Time to check: '+due.join('; ');
+ }
+ const overdue=beginnerTimers.filter(t=>t.deadline<=now);
+ // A loud repeating local alarm works when browser audio is running. Background browsers can suspend this.
+ if(overdue.length && now-beginnerLastAlarmAt>=15000){
+   if(playBeginnerAlarm('__due-reminders')){
+     beginnerLastAlarmAt=now;
+     if(document.visibilityState!=='hidden'){try{navigator.vibrate?.([220,110,220]);}catch{}}
+   }
+ }else if(!overdue.length)stopDueAlarmIfAllStopped();
+ document.querySelectorAll('[data-beginner-timer]').forEach(el=>{
+  const t=beginnerTimers.find(t=>t.id===el.dataset.beginnerTimer);
+  if(t)el.textContent=timerText(t,now);
+ });
 }
 setInterval(tickBeginnerTimers,500);
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')tickBeginnerTimers();});
+document.addEventListener('visibilitychange',()=>{
+ if(document.visibilityState==='visible'){
+   // If the browser suspended audio while away, sound again for still-unacknowledged overdue reminders.
+   beginnerLastAlarmAt=0;
+   armBeginnerAudio();
+   tickBeginnerTimers();
+ }
+});
+window.addEventListener('pageshow',()=>{if(beginnerTimers.some(t=>t.deadline<=Date.now())){beginnerLastAlarmAt=0;tickBeginnerTimers();}});
 function beginnerIngredientRows(r,task,portions){
  const keys=task.uses||[];const items=keys.map(k=>r.ingredients.find(i=>i[0]===k)).filter(Boolean);
  if(!items.length)return '';
@@ -36365,6 +36457,14 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
   function validateImport(data){if(!data||data.version!==1||!data.plan||typeof data.plan!=='object'||!Array.isArray(data.favorites)||!Array.isArray(data.pantry)||!Array.isArray(data.manual)||!Array.isArray(data.members))throw Error('Invalid backup');const out={...defaultState(),...data};out.budget=Math.min(2000,Math.max(1,Number(out.budget)||85));out.servings=Math.min(12,Math.max(1,Number(out.servings)||4));out.name=String(out.name||'Our kitchen').slice(0,48);out.members=out.members.slice(0,12).map(x=>String(x).slice(0,40));out.favorites=out.favorites.filter(x=>recipeById(x));out.pantry=out.pantry.filter(x=>typeof x==='string');out.inventory=cleanInventory(out.inventory);out.manual=out.manual.slice(0,200).map(m=>({id:String(m.id||''),name:String(m.name||'').slice(0,65),qty:String(m.qty||'').slice(0,30),checked:!!m.checked}));out.plan=Object.fromEntries(DAYS.filter(d=>out.plan[d]&&recipeById(out.plan[d].id)).map(d=>[d,{id:out.plan[d].id,servings:Math.min(12,Math.max(1,Number(out.plan[d].servings)||4))}]));out.checked=(out.checked&&typeof out.checked==='object')?out.checked:{};out.purchased=cleanPurchases(out.purchased);out.feedback=(out.feedback&&typeof out.feedback==='object')?out.feedback:{};out.votes=cleanVotes(out.votes);out.cooked=cleanCooked(out.cooked,out.plan);out.cookAlong=cleanCookAlong(out.cookAlong);out.standaloneCooked=cleanStandaloneCooked(out.standaloneCooked);out.votePerson=out.members.includes(out.votePerson)?out.votePerson:(out.members[0]||'You');out.retailer=['tesco','sainsburys','asda','morrisons'].includes(out.retailer)?out.retailer:'tesco';return out}
   const retailerLinks={tesco:'https://www.tesco.com/groceries/',sainsburys:'https://www.sainsburys.co.uk/gol-ui/groceries',asda:'https://groceries.asda.com/',morrisons:'https://groceries.morrisons.com/'};
   document.addEventListener('toggle',(ev)=>{const current=ev.target;if(current.matches?.('details.focus-technique')&&current.open){current.closest('.focus-help')?.querySelectorAll('details.focus-technique[open]').forEach(other=>{if(other!==current)other.open=false})}},true);
+  document.addEventListener('input',(ev)=>{
+    if(ev.target?.id==='beginner-alarm-volume'){
+      beginnerAlarmVolume=Math.min(100,Math.max(0,Number(ev.target.value)||0));
+      try{localStorage.setItem(BEGINNER_VOLUME_KEY,String(beginnerAlarmVolume));}catch{}
+      const value=document.getElementById('beginner-alarm-volume-value');
+      if(value)value.textContent=beginnerAlarmVolume+'%';
+    }
+  });
   document.addEventListener('click',(ev)=>{
     const pb=ev.target.closest('[data-page]');if(pb){navigate(pb.dataset.page);return}
     if(ev.target.id==='guide-backdrop'){exitGuide(true);return}
@@ -36382,6 +36482,7 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     if(act==='beginner-toggle-timers'){beginnerTimersExpanded=!beginnerTimersExpanded;refreshBeginnerTimerPanels();return}
     if(act==='beginner-stop-timer'){dismissBeginnerTimer(el.dataset.timerId);return}
     if(act==='beginner-extend-timer'){extendBeginnerTimer(el.dataset.timerId,Number(el.dataset.minutes));return}
+    if(act==='beginner-enable-notifications'){enableBeginnerNotifications();return}
     if(act==='beginner-test-alarm'){armBeginnerAudio();if(beginnerAudio){Promise.resolve(beginnerAudio.state==='running'?null:beginnerAudio.resume()).then(()=>{playBeginnerAlarm('test-alarm');refreshBeginnerTimerPanels();}).catch(()=>toast('Sound is blocked. Check your browser sound settings.'));}else toast('Sound is unavailable in this browser');return}
     if(act==='guide-start'){openCookAlong(id,day);return}
     if(act==='guide-close'||act==='guide-back-recipe'){exitGuide(true);return}
@@ -36597,7 +36698,7 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
   });
   window.addEventListener('hashchange',()=>{const id=location.hash.replace('#','');if(id!==page&&navItems.some(n=>n[0]===id)){page=id;render()}});
   const initial=location.hash.slice(1);page=navItems.some(n=>n[0]===initial)?initial:'home';render();
-  // Single-file demo intentionally does not register a service worker.
+  // Optional user-initiated notification service worker is registered only after permission.
 })();
 
 </script>

@@ -50,3 +50,12 @@ selection. Later instructions that only add prepared ingredients remain unchange
 
 Run `node tests/task-illustrations.cjs` from the repository root to check the actual
 task renderer, portion scaling, reorder resilience, and prepared-ingredient guards.
+
+## Traybake instructions and optional timer alerts (17 November 2026)
+
+- The chicken traybake's onion-wedging task now lists the recipe's red onions in the task-specific ingredient amounts. Roasting vegetables also lists the vegetables rather than the glaze ingredients.
+- The honey-mustard chicken task explicitly distinguishes the half of the glaze in the original bowl from the untouched half reserved in a clean bowl for the final five minutes.
+- Cooking reminders have a 0–100% alarm-volume slider, saved in browser storage; three stronger pitched dings repeat about every 15 seconds for overdue unacknowledged timers while the browser permits audio. Test the sound and raise the phone's media volume too.
+- Optional phone notifications can be enabled only by a user tap. They use `timer-alert-sw.js` for notification display and reopening the app; the service worker is **not** a background timer scheduler.
+- Android and other mobile browsers throttle or suspend JavaScript and sound after switching apps or locking the screen. Notifications, audio and vibration may be delayed or blocked, especially if the site is closed. These features **do not** guarantee an on-time background alarm; use the phone's Clock timer for important cooking reminders until a native app provides alarm scheduling.
+- Run `node tests/traybake-timers.cjs` for the onion/glaze and timed midpoint-reminder regression checks and `node tests/browser.cjs` for volume-control UI checks in a browser-enabled environment.

@@ -11,6 +11,16 @@ for(const m of html.matchAll(/<script>([\s\S]*?)<\/script>/g)) {
 
 const assert=require('node:assert/strict'),api=s.window.testApi;
 const recipe=api.recipes.find(r=>r.id==='chicken-roast');
+// Regression: the red onion belongs in the ingredient strip of its specific cutting task.
+assert(recipe.beginnerTasks[7].uses.includes('red-onion'),'onion-wedging task must reference red onion');
+assert(api.render(recipe,7).includes('<strong>Red onion</strong>'),'onion missing in visible per-task ingredient list');
+assert(api.render(recipe,3).includes('<strong>Potatoes</strong>'),'roasting vegetables should show potatoes, not glaze ingredients');
+assert(recipe.beginnerTasks[6].instructions.includes('honey-mustard glaze remaining in the ORIGINAL mixing bowl'),'ambiguous chicken coating instructions');
+assert(recipe.beginnerTasks[5].instructions.includes('separate clean bowl'),'reserved finishing glaze not explained');
+assert(recipe.beginnerTasks[9].instructions.includes('last 5 minutes'),'finishing stage missing or vague');
+assert(html.includes('id="beginner-alarm-volume"'),'alarm volume slider missing');
+assert(html.includes('beginner-enable-notifications'),'opt-in notification control missing');
+
 for(const index of [3,8]){
  const task=api.tasks(recipe)[index];
  const before=Date.now();api.start(recipe,task,index,1200);

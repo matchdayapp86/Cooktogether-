@@ -84,9 +84,15 @@ const hooks=`window.cookTest={
  assert.equal(await page.locator('#beginner-timer-details').count(),0);
  await page.locator('[data-action="beginner-toggle-timers"]').click();
  assert.equal(await page.locator('.beginner-running-timer').count(),1);
+ const slider=page.locator('#beginner-alarm-volume');
+ assert.equal(await slider.count(),1,'timer volume slider unavailable');
+ await slider.evaluate(el=>{el.value='90';el.dispatchEvent(new Event('input',{bubbles:true}));});
+ assert.equal(await page.locator('#beginner-alarm-volume-value').innerText(),'90%');
+ assert.equal(await page.evaluate(()=>localStorage.getItem('cookTogetherBeginnerAlarmVolume1')),'90');
  const firstDeadline=await page.evaluate(()=>cookTest.getTimers()[0].deadline);
  await page.locator('[data-action="beginner-extend-timer"][data-minutes="2"]').click();
  assert.equal(await page.evaluate(()=>cookTest.getTimers()[0].deadline),firstDeadline+120000);
+ assert.equal(await page.locator('#beginner-alarm-volume').inputValue(),'90');
  await page.evaluate(()=>cookTest.expireTimers());
  assert((await page.locator('.beginner-timer-bar').innerText()).includes('Time to check'));
  await page.locator('[data-action="beginner-stop-timer"]').click();
