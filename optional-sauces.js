@@ -108,14 +108,14 @@
    'Optional nutty dressing for someone who wants a creamier couscous bowl.',
    'https://www.themediterraneandish.com/tahini-sauce-recipe-how-to-make-tahini/');
  add('breakfast-cinnamon-french-toast','warm berry compote',
-   'Serve immediately',
+   'Serve the toast with berries and a share of the maple syrup',
    [['Frozen mixed berries',200,'g',frozen],['Caster sugar',2,'tsp',cup]],
    'While the French toast cooks, put 200g frozen mixed berries, 2 tsp caster sugar and 2 tbsp water into a small saucepan. Heat gently, stirring every minute, for about 5–7 minutes until the berries are softened, bubbling and juicy. If it becomes too thick, add a splash of water. Spoon over the fully cooked French toast just before serving.',
    'The fruit sauce is hot and spoonable, and the toast is fully cooked.',
    'A warm fruit sauce instead of buying a separate syrup.',
    'https://www.bbcgoodfood.com/recipes/quick-summer-compote',['Small saucepan','Spoon']);
  add('bakery-apple-crumble','warm vanilla custard',
-   'Serve warm with cream or custard',
+   'Rest for 10 minutes before dividing into six portions',
    [['Ready-made vanilla custard',500,'ml',chill]],
    'While the apple crumble rests, pour 500ml ready-made vanilla custard into a clean saucepan. Warm over LOW heat, stirring frequently, until steaming hot but not boiling, following the packet heating instructions. Remove from heat and spoon a little beside each serving of crumble. Alternatively, use chilled custard according to its label.',
    'Custard is heated according to the pack instructions and the crumble is ready to serve.',
