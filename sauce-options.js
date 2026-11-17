@@ -15,7 +15,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     ],
     check:"The sauce is smooth, lightly coats a spoon and has simmered after the cornflour was added. A little thinner is better than gluey.",
     safety:"Check stock ingredients for allergens. Mustard is an allergen. Never add uncooked chicken marinade to a ready-to-serve sauce.",
-    sources:["https://www.bbcgoodfood.com/recipes/honey-mustard-sauce","https://www.bbcgoodfood.com/recipes/roast-chicken-roots-lemon-poppy-seed-sauce"]
+    sources:["https://www.bbcgoodfood.com/recipes/honey-mustard-sauce","https://www.bbcgoodfood.com/recipes/roast-chicken-roots-lemon-poppy-seed-sauce","https://www.recipetineats.com/honey-mustard-chicken/"]
   },
   "greek-lamb-traybake": {
     name:"Garlic, lemon & oregano yoghurt", minutes:3,
@@ -28,7 +28,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     ],
     check:"Creamy and spoonable with no large lumps of garlic.",
     safety:"Contains milk. Keep the yoghurt chilled until making the sauce; do not mix it with raw lamb marinade.",
-    sources:["https://www.bbcgoodfood.com/recipes/garlic-yogurt","https://www.bbcgoodfood.com/recipes/greek-tzatziki"]
+    sources:["https://www.bbcgoodfood.com/recipes/garlic-yogurt","https://www.bbcgoodfood.com/recipes/greek-tzatziki","https://www.themediterraneandish.com/greek-chicken-souvlaki-recipe-tzatziki/"]
   },
   "dinner-sausage-veg-traybake": {
     name:"Quick onion gravy", minutes:15,
@@ -42,7 +42,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     ],
     check:"Onion is soft, gravy pours from a spoon and no raw flour taste remains.",
     safety:"Wheat in plain flour; check stock labels for allergens. Do not use uncooked sausage juices.",
-    sources:["https://www.bbcgoodfood.com/recipes/sausages-quick-onion-gravy","https://www.bbcgoodfood.com/recipes/bangers-n-mash-with-onion-gravy"]
+    sources:["https://www.bbcgoodfood.com/recipes/sausages-quick-onion-gravy","https://www.bbcgoodfood.com/recipes/bangers-n-mash-with-onion-gravy","https://www.deliaonline.com/recipes/occasions/christmas/christmas-stuffings-and-sauces/onion-gravy"]
   },
   "pork-schnitzel-potatoes": {
     name:"Lemon & caper butter", minutes:3,
@@ -68,7 +68,7 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     ],
     check:"The gherkin is finely chopped and evenly mixed into a smooth sauce.",
     safety:"Mayonnaise commonly contains egg and sometimes mustard. Check the label. Keep chilled until serving.",
-    sources:["https://www.bbcgoodfood.com/recipes/fish-cakes-tartare-sauce","https://www.bbcgoodfood.com/recipes/feelgood-fish-cakes"]
+    sources:["https://www.bbcgoodfood.com/recipes/fish-cakes-tartare-sauce","https://www.bbcgoodfood.com/recipes/feelgood-fish-cakes","https://www.greatbritishchefs.com/recipes/homemade-tartare-sauce-recipe"]
   },
   "beef-burgers-wedges": {
     name:"Creamy burger sauce", minutes:3,
@@ -95,6 +95,6 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     ],
     check:"Soft onion in smooth, pourable gravy without floury lumps.",
     safety:"Contains wheat; check the vegetable stock is vegetarian and inspect its allergen label.",
-    sources:["https://www.bbcgoodfood.com/recipes/next-level-vegan-wellington-with-gravy","https://www.bbcgoodfood.com/recipes/collection/gravy-recipes"]
+    sources:["https://www.bbcgoodfood.com/recipes/next-level-vegan-wellington-with-gravy","https://www.bbcgoodfood.com/recipes/collection/gravy-recipes","https://www.greatbritishchefs.com/how-to-cook/how-to-make-vegetarian-gravy"]
   }
 });
