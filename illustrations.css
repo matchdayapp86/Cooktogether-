@@ -1,11 +1,11 @@
 /* Small optional previews alongside the action, with a shared accessible zoom dialog. */
-.illustrated-action{display:grid;grid-template-columns:minmax(0,1fr) 132px;gap:14px;align-items:start}
+.illustrated-action{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:14px;align-items:start}
 .illustrated-action:not(:has(>.action-illustrations)){display:block}
 .action-illustrations{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px;min-width:0}
 .illustrated-action>.action-illustrations{display:grid;margin:0}
-.action-illustration{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:132px;max-width:100%;padding:6px;border:1px solid #d9e5d9;border-radius:10px;background:#fffdf7;color:#285346;text-align:left;line-height:1.25;touch-action:manipulation}
+.action-illustration{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:180px;max-width:100%;padding:6px;border:1px solid #d9e5d9;border-radius:10px;background:#fffdf7;color:#285346;text-align:left;line-height:1.25;touch-action:manipulation}
 .action-illustration:hover{border-color:#6f9b7c;background:#f4f8ef}
-.action-illustration img{display:block;width:100%;height:auto;aspect-ratio:3;object-fit:contain;border-radius:5px}
+.action-illustration img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;border-radius:5px}
 .action-illustration span{font-size:11px;font-weight:750}.action-illustration small{font-size:10px;color:#536f5d}
 .beginner-ready-item>.action-illustrations{margin:0 12px 8px 40px}
 .illustration-dialog{width:min(880px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:22px;border:1px solid #dce7dc;border-radius:18px;color:#233e30;overflow:auto;overscroll-behavior:contain;box-shadow:0 20px 80px #09261966}
@@ -16,5 +16,5 @@
 .illustration-dialog>img{display:block;width:100%;height:auto;background:#fffdf8;border-radius:12px}
 .illustration-dialog ol{padding-left:24px;line-height:1.6;font-size:15px}.illustration-dialog p{color:#435f4c;font-size:14px}.illustration-dialog>small{display:block;color:#607767}
 body:has(.illustration-dialog[open]){overflow:hidden}
-@media(max-width:600px){.illustrated-action{grid-template-columns:minmax(0,1fr) 100px;gap:9px}.illustrated-action .action-illustration{width:100px}.action-illustration{min-height:76px}.illustration-dialog{padding:16px}.illustration-dialog h2{font-size:20px}.illustration-dialog ol{font-size:14px}}
-@media(max-width:360px){.illustrated-action{display:block}.illustrated-action>.action-illustrations{display:flex;margin-top:10px}.illustrated-action .action-illustration{width:120px}}
+@media(max-width:600px){.illustrated-action{display:block}.illustrated-action>.action-illustrations{display:flex;margin:10px 0}.illustrated-action .action-illustration{width:min(210px,100%)}.action-illustration{min-height:0}.illustration-dialog{padding:16px}.illustration-dialog h2{font-size:20px}.illustration-dialog ol{font-size:14px}}
+@media(max-width:360px){.illustrated-action .action-illustration{width:min(190px,100%)}}

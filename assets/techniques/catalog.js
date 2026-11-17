@@ -45,13 +45,13 @@ window.COOK_ILLUSTRATIONS = {
     "note": "Keep the grater stable. Leave a small end piece rather than grating close to your fingertips; keep any juices needed by the recipe."
   },
   "garlic": {
-    "title": "Crush garlic with a press",
+    "title": "Crush garlic with a knife",
     "steps": [
-      "Separate and peel the cloves",
-      "Squeeze peeled cloves in press",
-      "Scrape paste off with a spoon"
+      "Lay a garlic clove on a stable board",
+      "Press gently with the flat blade, keeping the cutting edge away",
+      "Remove loosened skin; finely chop if requested"
     ],
-    "note": "The illustration shows a garlic press. If you use a knife, finely chop on a stable board with fingers clear of the blade."
+    "note": "This card demonstrates using the flat of a knife, not a garlic press. For pressed garlic use a press instead; follow the recipe’s specified texture."
   },
   "garlic-chop": {
     "title": "Finely chop garlic",
@@ -277,5 +277,59 @@ window.COOK_ILLUSTRATIONS = {
       "Use gloves; check the centre"
     ],
     "note": "Follow the recipe’s actual temperature and food check. A browned surface does not show the centre is safely cooked."
+  },
+  "carrot-slice": {
+    "title": "Slice a carrot",
+    "steps": [
+      "Wash and trim the ends; peel if needed",
+      "Make a flat side so the carrot cannot roll",
+      "Slice across into even rounds"
+    ],
+    "note": "Use the thickness specified in the recipe. Curl fingertips away from the blade."
+  },
+  "mushroom-slice": {
+    "title": "Slice mushrooms",
+    "steps": [
+      "Wipe clean and trim tough stalk ends",
+      "Lay each mushroom flat-side down",
+      "Cut into even slices"
+    ],
+    "note": "Only trim the stalk if needed. Do not use this illustration for browning mushrooms."
+  },
+  "chicken-cube": {
+    "title": "Cube raw chicken",
+    "steps": [
+      "Use a separate raw-meat board and clean knife",
+      "Cut the raw chicken into even strips, then cubes",
+      "Wash hands, utensils and surfaces afterwards"
+    ],
+    "note": "Do not wash raw chicken. A raw-prep image is not a doneness check; cook to the recipe’s safe centre temperature."
+  },
+  "beef-strips": {
+    "title": "Slice beef into strips",
+    "steps": [
+      "Use a separate board for raw beef",
+      "Identify the direction of the muscle fibres",
+      "Cut thin slices across the grain into strips"
+    ],
+    "note": "Clean raw-meat utensils afterwards. This is preparation only, not a doneness check."
+  },
+  "potato-wedges": {
+    "title": "Cut potato wedges",
+    "steps": [
+      "Wash and halve each potato lengthways",
+      "Place each half cut-side down on a stable board",
+      "Cut into even wedges of the recipe’s size"
+    ],
+    "note": "Wedges differ from cubed potatoes or rounds. Keep the size even for consistent cooking."
+  },
+  "broccoli-florets": {
+    "title": "Cut broccoli florets",
+    "steps": [
+      "Wash broccoli and remove any tough leaves",
+      "Cut the branching stems, not through the floret heads",
+      "Separate into similarly sized florets"
+    ],
+    "note": "Keep any usable stem if the recipe includes it. Cut larger florets down by splitting the stalk."
   }
 };

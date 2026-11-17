@@ -4,6 +4,9 @@
  */
 (() => {
   const catalog = window.COOK_ILLUSTRATIONS;
+  // Only approved full-colour guides can appear; legacy SVG diagrams are intentionally hidden.
+  const approvedImages = Object.freeze({"dice":"dice","garlic":"garlic-knife","pepper-dice":"pepper-dice","potato-prep":"potato-prep","carrot-slice":"carrot-slice","mushroom-slice":"mushroom-slice","chicken-cube":"chicken-cube","beef-strips":"beef-strips","potato-wedges":"potato-wedges","broccoli-florets":"broccoli-florets"});
+  const imageSrc = key => approvedImages[key] ? `assets/techniques/${approvedImages[key]}.webp` : null;
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function select(instruction, context = {}) {
     const text = String(instruction || '').toLowerCase().replace(/[’']/g, "'");
@@ -30,7 +33,7 @@
           else if (/onion/.test(ingredient) && /\bwedges\b/.test(clause)) add('onion-wedges');
         }
       }
-      if (near('crush', 'garlic') || (/garlic/.test(ingredient) && /\bcrush\b/.test(clause))) add('garlic');
+      if ((near('crush', 'garlic') || (/garlic/.test(ingredient) && /\bcrush\b/.test(clause))) && !/\bgarlic press\b|\bpress(?:ed|ing)?\b/.test(clause)) add('garlic');
       else if (near('chop|mince', 'garlic') || (/garlic/.test(ingredient) && /\b(?:chop|mince)\b/.test(clause))) add('garlic-chop');
       if (near('grate', '(?:fresh )?ginger|cheddar|cheese|apple') || (!onion && !/garlic/.test(ingredient) && ingredient && /\bgrate\b/.test(clause))) add('grate');
       const pepper = /\bpeppers?\b/.test(clause) || /pepper/.test(ingredient) && !/black|white|ground/.test(ingredient);
@@ -41,9 +44,25 @@
         else if (/\b(?:dice|chop|chunks|cubes)\b/.test(clause)) add('pepper-dice');
         else add('pepper-prep');
       }
+
+      // Newly illustrated prep actions. Only match a performed action, never "add sliced carrot".
+      if (near('slice', 'carrots?') || (near('cut', 'carrots?') && /\b(?:rounds?|slices?)\b/.test(clause)) || (/carrots?/.test(ingredient) && /\bslice\b|\bcut\b[^.;]{0,35}\brounds?\b/.test(clause))) add('carrot-slice');
+      if (near('slice', 'mushrooms?') || (/mushrooms?/.test(ingredient) && /\bslice\b/.test(clause))) add('mushroom-slice');
+      const rawChicken = /\bchicken\b/.test(clause) || /\bchicken\b/.test(ingredient);
+      if (rawChicken && !/\b(?:cooked|pre-cooked|leftover|shredded)\b/.test(clause+' '+ingredient) &&
+        (near('cube|dice', 'chicken(?: breasts?| fillets?)?') ||
+        (near('cut|chop', 'chicken(?: breasts?| fillets?)?') && /\b(?:cubes?|chunks?|pieces?|bite.size)\b/.test(clause)) ||
+        (/chicken/.test(ingredient) && /\b(?:cube|dice)\b|\bcut into\b[^.;]{0,30}\b(?:cubes?|chunks?|pieces?)\b/.test(clause)))) add('chicken-cube');
+      const beef = /\b(?:beef|steaks?|sirloin)\b/.test(clause+' '+ingredient);
+      if (beef && !/\b(?:cooked|leftover|pre-cooked)\b/.test(clause+' '+ingredient) &&
+        ((near('slice|cut', '(?:beef|steaks?|sirloin)(?: steaks?)?') && /\b(?:strips?|thinly|grain)\b/.test(clause)) ||
+        (/(?:beef|steak|sirloin)/.test(ingredient) && /\b(?:slice|cut)\b/.test(clause) && /\b(?:strips?|grain|thinly)\b/.test(clause)))) add('beef-strips');
+      if ((near('cut|separate', 'broccoli') && /\bflorets?\b/.test(clause)) ||
+        (/broccoli/.test(ingredient) && /\b(?:cut|separate)\b[^.;]{0,45}\bflorets?\b/.test(clause))) add('broccoli-florets');
       const potato = /\bpotatoes\b/.test(clause) || /potato/.test(ingredient);
       const potatoCut=near('cube|cut|chop', 'potatoes') || /potato/.test(ingredient) && /\b(?:cube|cut|chop)\b/.test(clause) || /\bpotatoes(?: and|,)? cut (?:them |into |evenly)/.test(clause);
       if (potato && potatoCut && !/\b(?:slice|slices|wedges|batons|rounds)\b/.test(clause)) add('potato-prep');
+      if (potato && /\bwedges?\b/.test(clause) && (near('cut|slice', 'potatoes?') || (/potato/.test(ingredient) && /\b(?:cut|slice)\b/.test(clause)))) add('potato-wedges');
       if (near('boil', '(?:sliced )?potatoes') || potato && /\bboil\b/.test(clause) && !/\bdo not boil\b/.test(clause)) add('potato-boil');
       if (/\b(?:cook|boil) (?:the )?(?:dried |dry )?(?:pasta|spaghetti|penne|tagliatelle|linguine)\b|\badd (?:the )?(?:weighed )?(?:dried|dry) pasta\b/.test(clause) && !/\b(?:cooked|drained) (?:pasta|spaghetti)\b/.test(clause)) add('pasta');
       if (/\b(?:cook|soak|boil|prepare)\b[^.;]{0,35}\bnoodles\b/.test(clause) && !/\bcooked noodles\b/.test(clause)) add('noodles');
@@ -84,17 +103,17 @@
     return found;
   }
   function render(keys) {
-    const valid = [...new Set(keys)].filter(k => catalog[k]);
+    const valid = [...new Set(keys)].filter(k => catalog[k] && imageSrc(k));
     if (!valid.length) return '';
     return `<aside class="action-illustrations" aria-label="Illustrated actions">${valid.map(key => {
       const info = catalog[key];
-      return `<button type="button" class="action-illustration" data-illustration="${key}" aria-label="Enlarge: ${escape(info.title)}" aria-haspopup="dialog"><img src="assets/techniques/${key}.svg" width="720" height="240" alt="${escape(info.steps.join('. '))}" loading="lazy"><span>${escape(info.title)}</span><small>Tap to enlarge ↗</small></button>`;
+      return `<button type="button" class="action-illustration" data-illustration="${key}" aria-label="Enlarge: ${escape(info.title)}" aria-haspopup="dialog"><img src="${imageSrc(key)}" width="900" height="900" alt="${escape(info.steps.join('. '))}" loading="lazy"><span>${escape(info.title)}</span><small>Tap to enlarge ↗</small></button>`;
     }).join('')}</aside>`;
   }
   let opener;
   function enlarge(key, button) {
     const info = catalog[key];
-    if (!info) return;
+    if (!info || !imageSrc(key)) return;
     let dialog = document.getElementById('illustration-dialog');
     if (!dialog) {
       dialog = document.createElement('dialog');
@@ -112,12 +131,12 @@
       });
     }
     opener = button;
-    dialog.innerHTML = `<header><h2 id="illustration-title">${escape(info.title)}</h2><button type="button" data-close-illustration aria-label="Close illustration" autofocus>×</button></header><img src="assets/techniques/${key}.svg" alt="${escape(info.steps.join('. '))}" width="720" height="240"><ol>${info.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol><p>${escape(info.note)}</p><small>Simplified action diagram. Follow the task’s written instructions and doneness checks.</small>`;
+    dialog.innerHTML = `<header><h2 id="illustration-title">${escape(info.title)}</h2><button type="button" data-close-illustration aria-label="Close illustration" autofocus>×</button></header><img src="${imageSrc(key)}" alt="${escape(info.steps.join('. '))}" width="900" height="900"><ol>${info.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol><p>${escape(info.note)}</p><small>Visual guide. Follow the recipe’s exact instructions, quantities and doneness checks.</small>`;
     dialog.showModal();
   }
   document.addEventListener('click', event => {
     const button = event.target.closest('[data-illustration]');
     if (button) enlarge(button.dataset.illustration, button);
   });
-  window.CookIllustrations = {select, render, catalog};
+  window.CookIllustrations = {select, render, catalog, imageSrc};
 })();

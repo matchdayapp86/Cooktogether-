@@ -6,7 +6,7 @@ const root = path.resolve(__dirname, '..');
 const sandbox = {window: {}, document: {addEventListener(){}}};
 vm.createContext(sandbox);
 for (const name of ['assets/techniques/catalog.js','illustration-ui.js']) vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),sandbox);
-const {select,catalog} = sandbox.window.CookIllustrations;
+const {select,catalog,render,imageSrc} = sandbox.window.CookIllustrations;
 const cases = [
  ['Peel and finely dice the onion.',['dice']],
  ['Dice onion and season with pepper.',['dice']],
@@ -66,10 +66,27 @@ for (const [ingredient,note,key] of [
  ['spring onions','Wash, trim roots and slice into rings.','spring-onion'],
  ['garlic','Peel and finely chop.','garlic-chop']
 ]) assert(select(note,{ingredient}).includes(key),ingredient+': '+note);
-for (const [key,info] of Object.entries(catalog)) {
- assert.equal(info.steps.length,3,key);
- const svg=fs.readFileSync(path.join(root,'assets/techniques',key+'.svg'),'utf8');
- assert(svg.includes('<title') && svg.includes('<desc'),key+' accessible description');
- assert(!svg.includes('foreignObject'),key+' browser-safe SVG');
+for (const [key,info] of Object.entries(catalog)) assert.equal(info.steps.length,3,key);
+const approved=['dice','garlic','pepper-dice','potato-prep','carrot-slice','mushroom-slice','chicken-cube','beef-strips','potato-wedges','broccoli-florets'];
+for(const key of approved){
+ const src=imageSrc(key);
+ assert(src && src.endsWith('.webp'),key+' approved WebP file');
+ const data=fs.readFileSync(path.join(root,src));
+ assert.equal(data.subarray(0,4).toString(),'RIFF',key+' RIFF header');
+ assert.equal(data.subarray(8,12).toString(),'WEBP',key+' WEBP header');
+ assert(render([key]).includes('.webp'),key+' card present');
 }
-console.log(`${cases.length} action-matching cases, 6 prep variants and ${Object.keys(catalog).length} SVG assets passed.`);
+assert.equal(render(['roux','pasta','mushrooms']),'','legacy diagrams must not render');
+for(const [instruction,ctx,key] of [
+ ['Slice the carrots into rounds.',{},'carrot-slice'],
+ ['Slice mushrooms into even pieces.',{},'mushroom-slice'],
+ ['Cut the raw chicken breast into even cubes.',{},'chicken-cube'],
+ ['Cut beef into thin strips across the grain.',{},'beef-strips'],
+ ['Cut potatoes into wedges.',{},'potato-wedges'],
+ ['Cut broccoli into small florets.',{},'broccoli-florets'],
+ ['Dice the peppers into cubes.',{},'pepper-dice'],
+ ['Crush the garlic clove.',{},'garlic']
+]) assert(select(instruction,ctx).includes(key),instruction);
+assert(!select('Add cooked chicken cubes to the pan.').includes('chicken-cube'));
+assert(!select('Add sliced carrots and chopped mushrooms to the pan.').includes('carrot-slice'));
+console.log(`${cases.length} existing action cases plus approved full-colour image and matching checks passed.`);
