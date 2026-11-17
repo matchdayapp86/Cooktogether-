@@ -1,0 +1,16 @@
+.optional-sauce-prompt,.optional-sauce-card{border:1px solid #d4e5d8;border-radius:16px;background:#f7fbf5;padding:16px;margin:16px 0;line-height:1.55}
+.optional-sauce-prompt h3,.optional-sauce-card h3{margin:0 0 7px;color:#1c503c;font-size:1.1rem}
+.optional-sauce-prompt p,.optional-sauce-card p{margin:5px 0 10px}
+.optional-sauce-label{display:flex;align-items:center;gap:10px;margin:12px 0;font-weight:700}
+.optional-sauce-label input{accent-color:#277c51;min-width:20px;min-height:20px}
+.optional-sauce-ingredients{margin:10px 0;padding:0;list-style:none}
+.optional-sauce-ingredients li{display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid #e2eee4}
+.optional-sauce-ingredients li strong{white-space:nowrap;color:#1c503c}
+.optional-sauce-steps{padding-left:24px;line-height:1.65}
+.optional-sauce-steps li{padding-bottom:10px}
+.optional-sauce-small{color:#54715e;font-size:.84rem}
+.optional-sauce-status{font-size:.8rem;color:#7a572f}
+.optional-sauce-card details summary{cursor:pointer;font-weight:700}
+.optional-sauce-card a{word-break:break-word}
+.optional-sauce-card .btn{max-width:100%;white-space:normal}
+@media(max-width:390px){.optional-sauce-prompt,.optional-sauce-card{padding:12px}.optional-sauce-ingredients li{font-size:.86rem}}
