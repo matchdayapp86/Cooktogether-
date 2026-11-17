@@ -13,8 +13,13 @@
 .illustration-dialog header{display:flex;align-items:start;gap:12px;justify-content:space-between;margin-bottom:14px}
 .illustration-dialog h2{font-size:23px;margin:4px 0}
 .illustration-dialog header button{flex-shrink:0;width:44px;height:44px;border:1px solid #dbe6d9;border-radius:10px;background:white;color:#285346;font-size:27px}
-.illustration-dialog>img{display:block;width:100%;height:auto;background:#fffdf8;border-radius:12px}
+.illustration-dialog .illustration-art img{display:block;width:100%;height:auto;background:#fffdf8;border-radius:12px}
 .illustration-dialog ol{padding-left:24px;line-height:1.6;font-size:15px}.illustration-dialog p{color:#435f4c;font-size:14px}.illustration-dialog>small{display:block;color:#607767}
 body:has(.illustration-dialog[open]){overflow:hidden}
 @media(max-width:600px){.illustrated-action{display:block}.illustrated-action>.action-illustrations{display:flex;margin:10px 0}.illustrated-action .action-illustration{width:min(210px,100%)}.action-illustration{min-height:0}.illustration-dialog{padding:16px}.illustration-dialog h2{font-size:20px}.illustration-dialog ol{font-size:14px}}
 @media(max-width:360px){.illustrated-action .action-illustration{width:min(190px,100%)}}
+
+/* Remove printed atlas panel badges in previews and the enlarged guide alike. */
+.illustration-art{display:block;position:relative;width:100%;isolation:isolate}
+.illustration-art img{display:block;width:100%;height:auto}
+.illustration-art-no-number::after{content:"";position:absolute;left:var(--badge-left);top:var(--badge-top);width:var(--badge-width);height:var(--badge-height);border-radius:46%;background:var(--badge-paper);pointer-events:none}

@@ -100,12 +100,127 @@
     if (context.recipeId === 'shepherds-pie' && context.taskIndex === 3) return ['potato-boil'];
     return found;
   }
+  // Original atlas panel numbers are unrelated to recipe task numbers.
+  // Cover only their measured corner badges in the UI, preserving source artwork.
+  // Coordinates are percentages of each 512px square asset, so zoom stays aligned.
+  const atlasBadges = {
+  "apple-slice": [
+    3.3203,
+    3.7109,
+    16.0156,
+    15.625,
+    "#fdf7e7"
+  ],
+  "avocado-prep": [
+    4.4922,
+    3.7109,
+    16.2109,
+    15.8203,
+    "#fdf7e7"
+  ],
+  "banana-slice": [
+    3.9062,
+    2.9297,
+    16.0156,
+    15.2344,
+    "#fdf7e7"
+  ],
+  "butternut-squash": [
+    3.7109,
+    3.7109,
+    15.4297,
+    15.2344,
+    "#fdf7e7"
+  ],
+  "cauliflower-florets": [
+    4.1016,
+    2.7344,
+    16.0156,
+    15.0391,
+    "#fdf7e7"
+  ],
+  "celery-prep": [
+    5.2734,
+    4.1016,
+    15.4297,
+    14.8438,
+    "#fdf7e7"
+  ],
+  "chicken-shred-cooked": [
+    2.3438,
+    2.7344,
+    15.8203,
+    15.2344,
+    "#fdf7e7"
+  ],
+  "courgette-dice": [
+    3.3203,
+    3.9062,
+    15.8203,
+    15.0391,
+    "#fdf7e7"
+  ],
+  "dice-mushrooms": [
+    4.1016,
+    4.2969,
+    15.4297,
+    15.4297,
+    "#fdf6e7"
+  ],
+  "herbs-chop": [
+    3.9062,
+    3.7109,
+    15.625,
+    15.8203,
+    "#fdf7e7"
+  ],
+  "leafy-greens-shred": [
+    3.7109,
+    3.7109,
+    15.4297,
+    15.0391,
+    "#fdf7e7"
+  ],
+  "leeks-prep": [
+    3.9062,
+    3.7109,
+    15.8203,
+    15.8203,
+    "#fdf7e7"
+  ],
+  "onion-wedges": [
+    3.7109,
+    4.2969,
+    15.625,
+    15.4297,
+    "#fdf7e7"
+  ],
+  "potato-slices": [
+    3.9062,
+    3.7109,
+    15.8203,
+    15.8203,
+    "#fdf7e7"
+  ],
+  "slice-carrot-rounds": [
+    4.1016,
+    4.2969,
+    15.625,
+    15.4297,
+    "#fdf7e6"
+  ]
+};
+  function renderImage(key, lazy = false) {
+    const info = catalog[key], badge = atlasBadges[approvedImages[key]];
+    const style = badge ? ` style="--badge-left:${badge[0]}%;--badge-top:${badge[1]}%;--badge-width:${badge[2]}%;--badge-height:${badge[3]}%;--badge-paper:${badge[4]}"` : '';
+    return `<span class="illustration-art${badge ? ' illustration-art-no-number' : ''}"${style}><img src="${imageSrc(key)}" width="900" height="900" alt="${escape(info.steps.join('. '))}"${lazy ? ' loading="lazy"' : ''}></span>`;
+  }
   function render(keys) {
     const valid = [...new Set(keys)].filter(k => catalog[k] && imageSrc(k));
     if (!valid.length) return '';
     return `<aside class="action-illustrations" aria-label="Illustrated actions">${valid.map(key => {
       const info = catalog[key];
-      return `<button type="button" class="action-illustration" data-illustration="${key}" aria-label="Enlarge: ${escape(info.title)}" aria-haspopup="dialog"><img src="${imageSrc(key)}" width="900" height="900" alt="${escape(info.steps.join('. '))}" loading="lazy"><span>${escape(info.title)}</span><small>Tap to enlarge ↗</small></button>`;
+      return `<button type="button" class="action-illustration" data-illustration="${key}" aria-label="Enlarge: ${escape(info.title)}" aria-haspopup="dialog">${renderImage(key, true)}<span>${escape(info.title)}</span><small>Tap to enlarge ↗</small></button>`;
     }).join('')}</aside>`;
   }
   let opener;
@@ -129,7 +244,7 @@
       });
     }
     opener = button;
-    dialog.innerHTML = `<header><h2 id="illustration-title">${escape(info.title)}</h2><button type="button" data-close-illustration aria-label="Close illustration" autofocus>×</button></header><img src="${imageSrc(key)}" alt="${escape(info.steps.join('. '))}" width="900" height="900"><ol>${info.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol><p>${escape(info.note)}</p><small>Visual guide. Follow the recipe’s exact instructions, quantities and doneness checks.</small>`;
+    dialog.innerHTML = `<header><h2 id="illustration-title">${escape(info.title)}</h2><button type="button" data-close-illustration aria-label="Close illustration" autofocus>×</button></header>${renderImage(key)}<ol>${info.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol><p>${escape(info.note)}</p><small>Visual guide. Follow the recipe’s exact instructions, quantities and doneness checks.</small>`;
     dialog.showModal();
   }
   document.addEventListener('click', event => {
