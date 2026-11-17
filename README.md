@@ -37,3 +37,16 @@ The browser checks render the current cooking tasks and inspect the ingredient p
 - A screenshot or illustration is not a food-safety or doneness check; follow written food-safety instructions.
 - Original six-panel Work sheets were split into separate WebP assets and linked to technique keys. Image files are not to be repeated merely because an ingredient is mentioned.
 - `tests/illustrations.cjs` checks active image assets and action matching; `tests/browser.cjs` additionally checks the UI in Chromium when Playwright is installed.
+
+## Cook-along task placement repair
+
+The cook-along now retains the same approved artwork at the action itself, even if
+it was already shown in Get Ready. Removed exclusions that hid explicit vegetable
+prep tasks. `illustration-task-matching.js` supplies 18 reviewed placements for
+pronouns, combined actions and measured ingredients that the general matcher missed.
+These match the recipe and complete authored instruction, not the step number;
+update the placement if that instruction changes. Portion scaling does not change
+selection. Later instructions that only add prepared ingredients remain unchanged.
+
+Run `node tests/task-illustrations.cjs` from the repository root to check the actual
+task renderer, portion scaling, reorder resilience, and prepared-ingredient guards.

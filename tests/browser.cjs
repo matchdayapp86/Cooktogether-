@@ -15,7 +15,7 @@ const hooks=`window.cookTest={
  getState:()=>state,getTimers:()=>beginnerTimers,getProgress:()=>guideProgress(),
  expireTimers:()=>{beginnerTimers.forEach(t=>t.deadline=Date.now()-1000);tickBeginnerTimers();},
  open:(id,index)=>{openCookAlong(id);guideProgress().step=index+1;save();renderCookAlong();},
- renderAll:()=>{guideServings=4;return RECIPES.flatMap(r=>guideTasks(r).map((t,i)=>({recipe:r.id,index:i,html:renderBeginnerTask(r,i),keys:CookIllustrations.select(t.instructions,{recipeId:r.id,taskIndex:i,skills:t.skills})})));}
+ renderAll:()=>{guideServings=4;return RECIPES.flatMap(r=>guideTasks(r).map((t,i)=>({recipe:r.id,index:i,html:renderBeginnerTask(r,i),keys:CookIllustrations.selectTask(t.instructions,{recipeId:r.id,taskIndex:i,skills:t.skills})})));}
 };`;
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});

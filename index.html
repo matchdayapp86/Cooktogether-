@@ -602,8 +602,9 @@ body.picker-open{overflow:hidden}
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="assets/techniques/catalog.js?v=20261117c"></script>
 <script src="assets/techniques/catalog-extra.js?v=20261117c"></script>
-<script src="illustration-ui.js?v=20261117c"></script>
-<script src="illustration-action-matching.js?v=20261117c"></script>
+<script src="illustration-ui.js?v=20261117d"></script>
+<script src="illustration-action-matching.js?v=20261117d"></script>
+<script src="illustration-task-matching.js?v=20261117d"></script>
 <script>
 // Cook Together v0.4 · independently authored development recipes; NOT yet kitchen-tested. All costs illustrative.
 window.COOK_RECIPES = [
@@ -35073,7 +35074,7 @@ function renderGlobalBeginnerTimers(){const root=document.getElementById('beginn
 function renderBeginnerTask(r,index){
  const t=currentBeginnerTask(r,index);if(!t)return '';
  const text=scaledInstruction(t.instructions,r,guideServings),heat=taskHeat(text),reminders=reminderOptions(text);
- const illustrationKeys=CookIllustrations.select(text,{recipeId:r.id,taskIndex:index,skills:t.skills});
+ const illustrationKeys=CookIllustrations.selectTask(t.instructions,{recipeId:r.id,taskIndex:index,skills:t.skills});
  // Old imported skill tags can describe ingredients that are already prepared.
  // Keep instruction help only when that technique is actually performed here.
  const preparationSkills=new Set(['dice','slice-onion','garlic','pepper','potato-prep','grate','rice','milk-sauce']);

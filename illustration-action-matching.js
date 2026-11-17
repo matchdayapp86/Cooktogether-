@@ -22,10 +22,6 @@
     const remove = key => {const i=old.indexOf(key);if(i>=0)old.splice(i,1);};
     // The newly-approved 'grate' card shows cheese on a box grater, NOT ginger, apple or onion.
     if (!has(text+' '+ingredient,'cheddar|cheese|parmesan|mozzarella')) remove('grate');
-    // Old continuation overrides were teaching the chopping of ingredients already in the pan.
-    if (['chicken-roast:1','chicken-fajitas:2','beef-pepper-skillet:2'].includes(context.recipeId+':'+context.taskIndex)) {
-      for (const k of ['potato-prep','slice-onion','pepper-strips','garlic','grate']) remove(k);
-    }
     const keys = [...old];
     const add = key => {if(illustrations.catalog[key]&&!keys.includes(key))keys.push(key);};
     const drop = key => {const i=keys.indexOf(key);if(i>=0)keys.splice(i,1);};
