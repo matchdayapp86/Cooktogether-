@@ -26,9 +26,10 @@ for(const [id,s] of Object.entries(sauces)){
   }
 }
 
-const data=html.match(/window\\.COOK_RECIPES = (\\[[\\s\\S]*?\\]);\\s*window\\.COOK_LEGACY_RECIPES = /);
-assert(data,'Cannot audit primary recipes');
-const recipes=JSON.parse(data[1]);
+const recipeStart=html.indexOf('window.COOK_RECIPES = ')+ 'window.COOK_RECIPES = '.length;
+const recipeEnd=html.indexOf(';'+'\\n'+'window.COOK_LEGACY_RECIPES',recipeStart);
+assert(recipeStart>0&&recipeEnd>recipeStart,'Cannot audit primary recipes');
+const recipes=JSON.parse(html.slice(recipeStart,recipeEnd));
 assert.equal(recipes.length,116,'Recipe inventory changed; refresh the audit');
 assert(ids.every(id=>recipes.some(r=>r.id===id)),'Optional sauce assigned to missing recipe');
 assert(!Object.keys(sauces).some(id=>['salmon-traybake','fish-pie-cheddar-mash','pork-chops','lamb-koftas','pesto-chicken','chicken-fajitas','chicken-tikka-masala-rice'].includes(id)),'Existing sauce duplicated');
