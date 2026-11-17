@@ -34973,6 +34973,14 @@ function reminderOptions(text){
   if(!out.some(x=>x.seconds===seconds))out.push({seconds,label:m[1]+' '+m[3],range:!!m[2],rangeLabel:m[0]});
  }return out;
 }
+// The traybake has two roasting stages. Use the first doneness-check time
+// for a range, rather than implying that the upper limit guarantees cooked food.
+function vegetableTurnReminder(r,task,seconds){
+ if(r.id!=='chicken-roast'||!/^Roast\b/i.test(task.instructions)||!/turning (?:vegetables )?once/i.test(task.instructions))return null;
+ const cooking=reminderOptions(task.instructions)[0];
+ if(!cooking||seconds!==cooking.seconds)return null;
+ return {seconds:Math.round(seconds/2),title:'Turn the vegetables'};
+}
 const BEGINNER_TIMER_KEY='cookTogetherBeginnerReminders29';
 let beginnerTimers=[];
 try{const raw=JSON.parse(localStorage.getItem(BEGINNER_TIMER_KEY)||'[]');if(Array.isArray(raw))beginnerTimers=raw.filter(t=>t&&typeof t.id==='string'&&typeof t.recipeId==='string'&&typeof t.title==='string'&&Number.isFinite(t.deadline)&&t.deadline>Date.now()-86400000&&t.deadline<Date.now()+86400000).slice(0,12);}catch{}
@@ -35012,9 +35020,14 @@ function playBeginnerAlarm(id){
 function startBeginnerTimer(r,task,index,seconds){
  if(!Number.isFinite(seconds)||seconds<1||seconds>86400)return;
  armBeginnerAudio();
- const id=r.id+'|'+index+'|'+seconds;stopBeginnerAlarm(id);announcedBeginnerTimers.delete(id);
- beginnerTimers=beginnerTimers.filter(t=>t.id!==id);
- beginnerTimers.push({id,recipeId:r.id,recipeTitle:r.title.slice(0,100),title:task.title.slice(0,100),deadline:Date.now()+seconds*1000});
+ const now=Date.now(),turn=vegetableTurnReminder(r,task,seconds);
+ const add=(id,title,duration)=>{
+  stopBeginnerAlarm(id);announcedBeginnerTimers.delete(id);
+  beginnerTimers=beginnerTimers.filter(t=>t.id!==id);
+  beginnerTimers.push({id,recipeId:r.id,recipeTitle:r.title.slice(0,100),title:title.slice(0,100),deadline:now+duration*1000});
+ };
+ add(r.id+'|'+index+'|'+seconds,turn?'Check the traybake — continue cooking if needed':task.title,seconds);
+ if(turn)add(r.id+'|'+index+'|'+seconds+'|turn',turn.title,turn.seconds);
  for(const t of beginnerTimers.slice(0,-12))stopBeginnerAlarm(t.id);
  beginnerTimers=beginnerTimers.slice(-12);saveBeginnerTimers();refreshBeginnerTimerPanels();
 }
@@ -35085,7 +35098,7 @@ function renderBeginnerTask(r,index){
  <div class="illustrated-action"><div class="beginner-do"><h4>Do this</h4>${renderGuideActions(text)}</div>${CookIllustrations.render(illustrationKeys)}</div>
  ${instructions.length?`<div class="beginner-how"><h4>How to do it</h4>${instructions.map(info=>`<section><strong>${esc(info.title)}</strong><ol>${info.actions.map(a=>`<li>${esc(a)}</li>`).join('')}</ol></section>`).join('')}</div>`:''}
  ${t.check?`<div class="beginner-check"><strong>Check before moving on</strong><p>${esc(scaledInstruction(t.check,r,guideServings))}</p></div>`:''}
- ${reminders.length?`<div class="beginner-reminder-buttons"><h4>Optional check reminders</h4>${reminders.map(o=>`<button type="button" class="btn btn-sm" data-action="beginner-start-timer" data-seconds="${o.seconds}" data-task-index="${index}">⏱ ${o.range?'Check at ':''}${esc(o.label)}${o.range?' (range '+esc(o.rangeLabel)+')':''}</button>`).join('')}<small>Start when this cooking or waiting period actually begins. A reminder does not mean the food is done.</small></div>`:''}
+ ${reminders.length?`<div class="beginner-reminder-buttons"><h4>Optional check reminders</h4>${reminders.map(o=>`<button type="button" class="btn btn-sm" data-action="beginner-start-timer" data-seconds="${o.seconds}" data-task-index="${index}">⏱ ${o.range?'Check at ':''}${esc(o.label)}${o.range?' (range '+esc(o.rangeLabel)+')':''}${vegetableTurnReminder(r,t,o.seconds)?' + turn reminder':''}</button>`).join('')}<small>Start when this cooking or waiting period actually begins. A reminder does not mean the food is done.</small>${reminders.some(o=>vegetableTurnReminder(r,t,o.seconds))?'<p class="beginner-turn-help">Starting this timer also sets a <strong>10-minute reminder to turn the vegetables</strong>. At that reminder, use oven gloves to place the tray on a heatproof surface. Turn the vegetables with a suitable spatula or tongs, then return the tray to the oven. The cooking timer keeps running. Check doneness when it rings; continue cooking if needed.</p>':''}</div>`:''}
  ${/pack(?:et)?|according to/i.test(text)&&/cook|boil|noodle|pasta|rice|pea|gnocchi/i.test(text)?`<div class="beginner-packet-timer"><label for="beginner-packet-minutes">Reminder from your packet (minutes)</label><input type="number" id="beginner-packet-minutes" min="0.5" max="180" step="0.5" inputmode="decimal" placeholder="Read packet"><button type="button" class="btn btn-sm" data-action="beginner-packet-timer" data-task-index="${index}">Start reminder</button><small>Use your packet’s cooking time, including any adjustment stated in this task.</small></div>`:''}
  ${t.optionalTemperatureCheck?`<details class="beginner-sources"><summary>Optional: check with a thermometer</summary><p>A clean food thermometer can confirm the centre is hot enough. Put the probe into the filling at the centre, avoiding the dish. One FSA combination is 75°C maintained for 30 seconds; another is 70°C for 2 minutes. This is the food’s centre temperature, not an oven setting. If it has not reached the target, continue baking and check again with a clean probe.</p><a href="https://www.food.gov.uk/safety-hygiene/cooking-your-food" target="_blank" rel="noopener noreferrer">FSA cooking advice ↗</a></details>`:''}
  ${amounts}
