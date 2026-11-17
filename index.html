@@ -35395,7 +35395,7 @@ function ingredientPreparationHelp(r,i,portions){
     for(const [key,val] of Object.entries(raw).slice(0,80)){
       if(!/^(recipe|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\|[a-z0-9-]{1,70}$/.test(key)||!val||typeof val!=='object')continue;
       const id=key.split('|')[1],r=recipeById(id);if(!r)continue;
-      out[key]={instructionsVersion:29,updatedInstructions:val.instructionsVersion!==29,step:val.instructionsVersion===29?Math.min(guideTaskCount(r)+1,Math.max(0,Math.floor(Number(val.step)||0))):0,portions:Math.min(12,Math.max(1,Math.floor(Number(val.portions)||r.servings))),checked:Array.isArray(val.checked)?val.checked.filter(i=>Number.isInteger(i)&&i>=0&&i<r.ingredients.length).slice(0,100):[],prepVisitedV22:!!val.prepVisitedV22,sauceEnabled:!!val.sauceEnabled,sessionId:/^[0-9]{13}-[a-z0-9]{4,10}$/.test(String(val.sessionId||''))?val.sessionId:null};
+      out[key]={instructionsVersion:29,updatedInstructions:val.instructionsVersion!==29,step:val.instructionsVersion===29?Math.min(guideTaskCount(r)+2,Math.max(0,Math.floor(Number(val.step)||0))):0,portions:Math.min(12,Math.max(1,Math.floor(Number(val.portions)||r.servings))),checked:Array.isArray(val.checked)?val.checked.filter(i=>Number.isInteger(i)&&i>=0&&i<r.ingredients.length).slice(0,100):[],prepVisitedV22:!!val.prepVisitedV22,sauceEnabled:!!val.sauceEnabled,sauceTimelineVersion:Number(val.sauceTimelineVersion)===1?1:0,sessionId:/^[0-9]{13}-[a-z0-9]{4,10}$/.test(String(val.sessionId||''))?val.sessionId:null};
     }return out;
   }
   function cleanCooked(v,plan){
@@ -35860,7 +35860,7 @@ function ingredientPreparationHelp(r,i,portions){
     p.sauceEnabled=!!enabled;
     if(enabled)state.manual=state.manual.filter(m=>m.checked||!String(m.sauceKey||'').startsWith(r.id+'|'));
     const guide=state.cookAlong?.[day+'|'+r.id];
-    if(guide)guide.sauceEnabled=!!enabled;
+    if(guide)setGuideSauceFlag(r,guide,!!enabled);
     save();return true;
   }
   function openPlanSaucePrompt(day){
@@ -36018,11 +36018,42 @@ function ingredientPreparationHelp(r,i,portions){
   }
   // Cook-along is a reading guide. It NEVER consumes pantry stock automatically.
   const guideStorageKey=()=>`${guideDay||'recipe'}|${guideId}`;
+  function sauceInsertStep(r){
+    const n=guideTaskCount(r),s=sauceFor(r),after=Number.isInteger(s?.afterTask)?s.afterTask:n-1;
+    return Math.min(n+1,Math.max(1,after+1));
+  }
+  const guideHasSauce=(r,p)=>!!(p?.sauceEnabled&&sauceFor(r));
+  const guideFinalStep=(r,p)=>guideTaskCount(r)+(guideHasSauce(r,p)?2:1);
+  function guideTaskIndexForStep(r,p){
+    const step=Number(p.step),n=guideTaskCount(r),slot=sauceInsertStep(r),extra=guideHasSauce(r,p);
+    if(step<1||step>n+(extra?1:0)||(extra&&step===slot))return -1;
+    return step-1-(extra&&step>slot?1:0);
+  }
+  function setGuideSauceFlag(r,p,enabled){
+    const old=guideHasSauce(r,p),next=!!(enabled&&sauceFor(r)),slot=sauceInsertStep(r);
+    if(old!==next&&p.sauceTimelineVersion===1){
+      if(next&&p.step>=slot)p.step++;
+      else if(!next&&p.step>=slot)p.step=p.step===slot?Math.max(0,slot-1):p.step-1;
+    }
+    p.sauceEnabled=next;
+  }
   function guideProgress(){
     if(!state.cookAlong||typeof state.cookAlong!=='object')state.cookAlong={};
-    const key=guideStorageKey(),r=recipeById(guideId);
-    if(!state.cookAlong[key])state.cookAlong[key]={step:0,checked:[],portions:guideServings,instructionsVersion:29,sauceEnabled:!!(guideDay&&state.plan[guideDay]?.sauceEnabled)};
-    const p=state.cookAlong[key];if(typeof p.sauceEnabled!=='boolean')p.sauceEnabled=false;p.step=Math.min(guideTaskCount(r)+(p.sauceEnabled&&sauceFor(r)?2:1),Math.max(0,Math.floor(Number(p.step)||0)));
+    const key=guideStorageKey(),r=recipeById(guideId),n=guideTaskCount(r);
+    if(!state.cookAlong[key])state.cookAlong[key]={step:0,checked:[],portions:guideServings,instructionsVersion:29,sauceEnabled:!!(guideDay&&state.plan[guideDay]?.sauceEnabled),sauceTimelineVersion:1};
+    const p=state.cookAlong[key];
+    if(typeof p.sauceEnabled!=='boolean')p.sauceEnabled=false;
+    if(p.sauceTimelineVersion!==1){
+      const old=Math.max(0,Math.floor(Number(p.step)||0)),slot=sauceInsertStep(r);
+      if(guideHasSauce(r,p)){
+        if(old===n)p.step=slot;
+        else if(old===n+1)p.step=n+1;
+        else if(old===n+2)p.step=n+2;
+        else if(old>=slot&&old<n)p.step=old+1;
+      }
+      p.sauceTimelineVersion=1;save();
+    }
+    p.step=Math.min(guideFinalStep(r,p),Math.max(0,Math.floor(Number(p.step)||0)));
     if(!Array.isArray(p.checked))p.checked=[];
     return p;
   }
@@ -36034,7 +36065,7 @@ function ingredientPreparationHelp(r,i,portions){
     // Recipe popup portions are used when cooking outside a planned day.
     guideServings=r.fixedBatch?r.servings:(planned?state.plan[planned].servings:Math.max(1,Math.min(12,Number(document.getElementById('meal-portions')?.value)||state.servings)));
     const stored=state.cookAlong?.[`${planned||'recipe'}|${id}`];
-    if(planned&&stored)stored.sauceEnabled=!!state.plan[planned].sauceEnabled;
+    if(planned&&stored)setGuideSauceFlag(r,stored,!!state.plan[planned].sauceEnabled);
     if(stored&&Number(stored.portions)!==guideServings){stored.portions=guideServings;stored.checked=[];stored.step=0;save()}if(stored&&stored.step===1&&!stored.prepVisitedV22){stored.step=0;save()}
     guideShowIngredients=false;guideShowHelp=true;modalRecipe=id;
     document.body.classList.add('guide-open');renderCookAlong();
@@ -36494,19 +36525,19 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
   function renderCookAlong(){
     renderGlobalBeginnerTimers();
     const r=recipeById(guideId);if(!r)return;
-    const p=guideProgress();const n=guideTaskCount(r),reviewing=isReviewingGuidePrep();const step=reviewing?0:p.step,sauceStage=!reviewing&&!!sauceFor(r)&&p.sauceEnabled&&step===n,finished=!reviewing&&step===n+(p.sauceEnabled&&sauceFor(r)?2:1);
-    const progress=finished?100:Math.round(Math.max(0,p.step-1)/(n+(p.sauceEnabled&&sauceFor(r)?1:0))*100);
+    const p=guideProgress(),n=guideTaskCount(r),reviewing=isReviewingGuidePrep(),hasSauce=guideHasSauce(r,p),sauceSlot=sauceInsertStep(r),lastStep=n+(hasSauce?1:0);const step=reviewing?0:p.step,sauceStage=!reviewing&&hasSauce&&step===sauceSlot,finished=!reviewing&&step===guideFinalStep(r,p),taskIndex=guideTaskIndexForStep(r,{...p,step}),currentSauce=sauceFor(r);
+    const progress=finished?100:Math.min(99,Math.round(Math.max(0,p.step-1)/lastStep*100));
     const completed=p.checked.filter(i=>i>=0&&i<r.ingredients.length).length;
     const checklist=`<section class="guide-ingredients" aria-labelledby="guide-ingredients-title"><h4 id="guide-ingredients-title" tabindex="-1">Ingredient quantities (${completed}/${r.ingredients.length} checked)</h4><p>Check amounts whenever needed. Tick items to keep track; Pantry stock will not change.</p><div class="guide-checklist">${r.ingredients.map((i,k)=>{const yes=p.checked.includes(k);return `<label class="guide-check ${yes?'is-done':''}"><input type="checkbox" data-action="guide-check" data-index="${k}" ${yes?'checked':''}><span><b>${esc(i[1])}</b><small>${ingredientAmount(i[2]*guideServings/r.servings,i[3])}</small></span></label>`}).join('')}</div></section>`;
     const content=step===0?prepDisplay(r,guideServings,p.checked)+renderGuideSauceChoice(r,p):sauceStage?renderGuideSauceStage(r,guideServings):finished?`<div class="guide-stage-label">YOU'VE REACHED THE FINAL STEP</div><div class="guide-step-card"><span class="guide-step-icon" aria-hidden="true">🎉</span><h3>Your recipe is ready to check!</h3><p class="guide-step-text">Review your dish, check it's fully cooked and safe to serve, and enjoy it together.</p><p class="guide-step-hint">You've completed the instructions. Now review what you really used so Pantry can update accurately.</p></div><div class="guide-finish-actions"><button type="button" class="btn btn-primary" data-action="guide-mark-cooked">✓ ${(guideDay&&state.cooked?.[guideDay])||(!guideDay&&state.standaloneCooked?.[guideProgress().sessionId])?'Review or correct amounts':'Review ingredients &amp; update Pantry'}</button><button class="btn" type="button" data-action="guide-back-recipe">Leave feedback or view the full recipe</button><button type="button" class="guide-soft-button" data-action="guide-restart">Cook it again from the start</button></div>`
-      :`${renderBeginnerTask(r,p.sauceEnabled&&sauceFor(r)&&step===n+1?n-1:step-1)}${step===(p.sauceEnabled&&sauceFor(r)?n+1:n)?`<div class="guide-safety-final"><strong>Before serving:</strong> ${esc(r.safety?.cooking||'Check this food is cooked through before serving.')}</div>`:''}<div class="guide-tools"><button type="button" class="guide-soft-button" data-action="guide-toggle-ingredients" aria-expanded="${guideShowIngredients}">${guideShowIngredients?'Hide':'Show'} all ingredients &amp; amounts</button></div>${guideShowIngredients?checklist:''}`;
-    document.getElementById('modal-root').innerHTML=`<div class="modal-overlay guide-overlay" id="guide-backdrop"><section class="guide-shell" role="dialog" aria-modal="true" aria-labelledby="guide-title"><header class="guide-header"><div class="guide-header-main"><button class="guide-back" type="button" data-action="guide-back-recipe">← Recipe</button><button class="guide-close" type="button" data-action="guide-close" aria-label="Close cooking guide">×</button></div><div class="guide-kicker">COOK TOGETHER · GUIDED COOKING</div><h2 id="guide-title">${r.emoji} ${esc(r.title)}</h2><div class="guide-meta"><span>⏱ About ${r.time} min total</span><span>${guideServings} ${r.fixedBatch?'pieces per batch':'portions'}</span>${guideDay?`<span>${esc(guideDay)}'s planned recipe</span>`:''}</div><div class="guide-track" role="progressbar" aria-label="Recipe progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}"><div class="guide-fill" style="width:${progress}%"></div></div><div class="guide-progress-label" aria-live="polite">${reviewing?`Reviewing prep · task ${p.step} saved`:finished?'All steps viewed':step===0?'Get ready':sauceStage?'Optional sauce · extra stage':`Task ${p.sauceEnabled&&sauceFor(r)&&step===n+1?n:step} of ${n}`}${reviewing?` <button type="button" class="guide-prep-shortcut" data-action="guide-resume-prep">Return to task ${p.step}</button>`:step>=1&&!finished?' <button type="button" class="guide-prep-shortcut" data-action="guide-prep">Review prep</button>':''}</div></header><div id="guide-timer-rack">${renderBeginnerTimers()}</div><div class="guide-scroller" id="guide-scroller">${p.updatedInstructions&&step===0?'<p class="beginner-update-note">This guide has been rewritten. Review Get Ready before continuing; your meal plan and cooked records are unchanged.</p>':''}${content}<details class="focus-fine-print"><summary>Recipe notes &amp; limitations</summary><p>Measure loose ingredients with kitchen scales or ask the butcher or shop to weigh them. Check allergens with the seller and follow UK food-safety guidance. These recipes remain development recipes and require physical testing.</p></details></div><footer class="guide-footer">${reviewing?`<button type="button" class="btn btn-primary" style="width:100%;grid-column:1 / -1" data-action="guide-resume-prep">← Return to task ${p.step}</button>`:`<button type="button" class="btn" data-action="guide-previous" ${step===0?'disabled':''}>← Back</button>${finished?`<button type="button" class="btn btn-primary" data-action="guide-back-recipe">✓ Back to recipe</button>`:`<button type="button" class="btn btn-primary" data-action="guide-next">${step===0?'Start first task →':sauceStage?'Final serving task →':p.sauceEnabled&&sauceFor(r)&&step===n-1?'Optional sauce →':step===(p.sauceEnabled&&sauceFor(r)?n+1:n)?'Finish guide →':'Next task →'}</button>`}`}</footer></section></div>`;
+      :`${renderBeginnerTask(r,taskIndex)}${step===lastStep?`<div class="guide-safety-final"><strong>Before serving:</strong> ${esc(r.safety?.cooking||'Check this food is cooked through before serving.')}</div>`:''}${hasSauce&&step+1===sauceSlot?`<div class="guide-sauce-timing"><strong>🍋 Up next: ${esc(currentSauce.name)}</strong><p>${esc(currentSauce.timingCue||'Make this optional sauce now, before the next main task.')}</p></div>`:''}<div class="guide-tools"><button type="button" class="guide-soft-button" data-action="guide-toggle-ingredients" aria-expanded="${guideShowIngredients}">${guideShowIngredients?'Hide':'Show'} all ingredients &amp; amounts</button></div>${guideShowIngredients?checklist:''}`;
+    document.getElementById('modal-root').innerHTML=`<div class="modal-overlay guide-overlay" id="guide-backdrop"><section class="guide-shell" role="dialog" aria-modal="true" aria-labelledby="guide-title"><header class="guide-header"><div class="guide-header-main"><button class="guide-back" type="button" data-action="guide-back-recipe">← Recipe</button><button class="guide-close" type="button" data-action="guide-close" aria-label="Close cooking guide">×</button></div><div class="guide-kicker">COOK TOGETHER · GUIDED COOKING</div><h2 id="guide-title">${r.emoji} ${esc(r.title)}</h2><div class="guide-meta"><span>⏱ About ${r.time} min total</span><span>${guideServings} ${r.fixedBatch?'pieces per batch':'portions'}</span>${guideDay?`<span>${esc(guideDay)}'s planned recipe</span>`:''}</div><div class="guide-track" role="progressbar" aria-label="Recipe progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}"><div class="guide-fill" style="width:${progress}%"></div></div><div class="guide-progress-label" aria-live="polite">${reviewing?`Reviewing prep · task ${p.step} saved`:finished?'All steps viewed':step===0?'Get ready':sauceStage?'Optional sauce · extra stage':`Task ${taskIndex+1} of ${n}`}${reviewing?` <button type="button" class="guide-prep-shortcut" data-action="guide-resume-prep">Return to task ${p.step}</button>`:step>=1&&!finished?' <button type="button" class="guide-prep-shortcut" data-action="guide-prep">Review prep</button>':''}</div></header><div id="guide-timer-rack">${renderBeginnerTimers()}</div><div class="guide-scroller" id="guide-scroller">${p.updatedInstructions&&step===0?'<p class="beginner-update-note">This guide has been rewritten. Review Get Ready before continuing; your meal plan and cooked records are unchanged.</p>':''}${content}<details class="focus-fine-print"><summary>Recipe notes &amp; limitations</summary><p>Measure loose ingredients with kitchen scales or ask the butcher or shop to weigh them. Check allergens with the seller and follow UK food-safety guidance. These recipes remain development recipes and require physical testing.</p></details></div><footer class="guide-footer">${reviewing?`<button type="button" class="btn btn-primary" style="width:100%;grid-column:1 / -1" data-action="guide-resume-prep">← Return to task ${p.step}</button>`:`<button type="button" class="btn" data-action="guide-previous" ${step===0?'disabled':''}>← Back</button>${finished?`<button type="button" class="btn btn-primary" data-action="guide-back-recipe">✓ Back to recipe</button>`:`<button type="button" class="btn btn-primary" data-action="guide-next">${step===0?'Start first task →':sauceStage?'Back to main recipe →':hasSauce&&step+1===sauceSlot?'Make optional sauce →':step===lastStep?'Finish guide →':'Next task →'}</button>`}`}</footer></section></div>`;
     document.getElementById('guide-title')?.setAttribute('tabindex','-1');document.getElementById('guide-title')?.focus({preventScroll:true});
   }
   function guideMove(offset){
     if(!guideId)return;
     if(isReviewingGuidePrep()){resumeGuideFromPrep();return;}
-    const r=recipeById(guideId),p=guideProgress(),step=Math.max(0,Math.min(guideTaskCount(r)+(p.sauceEnabled&&sauceFor(r)?2:1),p.step+offset));
+    const r=recipeById(guideId),p=guideProgress(),step=Math.max(0,Math.min(guideFinalStep(r,p),p.step+offset));
     if(step===p.step)return;if(p.step===0&&step===1)p.prepVisitedV22=true;p.step=step;save();renderCookAlong();
   }
   function exitGuide(toRecipe=true){
@@ -36623,8 +36654,8 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     const act=el.dataset.action,id=el.dataset.id,day=el.dataset.day;
     if(act.startsWith('go-')){closeModal();navigate(({ 'go-planner':'planner','go-recipes':'recipes','go-shopping':'shopping','go-settings':'settings','go-pantry':'pantry','go-tonight':'tonight','go-school':'school' })[act]||'home');return}
     if(act==='home-stock'){document.getElementById('modal-root').innerHTML=`<div class="modal-overlay" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="stock-choice-title"><button type="button" class="modal-x" data-action="close-modal" aria-label="Close">×</button><div class="modal-body"><h2 id="stock-choice-title">Shopping &amp; pantry</h2><div class="beginner-home-choices">${btn('🛒 Shopping list','go-shopping','','btn btn-primary')}${btn('🥕 My pantry','go-pantry','','btn')}</div></div></section></div>`;document.querySelector('.modal-x')?.focus();return}
-    if(act==='beginner-start-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),seconds=Number(el.dataset.seconds);if(task&&index===guideProgress().step-1&&reminderOptions(scaledInstruction(task.instructions,r,guideServings)).some(o=>o.seconds===seconds))startBeginnerTimer(r,task,index,seconds);return}
-    if(act==='beginner-packet-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),minutes=Number(document.getElementById('beginner-packet-minutes')?.value);if(!task||index!==guideProgress().step-1)return;if(!Number.isFinite(minutes)||minutes<0.5||minutes>180){toast('Enter your packet time between 0.5 and 180 minutes');return}startBeginnerTimer(r,task,index,minutes*60);return}
+    if(act==='beginner-start-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),seconds=Number(el.dataset.seconds);if(task&&index===guideTaskIndexForStep(r,guideProgress())&&reminderOptions(scaledInstruction(task.instructions,r,guideServings)).some(o=>o.seconds===seconds))startBeginnerTimer(r,task,index,seconds);return}
+    if(act==='beginner-packet-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),minutes=Number(document.getElementById('beginner-packet-minutes')?.value);if(!task||index!==guideTaskIndexForStep(r,guideProgress()))return;if(!Number.isFinite(minutes)||minutes<0.5||minutes>180){toast('Enter your packet time between 0.5 and 180 minutes');return}startBeginnerTimer(r,task,index,minutes*60);return}
     if(act==='beginner-toggle-timers'){beginnerTimersExpanded=!beginnerTimersExpanded;refreshBeginnerTimerPanels();return}
     if(act==='beginner-stop-timer'){dismissBeginnerTimer(el.dataset.timerId);return}
     if(act==='beginner-extend-timer'){extendBeginnerTimer(el.dataset.timerId,Number(el.dataset.minutes));return}
@@ -36637,7 +36668,7 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     
     if(act==='guide-sauce-toggle'){
       if(!guideId)return;const p=guideProgress();if(!sauceFor(recipeById(guideId)))return;
-      p.sauceEnabled=!p.sauceEnabled;if(guideDay&&state.plan[guideDay]?.id===guideId)setPlannedSauce(guideDay,p.sauceEnabled);else save();renderCookAlong();return;
+      const r=recipeById(guideId),enabled=!p.sauceEnabled;setGuideSauceFlag(r,p,enabled);if(guideDay&&state.plan[guideDay]?.id===guideId)setPlannedSauce(guideDay,enabled);else save();renderCookAlong();return;
     }
     if(act==='sauce-add-shopping'){
       const r=recipeById(id),s=sauceFor(r);if(!s)return;
