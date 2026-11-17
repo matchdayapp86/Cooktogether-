@@ -96,5 +96,98 @@ window.COOK_OPTIONAL_SAUCES = Object.freeze({
     check:"Soft onion in smooth, pourable gravy without floury lumps.",
     safety:"Contains wheat; check the vegetable stock is vegetarian and inspect its allergen label.",
     sources:["https://www.bbcgoodfood.com/recipes/next-level-vegan-wellington-with-gravy","https://www.bbcgoodfood.com/recipes/collection/gravy-recipes","https://www.greatbritishchefs.com/how-to-cook/how-to-make-vegetarian-gravy"]
+  },
+  "beef-pepper-skillet": {
+    name:"Teriyaki & lime noodle sauce", minutes:4,
+    why:"The beef and garlic noodles are lightly coated in the original method. A separate teriyaki-lime sauce gives an optional saucier finish without changing the stir-fry.",
+    ingredients:[["Teriyaki sauce (extra)",2,"tbsp"],["Lime juice (extra)",15,"ml"],["Cornflour",1,"tsp"]],
+    steps:[
+      "In a clean small saucepan mix the measured teriyaki sauce with 150ml COLD water. Set it over medium heat and bring to a gentle simmer.",
+      "In a cup stir the measured cornflour with 2 tsp COLD water until smooth. Stir gradually into the hot saucepan and simmer for 1–2 minutes, stirring until lightly glossy.",
+      "Take the saucepan off the heat. Stir in the measured lime juice, then taste with a clean spoon. The original noodles already contain soy sauce: spoon a LITTLE sauce over first and only add more if needed.",
+      "Serve separately or toss with the completely cooked beef and noodles just before plating. Do not pour extra sauce into the stir-fry while the beef is still cooking."
+    ],
+    check:"A thin, glossy, pourable sauce that is not excessively salty; the beef is cooked safely and served hot.",
+    safety:"Teriyaki sauce commonly contains soy and wheat. Check the bottle for allergens and salt, and do not reuse any sauce that touched raw beef.",
+    sources:["https://www.justonecookbook.com/teriyaki-sauce/","https://www.recipetineats.com/teriyaki-beef-stir-fry/"]
+  },
+  "beef-sesame-rice": {
+    name:"Light ginger-sesame drizzle", minutes:4,
+    why:"A light drizzle gives the rice extra moisture without soaking the browned beef or masking its existing soy-honey glaze.",
+    ingredients:[["Reduced-salt soy sauce (extra)",1,"tbsp"],["Honey (extra)",1,"tsp"],["Sesame oil (extra)",0.5,"tsp"],["Cornflour",1,"tsp"]],
+    steps:[
+      "In a small clean saucepan combine the measured soy sauce, honey, sesame oil and 120ml water. Bring to a very gentle simmer while stirring.",
+      "Mix the measured cornflour with 2 tsp COLD water in a cup. Stir a little at a time into the saucepan; simmer gently for about 1 minute until lightly glossy.",
+      "Taste with a CLEAN spoon. The beef is already seasoned with soy sauce, so add just one spoonful to each cooked rice bowl at first. Do not add salt without tasting."
+    ],
+    check:"Thin enough to drizzle rather than a thick or salty syrup. Beef is safely cooked before adding the sauce.",
+    safety:"Contains soya and sesame; soy sauce may contain wheat. Check all labels and be careful of salt.",
+    sources:["https://www.justonecookbook.com/yakiniku-sauce/","https://www.justonecookbook.com/teriyaki-sauce/"]
+  },
+  "breakfast-avocado-burritos": {
+    name:"Lime & smoked paprika yoghurt", minutes:3,
+    why:"Cooling citrus yoghurt works with chipotle eggs and avocado; serving it inside the wrap avoids a messy extra pan sauce.",
+    ingredients:[["Plain yoghurt",120,"g"],["Lime juice",10,"ml"],["Smoked paprika",0.25,"tsp"]],
+    steps:[
+      "In a CLEAN bowl stir together the measured yoghurt, lime juice and smoked paprika until evenly mixed.",
+      "Taste with a clean spoon; add a few drops more lime only if you prefer it sharper. Keep chilled until the burritos are being assembled.",
+      "Add a small spoonful to the cooked eggs and avocado before folding the warm tortilla. Do not overfill or the burritos will leak."
+    ],
+    check:"The yoghurt is smooth and thick enough to spoon; the scrambled eggs are fully set.",
+    safety:"Contains milk. Keep yoghurt refrigerated until use and use clean utensils.",
+    sources:["https://www.bbcgoodfood.com/recipes/kebab-shop-yogurt-garlic-sauce"]
+  },
+  "breakfast-pepper-potato-hash": {
+    name:"Smoky lemon yoghurt", minutes:3,
+    why:"A cool, lightly smoky spoonable sauce balances the golden potatoes, peppers, feta and eggs.",
+    ingredients:[["Greek yoghurt",160,"g"],["Lemon juice",15,"ml"],["Smoked paprika (extra)",0.25,"tsp"]],
+    steps:[
+      "While the eggs finish setting, put the measured Greek yoghurt into a clean bowl.",
+      "Add the lemon juice and smoked paprika and stir until smooth. Taste with a clean spoon, then keep chilled until the hash is plated.",
+      "Add a little yoghurt to the side of each plate only when the egg whites are fully set and the recipe is safely cooked."
+    ],
+    check:"The sauce is cool, spoonable and lightly tangy; the eggs are done to the original recipe instructions.",
+    safety:"Contains milk. Keep yoghurt chilled until serving. Check feta separately for allergens.",
+    sources:["https://www.recipetineats.com/lemon-yogurt-sauce/"]
+  },
+  "breakfast-potato-spinach-frittata": {
+    name:"Fresh herby tomato salsa", minutes:5,
+    why:"A fresh chopped salsa adds brightness to rich cheese-and-potato frittata without making the eggs watery during cooking.",
+    ingredients:[["Cherry tomatoes (extra)",200,"g"],["Lemon juice",5,"ml"],["Olive oil (extra)",1,"tsp"],["Dried oregano",0.5,"tsp"]],
+    steps:[
+      "Wash and dry the measured cherry tomatoes, remove any stalks, then cut them into small even pieces on a stable board.",
+      "Mix the tomatoes in a clean bowl with the measured lemon juice, olive oil and oregano.",
+      "Let stand for 2 minutes, then taste with a clean spoon. Spoon alongside slices of the fully set frittata instead of into the ovenproof pan."
+    ],
+    check:"Tomatoes are finely chopped and fresh; the frittata centre has no runny egg.",
+    safety:"Wash fresh produce. Keep the salsa separate from raw egg and check that the frittata is fully cooked.",
+    sources:["https://www.jamieoliver.com/recipes/vegetables/classic-tomato-salsa/"]
+  },
+  "lunch-lemon-chickpea-couscous": {
+    name:"Creamy lemon tahini drizzle", minutes:4,
+    why:"A nutty pourable dressing complements lemon and chickpeas for people who want a creamier couscous bowl.",
+    ingredients:[["Tahini",2,"tbsp"],["Lemon juice (extra)",15,"ml"],["Ground cumin",0.25,"tsp"]],
+    steps:[
+      "Spoon the measured tahini into a clean small bowl and add the lemon juice and cumin.",
+      "Stir well, adding COLD water one tablespoon at a time. The tahini may thicken at first; continue stirring until smooth and pourable, normally after 2–3 tbsp water.",
+      "Taste with a clean spoon. Spoon a little over the finished couscous just before serving; the original bowl already contains lemon and oil, so do not drench it."
+    ],
+    check:"A smooth, pourable drizzle, not a thick paste. Couscous remains fluffy rather than soggy.",
+    safety:"Contains sesame. Check the tahini label for other allergens; handle cooked couscous using the original recipe storage guidance.",
+    sources:["https://www.themediterraneandish.com/tahini-sauce-recipe-how-to-make-tahini/"]
+  },
+  "bakery-apple-crumble": {
+    name:"Warm vanilla custard", minutes:5,
+    why:"Warm custard is a familiar accompaniment to apple crumble, keeping the crisp topping intact until the moment it is served.",
+    ingredients:[["Ready-made vanilla custard",500,"ml"]],
+    steps:[
+      "Before the apple crumble is served, pour the measured ready-made custard into a clean saucepan. Check the packet for heating and storage instructions.",
+      "Warm over LOW heat, stirring regularly, until heated through as directed on its label. Do not let it catch on the bottom or boil if the packet advises against boiling.",
+      "Pour a little custard into a jug or spoon beside each portion of warm crumble so the topping stays crisp."
+    ],
+    check:"Custard is smooth and heated according to its packet instructions, and the crumble topping remains crisp.",
+    safety:"Ready-made custard typically contains milk and may contain egg. Check label and storage instructions. Use a clean saucepan.",
+    sources:["https://www.bbcgoodfood.com/recipes/collection/custard-recipes","https://www.bbcgoodfood.com/recipes/collection/apple-crumble-recipes"]
   }
+
 });
