@@ -1,0 +1,27 @@
+name: CookTogether optional sauces checks
+on:
+  push:
+    branches:
+      - feature/optional-sauce-audit-20261117
+  pull_request:
+    paths:
+      - index.html
+      - optional-sauces.js
+      - tests/optional-sauces.cjs
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate optional sauce source and pairings
+        run: |
+          node --check optional-sauces.js
+          node tests/optional-sauces.cjs
+      - name: Keep traybake and technique regressions passing
+        run: |
+          node tests/traybake-timers.cjs
+          node tests/task-illustrations.cjs
+          node tests/illustrations.cjs
