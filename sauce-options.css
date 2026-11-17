@@ -14,3 +14,15 @@
 .optional-sauce-card a{word-break:break-word}
 .optional-sauce-card .btn{max-width:100%;white-space:normal}
 @media(max-width:390px){.optional-sauce-prompt,.optional-sauce-card{padding:12px}.optional-sauce-ingredients li{font-size:.86rem}}
+
+/* Planner: keep the optional sauce choice visible and editable without crowding the recipe card. */
+.plan-sauce-setting{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:10px 0 12px;padding:11px 12px;border-radius:12px;background:#f4f8f2;border:1px solid #d6e5d5;font-size:.85rem;line-height:1.45}
+.plan-sauce-setting span{flex:1;min-width:150px;overflow-wrap:anywhere}
+.plan-sauce-setting .btn{flex-shrink:0;min-height:36px}
+.plan-sauce-modal{width:min(94vw,540px);max-height:min(90dvh,740px);overflow-y:auto}
+.plan-sauce-modal .modal-body{padding:clamp(20px,4vw,30px)}
+.plan-sauce-modal details{border:1px solid #e0e6df;padding:12px;border-radius:12px;margin:14px 0}
+.plan-sauce-modal details summary{cursor:pointer;font-weight:700;color:#174a42}
+.plan-sauce-buttons{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:20px}
+.plan-sauce-buttons .btn{min-height:44px}
+@media(max-width:480px){.plan-sauce-modal{width:min(96vw,540px)}.plan-sauce-buttons{flex-direction:column-reverse}.plan-sauce-buttons .btn{width:100%}}
