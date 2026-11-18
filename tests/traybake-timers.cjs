@@ -26,17 +26,17 @@ for(const index of [3,8]){
  const before=Date.now();api.start(recipe,task,index,1200);
  let timers=api.timers().filter(t=>t.id.startsWith(recipe.id+'|'+index+'|'));
  assert.equal(timers.length,2);
- let turn=timers.find(t=>t.id.endsWith('|turn')),cook=timers.find(t=>!t.id.endsWith('|turn'));
+ let turn=timers.find(t=>t.id.endsWith('|turn-0')),cook=timers.find(t=>!t.id.endsWith('|turn-0'));
  assert.equal(turn.title,'Turn the vegetables');
  assert.equal(cook.deadline-turn.deadline,600000);
  assert(turn.deadline>=before+600000&&turn.deadline<=Date.now()+600000);
  assert(cook.title.includes('Check the traybake'));
- assert(api.render(recipe,index).includes('10-minute reminder'));
+ assert(api.render(recipe,index).includes('at 10 minutes'));
  // Repeated starts replace both timers instead of accumulating duplicates.
  api.start(recipe,task,index,1200);
  timers=api.timers().filter(t=>t.id.startsWith(recipe.id+'|'+index+'|'));
  assert.equal(timers.length,2);
- turn=timers.find(t=>t.id.endsWith('|turn'));cook=timers.find(t=>!t.id.endsWith('|turn'));
+ turn=timers.find(t=>t.id.endsWith('|turn-0'));cook=timers.find(t=>!t.id.endsWith('|turn-0'));
  const end=cook.deadline;
  turn.deadline=Date.now()-100;api.tick();
  assert.equal(turn.alertedAt,turn.deadline);assert.equal(cook.alertedAt,undefined);

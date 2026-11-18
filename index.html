@@ -1226,7 +1226,8 @@ window.COOK_RECIPES = [
           "cumin",
           "paprika",
           "garlic",
-          "ground-coriander"
+          "ground-coriander",
+          "red-onion"
         ],
         "skills": [
           "mix"
@@ -1597,9 +1598,6 @@ window.COOK_RECIPES = [
         "uses": [
           "onion",
           "carrots",
-          "ras-el-hanout",
-          "tomato-puree",
-          "ground-cumin",
           "olive-oil"
         ],
         "skills": [],
@@ -1632,7 +1630,8 @@ window.COOK_RECIPES = [
         "uses": [
           "diced-lamb",
           "chopped-tomatoes",
-          "veg-stock"
+          "veg-stock",
+          "dried-apricots"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -1838,10 +1837,10 @@ window.COOK_RECIPES = [
       ]
     ],
     "steps": [
-      "Mix paprika, cumin, half the fajita seasoning and a spoon of oil. Slice chicken into even thin strips and coat; keep raw chicken separate from vegetables.",
+      "Mix the measured smoked paprika and cumin with half the fajita seasoning and half the measured olive oil in a bowl. Reserve the remaining seasoning and oil for the vegetables. Slice chicken into even thin strips and coat; keep raw chicken separate from vegetables.",
       "Slice peppers and onion. Mix yoghurt with a little lime zest and juice for a cooling sauce; set aside.",
       "Heat a large frying pan until hot. Cook chicken in two batches for 5–7 minutes each, turning until browned and fully cooked in the centre; transfer to a clean plate.",
-      "Add remaining oil, peppers and onion to the pan. Fry 6–8 minutes, stirring occasionally, until softened with charred edges. Return cooked chicken and toss together for 1–2 minutes.",
+      "Add the remaining half of the measured oil, the sliced peppers and onion, and the reserved half of the fajita seasoning to the pan. Fry 6–8 minutes, stirring occasionally, until softened with charred edges. Return cooked chicken and toss together for 1–2 minutes.",
       "Warm tortillas in a dry pan. Finish the fajita filling with fresh lime juice, taste for seasoning, and serve with lime yoghurt. Chicken must be thoroughly cooked."
     ],
     "category": "Chicken",
@@ -1867,19 +1866,21 @@ window.COOK_RECIPES = [
       "tortillas": "Count out tortillas; leave wrapped until warming just before serving."
     },
     "methodBeforeBeginner": [
-      "Mix paprika, cumin, half the fajita seasoning and a spoon of oil. Slice chicken into even thin strips and coat; keep raw chicken separate from vegetables.",
+      "Mix the measured smoked paprika and cumin with half the fajita seasoning and half the measured olive oil in a bowl. Reserve the remaining seasoning and oil for the vegetables. Slice chicken into even thin strips and coat; keep raw chicken separate from vegetables.",
       "Slice peppers and onion. Mix yoghurt with a little lime zest and juice for a cooling sauce; set aside.",
       "Heat a large frying pan until hot. Cook chicken in two batches for 5–7 minutes each, turning until browned and fully cooked in the centre; transfer to a clean plate.",
-      "Add remaining oil, peppers and onion to the pan. Fry 6–8 minutes, stirring occasionally, until softened with charred edges. Return cooked chicken and toss together for 1–2 minutes.",
+      "Add the remaining half of the measured oil, the sliced peppers and onion, and the reserved half of the fajita seasoning to the pan. Fry 6–8 minutes, stirring occasionally, until softened with charred edges. Return cooked chicken and toss together for 1–2 minutes.",
       "Warm tortillas in a dry pan. Finish the fajita filling with fresh lime juice, taste for seasoning, and serve with lime yoghurt. Chicken must be thoroughly cooked."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
-        "title": "Mix paprika, cumin, half the fajita seasoning and a spoon of oil",
+        "title": "Mix the chicken coating",
         "uses": [
           "ground-cumin",
-          "olive-oil"
+          "olive-oil",
+          "fajita-spice",
+          "smoked-paprika"
         ],
         "skills": [
           "mix"
@@ -1892,7 +1893,7 @@ window.COOK_RECIPES = [
           "Clean serving spoon"
         ],
         "sourceStage": 0,
-        "instructions": "Mix paprika, cumin, half the fajita seasoning and a spoon of oil."
+        "instructions": "Mix the measured smoked paprika and cumin with half the fajita seasoning and half the measured olive oil in a bowl. Reserve the remaining seasoning and oil for the vegetables."
       },
       {
         "title": "Slice chicken into even thin strips and coat",
@@ -1945,9 +1946,7 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Heat a large frying pan until hot",
-        "uses": [
-          "chicken"
-        ],
+        "uses": [],
         "skills": [],
         "check": "Check that hot.",
         "tools": [
@@ -1970,11 +1969,12 @@ window.COOK_RECIPES = [
         "instructions": "Cook chicken in two batches for 5–7 minutes each, turning until browned and fully cooked in the centre; transfer to a clean plate."
       },
       {
-        "title": "Add remaining oil, peppers and onion to the pan",
+        "title": "Add vegetables and reserved seasoning",
         "uses": [
           "peppers",
           "onion",
-          "olive-oil"
+          "olive-oil",
+          "fajita-spice"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -1982,12 +1982,11 @@ window.COOK_RECIPES = [
           "Large frying pan"
         ],
         "sourceStage": 3,
-        "instructions": "Add remaining oil, peppers and onion to the pan."
+        "instructions": "Add the remaining half of the measured oil, the sliced peppers and onion, and the reserved half of the fajita seasoning to the pan."
       },
       {
         "title": "Fry 6–8 minutes, stirring occasionally, until softened with…",
         "uses": [
-          "chicken",
           "peppers",
           "onion",
           "olive-oil"
@@ -2378,7 +2377,8 @@ window.COOK_RECIPES = [
         "title": "Add about 4 tablespoons reserved pasta water, mixing until…",
         "uses": [
           "chicken",
-          "pasta"
+          "pasta",
+          "cherry-tomatoes"
         ],
         "skills": [],
         "check": "Check that the sauce turns smooth and coats the chicken and tomatoes.",
@@ -2553,66 +2553,66 @@ window.COOK_RECIPES = [
       "Roast vegetables for 20 minutes, turning once. Meanwhile mix wholegrain mustard, honey, crushed garlic, lemon juice and the remaining oil.",
       "Before handling the raw chicken, pour half of the prepared honey-mustard glaze into a separate clean bowl and set it aside for brushing on during the final 5 minutes of roasting. Leave the other half of the glaze in the original mixing bowl. Pat the chicken thighs dry with kitchen paper, then use a spoon or separate brush to coat every thigh evenly with the glaze left in the original bowl. Discard any leftover glaze or utensils that touched the raw chicken. Peel and quarter the red onions, keeping some root attached, then add the onion wedges and the chicken to the tray, leaving space between the pieces.",
       "Roast another 20–25 minutes, until chicken is thoroughly cooked and vegetables have browned, turning vegetables once. Brush with the reserved clean glaze during the final 5 minutes using a clean brush; do not return a brush that touched chicken to the reserved bowl.",
-      "Rest chicken 3 minutes. Squeeze over a little lemon and spoon the tray juices onto the vegetables. If the chicken is cooked before the potatoes crisp, remove chicken and finish vegetables separately."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest chicken 3 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait. Squeeze over a little lemon and spoon the tray juices onto the vegetables. If the chicken is cooked before the potatoes crisp, remove chicken and finish vegetables separately."
     ],
     "flavour": "Start the potatoes first, then glaze the chicken near the end so the honey colours rather than burns.",
     "family": "For a milder finish, use less mustard on children’s portions and offer extra glaze at the table.",
     "optionalSauce": {
-        "title": "Optional lemon, honey & mustard sauce",
-        "status": "Suggested addition — not yet kitchen-tested",
-        "note": "A separate, lightly thickened sauce for serving, not an extra glaze for the roasting tray. Use clean utensils and only cooked tray juices. Extra ingredients are not automatically added to the shopping list.",
-        "ingredients": [
-            [
-                "sauce-stock",
-                "Chicken stock (extra)",
-                200,
-                "ml",
-                "Cupboard"
-            ],
-            [
-                "sauce-mustard",
-                "Wholegrain mustard (extra)",
-                1,
-                "tsp",
-                "Cupboard"
-            ],
-            [
-                "sauce-honey",
-                "Honey (extra)",
-                1,
-                "tsp",
-                "Cupboard"
-            ],
-            [
-                "sauce-lemon",
-                "Lemon juice (extra)",
-                2,
-                "tsp",
-                "Fresh produce"
-            ],
-            [
-                "sauce-cornflour",
-                "Cornflour (extra)",
-                1,
-                "tsp",
-                "Cupboard"
-            ]
+      "title": "Optional lemon, honey & mustard sauce",
+      "status": "Suggested addition — not yet kitchen-tested",
+      "note": "A separate, lightly thickened sauce for serving, not an extra glaze for the roasting tray. Use clean utensils and only cooked tray juices. Extra ingredients are not automatically added to the shopping list.",
+      "ingredients": [
+        [
+          "sauce-stock",
+          "Chicken stock (extra)",
+          200,
+          "ml",
+          "Cupboard"
         ],
-        "task": {
-            "title": "Optional: make lemon, honey & mustard sauce in a saucepan",
-            "instructions": "While the chicken finishes roasting, use a CLEAN small saucepan and spoon. Put 200ml chicken stock, 1 tsp wholegrain mustard, 1 tsp honey and 2 tsp lemon juice into the saucepan. Stir over medium heat until gently simmering. In a small cup, mix 1 tsp cornflour with 2 tsp COLD water until smooth. Stir that paste gradually into the simmering sauce and keep stirring gently for 1–2 minutes until glossy and lightly thickened. Keep the sauce in the saucepan, not in the oven tray; the honey glaze on the chicken is meant to caramelise. Use only clean ingredients, NOT leftover glaze or marinade that touched raw chicken. Once the chicken is completely cooked, any cooked tray juices may be stirred in if you like. Taste; if too thick, stir in a splash of water. Keep hot until serving.",
-            "check": "The sauce is hot, glossy and pourable. No raw-chicken glaze or uncooked juices have been reused. The chicken has been checked for doneness independently.",
-            "uses": [],
-            "skills": [],
-            "tools": [
-                "Small saucepan",
-                "Spoon or whisk",
-                "Small cup and teaspoon",
-                "Hob"
-            ],
-            "sourceStage": 3,
-            "optionalSauce": true
-        }
+        [
+          "sauce-mustard",
+          "Wholegrain mustard (extra)",
+          1,
+          "tsp",
+          "Cupboard"
+        ],
+        [
+          "sauce-honey",
+          "Honey (extra)",
+          1,
+          "tsp",
+          "Cupboard"
+        ],
+        [
+          "sauce-lemon",
+          "Lemon juice (extra)",
+          2,
+          "tsp",
+          "Fresh produce"
+        ],
+        [
+          "sauce-cornflour",
+          "Cornflour (extra)",
+          1,
+          "tsp",
+          "Cupboard"
+        ]
+      ],
+      "task": {
+        "title": "Optional: make lemon, honey & mustard sauce in a saucepan",
+        "instructions": "While the chicken finishes roasting, use a CLEAN small saucepan and spoon. Put 200ml chicken stock, 1 tsp wholegrain mustard, 1 tsp honey and 2 tsp lemon juice into the saucepan. Stir over medium heat until gently simmering. In a small cup, mix 1 tsp cornflour with 2 tsp COLD water until smooth. Stir that paste gradually into the simmering sauce and keep stirring gently for 1–2 minutes until glossy and lightly thickened. Keep the sauce in the saucepan, not in the oven tray; the honey glaze on the chicken is meant to caramelise. Use only clean ingredients, NOT leftover glaze or marinade that touched raw chicken. Once the chicken is completely cooked, any cooked tray juices may be stirred in if you like. Taste; if too thick, stir in a splash of water. Keep hot until serving.",
+        "check": "The sauce is hot, glossy and pourable. No raw-chicken glaze or uncooked juices have been reused. The chicken has been checked for doneness independently.",
+        "uses": [],
+        "skills": [],
+        "tools": [
+          "Small saucepan",
+          "Spoon or whisk",
+          "Small cup and teaspoon",
+          "Hob"
+        ],
+        "sourceStage": 3,
+        "optionalSauce": true
+      }
     },
     "reviewStatus": "Development recipe — not yet kitchen-tested",
     "safety": {
@@ -2637,17 +2637,13 @@ window.COOK_RECIPES = [
       "Roast vegetables for 20 minutes, turning once. Meanwhile mix wholegrain mustard, honey, crushed garlic, lemon juice and the remaining oil.",
       "Before handling the raw chicken, pour half of the prepared honey-mustard glaze into a separate clean bowl and set it aside for brushing on during the final 5 minutes of roasting. Leave the other half of the glaze in the original mixing bowl. Pat the chicken thighs dry with kitchen paper, then use a spoon or separate brush to coat every thigh evenly with the glaze left in the original bowl. Discard any leftover glaze or utensils that touched the raw chicken. Peel and quarter the red onions, keeping some root attached, then add the onion wedges and the chicken to the tray, leaving space between the pieces.",
       "Roast another 20–25 minutes, until chicken is thoroughly cooked and vegetables have browned, turning vegetables once. Brush with the reserved clean glaze during the final 5 minutes using a clean brush; do not return a brush that touched chicken to the reserved bowl.",
-      "Rest chicken 3 minutes. Squeeze over a little lemon and spoon the tray juices onto the vegetables. If the chicken is cooked before the potatoes crisp, remove chicken and finish vegetables separately."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest chicken 3 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait. Squeeze over a little lemon and spoon the tray juices onto the vegetables. If the chicken is cooked before the potatoes crisp, remove chicken and finish vegetables separately."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "potatoes",
-          "carrots",
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -2818,13 +2814,13 @@ window.COOK_RECIPES = [
           "chicken-thighs"
         ],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest chicken 3 minutes."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest chicken 3 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       },
       {
         "title": "Squeeze over a little lemon and spoon the tray juices onto…",
@@ -3372,7 +3368,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir in tomato purée and mixed herbs",
         "uses": [
-          "tomato-puree"
+          "tomato-puree",
+          "italian-herbs"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -3432,7 +3429,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir balsamic into the sauce, taste and adjust seasoning",
         "uses": [
-          "spaghetti"
+          "spaghetti",
+          "balsamic-vinegar"
         ],
         "skills": [
           "taste"
@@ -3655,7 +3653,8 @@ window.COOK_RECIPES = [
       {
         "title": "In remaining oil, fry sliced onions for 10–12 minutes on…",
         "uses": [
-          "olive-oil"
+          "olive-oil",
+          "onion"
         ],
         "skills": [],
         "check": "Check that deeply golden.",
@@ -3669,7 +3668,8 @@ window.COOK_RECIPES = [
         "title": "Add garlic, thyme and tomato purée",
         "uses": [
           "tomato-puree",
-          "garlic"
+          "garlic",
+          "dried-thyme"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -4239,7 +4239,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add garlic and thyme for the last 30 seconds",
         "uses": [
-          "garlic"
+          "garlic",
+          "dried-thyme"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -4470,10 +4471,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "peppers",
-          "chickpeas"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -4485,7 +4483,8 @@ window.COOK_RECIPES = [
       {
         "title": "Chop courgettes and peppers into bite-size pieces",
         "uses": [
-          "peppers"
+          "peppers",
+          "courgette"
         ],
         "skills": [],
         "check": "The food has the cut and size stated here and is ready for the next action.",
@@ -4515,7 +4514,8 @@ window.COOK_RECIPES = [
         "title": "Toss the vegetables and chickpeas with olive oil and harissa",
         "uses": [
           "olive-oil",
-          "chickpeas"
+          "chickpeas",
+          "harissa-paste"
         ],
         "skills": [
           "mix"
@@ -4627,7 +4627,8 @@ window.COOK_RECIPES = [
         "title": "Spoon into bowls with roasted veg and halloumi",
         "uses": [
           "halloumi",
-          "greek-yoghurt"
+          "greek-yoghurt",
+          "harissa-paste"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -4645,7 +4646,8 @@ window.COOK_RECIPES = [
           "couscous",
           "lemon",
           "fresh-parsley",
-          "greek-yoghurt"
+          "greek-yoghurt",
+          "harissa-paste"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -4772,10 +4774,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "potatoes",
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -4863,7 +4862,8 @@ window.COOK_RECIPES = [
         "uses": [
           "lemon",
           "garlic",
-          "mustard"
+          "mustard",
+          "dried-dill"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -4996,7 +4996,7 @@ window.COOK_RECIPES = [
       "Heat oil in a saucepan, cook crushed garlic for 30 seconds, then stir in passata and mustard. Simmer 6–8 minutes to deepen the flavour.",
       "Turn down heat and stir in cream cheese and a splash of pasta water until smooth. Drain tuna and sweetcorn well and fold them into the sauce.",
       "Mix pasta with sauce in a baking dish, adding a little more pasta water if it looks dry. Scatter evenly with grated cheddar.",
-      "Bake 15–20 minutes until bubbling and golden on top. Rest for 5 minutes before serving. Check tinned tuna and mustard product labels for allergens."
+      "Bake 15–20 minutes until bubbling and golden on top. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes before serving. Check tinned tuna and mustard product labels for allergens. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "category": "Fish",
     "flavour": "A little mustard and cream cheese make the sauce rich and tangy, rather than dry pasta covered in cheese.",
@@ -5026,15 +5026,13 @@ window.COOK_RECIPES = [
       "Heat oil in a saucepan, cook crushed garlic for 30 seconds, then stir in passata and mustard. Simmer 6–8 minutes to deepen the flavour.",
       "Turn down heat and stir in cream cheese and a splash of pasta water until smooth. Drain tuna and sweetcorn well and fold them into the sauce.",
       "Mix pasta with sauce in a baking dish, adding a little more pasta water if it looks dry. Scatter evenly with grated cheddar.",
-      "Bake 15–20 minutes until bubbling and golden on top. Rest for 5 minutes before serving. Check tinned tuna and mustard product labels for allergens."
+      "Bake 15–20 minutes until bubbling and golden on top. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes before serving. Check tinned tuna and mustard product labels for allergens. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat oven to 190°C fan",
-        "uses": [
-          "pasta"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -5183,13 +5181,13 @@ window.COOK_RECIPES = [
           "mustard"
         ],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest for 5 minutes before serving. Check tinned tuna and mustard product labels for allergens."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes before serving. Check tinned tuna and mustard product labels for allergens. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -5370,7 +5368,9 @@ window.COOK_RECIPES = [
           "peas",
           "lemon",
           "olive-oil",
-          "garlic"
+          "garlic",
+          "cherry-tomatoes",
+          "dried-oregano"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -5970,7 +5970,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add thin apple slices to the pan and cook 3–4 minutes until…",
         "uses": [
-          "pork-chops"
+          "pork-chops",
+          "apples"
         ],
         "skills": [],
         "check": "Check that golden at the edges.",
@@ -6270,7 +6271,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir-fry vegetables for 3–5 minutes until tender-crisp",
         "uses": [
-          "pork-strips"
+          "pork-strips",
+          "stirfry-veg"
         ],
         "skills": [],
         "check": "Check that tender-crisp.",
@@ -6337,7 +6339,8 @@ window.COOK_RECIPES = [
         "title": "Finish with sesame oil off the heat",
         "uses": [
           "sesame-oil",
-          "vegetable-oil"
+          "vegetable-oil",
+          "soy-sauce"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -7526,7 +7529,8 @@ window.COOK_RECIPES = [
           "black-beans",
           "garlic",
           "tomatoes",
-          "fresh-coriander"
+          "fresh-coriander",
+          "onion"
         ],
         "skills": [
           "slice-onion"
@@ -7596,7 +7600,8 @@ window.COOK_RECIPES = [
           "mushrooms",
           "smoked-paprika",
           "ground-cumin",
-          "rapeseed-oil"
+          "rapeseed-oil",
+          "onion"
         ],
         "skills": [
           "mix"
@@ -7830,7 +7835,7 @@ window.COOK_RECIPES = [
       ]
     ],
     "steps": [
-      "Wash hands and finely dice half the red onion. Mix lamb with the diced onion, crushed garlic, chopped mint, cumin and half the paprika. Shape into 16 similar-sized balls; chill until cooking.",
+      "Wash hands and finely dice half the red onion. Mix lamb with the diced onion, crushed garlic, chopped mint, cumin and half the paprika. Shape into 16 similar-sized balls; chill until cooking. To chill, cover and place in the fridge; do not leave it on the worktop.",
       "Heat oil in a deep frying pan over medium-high heat. Brown meatballs on all sides in batches, turning gently for 6–8 minutes; they will finish cooking in the sauce.",
       "Lower the heat and add the remaining finely diced onion. Soften 4 minutes; stir in the remaining paprika and passata. Return meatballs, cover and simmer gently for 15–18 minutes until thoroughly cooked through.",
       "Put couscous in a heatproof bowl with 350ml freshly boiled vegetable stock. Cover for 5–7 minutes, then fluff with a fork. Add lemon zest and a squeeze of juice.",
@@ -7858,7 +7863,7 @@ window.COOK_RECIPES = [
       "lemon": "Wash and zest finely; halve to squeeze juice into the couscous."
     },
     "methodBeforeBeginner": [
-      "Wash hands and finely dice half the red onion. Mix lamb with the diced onion, crushed garlic, chopped mint, cumin and half the paprika. Shape into 16 similar-sized balls; chill until cooking.",
+      "Wash hands and finely dice half the red onion. Mix lamb with the diced onion, crushed garlic, chopped mint, cumin and half the paprika. Shape into 16 similar-sized balls; chill until cooking. To chill, cover and place in the fridge; do not leave it on the worktop.",
       "Heat oil in a deep frying pan over medium-high heat. Brown meatballs on all sides in batches, turning gently for 6–8 minutes; they will finish cooking in the sauce.",
       "Lower the heat and add the remaining finely diced onion. Soften 4 minutes; stir in the remaining paprika and passata. Return meatballs, cover and simmer gently for 15–18 minutes until thoroughly cooked through.",
       "Put couscous in a heatproof bowl with 350ml freshly boiled vegetable stock. Cover for 5–7 minutes, then fluff with a fork. Add lemon zest and a squeeze of juice.",
@@ -7889,7 +7894,9 @@ window.COOK_RECIPES = [
           "lamb-mince",
           "garlic",
           "fresh-mint",
-          "ground-cumin"
+          "ground-cumin",
+          "red-onion",
+          "smoked-paprika"
         ],
         "skills": [
           "dice",
@@ -7924,7 +7931,7 @@ window.COOK_RECIPES = [
           "Clean hands or utensils"
         ],
         "sourceStage": 0,
-        "instructions": "Shape into 16 similar-sized balls; chill until cooking."
+        "instructions": "Shape into 16 similar-sized balls; chill until cooking. To chill, cover and place in the fridge; do not leave it on the worktop."
       },
       {
         "title": "Heat oil in a deep frying pan over medium-high heat",
@@ -7959,7 +7966,8 @@ window.COOK_RECIPES = [
       {
         "title": "Lower the heat and add the remaining finely diced onion",
         "uses": [
-          "passata"
+          "passata",
+          "red-onion"
         ],
         "skills": [
           "dice"
@@ -7975,7 +7983,8 @@ window.COOK_RECIPES = [
       {
         "title": "Soften 4 minutes",
         "uses": [
-          "passata"
+          "passata",
+          "smoked-paprika"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -8174,7 +8183,7 @@ window.COOK_RECIPES = [
       "Toss vegetables with oil, crushed garlic, oregano, lemon zest and 2 tablespoons lemon juice. Spread in one layer and roast 20 minutes.",
       "Add diced lamb and tomatoes, turning them in the tray juices. Spread everything out again. Roast for about 20–25 minutes more, turning once. Do not rely on time alone for doneness.",
       "Check the lamb has reached a safe temperature for the cut and preparation, following the FSA and the pack. If needed, continue cooking and check again; potatoes should be tender with golden edges.",
-      "Rest a few minutes, crumble feta over if suitable for the household, and finish with the remaining lemon juice. Serve straight from the tray."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest a few minutes, crumble feta over if suitable for the household, and finish with the remaining lemon juice. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait. Serve straight from the tray."
     ],
     "category": "Lamb",
     "flavour": "Oregano, lemon and garlic season both lamb and potatoes; roasting in a broad layer develops golden edges.",
@@ -8204,17 +8213,13 @@ window.COOK_RECIPES = [
       "Toss vegetables with oil, crushed garlic, oregano, lemon zest and 2 tablespoons lemon juice. Spread in one layer and roast 20 minutes.",
       "Add diced lamb and tomatoes, turning them in the tray juices. Spread everything out again. Roast for about 20–25 minutes more, turning once. Do not rely on time alone for doneness.",
       "Check the lamb has reached a safe temperature for the cut and preparation, following the FSA and the pack. If needed, continue cooking and check again; potatoes should be tender with golden edges.",
-      "Rest a few minutes, crumble feta over if suitable for the household, and finish with the remaining lemon juice. Serve straight from the tray."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest a few minutes, crumble feta over if suitable for the household, and finish with the remaining lemon juice. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait. Serve straight from the tray."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat the oven to 200°C fan",
-        "uses": [
-          "potatoes",
-          "courgette",
-          "feta"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -8244,7 +8249,8 @@ window.COOK_RECIPES = [
       {
         "title": "Slice onions into wedges and courgette into thick half-moons",
         "uses": [
-          "courgette"
+          "courgette",
+          "red-onion"
         ],
         "skills": [
           "slice-onion"
@@ -8261,7 +8267,9 @@ window.COOK_RECIPES = [
       {
         "title": "Put everything except lamb, tomatoes and feta onto a large…",
         "uses": [
-          "feta"
+          "feta",
+          "lamb-leg-steak",
+          "cherry-tomatoes"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -8277,7 +8285,8 @@ window.COOK_RECIPES = [
         "uses": [
           "garlic",
           "lemon",
-          "olive-oil"
+          "olive-oil",
+          "dried-oregano"
         ],
         "skills": [
           "mix"
@@ -8311,7 +8320,10 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Add diced lamb and tomatoes, turning them in the tray juices",
-        "uses": [],
+        "uses": [
+          "lamb-leg-steak",
+          "cherry-tomatoes"
+        ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
         "tools": [
@@ -8350,7 +8362,8 @@ window.COOK_RECIPES = [
       {
         "title": "Check the lamb has reached a safe temperature for the cut and…",
         "uses": [
-          "potatoes"
+          "potatoes",
+          "lamb-leg-steak"
         ],
         "skills": [],
         "check": "The food has the cut and size stated here and is ready for the next action.",
@@ -8367,13 +8380,13 @@ window.COOK_RECIPES = [
           "feta"
         ],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest a few minutes, crumble feta over if suitable for the household, and finish with the remaining lemon juice."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest a few minutes, crumble feta over if suitable for the household, and finish with the remaining lemon juice. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       },
       {
         "title": "Serve straight from the tray",
@@ -8623,7 +8636,8 @@ window.COOK_RECIPES = [
         "uses": [
           "onion",
           "garlic",
-          "ground-cumin"
+          "ground-cumin",
+          "smoked-paprika"
         ],
         "skills": [],
         "check": "Check that soft.",
@@ -9104,7 +9118,8 @@ window.COOK_RECIPES = [
         "uses": [
           "onion",
           "garlic",
-          "chicken-thighs"
+          "chicken-thighs",
+          "baby-spinach"
         ],
         "skills": [
           "garlic"
@@ -9155,7 +9170,8 @@ window.COOK_RECIPES = [
         "uses": [
           "orzo",
           "onion",
-          "garlic"
+          "garlic",
+          "dried-oregano"
         ],
         "skills": [
           "soften"
@@ -9206,7 +9222,8 @@ window.COOK_RECIPES = [
         "uses": [
           "veg-stock",
           "lemon",
-          "vegetarian-cheese"
+          "vegetarian-cheese",
+          "baby-spinach"
         ],
         "skills": [
           "spinach"
@@ -9876,7 +9893,8 @@ window.COOK_RECIPES = [
         "title": "Serve over hot rice with spring onion and sesame seeds",
         "uses": [
           "rice",
-          "sesame-seeds"
+          "sesame-seeds",
+          "spring-onions"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -10528,10 +10546,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat the oven to 200°C fan",
-        "uses": [
-          "sweet-potatoes",
-          "butter"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -10794,7 +10809,7 @@ window.COOK_RECIPES = [
       "Drain and rinse ready-cooked canned black beans. Finely dice red onion and mix with roasted sweet potato, beans and lime juice.",
       "Pour a little passata into an ovenproof dish. Spoon filling into eight tortillas, roll tightly and arrange seam-side down.",
       "Pour remaining passata over tortillas and scatter grated Cheddar evenly. Bake for 18–22 minutes until piping hot throughout with a bubbling top.",
-      "Rest 5 minutes and serve. Verify the filling and centre are thoroughly hot before serving, and check tortilla packaging for allergens."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes and serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait. Verify the filling and centre are thoroughly hot before serving, and check tortilla packaging for allergens."
     ],
     "category": "Vegetarian",
     "flavour": "Roasting sweet potato before rolling the tortillas concentrates its sweetness; lime keeps the filling lively.",
@@ -10823,17 +10838,13 @@ window.COOK_RECIPES = [
       "Drain and rinse ready-cooked canned black beans. Finely dice red onion and mix with roasted sweet potato, beans and lime juice.",
       "Pour a little passata into an ovenproof dish. Spoon filling into eight tortillas, roll tightly and arrange seam-side down.",
       "Pour remaining passata over tortillas and scatter grated Cheddar evenly. Bake for 18–22 minutes until piping hot throughout with a bubbling top.",
-      "Rest 5 minutes and serve. Verify the filling and centre are thoroughly hot before serving, and check tortilla packaging for allergens."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes and serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait. Verify the filling and centre are thoroughly hot before serving, and check tortilla packaging for allergens."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat the oven to 200°C fan",
-        "uses": [
-          "sweet-potatoes",
-          "ground-cumin",
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -10864,7 +10875,8 @@ window.COOK_RECIPES = [
         "title": "Toss with oil, paprika and cumin and roast on a tray for…",
         "uses": [
           "ground-cumin",
-          "olive-oil"
+          "olive-oil",
+          "smoked-paprika"
         ],
         "skills": [
           "roast",
@@ -10990,12 +11002,12 @@ window.COOK_RECIPES = [
         "title": "Rest 5 minutes and serve",
         "uses": [],
         "skills": [],
-        "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Clean serving spoon"
         ],
         "sourceStage": 4,
-        "instructions": "Rest 5 minutes and serve."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes and serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       },
       {
         "title": "Verify the filling and centre are thoroughly hot before…",
@@ -11807,7 +11819,8 @@ window.COOK_RECIPES = [
       {
         "title": "Drain and rinse ready-cooked canned butter beans",
         "uses": [
-          "butter-beans"
+          "butter-beans",
+          "baby-spinach"
         ],
         "skills": [
           "canned-beans"
@@ -11837,7 +11850,8 @@ window.COOK_RECIPES = [
         "title": "Soften onion for 6 minutes",
         "uses": [
           "onion",
-          "garlic"
+          "garlic",
+          "smoked-paprika"
         ],
         "skills": [
           "soften"
@@ -11904,7 +11918,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir spinach into sauce until wilted without breaking up cod",
         "uses": [
-          "cod"
+          "cod",
+          "baby-spinach"
         ],
         "skills": [
           "spinach"
@@ -12066,11 +12081,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat the oven to 190°C fan",
-        "uses": [
-          "rice",
-          "cucumber",
-          "spring-onions"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -12118,7 +12129,8 @@ window.COOK_RECIPES = [
         "title": "Mix miso paste, honey, soy sauce and a tablespoon of water in…",
         "uses": [
           "honey",
-          "soy-sauce"
+          "soy-sauce",
+          "white-miso"
         ],
         "skills": [
           "mix"
@@ -12182,7 +12194,9 @@ window.COOK_RECIPES = [
         "uses": [
           "cucumber",
           "lime",
-          "sesame-oil"
+          "sesame-oil",
+          "white-miso",
+          "soy-sauce"
         ],
         "skills": [
           "taste"
@@ -12394,7 +12408,8 @@ window.COOK_RECIPES = [
         "title": "Shred cabbage and carrots",
         "uses": [
           "carrots",
-          "lime"
+          "lime",
+          "red-cabbage"
         ],
         "skills": [
           "mix"
@@ -12414,7 +12429,8 @@ window.COOK_RECIPES = [
           "breadcrumbs",
           "plain-flour",
           "eggs",
-          "white-fish"
+          "white-fish",
+          "smoked-paprika"
         ],
         "skills": [
           "whisk"
@@ -12431,7 +12447,8 @@ window.COOK_RECIPES = [
         "title": "Dip fish pieces into flour, egg then crumbs",
         "uses": [
           "white-fish",
-          "plain-flour"
+          "plain-flour",
+          "eggs"
         ],
         "skills": [
           "coat"
@@ -12744,7 +12761,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add remaining sesame oil, then stir-fry vegetables for 4–5…",
         "uses": [
-          "sesame-oil"
+          "sesame-oil",
+          "stirfry-veg"
         ],
         "skills": [],
         "check": "Check that tender-crisp.",
@@ -12985,7 +13003,8 @@ window.COOK_RECIPES = [
         "title": "Finely grate one apple and dice the onion",
         "uses": [
           "pork-mince",
-          "onion"
+          "onion",
+          "apples"
         ],
         "skills": [
           "dice",
@@ -13008,7 +13027,9 @@ window.COOK_RECIPES = [
         "uses": [
           "pork-mince",
           "onion",
-          "breadcrumbs"
+          "breadcrumbs",
+          "apples",
+          "dried-sage"
         ],
         "skills": [
           "mix"
@@ -13105,7 +13126,8 @@ window.COOK_RECIPES = [
       {
         "title": "Dice the other apple and add to the pan for the final 4 minutes",
         "uses": [
-          "potatoes"
+          "potatoes",
+          "apples"
         ],
         "skills": [],
         "check": "The food has the cut and size stated here and is ready for the next action.",
@@ -13372,7 +13394,8 @@ window.COOK_RECIPES = [
         "title": "Stir in garlic and paprika for 30 seconds, then add rice and…",
         "uses": [
           "rice",
-          "garlic"
+          "garlic",
+          "smoked-paprika"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -13606,10 +13629,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat the oven to 200°C fan",
-        "uses": [
-          "cauliflower",
-          "rapeseed-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -13694,9 +13714,7 @@ window.COOK_RECIPES = [
           "chopped-tomatoes",
           "veg-stock"
         ],
-        "skills": [
-          "canned-beans"
-        ],
+        "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
         "tools": [
           "Sieve",
@@ -13929,7 +13947,8 @@ window.COOK_RECIPES = [
         "uses": [
           "chickpeas",
           "onion",
-          "garlic"
+          "garlic",
+          "baby-spinach"
         ],
         "skills": [
           "canned-beans"
@@ -13959,7 +13978,8 @@ window.COOK_RECIPES = [
         "title": "Cook onion gently for 6–8 minutes until sweet",
         "uses": [
           "onion",
-          "garlic"
+          "garlic",
+          "dried-oregano"
         ],
         "skills": [],
         "check": "Check that sweet.",
@@ -14003,7 +14023,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir in chickpeas and spinach until both are piping hot and…",
         "uses": [
-          "chickpeas"
+          "chickpeas",
+          "baby-spinach"
         ],
         "skills": [
           "spinach"
@@ -14289,7 +14310,8 @@ window.COOK_RECIPES = [
       {
         "title": "Fry tofu with smoked paprika in batches for 7–9 minutes,…",
         "uses": [
-          "smoked-paprika"
+          "smoked-paprika",
+          "firm-tofu"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -14693,7 +14715,8 @@ window.COOK_RECIPES = [
       {
         "title": "Serve on toast",
         "uses": [
-          "bread-slices"
+          "bread-slices",
+          "eggs"
         ],
         "skills": [],
         "check": "The eggs are cooked to the required doneness and served promptly.",
@@ -14924,7 +14947,8 @@ window.COOK_RECIPES = [
       {
         "title": "Offer the measured sugar separately so everyone can choose…",
         "uses": [
-          "lemon"
+          "lemon",
+          "caster-sugar"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -15040,10 +15064,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat the oven to 200°C fan",
-        "uses": [
-          "baby-potatoes",
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -15069,7 +15090,8 @@ window.COOK_RECIPES = [
       {
         "title": "Spread over a large roasting tray with 1 tbsp of the oil and…",
         "uses": [
-          "olive-oil"
+          "olive-oil",
+          "dried-thyme"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -15098,7 +15120,8 @@ window.COOK_RECIPES = [
       {
         "title": "Meanwhile, wash, deseed and cut the peppers into 2–3cm strips",
         "uses": [
-          "peppers"
+          "peppers",
+          "red-onion"
         ],
         "skills": [
           "pepper"
@@ -15116,7 +15139,8 @@ window.COOK_RECIPES = [
         "title": "Leave sausages chilled until the next step",
         "uses": [
           "baby-potatoes",
-          "peppers"
+          "peppers",
+          "pork-sausages"
         ],
         "skills": [],
         "check": "Check that the next step.",
@@ -15148,7 +15172,9 @@ window.COOK_RECIPES = [
         "uses": [
           "baby-potatoes",
           "peppers",
-          "olive-oil"
+          "olive-oil",
+          "pork-sausages",
+          "red-onion"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -15177,7 +15203,8 @@ window.COOK_RECIPES = [
       {
         "title": "Roast for another 30–35 minutes, turning the sausages and…",
         "uses": [
-          "baby-potatoes"
+          "baby-potatoes",
+          "pork-sausages"
         ],
         "skills": [
           "roast",
@@ -15193,7 +15220,9 @@ window.COOK_RECIPES = [
       },
       {
         "title": "If the vegetables colour before the sausages are safely…",
-        "uses": [],
+        "uses": [
+          "pork-sausages"
+        ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
         "tools": [
@@ -15205,7 +15234,9 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Serve only once the sausages are fully cooked",
-        "uses": [],
+        "uses": [
+          "pork-sausages"
+        ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
         "tools": [
@@ -15359,7 +15390,8 @@ window.COOK_RECIPES = [
         "title": "Rinse 200g red split lentils in a sieve under cold running…",
         "uses": [
           "carrots",
-          "onion"
+          "onion",
+          "red-lentils"
         ],
         "skills": [],
         "check": "The lentils have been rinsed in a sieve and excess water has drained.",
@@ -15418,7 +15450,8 @@ window.COOK_RECIPES = [
         "title": "Stir in the drained lentils, 400g chopped tomatoes and 850ml…",
         "uses": [
           "chopped-tomatoes",
-          "veg-stock"
+          "veg-stock",
+          "red-lentils"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -15621,11 +15654,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "self-raising-flour",
-          "baking-powder",
-          "caster-sugar"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -15919,11 +15948,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 170°C fan and line a 12-hole muffin tin with…",
-        "uses": [
-          "self-raising-flour",
-          "baking-powder",
-          "caster-sugar"
-        ],
+        "uses": [],
         "skills": [
           "probe",
           "line-tin"
@@ -15944,7 +15969,8 @@ window.COOK_RECIPES = [
         "uses": [
           "self-raising-flour",
           "baking-powder",
-          "caster-sugar"
+          "caster-sugar",
+          "bicarb"
         ],
         "skills": [
           "mix"
@@ -16198,11 +16224,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 180°C fan",
-        "uses": [
-          "plain-flour",
-          "wholemeal-flour",
-          "salt"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -16232,7 +16254,8 @@ window.COOK_RECIPES = [
         "uses": [
           "plain-flour",
           "wholemeal-flour",
-          "salt"
+          "salt",
+          "bicarb"
         ],
         "skills": [
           "mix"
@@ -16739,7 +16762,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add the pepper strips and onion",
         "uses": [
-          "peppers"
+          "peppers",
+          "red-onion"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -16850,7 +16874,8 @@ window.COOK_RECIPES = [
         "title": "Sprinkle over 1 tsp paprika",
         "uses": [
           "chicken",
-          "olive-oil"
+          "olive-oil",
+          "smoked-paprika"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -16880,7 +16905,8 @@ window.COOK_RECIPES = [
       {
         "title": "Return the cooked peppers and onion to the pan and stir for…",
         "uses": [
-          "peppers"
+          "peppers",
+          "red-onion"
         ],
         "skills": [],
         "check": "Check that thoroughly hot.",
@@ -17304,7 +17330,8 @@ window.COOK_RECIPES = [
         "title": "Wash both carrots, the cucumber and the spinach if the pack…",
         "uses": [
           "carrots",
-          "cucumber"
+          "cucumber",
+          "baby-spinach"
         ],
         "skills": [],
         "check": "Produce is washed as its label requires, without contact with raw-food utensils.",
@@ -17430,7 +17457,8 @@ window.COOK_RECIPES = [
         "title": "Fill each with one-quarter of the grated carrot, sliced…",
         "uses": [
           "carrots",
-          "cucumber"
+          "cucumber",
+          "baby-spinach"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -17724,7 +17752,8 @@ window.COOK_RECIPES = [
           "chickpeas",
           "roasted-peppers",
           "lemon",
-          "olive-oil"
+          "olive-oil",
+          "cherry-tomatoes"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -17985,7 +18014,8 @@ window.COOK_RECIPES = [
         "uses": [
           "mayonnaise",
           "cress",
-          "ground-black-pepper"
+          "ground-black-pepper",
+          "eggs"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -18012,7 +18042,8 @@ window.COOK_RECIPES = [
       {
         "title": "Divide the egg mixture between four slices, spreading it to…",
         "uses": [
-          "bread-slices"
+          "bread-slices",
+          "eggs"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -18038,7 +18069,8 @@ window.COOK_RECIPES = [
       {
         "title": "Serve immediately",
         "uses": [
-          "mayonnaise"
+          "mayonnaise",
+          "eggs"
         ],
         "skills": [],
         "check": "Check that needed.",
@@ -18138,10 +18170,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat the oven to 200°C fan",
-        "uses": [
-          "baking-potatoes",
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -18224,7 +18253,8 @@ window.COOK_RECIPES = [
       {
         "title": "Open both 415g tins of baked beans, tip into a saucepan and…",
         "uses": [
-          "mature-cheddar"
+          "mature-cheddar",
+          "baked-beans-tins"
         ],
         "skills": [],
         "check": "Check that steaming hot throughout.",
@@ -18259,7 +18289,9 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Gently open each and spoon over about one-quarter of the hot…",
-        "uses": [],
+        "uses": [
+          "baked-beans-tins"
+        ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
         "tools": [
@@ -18428,7 +18460,8 @@ window.COOK_RECIPES = [
         "title": "Cut the peppers into thin strips, finely dice the onion and…",
         "uses": [
           "red-pepper",
-          "garlic"
+          "garlic",
+          "red-onion"
         ],
         "skills": [
           "dice",
@@ -18450,7 +18483,8 @@ window.COOK_RECIPES = [
         "title": "Heat 1 tbsp oil in a large lidded frying pan over medium heat",
         "uses": [
           "olive-oil",
-          "red-pepper"
+          "red-pepper",
+          "red-onion"
         ],
         "skills": [],
         "check": "Check that softened.",
@@ -18558,7 +18592,8 @@ window.COOK_RECIPES = [
       {
         "title": "Warm flatbreads according to the pack instructions and serve…",
         "uses": [
-          "eggs"
+          "eggs",
+          "flatbread"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -18783,7 +18818,8 @@ window.COOK_RECIPES = [
         "title": "Slice the mushrooms and spring onions while the chicken cooks",
         "uses": [
           "chicken-breast",
-          "mushrooms"
+          "mushrooms",
+          "spring-onion"
         ],
         "skills": [
           "slice-onion"
@@ -18833,7 +18869,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir in 2 tbsp reduced-salt soy sauce and most of the spring…",
         "uses": [
-          "soy-sauce"
+          "soy-sauce",
+          "spring-onion"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -18863,7 +18900,8 @@ window.COOK_RECIPES = [
         "title": "Serve piping hot, topped with remaining spring onions",
         "uses": [
           "chicken-stock",
-          "soy-sauce"
+          "soy-sauce",
+          "spring-onion"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -18989,11 +19027,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 180°C fan (200°C conventional)",
-        "uses": [
-          "self-raising-flour",
-          "baking-powder",
-          "mustard-powder"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -19631,7 +19665,7 @@ window.COOK_RECIPES = [
       ]
     ],
     "steps": [
-      "Boil potatoes in a pan of water for 8–10 minutes until nearly tender. Drain and steam-dry for 3 minutes. Heat the oven to 180°C fan.",
+      "Boil potatoes in a pan of water for 8–10 minutes until nearly tender. Drain and steam-dry for 3 minutes. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate. Heat the oven to 180°C fan.",
       "Heat oil in a large ovenproof frying pan. Cook onion and peppers over medium heat for 6–8 minutes. Add potatoes and paprika; fry for 10–12 minutes, turning occasionally, until golden.",
       "Make one gap per person and slide an egg into each. Crumble feta over the potatoes. Transfer the pan to the oven for 7–12 minutes until egg whites are completely set; cook yolks firm if required.",
       "Use oven gloves for the hot handle. Divide between plates."
@@ -19666,7 +19700,7 @@ window.COOK_RECIPES = [
       "https://www.bbcgoodfood.com/recipes/breakfast-hash"
     ],
     "methodBeforeBeginner": [
-      "Boil potatoes in a pan of water for 8–10 minutes until nearly tender. Drain and steam-dry for 3 minutes. Heat the oven to 180°C fan.",
+      "Boil potatoes in a pan of water for 8–10 minutes until nearly tender. Drain and steam-dry for 3 minutes. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate. Heat the oven to 180°C fan.",
       "Heat oil in a large ovenproof frying pan. Cook onion and peppers over medium heat for 6–8 minutes. Add potatoes and paprika; fry for 10–12 minutes, turning occasionally, until golden.",
       "Make one gap per person and slide an egg into each. Crumble feta over the potatoes. Transfer the pan to the oven for 7–12 minutes until egg whites are completely set; cook yolks firm if required.",
       "Use oven gloves for the hot handle. Divide between plates."
@@ -19706,13 +19740,11 @@ window.COOK_RECIPES = [
           "Heatproof jug if needed"
         ],
         "sourceStage": 0,
-        "instructions": "Drain and steam-dry for 3 minutes."
+        "instructions": "Drain and steam-dry for 3 minutes. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate."
       },
       {
         "title": "Heat the oven to 180°C fan",
-        "uses": [
-          "potatoes"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -19753,7 +19785,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add potatoes and paprika",
         "uses": [
-          "potatoes"
+          "potatoes",
+          "smoked-paprika"
         ],
         "skills": [],
         "check": "Check that golden.",
@@ -19766,8 +19799,7 @@ window.COOK_RECIPES = [
       {
         "title": "Make one gap per person and slide an egg into each",
         "uses": [
-          "potatoes",
-          "feta"
+          "eggs"
         ],
         "skills": [],
         "check": "Each intended egg has a space in the hot hash; complete the next cooking stage before serving.",
@@ -19797,7 +19829,8 @@ window.COOK_RECIPES = [
         "title": "Transfer the pan to the oven for 7–12 minutes until egg…",
         "uses": [
           "potatoes",
-          "feta"
+          "feta",
+          "eggs"
         ],
         "skills": [],
         "check": "Check that egg whites are completely set.",
@@ -19973,7 +20006,8 @@ window.COOK_RECIPES = [
         "title": "Heat oil in a large non-stick pan over medium heat",
         "uses": [
           "olive-oil",
-          "spinach"
+          "spinach",
+          "cherry-tomatoes"
         ],
         "skills": [
           "spinach"
@@ -20136,7 +20170,7 @@ window.COOK_RECIPES = [
       "Boil sliced potatoes for 8–10 minutes until tender; drain well. Heat oven to 180°C fan. Use a 24cm ovenproof non-stick frying pan.",
       "Heat oil in the pan, add potatoes and spring onions and fry over medium heat for 5 minutes. Stir in spinach until wilted.",
       "Mix half the cheese into the eggs. Pour over the potatoes, gently distribute the filling and cook on low heat for 5 minutes until edges begin to set.",
-      "Sprinkle remaining cheese on top and bake for 12–18 minutes until the centre is firm with no runny egg. Rest 3 minutes; use oven gloves to handle the pan."
+      "Sprinkle remaining cheese on top and bake for 12–18 minutes until the centre is firm with no runny egg. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 3 minutes; use oven gloves to handle the pan. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "potatoes": "Scrub and cut into 1cm slices.",
@@ -20170,7 +20204,7 @@ window.COOK_RECIPES = [
       "Boil sliced potatoes for 8–10 minutes until tender; drain well. Heat oven to 180°C fan. Use a 24cm ovenproof non-stick frying pan.",
       "Heat oil in the pan, add potatoes and spring onions and fry over medium heat for 5 minutes. Stir in spinach until wilted.",
       "Mix half the cheese into the eggs. Pour over the potatoes, gently distribute the filling and cook on low heat for 5 minutes until edges begin to set.",
-      "Sprinkle remaining cheese on top and bake for 12–18 minutes until the centre is firm with no runny egg. Rest 3 minutes; use oven gloves to handle the pan."
+      "Sprinkle remaining cheese on top and bake for 12–18 minutes until the centre is firm with no runny egg. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 3 minutes; use oven gloves to handle the pan. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -20275,7 +20309,8 @@ window.COOK_RECIPES = [
       {
         "title": "Sprinkle remaining cheese on top and bake for 12–18 minutes…",
         "uses": [
-          "cheddar"
+          "cheddar",
+          "eggs"
         ],
         "skills": [
           "roast"
@@ -20294,13 +20329,13 @@ window.COOK_RECIPES = [
           "cheddar"
         ],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Dry oven gloves",
           "Ovenproof non-stick frying pan"
         ],
         "sourceStage": 3,
-        "instructions": "Rest 3 minutes; use oven gloves to handle the pan."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 3 minutes; use oven gloves to handle the pan. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -20480,7 +20515,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir in crème fraîche and warm gently for 2 minutes",
         "uses": [
-          "fresh-parsley"
+          "fresh-parsley",
+          "creme-fraiche"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -20664,12 +20700,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 140°C fan and line a large baking tray",
-        "uses": [
-          "porridge-oats",
-          "maple-syrup",
-          "vegetable-oil",
-          "vanilla"
-        ],
+        "uses": [],
         "skills": [
           "line-tin"
         ],
@@ -20689,7 +20720,8 @@ window.COOK_RECIPES = [
           "porridge-oats",
           "maple-syrup",
           "vegetable-oil",
-          "vanilla"
+          "vanilla",
+          "pumpkin-seeds"
         ],
         "skills": [
           "mix"
@@ -20967,7 +20999,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir in garlic and oregano for 1 minute",
         "uses": [
-          "garlic"
+          "garlic",
+          "dried-oregano"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -21470,7 +21503,8 @@ window.COOK_RECIPES = [
       {
         "title": "Lay out bread, divide salad and filling between half the…",
         "uses": [
-          "bread-slices"
+          "bread-slices",
+          "salad-leaves"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -21589,7 +21623,7 @@ window.COOK_RECIPES = [
       "Whisk lemon juice and oil in a large bowl. Taste and season lightly.",
       "Fold in beans, pepper and grated carrot. Gently break tuna into flakes and add without crushing it.",
       "Divide salad leaves between plates and top with the tuna mixture, spooning over the dressing.",
-      "Serve with bread. If preparing ahead, chill the bean mixture and keep leaves separate until serving."
+      "Serve with bread. If preparing ahead, chill the bean mixture and keep leaves separate until serving. To chill, cover and place in the fridge; do not leave it on the worktop."
     ],
     "prep": {
       "tuna": "Drain the listed number of 145g tins (about 100g drained tuna per tin).",
@@ -21625,7 +21659,7 @@ window.COOK_RECIPES = [
       "Whisk lemon juice and oil in a large bowl. Taste and season lightly.",
       "Fold in beans, pepper and grated carrot. Gently break tuna into flakes and add without crushing it.",
       "Divide salad leaves between plates and top with the tuna mixture, spooning over the dressing.",
-      "Serve with bread. If preparing ahead, chill the bean mixture and keep leaves separate until serving."
+      "Serve with bread. If preparing ahead, chill the bean mixture and keep leaves separate until serving. To chill, cover and place in the fridge; do not leave it on the worktop."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -21712,7 +21746,8 @@ window.COOK_RECIPES = [
       {
         "title": "Serve with bread",
         "uses": [
-          "bread-slices"
+          "bread-slices",
+          "salad-leaves"
         ],
         "skills": [],
         "check": "Check that serving.",
@@ -21720,7 +21755,7 @@ window.COOK_RECIPES = [
           "Clean serving spoon"
         ],
         "sourceStage": 3,
-        "instructions": "Serve with bread. If preparing ahead, chill the bean mixture and keep leaves separate until serving."
+        "instructions": "Serve with bread. If preparing ahead, chill the bean mixture and keep leaves separate until serving. To chill, cover and place in the fridge; do not leave it on the worktop."
       }
     ]
   },
@@ -21854,7 +21889,8 @@ window.COOK_RECIPES = [
           "black-beans",
           "cheddar",
           "spring-onions",
-          "ground-cumin"
+          "ground-cumin",
+          "smoked-paprika"
         ],
         "skills": [
           "mix"
@@ -22081,7 +22117,7 @@ window.COOK_RECIPES = [
     ],
     "steps": [
       "Cook onion in half the oil for 6 minutes over medium heat; add garlic for 1 minute. Cool for 5 minutes.",
-      "Mash chickpeas coarsely with cumin, coriander, parsley, egg, flour and cooled onion. Shape into three flat patties per person; chill for 30 minutes to firm up.",
+      "Mash chickpeas coarsely with cumin, coriander, parsley, egg, flour and cooled onion. Shape into three flat patties per person; chill for 30 minutes to firm up. To chill, cover and place in the fridge; do not leave it on the worktop.",
       "Heat remaining oil in a non-stick pan over medium heat. Fry patties in batches for 4–5 minutes each side until golden, firm and hot through; add a little oil if needed.",
       "Mix yoghurt with lemon zest and juice to taste. Warm pittas following the pack, split and fill with salad, falafel and yoghurt."
     ],
@@ -22123,7 +22159,7 @@ window.COOK_RECIPES = [
     ],
     "methodBeforeBeginner": [
       "Cook onion in half the oil for 6 minutes over medium heat; add garlic for 1 minute. Cool for 5 minutes.",
-      "Mash chickpeas coarsely with cumin, coriander, parsley, egg, flour and cooled onion. Shape into three flat patties per person; chill for 30 minutes to firm up.",
+      "Mash chickpeas coarsely with cumin, coriander, parsley, egg, flour and cooled onion. Shape into three flat patties per person; chill for 30 minutes to firm up. To chill, cover and place in the fridge; do not leave it on the worktop.",
       "Heat remaining oil in a non-stick pan over medium heat. Fry patties in batches for 4–5 minutes each side until golden, firm and hot through; add a little oil if needed.",
       "Mix yoghurt with lemon zest and juice to taste. Warm pittas following the pack, split and fill with salad, falafel and yoghurt."
     ],
@@ -22169,7 +22205,8 @@ window.COOK_RECIPES = [
           "ground-cumin",
           "ground-coriander",
           "fresh-parsley",
-          "plain-flour"
+          "plain-flour",
+          "eggs"
         ],
         "skills": [],
         "check": "The beans or chickpeas have been crushed to the texture stated, without large intact pieces where a binding mash is needed.",
@@ -22202,7 +22239,7 @@ window.COOK_RECIPES = [
           "Fridge"
         ],
         "sourceStage": 1,
-        "instructions": "Shape into three flat patties per person; chill for 30 minutes to firm up."
+        "instructions": "Shape into three flat patties per person; chill for 30 minutes to firm up. To chill, cover and place in the fridge; do not leave it on the worktop."
       },
       {
         "title": "Heat remaining oil in a non-stick pan over medium heat",
@@ -22254,7 +22291,8 @@ window.COOK_RECIPES = [
         "title": "Warm pittas following the pack, split and fill with salad,…",
         "uses": [
           "pitta-breads",
-          "plain-yoghurt"
+          "plain-yoghurt",
+          "salad-leaves"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -22403,7 +22441,8 @@ window.COOK_RECIPES = [
         "title": "Put tomatoes, cucumber and onion in a large bowl",
         "uses": [
           "tomatoes",
-          "cucumber"
+          "cucumber",
+          "red-onion"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -22417,7 +22456,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add olives and oregano",
         "uses": [
-          "olives"
+          "olives",
+          "dried-oregano"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -22431,7 +22471,8 @@ window.COOK_RECIPES = [
       {
         "title": "Whisk oil and vinegar together and toss through the vegetables",
         "uses": [
-          "olive-oil"
+          "olive-oil",
+          "red-wine-vinegar"
         ],
         "skills": [
           "whisk"
@@ -22461,7 +22502,9 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Warm flatbreads following pack instructions while the salad…",
-        "uses": [],
+        "uses": [
+          "flatbread"
+        ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
         "tools": [
@@ -22491,7 +22534,8 @@ window.COOK_RECIPES = [
         "title": "Serve the salad with warm flatbreads and its juices",
         "uses": [
           "feta",
-          "olives"
+          "olives",
+          "flatbread"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -23139,7 +23183,8 @@ window.COOK_RECIPES = [
         "title": "Serve the fritters with yoghurt, lemon and salad",
         "uses": [
           "plain-yoghurt",
-          "lemon"
+          "lemon",
+          "salad-leaves"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -23305,7 +23350,8 @@ window.COOK_RECIPES = [
       {
         "title": "Loosen quinoa with a fork and fold into the dressing with…",
         "uses": [
-          "lentils"
+          "lentils",
+          "cooked-quinoa"
         ],
         "skills": [
           "mix"
@@ -23576,7 +23622,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add tomatoes, chutney and enough water to rinse out the…",
         "uses": [
-          "chopped-tomatoes"
+          "chopped-tomatoes",
+          "mango-chutney"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -23643,7 +23690,8 @@ window.COOK_RECIPES = [
         "title": "Stir in cream and warm gently for 2 minutes",
         "uses": [
           "plain-yoghurt",
-          "chicken-breast"
+          "chicken-breast",
+          "double-cream"
         ],
         "skills": [
           "probe"
@@ -23809,7 +23857,7 @@ window.COOK_RECIPES = [
       ]
     ],
     "steps": [
-      "Heat oven to 200°C fan. Soften onion and carrot in one third of the oil for 8 minutes. Add garlic, ginger and curry powder for 1 minute, then stir in the sauce portion of flour for 1 minute.",
+      "Heat oven to 200°C fan. Soften onion and carrot in one third of the oil for 8 minutes. Add garlic, ginger and curry powder for 1 minute, then stir in one quarter of the measured flour (reserve the other three quarters for coating) for 1 minute.",
       "Gradually add stock, soy and honey. Simmer for 15–20 minutes until carrot is tender; blend with a stick blender off the heat if you want a smooth sauce.",
       "Dip chicken in the coating flour, then egg, then breadcrumbs. Discard coating leftovers. Brush with remaining oil and lay on a lined tray.",
       "Bake for 20–25 minutes, turning halfway, until crisp and cooked through. Check thickest parts with a clean probe: 75°C for 30 seconds. Cook rice following pack instructions while chicken bakes.",
@@ -23856,7 +23904,7 @@ window.COOK_RECIPES = [
       "https://www.bbcgoodfood.com/recipes/chicken-katsu-curry"
     ],
     "methodBeforeBeginner": [
-      "Heat oven to 200°C fan. Soften onion and carrot in one third of the oil for 8 minutes. Add garlic, ginger and curry powder for 1 minute, then stir in the sauce portion of flour for 1 minute.",
+      "Heat oven to 200°C fan. Soften onion and carrot in one third of the oil for 8 minutes. Add garlic, ginger and curry powder for 1 minute, then stir in one quarter of the measured flour (reserve the other three quarters for coating) for 1 minute.",
       "Gradually add stock, soy and honey. Simmer for 15–20 minutes until carrot is tender; blend with a stick blender off the heat if you want a smooth sauce.",
       "Dip chicken in the coating flour, then egg, then breadcrumbs. Discard coating leftovers. Brush with remaining oil and lay on a lined tray.",
       "Bake for 20–25 minutes, turning halfway, until crisp and cooked through. Check thickest parts with a clean probe: 75°C for 30 seconds. Cook rice following pack instructions while chicken bakes.",
@@ -23866,15 +23914,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "plain-flour",
-          "vegetable-oil",
-          "onion",
-          "carrots",
-          "garlic",
-          "fresh-ginger",
-          "curry-powder"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -23915,13 +23955,14 @@ window.COOK_RECIPES = [
           "Heatproof spoon or spatula"
         ],
         "sourceStage": 0,
-        "instructions": "Add garlic, ginger and curry powder for 1 minute, then stir in the sauce portion of flour for 1 minute."
+        "instructions": "Add garlic, ginger and curry powder for 1 minute, then stir in one quarter of the measured flour (reserve the other three quarters for coating) for 1 minute."
       },
       {
         "title": "Gradually add stock, soy and honey",
         "uses": [
           "chicken-stock",
-          "honey"
+          "honey",
+          "soy-sauce"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -23956,7 +23997,8 @@ window.COOK_RECIPES = [
         "uses": [
           "chicken-breast",
           "plain-flour",
-          "breadcrumbs"
+          "breadcrumbs",
+          "eggs"
         ],
         "skills": [
           "coat"
@@ -24215,7 +24257,8 @@ window.COOK_RECIPES = [
           "honey",
           "curry-powder",
           "garlic",
-          "fresh-ginger"
+          "fresh-ginger",
+          "soy-sauce"
         ],
         "skills": [
           "mix"
@@ -24838,7 +24881,8 @@ window.COOK_RECIPES = [
         "title": "Cook onion with cardamom and cinnamon for 10–12 minutes until…",
         "uses": [
           "onion",
-          "cardamom"
+          "cardamom",
+          "cinnamon-stick"
         ],
         "skills": [],
         "check": "Check that soft and golden.",
@@ -24852,7 +24896,8 @@ window.COOK_RECIPES = [
       {
         "title": "Stir in turmeric and curry paste for 1 minute",
         "uses": [
-          "turmeric"
+          "turmeric",
+          "balti-paste"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -24944,7 +24989,8 @@ window.COOK_RECIPES = [
       {
         "title": "Remove cinnamon and cardamom pods",
         "uses": [
-          "cardamom"
+          "cardamom",
+          "cinnamon-stick"
         ],
         "skills": [],
         "check": "Whole spices or bay leaves that can be found have been removed before serving.",
@@ -25072,7 +25118,7 @@ window.COOK_RECIPES = [
       "Stir in flour for 1 minute. Gradually add stock, then simmer gently for 15 minutes until thick and chicken is cooked through. Stir in crème fraîche and mustard. Check chicken reaches 75°C for 30 seconds.",
       "Transfer to a shallow 2-litre pie dish; let steam escape for about 20 minutes. Heat oven to 200°C fan.",
       "Lay cold pastry over the filling, trim and seal around the dish edge. Cut a steam slit and brush with egg. Bake for 25–30 minutes until puffed, golden and filling piping hot at the centre.",
-      "Cook peas following pack instructions near the end. Rest pie for 5 minutes, then serve with peas."
+      "Cook peas following pack instructions near the end. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest pie for 5 minutes, then serve with peas. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "chicken-thighs": "Cut boneless thighs into 2cm chunks; keep chilled.",
@@ -25114,7 +25160,7 @@ window.COOK_RECIPES = [
       "Stir in flour for 1 minute. Gradually add stock, then simmer gently for 15 minutes until thick and chicken is cooked through. Stir in crème fraîche and mustard. Check chicken reaches 75°C for 30 seconds.",
       "Transfer to a shallow 2-litre pie dish; let steam escape for about 20 minutes. Heat oven to 200°C fan.",
       "Lay cold pastry over the filling, trim and seal around the dish edge. Cut a steam slit and brush with egg. Bake for 25–30 minutes until puffed, golden and filling piping hot at the centre.",
-      "Cook peas following pack instructions near the end. Rest pie for 5 minutes, then serve with peas."
+      "Cook peas following pack instructions near the end. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest pie for 5 minutes, then serve with peas. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -25193,7 +25239,8 @@ window.COOK_RECIPES = [
         "title": "Stir in crème fraîche and mustard",
         "uses": [
           "mustard",
-          "chicken-thighs"
+          "chicken-thighs",
+          "creme-fraiche"
         ],
         "skills": [
           "probe"
@@ -25245,7 +25292,8 @@ window.COOK_RECIPES = [
       {
         "title": "Cut a steam slit and brush with egg",
         "uses": [
-          "puff-pastry"
+          "puff-pastry",
+          "eggs"
         ],
         "skills": [],
         "check": "The food has the cut and size stated here and is ready for the next action.",
@@ -25293,12 +25341,12 @@ window.COOK_RECIPES = [
           "frozen-peas"
         ],
         "skills": [],
-        "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Clean serving spoon"
         ],
         "sourceStage": 4,
-        "instructions": "Rest pie for 5 minutes, then serve with peas."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest pie for 5 minutes, then serve with peas. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -25410,7 +25458,7 @@ window.COOK_RECIPES = [
       "Mix turkey, egg, breadcrumbs and cooled onion. Shape into one or more loaves no more than 6cm high in a roasting dish. Wash hands and utensils after raw mince.",
       "Spread one third of the barbecue sauce over the loaf. Bake for 30 minutes.",
       "Mix both tins of beans, including liquid from one, with remaining barbecue sauce and tomato purée. Spoon around the loaf and bake for 15–25 minutes more, until the centre reaches 75°C for 30 seconds and beans are piping hot.",
-      "Rest for 5 minutes, sprinkle with parsley and slice to serve."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes, sprinkle with parsley and slice to serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "turkey-mince": "Keep chilled until mixing.",
@@ -25452,18 +25500,13 @@ window.COOK_RECIPES = [
       "Mix turkey, egg, breadcrumbs and cooled onion. Shape into one or more loaves no more than 6cm high in a roasting dish. Wash hands and utensils after raw mince.",
       "Spread one third of the barbecue sauce over the loaf. Bake for 30 minutes.",
       "Mix both tins of beans, including liquid from one, with remaining barbecue sauce and tomato purée. Spoon around the loaf and bake for 15–25 minutes more, until the centre reaches 75°C for 30 seconds and beans are piping hot.",
-      "Rest for 5 minutes, sprinkle with parsley and slice to serve."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes, sprinkle with parsley and slice to serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat oven to 160°C fan",
-        "uses": [
-          "onion",
-          "garlic",
-          "olive-oil",
-          "tomato-puree"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -25491,7 +25534,8 @@ window.COOK_RECIPES = [
         "title": "Add garlic, Worcestershire and half the tomato purée",
         "uses": [
           "garlic",
-          "tomato-puree"
+          "tomato-puree",
+          "worcestershire-sauce"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -25523,7 +25567,8 @@ window.COOK_RECIPES = [
         "uses": [
           "turkey-mince",
           "onion",
-          "breadcrumbs"
+          "breadcrumbs",
+          "eggs"
         ],
         "skills": [
           "mix"
@@ -25568,7 +25613,9 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Spread one third of the barbecue sauce over the loaf",
-        "uses": [],
+        "uses": [
+          "bbq-sauce"
+        ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
         "tools": [
@@ -25596,7 +25643,8 @@ window.COOK_RECIPES = [
         "title": "Mix both tins of beans, including liquid from one, with…",
         "uses": [
           "tomato-puree",
-          "cannellini-beans"
+          "cannellini-beans",
+          "bbq-sauce"
         ],
         "skills": [
           "mix"
@@ -25635,13 +25683,13 @@ window.COOK_RECIPES = [
           "fresh-parsley"
         ],
         "skills": [],
-        "check": "The food has the cut and size stated here and is ready for the next action.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Non-slip board and knife",
           "Clean serving spoon"
         ],
         "sourceStage": 4,
-        "instructions": "Rest for 5 minutes, sprinkle with parsley and slice to serve."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes, sprinkle with parsley and slice to serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -25798,11 +25846,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "chicken-breast",
-          "plain-flour",
-          "breadcrumbs"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -25816,7 +25860,8 @@ window.COOK_RECIPES = [
         "uses": [
           "chicken-breast",
           "plain-flour",
-          "breadcrumbs"
+          "breadcrumbs",
+          "eggs"
         ],
         "skills": [
           "coat"
@@ -25866,7 +25911,8 @@ window.COOK_RECIPES = [
         "title": "Cook garlic for 30 seconds, add passata and oregano and…",
         "uses": [
           "passata",
-          "garlic"
+          "garlic",
+          "dried-oregano"
         ],
         "skills": [
           "simmer"
@@ -26050,7 +26096,7 @@ window.COOK_RECIPES = [
       "Mix oil, oregano, cumin, lemon zest, half the juice and two thirds of the garlic. Coat chicken, cover and refrigerate for at least 30 minutes; time shown includes this short marinade.",
       "On a clean board prepare salad. Mix yoghurt with squeezed cucumber, remaining garlic and lemon juice. Refrigerate until serving.",
       "Heat oven to 200°C fan. Spread chicken in one layer on a lined roasting tray. Bake for 20–25 minutes, turning once, until browned and cooked through.",
-      "Use a clean probe to check thickest pieces reach 75°C for 30 seconds. Rest 5 minutes. Warm pittas following their pack instructions.",
+      "Use a clean probe to check thickest pieces reach 75°C for 30 seconds. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait. Warm pittas following their pack instructions.",
       "Fill pittas with salad, chicken and yoghurt. Discard raw marinade."
     ],
     "prep": {
@@ -26091,7 +26137,7 @@ window.COOK_RECIPES = [
       "Mix oil, oregano, cumin, lemon zest, half the juice and two thirds of the garlic. Coat chicken, cover and refrigerate for at least 30 minutes; time shown includes this short marinade.",
       "On a clean board prepare salad. Mix yoghurt with squeezed cucumber, remaining garlic and lemon juice. Refrigerate until serving.",
       "Heat oven to 200°C fan. Spread chicken in one layer on a lined roasting tray. Bake for 20–25 minutes, turning once, until browned and cooked through.",
-      "Use a clean probe to check thickest pieces reach 75°C for 30 seconds. Rest 5 minutes. Warm pittas following their pack instructions.",
+      "Use a clean probe to check thickest pieces reach 75°C for 30 seconds. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait. Warm pittas following their pack instructions.",
       "Fill pittas with salad, chicken and yoghurt. Discard raw marinade."
     ],
     "instructionVersion": 29,
@@ -26102,7 +26148,8 @@ window.COOK_RECIPES = [
           "olive-oil",
           "ground-cumin",
           "lemon",
-          "garlic"
+          "garlic",
+          "dried-oregano"
         ],
         "skills": [
           "mix"
@@ -26139,7 +26186,9 @@ window.COOK_RECIPES = [
           "lemon",
           "garlic",
           "greek-yoghurt",
-          "cucumber"
+          "cucumber",
+          "tomatoes",
+          "salad-leaves"
         ],
         "skills": [],
         "check": "Salad is prepared using a clean board and utensils, separate from raw chicken.",
@@ -26189,9 +26238,7 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "chicken-thighs"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -26250,13 +26297,13 @@ window.COOK_RECIPES = [
           "pitta-breads"
         ],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 3,
-        "instructions": "Rest 5 minutes."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       },
       {
         "title": "Warm pittas following their pack instructions",
@@ -26277,7 +26324,8 @@ window.COOK_RECIPES = [
         "uses": [
           "chicken-thighs",
           "greek-yoghurt",
-          "pitta-breads"
+          "pitta-breads",
+          "salad-leaves"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -26386,7 +26434,7 @@ window.COOK_RECIPES = [
     ],
     "steps": [
       "Heat oven to 200°C fan. Toss potatoes with half the oil and paprika; spread on a tray and roast for 35–45 minutes, turning halfway, until tender and golden.",
-      "Mix beef, finely diced onion and egg briefly. Shape one patty per person about 2cm thick. Chill for 15 minutes while wedges cook.",
+      "Mix beef, finely diced onion and egg briefly. Shape one patty per person about 2cm thick. Chill for 15 minutes while wedges cook. To chill, cover and place in the fridge; do not leave it on the worktop.",
       "Heat remaining oil in a frying pan over medium heat. Fry burgers for 6–8 minutes per side, turning carefully, until thoroughly cooked. Do not rely on a browned outside: check the centre reaches 75°C for 30 seconds.",
       "Toast the cut sides of buns briefly. Fill with lettuce, tomato, cooked burgers and ketchup, using clean utensils.",
       "Serve with the wedges."
@@ -26426,7 +26474,7 @@ window.COOK_RECIPES = [
     ],
     "methodBeforeBeginner": [
       "Heat oven to 200°C fan. Toss potatoes with half the oil and paprika; spread on a tray and roast for 35–45 minutes, turning halfway, until tender and golden.",
-      "Mix beef, finely diced onion and egg briefly. Shape one patty per person about 2cm thick. Chill for 15 minutes while wedges cook.",
+      "Mix beef, finely diced onion and egg briefly. Shape one patty per person about 2cm thick. Chill for 15 minutes while wedges cook. To chill, cover and place in the fridge; do not leave it on the worktop.",
       "Heat remaining oil in a frying pan over medium heat. Fry burgers for 6–8 minutes per side, turning carefully, until thoroughly cooked. Do not rely on a browned outside: check the centre reaches 75°C for 30 seconds.",
       "Toast the cut sides of buns briefly. Fill with lettuce, tomato, cooked burgers and ketchup, using clean utensils.",
       "Serve with the wedges."
@@ -26435,10 +26483,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "vegetable-oil",
-          "potatoes"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -26451,7 +26496,8 @@ window.COOK_RECIPES = [
         "title": "Toss potatoes with half the oil and paprika",
         "uses": [
           "vegetable-oil",
-          "potatoes"
+          "potatoes",
+          "smoked-paprika"
         ],
         "skills": [
           "roast",
@@ -26472,7 +26518,8 @@ window.COOK_RECIPES = [
         "title": "Mix beef, finely diced onion and egg briefly",
         "uses": [
           "beef-mince",
-          "onion"
+          "onion",
+          "eggs"
         ],
         "skills": [
           "dice",
@@ -26521,7 +26568,7 @@ window.COOK_RECIPES = [
           "Fridge"
         ],
         "sourceStage": 1,
-        "instructions": "Chill for 15 minutes while wedges cook."
+        "instructions": "Chill for 15 minutes while wedges cook. To chill, cover and place in the fridge; do not leave it on the worktop."
       },
       {
         "title": "Heat remaining oil in a frying pan over medium heat",
@@ -26555,7 +26602,8 @@ window.COOK_RECIPES = [
       {
         "title": "Toast the cut sides of buns briefly",
         "uses": [
-          "ketchup"
+          "ketchup",
+          "burger-buns"
         ],
         "skills": [],
         "check": "The food has the cut and size stated here and is ready for the next action.",
@@ -26569,7 +26617,9 @@ window.COOK_RECIPES = [
       {
         "title": "Fill with lettuce, tomato, cooked burgers and ketchup, using…",
         "uses": [
-          "ketchup"
+          "ketchup",
+          "salad-leaves",
+          "tomatoes"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -26721,7 +26771,7 @@ window.COOK_RECIPES = [
       "Add mince and break it up. Fry for 8–10 minutes until browned. Stir in tomato purée, tomatoes and oregano; simmer for 20 minutes. Keep the sauce loose enough to hydrate the pasta.",
       "Heat oven to 180°C fan. Mix crème fraîche with milk and half the hard cheese.",
       "In a 2.5-litre baking dish layer meat sauce, lasagne and creamy mixture, finishing with cream. Scatter with mozzarella and remaining hard cheese.",
-      "Bake for 40–45 minutes, or the pasta pack time, until pasta is tender when pierced and the centre is bubbling hot. Cover loosely if browning too fast. Rest for 10 minutes before serving."
+      "Bake for 40–45 minutes, or the pasta pack time, until pasta is tender when pierced and the centre is bubbling hot. Cover loosely if browning too fast. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 10 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "beef-mince": "Measure the amount shown in your ingredients list.",
@@ -26766,7 +26816,7 @@ window.COOK_RECIPES = [
       "Add mince and break it up. Fry for 8–10 minutes until browned. Stir in tomato purée, tomatoes and oregano; simmer for 20 minutes. Keep the sauce loose enough to hydrate the pasta.",
       "Heat oven to 180°C fan. Mix crème fraîche with milk and half the hard cheese.",
       "In a 2.5-litre baking dish layer meat sauce, lasagne and creamy mixture, finishing with cream. Scatter with mozzarella and remaining hard cheese.",
-      "Bake for 40–45 minutes, or the pasta pack time, until pasta is tender when pierced and the centre is bubbling hot. Cover loosely if browning too fast. Rest for 10 minutes before serving."
+      "Bake for 40–45 minutes, or the pasta pack time, until pasta is tender when pierced and the centre is bubbling hot. Cover loosely if browning too fast. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 10 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -26836,7 +26886,8 @@ window.COOK_RECIPES = [
         "uses": [
           "tomato-puree",
           "chopped-tomatoes",
-          "beef-mince"
+          "beef-mince",
+          "dried-oregano"
         ],
         "skills": [
           "simmer"
@@ -26852,10 +26903,7 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Heat oven to 180°C fan",
-        "uses": [
-          "milk",
-          "hard-cheese"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -26868,7 +26916,8 @@ window.COOK_RECIPES = [
         "title": "Mix crème fraîche with milk and half the hard cheese",
         "uses": [
           "milk",
-          "hard-cheese"
+          "hard-cheese",
+          "creme-fraiche"
         ],
         "skills": [
           "mix"
@@ -26886,7 +26935,8 @@ window.COOK_RECIPES = [
         "title": "In a 2.5-litre baking dish layer meat sauce, lasagne and…",
         "uses": [
           "mozzarella",
-          "hard-cheese"
+          "hard-cheese",
+          "lasagne-sheets"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -26942,13 +26992,13 @@ window.COOK_RECIPES = [
         "title": "Rest for 10 minutes before serving",
         "uses": [],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest for 10 minutes before serving."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 10 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -27232,7 +27282,9 @@ window.COOK_RECIPES = [
         "title": "Stir in stock, mustard and crème fraîche",
         "uses": [
           "beef-strips",
-          "beef-stock"
+          "beef-stock",
+          "creme-fraiche",
+          "dijon-mustard"
         ],
         "skills": [
           "simmer",
@@ -27719,10 +27771,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 150°C fan",
-        "uses": [
-          "diced-lamb",
-          "butter"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -27805,7 +27854,8 @@ window.COOK_RECIPES = [
         "title": "Return lamb and juices",
         "uses": [
           "diced-lamb",
-          "bay-leaves"
+          "bay-leaves",
+          "dried-thyme"
         ],
         "skills": [
           "simmer"
@@ -28020,7 +28070,7 @@ window.COOK_RECIPES = [
       "Stir in flour and tomato purée for 1 minute. Gradually add ale and stock, scraping the pan base. Return beef; add thyme and bay leaves. Cover and simmer very gently for 2–2½ hours until beef is fork-tender, stirring occasionally and adding water if drying.",
       "Remove bay leaves. Simmer uncovered briefly if the gravy is thin. Transfer to a 2-litre pie dish and let steam escape for 30 minutes; keep pastry cold.",
       "Heat oven to 200°C fan. Cover filling with pastry, seal at the rim, cut a steam vent and brush with egg.",
-      "Bake 30–35 minutes until pastry is risen and golden and filling is piping hot throughout. Cook peas following pack instructions. Rest pie 5 minutes and serve."
+      "Bake 30–35 minutes until pastry is risen and golden and filling is piping hot throughout. Cook peas following pack instructions. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest pie 5 minutes and serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "diced-beef": "Use stewing beef; cut into 3cm pieces.",
@@ -28065,7 +28115,7 @@ window.COOK_RECIPES = [
       "Stir in flour and tomato purée for 1 minute. Gradually add ale and stock, scraping the pan base. Return beef; add thyme and bay leaves. Cover and simmer very gently for 2–2½ hours until beef is fork-tender, stirring occasionally and adding water if drying.",
       "Remove bay leaves. Simmer uncovered briefly if the gravy is thin. Transfer to a 2-litre pie dish and let steam escape for 30 minutes; keep pastry cold.",
       "Heat oven to 200°C fan. Cover filling with pastry, seal at the rim, cut a steam vent and brush with egg.",
-      "Bake 30–35 minutes until pastry is risen and golden and filling is piping hot throughout. Cook peas following pack instructions. Rest pie 5 minutes and serve."
+      "Bake 30–35 minutes until pastry is risen and golden and filling is piping hot throughout. Cook peas following pack instructions. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest pie 5 minutes and serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -28158,7 +28208,8 @@ window.COOK_RECIPES = [
         "title": "Return beef",
         "uses": [
           "diced-beef",
-          "bay-leaves"
+          "bay-leaves",
+          "dried-thyme"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -28232,9 +28283,7 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "puff-pastry"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -28246,7 +28295,8 @@ window.COOK_RECIPES = [
       {
         "title": "Cover filling with pastry, seal at the rim, cut a steam vent…",
         "uses": [
-          "puff-pastry"
+          "puff-pastry",
+          "eggs"
         ],
         "skills": [],
         "check": "The food has the cut and size stated here and is ready for the next action.",
@@ -28295,12 +28345,12 @@ window.COOK_RECIPES = [
           "frozen-peas"
         ],
         "skills": [],
-        "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Clean serving spoon"
         ],
         "sourceStage": 4,
-        "instructions": "Rest pie 5 minutes and serve."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest pie 5 minutes and serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -28449,12 +28499,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "beef-mince",
-          "breadcrumbs",
-          "hard-cheese",
-          "onion"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -28469,7 +28514,8 @@ window.COOK_RECIPES = [
           "beef-mince",
           "breadcrumbs",
           "hard-cheese",
-          "onion"
+          "onion",
+          "eggs"
         ],
         "skills": [
           "mix"
@@ -28550,7 +28596,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add tomatoes and oregano",
         "uses": [
-          "chopped-tomatoes"
+          "chopped-tomatoes",
+          "dried-oregano"
         ],
         "skills": [
           "simmer"
@@ -28692,11 +28739,11 @@ window.COOK_RECIPES = [
       ]
     ],
     "steps": [
-      "Heat oven to 180°C fan. Boil potatoes for 15–20 minutes until tender. Drain, steam-dry and mash with half the butter and the mash portion of milk.",
-      "Melt remaining butter in a saucepan over medium-low heat. Soften spring onions for 3 minutes. Stir in flour for 1 minute, then gradually whisk in the sauce portion of milk. Simmer for 3 minutes until thick; add mustard.",
+      "Heat oven to 180°C fan. Boil potatoes for 15–20 minutes until tender. Drain, steam-dry and mash with half the butter and one fifth of the measured milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate.",
+      "Melt remaining butter in a saucepan over medium-low heat. Soften spring onions for 3 minutes. Stir in flour for 1 minute, then gradually whisk in the remaining four fifths of the milk. Simmer for 3 minutes until thick; add mustard.",
       "Put fish, peas and sweetcorn into a 2-litre baking dish. Pour over hot sauce, spread mash on top and sprinkle with cheese.",
       "Bake for 30–40 minutes until bubbling hot throughout and fish is opaque and flakes easily. Check the thickest central fish pieces; extend cooking if needed.",
-      "Rest for 5 minutes before serving."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "fish-pie-mix": "Fully thaw in the fridge if frozen; check carefully for bones.",
@@ -28733,21 +28780,17 @@ window.COOK_RECIPES = [
       "https://www.bbcgoodfood.com/recipes/family-meals-easy-fish-pie-recipe"
     ],
     "methodBeforeBeginner": [
-      "Heat oven to 180°C fan. Boil potatoes for 15–20 minutes until tender. Drain, steam-dry and mash with half the butter and the mash portion of milk.",
-      "Melt remaining butter in a saucepan over medium-low heat. Soften spring onions for 3 minutes. Stir in flour for 1 minute, then gradually whisk in the sauce portion of milk. Simmer for 3 minutes until thick; add mustard.",
+      "Heat oven to 180°C fan. Boil potatoes for 15–20 minutes until tender. Drain, steam-dry and mash with half the butter and one fifth of the measured milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate.",
+      "Melt remaining butter in a saucepan over medium-low heat. Soften spring onions for 3 minutes. Stir in flour for 1 minute, then gradually whisk in the remaining four fifths of the milk. Simmer for 3 minutes until thick; add mustard.",
       "Put fish, peas and sweetcorn into a 2-litre baking dish. Pour over hot sauce, spread mash on top and sprinkle with cheese.",
       "Bake for 30–40 minutes until bubbling hot throughout and fish is opaque and flakes easily. Check the thickest central fish pieces; extend cooking if needed.",
-      "Rest for 5 minutes before serving."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat oven to 180°C fan",
-        "uses": [
-          "potatoes",
-          "milk",
-          "butter"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -28794,7 +28837,7 @@ window.COOK_RECIPES = [
           "Heatproof jug if needed"
         ],
         "sourceStage": 0,
-        "instructions": "Drain, steam-dry and mash with half the butter and the mash portion of milk."
+        "instructions": "Drain, steam-dry and mash with half the butter and one fifth of the measured milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate."
       },
       {
         "title": "Melt remaining butter in a saucepan over medium-low heat",
@@ -28845,7 +28888,7 @@ window.COOK_RECIPES = [
           "Heatproof spoon or spatula"
         ],
         "sourceStage": 1,
-        "instructions": "Stir in flour for 1 minute, then gradually whisk in the sauce portion of milk."
+        "instructions": "Stir in flour for 1 minute, then gradually whisk in the remaining four fifths of the milk."
       },
       {
         "title": "Simmer for 3 minutes until thick",
@@ -28853,7 +28896,8 @@ window.COOK_RECIPES = [
           "milk",
           "butter",
           "plain-flour",
-          "spring-onions"
+          "spring-onions",
+          "dijon-mustard"
         ],
         "skills": [
           "simmer",
@@ -28919,13 +28963,13 @@ window.COOK_RECIPES = [
         "title": "Rest for 5 minutes before serving",
         "uses": [],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest for 5 minutes before serving."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -29109,7 +29153,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add garlic and paprika for 30 seconds",
         "uses": [
-          "garlic"
+          "garlic",
+          "smoked-paprika"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -29124,7 +29169,8 @@ window.COOK_RECIPES = [
         "title": "Stir in rice, tomatoes and hot stock",
         "uses": [
           "chopped-tomatoes",
-          "veg-stock"
+          "veg-stock",
+          "paella-rice"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -29155,7 +29201,8 @@ window.COOK_RECIPES = [
         "title": "Add a little hot water if rice dries before softening",
         "uses": [
           "chopped-tomatoes",
-          "veg-stock"
+          "veg-stock",
+          "paella-rice"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -29170,7 +29217,8 @@ window.COOK_RECIPES = [
         "title": "When rice is nearly tender, nestle in prawns and peas",
         "uses": [
           "raw-prawns",
-          "frozen-peas"
+          "frozen-peas",
+          "paella-rice"
         ],
         "skills": [],
         "check": "Rice is nearly tender before adding the prawns and peas; those ingredients still need the next cooking stage.",
@@ -29199,7 +29247,8 @@ window.COOK_RECIPES = [
       {
         "title": "Check rice is tender",
         "uses": [
-          "lemon"
+          "lemon",
+          "paella-rice"
         ],
         "skills": [],
         "check": "Taste a safely cooled grain: it should be tender without a hard, chalky centre.",
@@ -29354,9 +29403,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan and line a baking tray",
-        "uses": [
-          "breadcrumbs"
-        ],
+        "uses": [],
         "skills": [
           "line-tin"
         ],
@@ -29373,7 +29420,8 @@ window.COOK_RECIPES = [
       {
         "title": "Mix breadcrumbs and sage on a plate",
         "uses": [
-          "breadcrumbs"
+          "breadcrumbs",
+          "dried-sage"
         ],
         "skills": [
           "mix"
@@ -29392,7 +29440,8 @@ window.COOK_RECIPES = [
         "title": "Dip pork into egg, let excess drip off, then press into…",
         "uses": [
           "pork-chops",
-          "breadcrumbs"
+          "breadcrumbs",
+          "eggs"
         ],
         "skills": [
           "coat"
@@ -29409,7 +29458,8 @@ window.COOK_RECIPES = [
       {
         "title": "Put on the tray and brush with melted butter. Discard…",
         "uses": [
-          "butter"
+          "butter",
+          "eggs"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -29641,7 +29691,8 @@ window.COOK_RECIPES = [
       {
         "title": "Brown sausages for 6–8 minutes, turning, then set aside",
         "uses": [
-          "olive-oil"
+          "olive-oil",
+          "pork-sausages"
         ],
         "skills": [
           "brown-pieces"
@@ -29675,7 +29726,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add garlic and thyme for 1 minute",
         "uses": [
-          "garlic"
+          "garlic",
+          "dried-thyme"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -29689,7 +29741,9 @@ window.COOK_RECIPES = [
       {
         "title": "Add rinsed lentils, stock and sausages",
         "uses": [
-          "veg-stock"
+          "veg-stock",
+          "pork-sausages",
+          "green-lentils"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -29719,7 +29773,8 @@ window.COOK_RECIPES = [
       {
         "title": "Add hot water if the lentils become dry before softening",
         "uses": [
-          "veg-stock"
+          "veg-stock",
+          "green-lentils"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -29732,7 +29787,10 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Check lentils are tender and sausages thoroughly cooked, with…",
-        "uses": [],
+        "uses": [
+          "pork-sausages",
+          "green-lentils"
+        ],
         "skills": [
           "probe"
         ],
@@ -29867,9 +29925,9 @@ window.COOK_RECIPES = [
       ]
     ],
     "steps": [
-      "Boil potatoes for 12–15 minutes until soft. Drain, steam-dry for 3 minutes and mash with milk. Cook peas following the pack, drain and add with spring onions and tuna.",
-      "Let mash cool until comfortable to handle, about 15 minutes. Shape into flat fishcakes about 2cm thick; chill for 15 minutes if soft.",
-      "Dip in beaten egg then breadcrumbs. Discard unused coating. Heat the frying portion of oil in a non-stick pan over medium heat.",
+      "Boil potatoes for 12–15 minutes until soft. Drain, steam-dry for 3 minutes and mash with milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate. Cook peas following the pack, drain and add with spring onions and tuna.",
+      "Let mash cool until comfortable to handle, about 15 minutes. Shape into flat fishcakes about 2cm thick; chill for 15 minutes if soft. To chill, cover and place in the fridge; do not leave it on the worktop.",
+      "Dip in beaten egg then breadcrumbs. Discard unused coating. Heat two thirds of the measured oil (reserve the final third for the salad) in a non-stick pan over medium heat.",
       "Fry in uncrowded batches for 4–5 minutes per side until crisp and piping hot through the centre. Keep cooked batches hot while finishing.",
       "Toss leaves and tomatoes with remaining oil and serve alongside."
     ],
@@ -29908,9 +29966,9 @@ window.COOK_RECIPES = [
       "https://www.tesco.com/recipes/en-GB/recipe/tuna-fishcakes"
     ],
     "methodBeforeBeginner": [
-      "Boil potatoes for 12–15 minutes until soft. Drain, steam-dry for 3 minutes and mash with milk. Cook peas following the pack, drain and add with spring onions and tuna.",
-      "Let mash cool until comfortable to handle, about 15 minutes. Shape into flat fishcakes about 2cm thick; chill for 15 minutes if soft.",
-      "Dip in beaten egg then breadcrumbs. Discard unused coating. Heat the frying portion of oil in a non-stick pan over medium heat.",
+      "Boil potatoes for 12–15 minutes until soft. Drain, steam-dry for 3 minutes and mash with milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate. Cook peas following the pack, drain and add with spring onions and tuna.",
+      "Let mash cool until comfortable to handle, about 15 minutes. Shape into flat fishcakes about 2cm thick; chill for 15 minutes if soft. To chill, cover and place in the fridge; do not leave it on the worktop.",
+      "Dip in beaten egg then breadcrumbs. Discard unused coating. Heat two thirds of the measured oil (reserve the final third for the salad) in a non-stick pan over medium heat.",
       "Fry in uncrowded batches for 4–5 minutes per side until crisp and piping hot through the centre. Keep cooked batches hot while finishing.",
       "Toss leaves and tomatoes with remaining oil and serve alongside."
     ],
@@ -29953,7 +30011,7 @@ window.COOK_RECIPES = [
           "Heatproof jug if needed"
         ],
         "sourceStage": 0,
-        "instructions": "Drain, steam-dry for 3 minutes and mash with milk."
+        "instructions": "Drain, steam-dry for 3 minutes and mash with milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate."
       },
       {
         "title": "Cook peas following the pack, drain and add with spring…",
@@ -30005,12 +30063,13 @@ window.COOK_RECIPES = [
           "Fridge"
         ],
         "sourceStage": 1,
-        "instructions": "Shape into flat fishcakes about 2cm thick; chill for 15 minutes if soft."
+        "instructions": "Shape into flat fishcakes about 2cm thick; chill for 15 minutes if soft. To chill, cover and place in the fridge; do not leave it on the worktop."
       },
       {
         "title": "Dip in beaten egg then breadcrumbs. Discard unused coating",
         "uses": [
-          "breadcrumbs"
+          "breadcrumbs",
+          "eggs"
         ],
         "skills": [
           "coat",
@@ -30038,7 +30097,7 @@ window.COOK_RECIPES = [
           "Saucepan or frying pan already in use"
         ],
         "sourceStage": 2,
-        "instructions": "Heat the frying portion of oil in a non-stick pan over medium heat."
+        "instructions": "Heat two thirds of the measured oil (reserve the final third for the salad) in a non-stick pan over medium heat."
       },
       {
         "title": "Fry in uncrowded batches for 4–5 minutes per side until crisp…",
@@ -30054,7 +30113,9 @@ window.COOK_RECIPES = [
       {
         "title": "Toss leaves and tomatoes with remaining oil and serve alongside",
         "uses": [
-          "olive-oil"
+          "olive-oil",
+          "salad-leaves",
+          "cherry-tomatoes"
         ],
         "skills": [
           "mix"
@@ -30308,7 +30369,9 @@ window.COOK_RECIPES = [
           "chopped-tomatoes",
           "capers",
           "raisins",
-          "olives"
+          "olives",
+          "caster-sugar",
+          "red-wine-vinegar"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -30490,7 +30553,7 @@ window.COOK_RECIPES = [
       "Wilt spinach in a large pan with a splash of water. Cool until safe to handle, squeeze very dry and chop finely. Mix with ricotta, nutmeg and half the hard cheese.",
       "Spoon tomato sauce into a 2-litre baking dish. Fill cannelloni with the spinach mixture using a piping bag or teaspoon; lay in one layer on the sauce.",
       "Mix mascarpone and milk into a pourable topping and spread over all exposed pasta. Add mozzarella and remaining hard cheese.",
-      "Cover loosely with foil and bake for 25 minutes, then uncover for 15–20 minutes until pasta is tender and the centre bubbling hot. Follow a longer pack time if required. Rest 5 minutes."
+      "Cover loosely with foil and bake for 25 minutes, then uncover for 15–20 minutes until pasta is tender and the centre bubbling hot. Follow a longer pack time if required. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "spinach": "Wash thoroughly.",
@@ -30531,7 +30594,7 @@ window.COOK_RECIPES = [
       "Wilt spinach in a large pan with a splash of water. Cool until safe to handle, squeeze very dry and chop finely. Mix with ricotta, nutmeg and half the hard cheese.",
       "Spoon tomato sauce into a 2-litre baking dish. Fill cannelloni with the spinach mixture using a piping bag or teaspoon; lay in one layer on the sauce.",
       "Mix mascarpone and milk into a pourable topping and spread over all exposed pasta. Add mozzarella and remaining hard cheese.",
-      "Cover loosely with foil and bake for 25 minutes, then uncover for 15–20 minutes until pasta is tender and the centre bubbling hot. Follow a longer pack time if required. Rest 5 minutes."
+      "Cover loosely with foil and bake for 25 minutes, then uncover for 15–20 minutes until pasta is tender and the centre bubbling hot. Follow a longer pack time if required. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -30568,11 +30631,7 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Heat oven to 180°C fan",
-        "uses": [
-          "chopped-tomatoes",
-          "garlic",
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -30712,13 +30771,13 @@ window.COOK_RECIPES = [
         "title": "Rest 5 minutes",
         "uses": [],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest 5 minutes."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -30914,7 +30973,8 @@ window.COOK_RECIPES = [
         "uses": [
           "ground-cumin",
           "ground-coriander",
-          "turmeric"
+          "turmeric",
+          "butternut-squash"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -30928,7 +30988,8 @@ window.COOK_RECIPES = [
         "title": "Add tomatoes, stock and chutney",
         "uses": [
           "chopped-tomatoes",
-          "veg-stock"
+          "veg-stock",
+          "mango-chutney"
         ],
         "skills": [
           "simmer"
@@ -30943,7 +31004,10 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Add rinsed lentils and simmer gently for 20–25 minutes,…",
-        "uses": [],
+        "uses": [
+          "red-lentils",
+          "butternut-squash"
+        ],
         "skills": [
           "simmer"
         ],
@@ -30969,7 +31033,9 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Warm flatbreads following their pack instructions",
-        "uses": [],
+        "uses": [
+          "flatbread"
+        ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
         "tools": [
@@ -31366,7 +31432,7 @@ window.COOK_RECIPES = [
       "Meanwhile soften onion in remaining oil over medium heat for 7 minutes. Add garlic, oregano and cinnamon for 1 minute. Add lentils, tomatoes and stock; simmer for 30–40 minutes until lentils are tender and filling thick. Add water if needed.",
       "Lower oven to 180°C fan. Whisk yoghurt, eggs and flour until smooth; stir in half the cheese.",
       "Layer aubergine and lentil filling in a 2-litre baking dish. Spread yoghurt mixture over the top and scatter with remaining cheese.",
-      "Bake for 30–35 minutes until golden and the topping is set at the centre. Rest 10 minutes before slicing."
+      "Bake for 30–35 minutes until golden and the topping is set at the centre. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 10 minutes before slicing. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "green-lentils": "Rinse in a sieve.",
@@ -31410,16 +31476,13 @@ window.COOK_RECIPES = [
       "Meanwhile soften onion in remaining oil over medium heat for 7 minutes. Add garlic, oregano and cinnamon for 1 minute. Add lentils, tomatoes and stock; simmer for 30–40 minutes until lentils are tender and filling thick. Add water if needed.",
       "Lower oven to 180°C fan. Whisk yoghurt, eggs and flour until smooth; stir in half the cheese.",
       "Layer aubergine and lentil filling in a 2-litre baking dish. Spread yoghurt mixture over the top and scatter with remaining cheese.",
-      "Bake for 30–35 minutes until golden and the topping is set at the centre. Rest 10 minutes before slicing."
+      "Bake for 30–35 minutes until golden and the topping is set at the centre. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 10 minutes before slicing. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat oven to 190°C fan",
-        "uses": [
-          "aubergine",
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -31466,7 +31529,8 @@ window.COOK_RECIPES = [
         "title": "Add garlic, oregano and cinnamon for 1 minute",
         "uses": [
           "garlic",
-          "ground-cinnamon"
+          "ground-cinnamon",
+          "dried-oregano"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -31481,7 +31545,8 @@ window.COOK_RECIPES = [
         "title": "Add lentils, tomatoes and stock",
         "uses": [
           "chopped-tomatoes",
-          "veg-stock"
+          "veg-stock",
+          "green-lentils"
         ],
         "skills": [
           "simmer",
@@ -31598,13 +31663,13 @@ window.COOK_RECIPES = [
         "title": "Rest 10 minutes before slicing",
         "uses": [],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest 10 minutes before slicing."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 10 minutes before slicing. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -31786,7 +31851,8 @@ window.COOK_RECIPES = [
       {
         "title": "Fry tofu for 5–6 minutes until some edges colour",
         "uses": [
-          "vegetable-oil"
+          "vegetable-oil",
+          "firm-tofu"
         ],
         "skills": [],
         "check": "Check that some edges colour.",
@@ -31800,7 +31866,8 @@ window.COOK_RECIPES = [
         "title": "Cook carrots for 4–5 minutes, then spring onion whites and…",
         "uses": [
           "carrots",
-          "garlic"
+          "garlic",
+          "spring-onions"
         ],
         "skills": [],
         "check": "Carrots begin to soften; the spring onion and garlic have completed only the short final cooking period stated.",
@@ -31845,7 +31912,8 @@ window.COOK_RECIPES = [
         "title": "Add rice, tofu and soy sauce",
         "uses": [
           "cooked-rice",
-          "soy-sauce"
+          "soy-sauce",
+          "firm-tofu"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -31874,7 +31942,8 @@ window.COOK_RECIPES = [
         "title": "Stir in sesame oil and spring onion greens",
         "uses": [
           "vegetable-oil",
-          "sesame-oil"
+          "sesame-oil",
+          "spring-onions"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -31990,8 +32059,8 @@ window.COOK_RECIPES = [
       "Heat oven to 180°C fan. Brush mushroom caps with half the oil and roast gill-side up for 15 minutes; drain off liquid and cool for 15 minutes.",
       "Heat remaining oil in a pan. Fry chopped stalks, garlic and thyme for 3 minutes; add spinach to wilt. Cool, squeeze out liquid and chop.",
       "Dust the surface with flour. Cut pastry into two squares per mushroom, making the lids slightly larger. Put a mushroom on each base, add spinach and blue cheese.",
-      "Brush borders with egg, cover with lids and press edges together with a fork. Cut a steam slit and brush with egg. Chill for 15 minutes while oven heats to 200°C fan.",
-      "Bake on a lined tray for 25–30 minutes until risen, golden and hot through. Rest 5 minutes before serving."
+      "Brush borders with egg, cover with lids and press edges together with a fork. Cut a steam slit and brush with egg. Chill for 15 minutes while oven heats to 200°C fan. To chill, cover and place in the fridge; do not leave it on the worktop.",
+      "Bake on a lined tray for 25–30 minutes until risen, golden and hot through. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "portobello": "Wipe clean, remove stalks and finely chop stalks.",
@@ -32029,16 +32098,14 @@ window.COOK_RECIPES = [
       "Heat oven to 180°C fan. Brush mushroom caps with half the oil and roast gill-side up for 15 minutes; drain off liquid and cool for 15 minutes.",
       "Heat remaining oil in a pan. Fry chopped stalks, garlic and thyme for 3 minutes; add spinach to wilt. Cool, squeeze out liquid and chop.",
       "Dust the surface with flour. Cut pastry into two squares per mushroom, making the lids slightly larger. Put a mushroom on each base, add spinach and blue cheese.",
-      "Brush borders with egg, cover with lids and press edges together with a fork. Cut a steam slit and brush with egg. Chill for 15 minutes while oven heats to 200°C fan.",
-      "Bake on a lined tray for 25–30 minutes until risen, golden and hot through. Rest 5 minutes before serving."
+      "Brush borders with egg, cover with lids and press edges together with a fork. Cut a steam slit and brush with egg. Chill for 15 minutes while oven heats to 200°C fan. To chill, cover and place in the fridge; do not leave it on the worktop.",
+      "Bake on a lined tray for 25–30 minutes until risen, golden and hot through. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat oven to 180°C fan",
-        "uses": [
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -32050,7 +32117,8 @@ window.COOK_RECIPES = [
       {
         "title": "Brush mushroom caps with half the oil and roast gill-side up…",
         "uses": [
-          "olive-oil"
+          "olive-oil",
+          "portobello"
         ],
         "skills": [
           "roast"
@@ -32080,7 +32148,8 @@ window.COOK_RECIPES = [
         "title": "Fry chopped stalks, garlic and thyme for 3 minutes",
         "uses": [
           "spinach",
-          "garlic"
+          "garlic",
+          "dried-thyme"
         ],
         "skills": [
           "spinach"
@@ -32125,7 +32194,8 @@ window.COOK_RECIPES = [
       {
         "title": "Cut pastry into two squares per mushroom, making the lids…",
         "uses": [
-          "puff-pastry"
+          "puff-pastry",
+          "portobello"
         ],
         "skills": [],
         "check": "The food has the cut and size stated here and is ready for the next action.",
@@ -32138,7 +32208,9 @@ window.COOK_RECIPES = [
       {
         "title": "Put a mushroom on each base, add spinach and blue cheese",
         "uses": [
-          "spinach"
+          "spinach",
+          "portobello",
+          "stilton"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -32151,7 +32223,9 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Brush borders with egg, cover with lids and press edges…",
-        "uses": [],
+        "uses": [
+          "eggs"
+        ],
         "skills": [
           "seal-pastry"
         ],
@@ -32166,7 +32240,9 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Cut a steam slit and brush with egg",
-        "uses": [],
+        "uses": [
+          "eggs"
+        ],
         "skills": [],
         "check": "The food has the cut and size stated here and is ready for the next action.",
         "tools": [
@@ -32188,7 +32264,7 @@ window.COOK_RECIPES = [
           "Dry oven gloves"
         ],
         "sourceStage": 3,
-        "instructions": "Chill for 15 minutes while oven heats to 200°C fan."
+        "instructions": "Chill for 15 minutes while oven heats to 200°C fan. To chill, cover and place in the fridge; do not leave it on the worktop."
       },
       {
         "title": "Bake on a lined tray for 25–30 minutes until risen, golden…",
@@ -32208,13 +32284,13 @@ window.COOK_RECIPES = [
         "title": "Rest 5 minutes before serving",
         "uses": [],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest 5 minutes before serving."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -32360,12 +32436,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 180°C fan",
-        "uses": [
-          "red-pepper",
-          "passata",
-          "garlic",
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -32378,7 +32449,8 @@ window.COOK_RECIPES = [
         "title": "Mix passata, half the garlic and oregano in a large roasting dish",
         "uses": [
           "passata",
-          "garlic"
+          "garlic",
+          "dried-oregano"
         ],
         "skills": [
           "mix"
@@ -32507,7 +32579,8 @@ window.COOK_RECIPES = [
       {
         "title": "Serve with salad and spoon the tomato sauce over the peppers",
         "uses": [
-          "red-pepper"
+          "red-pepper",
+          "salad-leaves"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -32912,7 +32985,7 @@ window.COOK_RECIPES = [
       "Meanwhile melt butter in a saucepan over medium-low heat. Stir in flour for 1 minute. Add milk gradually, whisking smooth after each addition.",
       "Bring to a gentle simmer and stir for 3–4 minutes until the sauce coats a spoon. Remove from heat; stir in mustard and two thirds of the cheese.",
       "Mix sauce with pasta and broccoli in a 2-litre baking dish. Scatter remaining cheese over the top.",
-      "Bake for 15–20 minutes until golden, bubbling and the pasta is tender. Rest 3 minutes before serving."
+      "Bake for 15–20 minutes until golden, bubbling and the pasta is tender. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 3 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "pasta": "Use penne or macaroni.",
@@ -32949,16 +33022,13 @@ window.COOK_RECIPES = [
       "Meanwhile melt butter in a saucepan over medium-low heat. Stir in flour for 1 minute. Add milk gradually, whisking smooth after each addition.",
       "Bring to a gentle simmer and stir for 3–4 minutes until the sauce coats a spoon. Remove from heat; stir in mustard and two thirds of the cheese.",
       "Mix sauce with pasta and broccoli in a 2-litre baking dish. Scatter remaining cheese over the top.",
-      "Bake for 15–20 minutes until golden, bubbling and the pasta is tender. Rest 3 minutes before serving."
+      "Bake for 15–20 minutes until golden, bubbling and the pasta is tender. Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 3 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "pasta",
-          "broccoli"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -33136,13 +33206,13 @@ window.COOK_RECIPES = [
           "pasta"
         ],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest 3 minutes before serving."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 3 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   },
@@ -33324,7 +33394,8 @@ window.COOK_RECIPES = [
       {
         "title": "Beat eggs and sugar with an electric whisk for 5–7 minutes…",
         "uses": [
-          "large-eggs"
+          "large-eggs",
+          "caster-sugar"
         ],
         "skills": [
           "whisk"
@@ -33479,10 +33550,10 @@ window.COOK_RECIPES = [
     ],
     "steps": [
       "Heat oven to 160°C fan. Grease and line a 900g/2lb loaf tin about 23 × 13cm.",
-      "Beat butter with the cake portion of sugar for 3–5 minutes until pale. Add beaten eggs gradually, beating between additions; add a spoonful of the flour if it curdles.",
+      "Beat butter with 225g caster sugar (reserve 85g for the drizzle) for 3–5 minutes until pale. Add beaten eggs gradually, beating between additions; add a spoonful of the flour if it curdles.",
       "Fold in remaining flour and lemon zest. Spoon into the tin and level.",
       "Bake for 45–55 minutes until risen and a skewer from the centre comes out clean. Cover loosely with foil if the top browns early.",
-      "Mix the drizzle sugar with lemon juice. Prick the warm cake all over with a skewer and spoon the drizzle over gradually. Cool in the tin for at least 45 minutes before lifting out and slicing."
+      "Mix the reserved 85g caster sugar with lemon juice. Prick the warm cake all over with a skewer and spoon the drizzle over gradually. Cool in the tin for at least 45 minutes before lifting out and slicing."
     ],
     "prep": {
       "butter": "Soften at room temperature; use unsalted butter.",
@@ -33515,10 +33586,10 @@ window.COOK_RECIPES = [
     ],
     "methodBeforeBeginner": [
       "Heat oven to 160°C fan. Grease and line a 900g/2lb loaf tin about 23 × 13cm.",
-      "Beat butter with the cake portion of sugar for 3–5 minutes until pale. Add beaten eggs gradually, beating between additions; add a spoonful of the flour if it curdles.",
+      "Beat butter with 225g caster sugar (reserve 85g for the drizzle) for 3–5 minutes until pale. Add beaten eggs gradually, beating between additions; add a spoonful of the flour if it curdles.",
       "Fold in remaining flour and lemon zest. Spoon into the tin and level.",
       "Bake for 45–55 minutes until risen and a skewer from the centre comes out clean. Cover loosely with foil if the top browns early.",
-      "Mix the drizzle sugar with lemon juice. Prick the warm cake all over with a skewer and spoon the drizzle over gradually. Cool in the tin for at least 45 minutes before lifting out and slicing."
+      "Mix the reserved 85g caster sugar with lemon juice. Prick the warm cake all over with a skewer and spoon the drizzle over gradually. Cool in the tin for at least 45 minutes before lifting out and slicing."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -33551,7 +33622,8 @@ window.COOK_RECIPES = [
       {
         "title": "Beat butter with the cake portion of sugar for 3–5 minutes…",
         "uses": [
-          "butter"
+          "butter",
+          "caster-sugar"
         ],
         "skills": [
           "cream"
@@ -33563,7 +33635,7 @@ window.COOK_RECIPES = [
           "Spatula"
         ],
         "sourceStage": 1,
-        "instructions": "Beat butter with the cake portion of sugar for 3–5 minutes until pale."
+        "instructions": "Beat butter with 225g caster sugar (reserve 85g for the drizzle) for 3–5 minutes until pale."
       },
       {
         "title": "Add beaten eggs gradually, beating between additions",
@@ -33643,7 +33715,8 @@ window.COOK_RECIPES = [
       {
         "title": "Mix the drizzle sugar with lemon juice",
         "uses": [
-          "lemon"
+          "lemon",
+          "caster-sugar"
         ],
         "skills": [
           "mix"
@@ -33655,7 +33728,7 @@ window.COOK_RECIPES = [
           "Heatproof spoon or spatula"
         ],
         "sourceStage": 4,
-        "instructions": "Mix the drizzle sugar with lemon juice."
+        "instructions": "Mix the reserved 85g caster sugar with lemon juice."
       },
       {
         "title": "Prick the warm cake all over with a skewer and spoon the…",
@@ -33818,9 +33891,7 @@ window.COOK_RECIPES = [
     "beginnerTasks": [
       {
         "title": "Heat oven to 170°C fan and line two large baking trays",
-        "uses": [
-          "butter"
-        ],
+        "uses": [],
         "skills": [
           "probe",
           "line-tin"
@@ -33839,7 +33910,9 @@ window.COOK_RECIPES = [
       {
         "title": "Beat softened butter with both sugars until creamy",
         "uses": [
-          "butter"
+          "butter",
+          "brown-sugar",
+          "caster-sugar"
         ],
         "skills": [
           "cream"
@@ -33874,7 +33947,8 @@ window.COOK_RECIPES = [
         "title": "Stir flour and bicarbonate together separately, then fold…",
         "uses": [
           "butter",
-          "plain-flour"
+          "plain-flour",
+          "bicarb"
         ],
         "skills": [
           "fold"
@@ -34029,9 +34103,9 @@ window.COOK_RECIPES = [
       ]
     ],
     "steps": [
-      "Mix flour, yeast and salt in a large bowl. Add the dough portion of oil and 375ml lukewarm water. Mix into a sticky dough, then knead for 8–10 minutes until elastic. Use lightly oiled hands if sticky.",
+      "Mix flour, yeast and salt in a large bowl. Add two fifths of the measured oil and 375ml lukewarm water. Mix into a sticky dough, then knead for 8–10 minutes until elastic. Use lightly oiled hands if sticky.",
       "Cover the bowl and leave in a warm place for 60–90 minutes until approximately doubled; cool rooms take longer.",
-      "Oil a 25 × 35cm shallow metal tin with the tin portion of oil. Stretch dough into the tin, cover and leave for 35–45 minutes until puffy.",
+      "Oil a 25 × 35cm shallow metal tin with one fifth of the measured oil. Stretch dough into the tin, cover and leave for 35–45 minutes until puffy.",
       "Heat oven to 200°C fan. Dimple dough with oiled fingertips, drizzle with remaining oil and sprinkle rosemary on top.",
       "Bake for 20–25 minutes until golden on top and cooked underneath. Cool on a rack for 20 minutes before cutting into 12 pieces."
     ],
@@ -34062,9 +34136,9 @@ window.COOK_RECIPES = [
       "https://www.bbcgoodfood.com/recipes/focaccia"
     ],
     "methodBeforeBeginner": [
-      "Mix flour, yeast and salt in a large bowl. Add the dough portion of oil and 375ml lukewarm water. Mix into a sticky dough, then knead for 8–10 minutes until elastic. Use lightly oiled hands if sticky.",
+      "Mix flour, yeast and salt in a large bowl. Add two fifths of the measured oil and 375ml lukewarm water. Mix into a sticky dough, then knead for 8–10 minutes until elastic. Use lightly oiled hands if sticky.",
       "Cover the bowl and leave in a warm place for 60–90 minutes until approximately doubled; cool rooms take longer.",
-      "Oil a 25 × 35cm shallow metal tin with the tin portion of oil. Stretch dough into the tin, cover and leave for 35–45 minutes until puffy.",
+      "Oil a 25 × 35cm shallow metal tin with one fifth of the measured oil. Stretch dough into the tin, cover and leave for 35–45 minutes until puffy.",
       "Heat oven to 200°C fan. Dimple dough with oiled fingertips, drizzle with remaining oil and sprinkle rosemary on top.",
       "Bake for 20–25 minutes until golden on top and cooked underneath. Cool on a rack for 20 minutes before cutting into 12 pieces."
     ],
@@ -34101,7 +34175,7 @@ window.COOK_RECIPES = [
           "Heatproof spoon or spatula"
         ],
         "sourceStage": 0,
-        "instructions": "Add the dough portion of oil and 375ml lukewarm water."
+        "instructions": "Add two fifths of the measured oil and 375ml lukewarm water."
       },
       {
         "title": "Mix into a sticky dough, then knead for 8–10 minutes until…",
@@ -34149,7 +34223,7 @@ window.COOK_RECIPES = [
           "Dry oven gloves if hot"
         ],
         "sourceStage": 2,
-        "instructions": "Oil a 25 × 35cm shallow metal tin with the tin portion of oil."
+        "instructions": "Oil a 25 × 35cm shallow metal tin with one fifth of the measured oil."
       },
       {
         "title": "Stretch dough into the tin, cover and leave for 35–45 minutes…",
@@ -34167,9 +34241,7 @@ window.COOK_RECIPES = [
       },
       {
         "title": "Heat oven to 200°C fan",
-        "uses": [
-          "olive-oil"
-        ],
+        "uses": [],
         "skills": [],
         "check": "The oven is set to the stated temperature; allow it to preheat before the baking stage.",
         "tools": [
@@ -34181,7 +34253,8 @@ window.COOK_RECIPES = [
       {
         "title": "Dimple dough with oiled fingertips, drizzle with remaining…",
         "uses": [
-          "olive-oil"
+          "olive-oil",
+          "dried-rosemary"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -34310,7 +34383,7 @@ window.COOK_RECIPES = [
     ],
     "steps": [
       "Heat oven to 170°C fan. Grease two 20cm round sandwich tins and line the bases.",
-      "Beat the cake portion of butter with caster sugar until pale. Beat in eggs gradually. Fold in flour and baking powder, then milk, to make a smooth batter.",
+      "Beat 200g softened butter (reserve 100g for the filling) with caster sugar until pale. Beat in eggs gradually. Fold in flour and baking powder, then milk, to make a smooth batter.",
       "Divide between tins and level. Bake for 20–25 minutes until golden and springy with a clean skewer from the centre.",
       "Cool in tins for 10 minutes, then turn onto a rack, peel off paper and cool completely for at least 40 minutes.",
       "Beat remaining butter with icing sugar and vanilla until smooth. Spread over the flat side of one sponge, spread jam on the other, then sandwich together. Cut into 10 slices."
@@ -34349,7 +34422,7 @@ window.COOK_RECIPES = [
     ],
     "methodBeforeBeginner": [
       "Heat oven to 170°C fan. Grease two 20cm round sandwich tins and line the bases.",
-      "Beat the cake portion of butter with caster sugar until pale. Beat in eggs gradually. Fold in flour and baking powder, then milk, to make a smooth batter.",
+      "Beat 200g softened butter (reserve 100g for the filling) with caster sugar until pale. Beat in eggs gradually. Fold in flour and baking powder, then milk, to make a smooth batter.",
       "Divide between tins and level. Bake for 20–25 minutes until golden and springy with a clean skewer from the centre.",
       "Cool in tins for 10 minutes, then turn onto a rack, peel off paper and cool completely for at least 40 minutes.",
       "Beat remaining butter with icing sugar and vanilla until smooth. Spread over the flat side of one sponge, spread jam on the other, then sandwich together. Cut into 10 slices."
@@ -34401,7 +34474,7 @@ window.COOK_RECIPES = [
           "Spatula"
         ],
         "sourceStage": 1,
-        "instructions": "Beat the cake portion of butter with caster sugar until pale."
+        "instructions": "Beat 200g softened butter (reserve 100g for the filling) with caster sugar until pale."
       },
       {
         "title": "Beat in eggs gradually",
@@ -34587,11 +34660,11 @@ window.COOK_RECIPES = [
       ]
     ],
     "steps": [
-      "Heat oven to 170°C fan. Put sliced apples in a baking dish about 20 × 25cm with the smaller portion of sugar, cinnamon and 2 tbsp water. Toss and spread evenly.",
-      "Rub cold butter into flour using fingertips until the mixture looks like coarse breadcrumbs. Stir in the topping sugar.",
+      "Heat oven to 170°C fan. Put sliced apples in a baking dish about 20 × 25cm with 30g caster sugar (reserve 110g for the topping), cinnamon and 2 tbsp water. Toss and spread evenly.",
+      "Rub cold butter into flour using fingertips until the mixture looks like coarse breadcrumbs. Stir in the reserved 110g caster sugar.",
       "Scatter topping over apples without pressing down. Put the dish on a baking tray to catch any bubbling juice.",
       "Bake for 40–50 minutes until topping is golden and a knife passes easily through the apples. If topping colours before the fruit softens, cover loosely with foil and continue baking.",
-      "Rest for 10 minutes before dividing into six portions; fruit underneath will be very hot."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 10 minutes before dividing into six portions; fruit underneath will be very hot. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "prep": {
       "apples": "Use about 750g Bramley apples before peeling; peel, core and slice 1cm thick.",
@@ -34621,20 +34694,17 @@ window.COOK_RECIPES = [
       "https://www.bbcgoodfood.com/recipes/best-apple-crumble"
     ],
     "methodBeforeBeginner": [
-      "Heat oven to 170°C fan. Put sliced apples in a baking dish about 20 × 25cm with the smaller portion of sugar, cinnamon and 2 tbsp water. Toss and spread evenly.",
-      "Rub cold butter into flour using fingertips until the mixture looks like coarse breadcrumbs. Stir in the topping sugar.",
+      "Heat oven to 170°C fan. Put sliced apples in a baking dish about 20 × 25cm with 30g caster sugar (reserve 110g for the topping), cinnamon and 2 tbsp water. Toss and spread evenly.",
+      "Rub cold butter into flour using fingertips until the mixture looks like coarse breadcrumbs. Stir in the reserved 110g caster sugar.",
       "Scatter topping over apples without pressing down. Put the dish on a baking tray to catch any bubbling juice.",
       "Bake for 40–50 minutes until topping is golden and a knife passes easily through the apples. If topping colours before the fruit softens, cover loosely with foil and continue baking.",
-      "Rest for 10 minutes before dividing into six portions; fruit underneath will be very hot."
+      "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 10 minutes before dividing into six portions; fruit underneath will be very hot. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
       {
         "title": "Heat oven to 170°C fan",
-        "uses": [
-          "apples",
-          "ground-cinnamon"
-        ],
+        "uses": [],
         "skills": [
           "probe"
         ],
@@ -34650,7 +34720,8 @@ window.COOK_RECIPES = [
         "title": "Put sliced apples in a baking dish about 20 × 25cm with the…",
         "uses": [
           "apples",
-          "ground-cinnamon"
+          "ground-cinnamon",
+          "caster-sugar"
         ],
         "skills": [],
         "check": "The food is arranged as this action describes; use the stated next action for any further cooking.",
@@ -34659,7 +34730,7 @@ window.COOK_RECIPES = [
           "Heatproof spoon or spatula"
         ],
         "sourceStage": 0,
-        "instructions": "Put sliced apples in a baking dish about 20 × 25cm with the smaller portion of sugar, cinnamon and 2 tbsp water."
+        "instructions": "Put sliced apples in a baking dish about 20 × 25cm with 30g caster sugar (reserve 110g for the topping), cinnamon and 2 tbsp water."
       },
       {
         "title": "Toss and spread evenly",
@@ -34700,7 +34771,8 @@ window.COOK_RECIPES = [
         "title": "Stir in the topping sugar",
         "uses": [
           "plain-flour",
-          "butter"
+          "butter",
+          "caster-sugar"
         ],
         "skills": [],
         "check": "The ingredients are added or combined as stated here. Continue with the next cooking action; this is not a final doneness check.",
@@ -34708,7 +34780,7 @@ window.COOK_RECIPES = [
           "Heatproof spoon or spatula"
         ],
         "sourceStage": 1,
-        "instructions": "Stir in the topping sugar."
+        "instructions": "Stir in the reserved 110g caster sugar."
       },
       {
         "title": "Scatter topping over apples without pressing down",
@@ -34758,13 +34830,13 @@ window.COOK_RECIPES = [
         "title": "Rest for 10 minutes before dividing into six portions",
         "uses": [],
         "skills": [],
-        "check": "Complete the stated rest or standing time before continuing.",
+        "check": "The food has stood off the heat for the stated time before cutting or serving. The food and cookware may still be hot.",
         "tools": [
           "Heatproof surface",
           "Dry oven gloves for hot cookware"
         ],
         "sourceStage": 4,
-        "instructions": "Rest for 10 minutes before dividing into six portions; fruit underneath will be very hot."
+        "instructions": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 10 minutes before dividing into six portions; fruit underneath will be very hot. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
       }
     ]
   }
@@ -35119,11 +35191,28 @@ function taskTurnReminders(r,task,seconds){
   const first=reminderOptions(task.instructions)[0];
   if(first&&first.seconds===seconds)return [3,6,9].filter(min=>min*60<seconds).map(min=>({seconds:min*60,title:'Turn koftas ('+min+' minutes)'}));
  }
+ // Only attach action reminders to the first full cooking duration, not a
+ // second short time embedded in the same instruction (or a thermometer check).
+ const first=reminderOptions(task.instructions)[0];
+ if(!first||first.seconds!==seconds)return [];
+ const text=task.instructions;
+ if(/\b(?:turn(?:ing)?|stir(?:ring)?|shake|shaking|toss(?:ing)?)\b[^.!?]{0,35}\b(?:halfway|half.way|once)\b/i.test(text)){
+   return [{seconds:Math.round(seconds/2),title:/\bstir/i.test(text)?(/\bturn/i.test(text)?'Stir and turn halfway through':'Stir halfway through'):/\bshak/i.test(text)?'Shake halfway through':'Turn halfway through'}];
+ }
+ const interval=text.match(/\b(turn(?:ing)?|stir(?:ring)?|shake|shaking)\b[^.!?]{0,25}\bevery\s+(\d+)\s+minutes?/i);
+ if(interval){
+   const gap=Number(interval[2])*60;
+   if(gap>0)return Array.from({length:Math.min(8,Math.ceil(seconds/gap)-1)},(_,i)=>({seconds:gap*(i+1),title:(/^stir/i.test(interval[1])?'Stir the food':'Turn the food')+' — '+((i+1)*gap/60)+' minutes'}));
+ }
+ if(/\b(?:turn(?:ing)?|stir(?:ring)?)\s+(?:occasionally|every few minutes)\b/i.test(text)&&seconds>=240){
+   const gap=/every few minutes/i.test(text)?180:Math.min(900,Math.max(180,Math.round(seconds/4)));
+   return Array.from({length:Math.min(8,Math.ceil(seconds/gap)-1)},(_,i)=>({seconds:gap*(i+1),title:/stir(?:ring)?\s+(?:occasionally|every few)/i.test(text)?'Check and stir the food':'Check and turn the food'}));
+ }
  return [];
 }
 const BEGINNER_TIMER_KEY='cookTogetherBeginnerReminders29';
 let beginnerTimers=[];
-try{const raw=JSON.parse(localStorage.getItem(BEGINNER_TIMER_KEY)||'[]');if(Array.isArray(raw))beginnerTimers=raw.filter(t=>t&&typeof t.id==='string'&&typeof t.recipeId==='string'&&typeof t.title==='string'&&Number.isFinite(t.deadline)&&t.deadline>Date.now()-86400000&&t.deadline<Date.now()+86400000).slice(0,12);}catch{}
+try{const raw=JSON.parse(localStorage.getItem(BEGINNER_TIMER_KEY)||'[]');if(Array.isArray(raw))beginnerTimers=raw.filter(t=>t&&typeof t.id==='string'&&typeof t.recipeId==='string'&&typeof t.title==='string'&&Number.isFinite(t.deadline)&&t.deadline>Date.now()-86400000&&t.deadline<Date.now()+86400000).slice(0,128);}catch{}
 let beginnerAudio=null;
 const BEGINNER_VOLUME_KEY='cookTogetherBeginnerAlarmVolume1';
 let beginnerAlarmVolume=75;
@@ -35214,8 +35303,8 @@ function startBeginnerTimer(r,task,index,seconds){
  };
  add(r.id+'|'+index+'|'+seconds,tray?'Check the traybake — continue cooking if needed':r.id==='lamb-koftas'&&turns.length?'Check koftas are cooked through':task.title,seconds);
  turns.forEach((turn,i)=>add(r.id+'|'+index+'|'+seconds+'|turn-'+i,turn.title,turn.seconds));
- for(const t of beginnerTimers.slice(0,-12))stopBeginnerAlarm(t.id);
- beginnerTimers=beginnerTimers.slice(-12);saveBeginnerTimers();stopDueAlarmIfAllStopped();refreshBeginnerTimerPanels();
+ for(const t of beginnerTimers.slice(0,-128))stopBeginnerAlarm(t.id);
+ beginnerTimers=beginnerTimers.slice(-128);saveBeginnerTimers();stopDueAlarmIfAllStopped();refreshBeginnerTimerPanels();
 }
 function extendBeginnerTimer(id,minutes){
  const t=beginnerTimers.find(t=>t.id===id);if(!t||![1,2,3].includes(minutes))return;
@@ -35329,14 +35418,14 @@ function renderBeginnerTask(r,index){
  // Old imported skill tags can describe ingredients that are already prepared.
  // Keep instruction help only when that technique is actually performed here.
  const preparationSkills=new Set(['dice','slice-onion','garlic','pepper','potato-prep','grate','rice','milk-sauce']);
- const instructions=(Array.isArray(t.how)&&t.how.length?t.how:t.skills.filter(k=>!preparationSkills.has(k)||illustrationKeys.includes(k)||(k==='pepper'&&illustrationKeys.some(v=>v.startsWith('pepper-')))).map(k=>k==='mix'?relevantMixHelp(t.instructions):BEGINNER_TECHNIQUES[k])).filter(Boolean);
+ const instructions=(Array.isArray(t.how)&&t.how.length?t.how:t.skills.filter(k=>(!preparationSkills.has(k)||illustrationKeys.includes(k)||(k==='pepper'&&illustrationKeys.some(v=>v.startsWith('pepper-'))))&&(k!=='canned-beans'||(/\b(?:drain|rinse)\b/i.test(t.instructions)&&!/\bdried\b/i.test(t.instructions)))&&(k!=='whisk'||/\b(?:beat|whisk)\b/i.test(t.instructions))).map(k=>k==='mix'?relevantMixHelp(t.instructions):k==='cool'?{title:'Let the food cool for the next step',actions:['Move the food to the heatproof surface, rack or container named in this step. Use oven gloves for hot cookware.','Wait for the stated time and texture before handling or continuing. Follow the recipe storage instructions for leftovers.']}:BEGINNER_TECHNIQUES[k])).filter(Boolean);
  const amounts=beginnerIngredientRows(r,t,guideServings);
  return `<section class="beginner-task" id="guide-current-instruction"><div class="beginner-task-heading"><span class="eyebrow">TASK ${index+1} OF ${guideTaskCount(r)}</span><h3>${esc(scaledInstruction(t.title,r,guideServings))}</h3></div>${heat?`<p class="beginner-heat">Heat: <strong>${esc(heat)}</strong></p>`:''}
  <div class="beginner-amounts-reminder"><span>${amounts?'Ingredient amounts are further down this page.':'Need to check another recipe ingredient amount?'}</span><button type="button" data-action="guide-jump-amounts">${amounts?'View amounts ↓':'View all ingredients ↓'}</button></div>
  <div class="illustrated-action"><div class="beginner-do"><h4>Do this</h4>${renderGuideActions(text)}</div>${CookIllustrations.render(illustrationKeys)}</div>
  ${instructions.length?`<div class="beginner-how"><h4>How to do it</h4>${instructions.map(info=>`<section><strong>${esc(info.title)}</strong><ol>${info.actions.map(a=>`<li>${esc(a)}</li>`).join('')}</ol></section>`).join('')}</div>`:''}
  ${t.check?`<div class="beginner-check"><strong>Check before moving on</strong><p>${esc(scaledInstruction(t.check,r,guideServings))}</p></div>`:''}
- ${reminders.length?`<div class="beginner-reminder-buttons"><h4>Optional check reminders</h4>${reminders.map(o=>`<button type="button" class="btn btn-sm" data-action="beginner-start-timer" data-seconds="${o.seconds}" data-task-index="${index}">⏱ ${o.range?'Check at ':''}${esc(o.label)}${o.range?' (range '+esc(o.rangeLabel)+')':''}${taskTurnReminders(r,t,o.seconds).length?(r.id==='lamb-koftas'?' + 3 turn reminders':' + turn reminder'):''}</button>`).join('')}<small>Start when this cooking or waiting period actually begins. A reminder does not mean the food is done.</small>${reminders.some(o=>taskTurnReminders(r,t,o.seconds).length)?(r.id==='lamb-koftas'?'<p class="beginner-turn-help">Start the cooking timer for each batch when it goes into the pan. You will also receive alerts at <strong>3, 6 and 9 minutes</strong> to turn the koftas with tongs. The final alarm is only a check: ensure the koftas are safely cooked all the way through and continue cooking if needed.</p>':'<p class="beginner-turn-help">Starting this timer also sets a <strong>10-minute reminder to turn the vegetables</strong>. At that reminder, use oven gloves to place the tray on a heatproof surface. Turn the vegetables with a suitable spatula or tongs, then return the tray to the oven. The cooking timer keeps running. Check doneness when it rings; continue cooking if needed.</p>'):''}</div>`:''}
+ ${reminders.length?`<div class="beginner-reminder-buttons"><h4>Optional check reminders</h4>${reminders.map(o=>`<button type="button" class="btn btn-sm" data-action="beginner-start-timer" data-seconds="${o.seconds}" data-task-index="${index}">⏱ ${o.range?'Check at ':''}${esc(o.label)}${o.range?' (range '+esc(o.rangeLabel)+')':''}${taskTurnReminders(r,t,o.seconds).length?(' + '+taskTurnReminders(r,t,o.seconds).length+' action reminder'+(taskTurnReminders(r,t,o.seconds).length===1?'':'s')):''}</button>`).join('')}<small>Start when this cooking or waiting period actually begins. A reminder does not mean the food is done.</small>${reminders.some(o=>taskTurnReminders(r,t,o.seconds).length)?`<p class="beginner-turn-help">Starting the cooking timer also sets: ${taskTurnReminders(r,t,reminders[0].seconds).map(c=>esc(c.title)+' at '+count(c.seconds/60)+' minutes').join('; ')}. Continue any regular stirring or turning stated in the step between alerts. Use oven gloves for hot cookware. The main cooking timer keeps running; its alarm means check doneness, not that the food is guaranteed cooked.</p>`:''}</div>`:''}
  ${/pack(?:et)?|according to/i.test(text)&&/cook|boil|noodle|pasta|rice|pea|gnocchi/i.test(text)?`<div class="beginner-packet-timer"><label for="beginner-packet-minutes">Reminder from your packet (minutes)</label><input type="number" id="beginner-packet-minutes" min="0.5" max="180" step="0.5" inputmode="decimal" placeholder="Read packet"><button type="button" class="btn btn-sm" data-action="beginner-packet-timer" data-task-index="${index}">Start reminder</button><small>Use your packet’s cooking time, including any adjustment stated in this task.</small></div>`:''}
  ${t.optionalTemperatureCheck?`<details class="beginner-sources"><summary>Optional: check with a thermometer</summary><p>A clean food thermometer can confirm the centre is hot enough. Put the probe into the filling at the centre, avoiding the dish. One FSA combination is 75°C maintained for 30 seconds; another is 70°C for 2 minutes. This is the food’s centre temperature, not an oven setting. If it has not reached the target, continue baking and check again with a clean probe.</p><a href="https://www.food.gov.uk/safety-hygiene/cooking-your-food" target="_blank" rel="noopener noreferrer">FSA cooking advice ↗</a></details>`:''}
  ${amounts}

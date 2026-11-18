@@ -1,0 +1,3105 @@
+[
+  {
+    "recipe": "lamb-koftas",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "lamb-mince",
+      "cumin",
+      "paprika",
+      "garlic",
+      "ground-coriander"
+    ],
+    "after": [
+      "lamb-mince",
+      "cumin",
+      "paprika",
+      "garlic",
+      "ground-coriander",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "lamb-tagine",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "diced-lamb",
+      "chopped-tomatoes",
+      "veg-stock"
+    ],
+    "after": [
+      "diced-lamb",
+      "chopped-tomatoes",
+      "veg-stock",
+      "dried-apricots"
+    ]
+  },
+  {
+    "recipe": "chicken-fajitas",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "ground-cumin",
+      "olive-oil"
+    ],
+    "after": [
+      "ground-cumin",
+      "olive-oil",
+      "fajita-spice",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "chicken-fajitas",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "chicken"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "pesto-chicken",
+    "task": 13,
+    "change": "ingredients",
+    "before": [
+      "chicken",
+      "pasta"
+    ],
+    "after": [
+      "chicken",
+      "pasta",
+      "cherry-tomatoes"
+    ]
+  },
+  {
+    "recipe": "chicken-roast",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "potatoes",
+      "carrots",
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "beef-bolognese",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "tomato-puree"
+    ],
+    "after": [
+      "tomato-puree",
+      "italian-herbs"
+    ]
+  },
+  {
+    "recipe": "beef-bolognese",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "spaghetti"
+    ],
+    "after": [
+      "spaghetti",
+      "balsamic-vinegar"
+    ]
+  },
+  {
+    "recipe": "beef-stew",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": [
+      "olive-oil",
+      "onion"
+    ]
+  },
+  {
+    "recipe": "beef-stew",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "tomato-puree",
+      "garlic"
+    ],
+    "after": [
+      "tomato-puree",
+      "garlic",
+      "dried-thyme"
+    ]
+  },
+  {
+    "recipe": "mushroom-risotto",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "garlic"
+    ],
+    "after": [
+      "garlic",
+      "dried-thyme"
+    ]
+  },
+  {
+    "recipe": "halloumi-couscous",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "peppers",
+      "chickpeas"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "halloumi-couscous",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "peppers"
+    ],
+    "after": [
+      "peppers",
+      "courgette"
+    ]
+  },
+  {
+    "recipe": "halloumi-couscous",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "olive-oil",
+      "chickpeas"
+    ],
+    "after": [
+      "olive-oil",
+      "chickpeas",
+      "harissa-paste"
+    ]
+  },
+  {
+    "recipe": "halloumi-couscous",
+    "task": 10,
+    "change": "ingredients",
+    "before": [
+      "halloumi",
+      "greek-yoghurt"
+    ],
+    "after": [
+      "halloumi",
+      "greek-yoghurt",
+      "harissa-paste"
+    ]
+  },
+  {
+    "recipe": "halloumi-couscous",
+    "task": 11,
+    "change": "ingredients",
+    "before": [
+      "halloumi",
+      "couscous",
+      "lemon",
+      "fresh-parsley",
+      "greek-yoghurt"
+    ],
+    "after": [
+      "halloumi",
+      "couscous",
+      "lemon",
+      "fresh-parsley",
+      "greek-yoghurt",
+      "harissa-paste"
+    ]
+  },
+  {
+    "recipe": "salmon-traybake",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "potatoes",
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "salmon-traybake",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "lemon",
+      "garlic",
+      "mustard"
+    ],
+    "after": [
+      "lemon",
+      "garlic",
+      "mustard",
+      "dried-dill"
+    ]
+  },
+  {
+    "recipe": "tuna-pasta",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "pasta"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "cod-parcels",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "peas",
+      "lemon",
+      "olive-oil",
+      "garlic"
+    ],
+    "after": [
+      "peas",
+      "lemon",
+      "olive-oil",
+      "garlic",
+      "cherry-tomatoes",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "pork-chops",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "pork-chops"
+    ],
+    "after": [
+      "pork-chops",
+      "apples"
+    ]
+  },
+  {
+    "recipe": "pork-stirfry",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "pork-strips"
+    ],
+    "after": [
+      "pork-strips",
+      "stirfry-veg"
+    ]
+  },
+  {
+    "recipe": "pork-stirfry",
+    "task": 9,
+    "change": "ingredients",
+    "before": [
+      "sesame-oil",
+      "vegetable-oil"
+    ],
+    "after": [
+      "sesame-oil",
+      "vegetable-oil",
+      "soy-sauce"
+    ]
+  },
+  {
+    "recipe": "veggie-fajitas",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "peppers",
+      "mushrooms",
+      "black-beans",
+      "garlic",
+      "tomatoes",
+      "fresh-coriander"
+    ],
+    "after": [
+      "peppers",
+      "mushrooms",
+      "black-beans",
+      "garlic",
+      "tomatoes",
+      "fresh-coriander",
+      "onion"
+    ]
+  },
+  {
+    "recipe": "veggie-fajitas",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "peppers",
+      "mushrooms",
+      "smoked-paprika",
+      "ground-cumin",
+      "rapeseed-oil"
+    ],
+    "after": [
+      "peppers",
+      "mushrooms",
+      "smoked-paprika",
+      "ground-cumin",
+      "rapeseed-oil",
+      "onion"
+    ]
+  },
+  {
+    "recipe": "mint-lamb-meatballs",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "lamb-mince",
+      "garlic",
+      "fresh-mint",
+      "ground-cumin"
+    ],
+    "after": [
+      "lamb-mince",
+      "garlic",
+      "fresh-mint",
+      "ground-cumin",
+      "red-onion",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "mint-lamb-meatballs",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "passata"
+    ],
+    "after": [
+      "passata",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "mint-lamb-meatballs",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "passata"
+    ],
+    "after": [
+      "passata",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "greek-lamb-traybake",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "potatoes",
+      "courgette",
+      "feta"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "greek-lamb-traybake",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "courgette"
+    ],
+    "after": [
+      "courgette",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "greek-lamb-traybake",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "feta"
+    ],
+    "after": [
+      "feta",
+      "lamb-leg-steak",
+      "cherry-tomatoes"
+    ]
+  },
+  {
+    "recipe": "greek-lamb-traybake",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "garlic",
+      "lemon",
+      "olive-oil"
+    ],
+    "after": [
+      "garlic",
+      "lemon",
+      "olive-oil",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "greek-lamb-traybake",
+    "task": 6,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "lamb-leg-steak",
+      "cherry-tomatoes"
+    ]
+  },
+  {
+    "recipe": "greek-lamb-traybake",
+    "task": 9,
+    "change": "ingredients",
+    "before": [
+      "potatoes"
+    ],
+    "after": [
+      "potatoes",
+      "lamb-leg-steak"
+    ]
+  },
+  {
+    "recipe": "lamb-aubergine-rice",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "onion",
+      "garlic",
+      "ground-cumin"
+    ],
+    "after": [
+      "onion",
+      "garlic",
+      "ground-cumin",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "lemon-chicken-orzo",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "onion",
+      "garlic",
+      "chicken-thighs"
+    ],
+    "after": [
+      "onion",
+      "garlic",
+      "chicken-thighs",
+      "baby-spinach"
+    ]
+  },
+  {
+    "recipe": "lemon-chicken-orzo",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "orzo",
+      "onion",
+      "garlic"
+    ],
+    "after": [
+      "orzo",
+      "onion",
+      "garlic",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "lemon-chicken-orzo",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "veg-stock",
+      "lemon",
+      "vegetarian-cheese"
+    ],
+    "after": [
+      "veg-stock",
+      "lemon",
+      "vegetarian-cheese",
+      "baby-spinach"
+    ]
+  },
+  {
+    "recipe": "beef-sesame-rice",
+    "task": 10,
+    "change": "ingredients",
+    "before": [
+      "rice",
+      "sesame-seeds"
+    ],
+    "after": [
+      "rice",
+      "sesame-seeds",
+      "spring-onions"
+    ]
+  },
+  {
+    "recipe": "beef-sweet-potato-pie",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "sweet-potatoes",
+      "butter"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "sweet-potato-enchiladas",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "sweet-potatoes",
+      "ground-cumin",
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "sweet-potato-enchiladas",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "ground-cumin",
+      "olive-oil"
+    ],
+    "after": [
+      "ground-cumin",
+      "olive-oil",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "paprika-cod-beans",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "butter-beans"
+    ],
+    "after": [
+      "butter-beans",
+      "baby-spinach"
+    ]
+  },
+  {
+    "recipe": "paprika-cod-beans",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "onion",
+      "garlic"
+    ],
+    "after": [
+      "onion",
+      "garlic",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "paprika-cod-beans",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "cod"
+    ],
+    "after": [
+      "cod",
+      "baby-spinach"
+    ]
+  },
+  {
+    "recipe": "miso-salmon-rice",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "rice",
+      "cucumber",
+      "spring-onions"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "miso-salmon-rice",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "honey",
+      "soy-sauce"
+    ],
+    "after": [
+      "honey",
+      "soy-sauce",
+      "white-miso"
+    ]
+  },
+  {
+    "recipe": "miso-salmon-rice",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "cucumber",
+      "lime",
+      "sesame-oil"
+    ],
+    "after": [
+      "cucumber",
+      "lime",
+      "sesame-oil",
+      "white-miso",
+      "soy-sauce"
+    ]
+  },
+  {
+    "recipe": "crunchy-fish-tacos",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "carrots",
+      "lime"
+    ],
+    "after": [
+      "carrots",
+      "lime",
+      "red-cabbage"
+    ]
+  },
+  {
+    "recipe": "crunchy-fish-tacos",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "breadcrumbs",
+      "plain-flour",
+      "eggs",
+      "white-fish"
+    ],
+    "after": [
+      "breadcrumbs",
+      "plain-flour",
+      "eggs",
+      "white-fish",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "crunchy-fish-tacos",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "white-fish",
+      "plain-flour"
+    ],
+    "after": [
+      "white-fish",
+      "plain-flour",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "ginger-pork-noodles",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "sesame-oil"
+    ],
+    "after": [
+      "sesame-oil",
+      "stirfry-veg"
+    ]
+  },
+  {
+    "recipe": "pork-apple-meatballs",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "pork-mince",
+      "onion"
+    ],
+    "after": [
+      "pork-mince",
+      "onion",
+      "apples"
+    ]
+  },
+  {
+    "recipe": "pork-apple-meatballs",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "pork-mince",
+      "onion",
+      "breadcrumbs"
+    ],
+    "after": [
+      "pork-mince",
+      "onion",
+      "breadcrumbs",
+      "apples",
+      "dried-sage"
+    ]
+  },
+  {
+    "recipe": "pork-apple-meatballs",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "potatoes"
+    ],
+    "after": [
+      "potatoes",
+      "apples"
+    ]
+  },
+  {
+    "recipe": "paprika-pork-pepper-rice",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "rice",
+      "garlic"
+    ],
+    "after": [
+      "rice",
+      "garlic",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "roasted-cauliflower-lentils",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "cauliflower",
+      "rapeseed-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "lemon-chickpea-orzo",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "chickpeas",
+      "onion",
+      "garlic"
+    ],
+    "after": [
+      "chickpeas",
+      "onion",
+      "garlic",
+      "baby-spinach"
+    ]
+  },
+  {
+    "recipe": "lemon-chickpea-orzo",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "onion",
+      "garlic"
+    ],
+    "after": [
+      "onion",
+      "garlic",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "lemon-chickpea-orzo",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "chickpeas"
+    ],
+    "after": [
+      "chickpeas",
+      "baby-spinach"
+    ]
+  },
+  {
+    "recipe": "smoky-tofu-peanut-noodles",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "smoked-paprika"
+    ],
+    "after": [
+      "smoked-paprika",
+      "firm-tofu"
+    ]
+  },
+  {
+    "recipe": "breakfast-eggs-toast",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "bread-slices"
+    ],
+    "after": [
+      "bread-slices",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "breakfast-lemon-pancakes",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "lemon"
+    ],
+    "after": [
+      "lemon",
+      "caster-sugar"
+    ]
+  },
+  {
+    "recipe": "dinner-sausage-veg-traybake",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "baby-potatoes",
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "dinner-sausage-veg-traybake",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": [
+      "olive-oil",
+      "dried-thyme"
+    ]
+  },
+  {
+    "recipe": "dinner-sausage-veg-traybake",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "peppers"
+    ],
+    "after": [
+      "peppers",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "dinner-sausage-veg-traybake",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "baby-potatoes",
+      "peppers"
+    ],
+    "after": [
+      "baby-potatoes",
+      "peppers",
+      "pork-sausages"
+    ]
+  },
+  {
+    "recipe": "dinner-sausage-veg-traybake",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "baby-potatoes",
+      "peppers",
+      "olive-oil"
+    ],
+    "after": [
+      "baby-potatoes",
+      "peppers",
+      "olive-oil",
+      "pork-sausages",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "dinner-sausage-veg-traybake",
+    "task": 9,
+    "change": "ingredients",
+    "before": [
+      "baby-potatoes"
+    ],
+    "after": [
+      "baby-potatoes",
+      "pork-sausages"
+    ]
+  },
+  {
+    "recipe": "dinner-sausage-veg-traybake",
+    "task": 10,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "pork-sausages"
+    ]
+  },
+  {
+    "recipe": "dinner-sausage-veg-traybake",
+    "task": 11,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "pork-sausages"
+    ]
+  },
+  {
+    "recipe": "dinner-red-lentil-soup",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "carrots",
+      "onion"
+    ],
+    "after": [
+      "carrots",
+      "onion",
+      "red-lentils"
+    ]
+  },
+  {
+    "recipe": "dinner-red-lentil-soup",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes",
+      "veg-stock"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "veg-stock",
+      "red-lentils"
+    ]
+  },
+  {
+    "recipe": "bakery-plain-scones",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "self-raising-flour",
+      "baking-powder",
+      "caster-sugar"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "bakery-banana-muffins",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "self-raising-flour",
+      "baking-powder",
+      "caster-sugar"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "bakery-banana-muffins",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "self-raising-flour",
+      "baking-powder",
+      "caster-sugar"
+    ],
+    "after": [
+      "self-raising-flour",
+      "baking-powder",
+      "caster-sugar",
+      "bicarb"
+    ]
+  },
+  {
+    "recipe": "bakery-soda-bread",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "plain-flour",
+      "wholemeal-flour",
+      "salt"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "bakery-soda-bread",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "plain-flour",
+      "wholemeal-flour",
+      "salt"
+    ],
+    "after": [
+      "plain-flour",
+      "wholemeal-flour",
+      "salt",
+      "bicarb"
+    ]
+  },
+  {
+    "recipe": "lunch-chicken-pepper-wraps",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "peppers"
+    ],
+    "after": [
+      "peppers",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "lunch-chicken-pepper-wraps",
+    "task": 12,
+    "change": "ingredients",
+    "before": [
+      "chicken",
+      "olive-oil"
+    ],
+    "after": [
+      "chicken",
+      "olive-oil",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "lunch-chicken-pepper-wraps",
+    "task": 14,
+    "change": "ingredients",
+    "before": [
+      "peppers"
+    ],
+    "after": [
+      "peppers",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "lunch-hummus-crunch-pittas",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "carrots",
+      "cucumber"
+    ],
+    "after": [
+      "carrots",
+      "cucumber",
+      "baby-spinach"
+    ]
+  },
+  {
+    "recipe": "lunch-hummus-crunch-pittas",
+    "task": 9,
+    "change": "ingredients",
+    "before": [
+      "carrots",
+      "cucumber"
+    ],
+    "after": [
+      "carrots",
+      "cucumber",
+      "baby-spinach"
+    ]
+  },
+  {
+    "recipe": "lunch-lemon-chickpea-couscous",
+    "task": 9,
+    "change": "ingredients",
+    "before": [
+      "chickpeas",
+      "roasted-peppers",
+      "lemon",
+      "olive-oil"
+    ],
+    "after": [
+      "chickpeas",
+      "roasted-peppers",
+      "lemon",
+      "olive-oil",
+      "cherry-tomatoes"
+    ]
+  },
+  {
+    "recipe": "lunch-egg-cress-sandwiches",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "mayonnaise",
+      "cress",
+      "ground-black-pepper"
+    ],
+    "after": [
+      "mayonnaise",
+      "cress",
+      "ground-black-pepper",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "lunch-egg-cress-sandwiches",
+    "task": 9,
+    "change": "ingredients",
+    "before": [
+      "bread-slices"
+    ],
+    "after": [
+      "bread-slices",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "lunch-egg-cress-sandwiches",
+    "task": 11,
+    "change": "ingredients",
+    "before": [
+      "mayonnaise"
+    ],
+    "after": [
+      "mayonnaise",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "lunch-jackets-beans-cheese",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "baking-potatoes",
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "lunch-jackets-beans-cheese",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "mature-cheddar"
+    ],
+    "after": [
+      "mature-cheddar",
+      "baked-beans-tins"
+    ]
+  },
+  {
+    "recipe": "lunch-jackets-beans-cheese",
+    "task": 9,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "baked-beans-tins"
+    ]
+  },
+  {
+    "recipe": "breakfast-smoky-pepper-shakshuka",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "red-pepper",
+      "garlic"
+    ],
+    "after": [
+      "red-pepper",
+      "garlic",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "breakfast-smoky-pepper-shakshuka",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "olive-oil",
+      "red-pepper"
+    ],
+    "after": [
+      "olive-oil",
+      "red-pepper",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "breakfast-smoky-pepper-shakshuka",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "eggs"
+    ],
+    "after": [
+      "eggs",
+      "flatbread"
+    ]
+  },
+  {
+    "recipe": "lunch-ginger-chicken-noodle-soup",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "chicken-breast",
+      "mushrooms"
+    ],
+    "after": [
+      "chicken-breast",
+      "mushrooms",
+      "spring-onion"
+    ]
+  },
+  {
+    "recipe": "lunch-ginger-chicken-noodle-soup",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "soy-sauce"
+    ],
+    "after": [
+      "soy-sauce",
+      "spring-onion"
+    ]
+  },
+  {
+    "recipe": "lunch-ginger-chicken-noodle-soup",
+    "task": 10,
+    "change": "ingredients",
+    "before": [
+      "chicken-stock",
+      "soy-sauce"
+    ],
+    "after": [
+      "chicken-stock",
+      "soy-sauce",
+      "spring-onion"
+    ]
+  },
+  {
+    "recipe": "bakery-cheddar-chive-scones",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "self-raising-flour",
+      "baking-powder",
+      "mustard-powder"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "breakfast-pepper-potato-hash",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "potatoes"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "breakfast-pepper-potato-hash",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "potatoes"
+    ],
+    "after": [
+      "potatoes",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "breakfast-pepper-potato-hash",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "potatoes",
+      "feta"
+    ],
+    "after": [
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "breakfast-pepper-potato-hash",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "potatoes",
+      "feta"
+    ],
+    "after": [
+      "potatoes",
+      "feta",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "breakfast-avocado-burritos",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "olive-oil",
+      "spinach"
+    ],
+    "after": [
+      "olive-oil",
+      "spinach",
+      "cherry-tomatoes"
+    ]
+  },
+  {
+    "recipe": "breakfast-potato-spinach-frittata",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "cheddar"
+    ],
+    "after": [
+      "cheddar",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "breakfast-creamy-mushroom-toast",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "fresh-parsley"
+    ],
+    "after": [
+      "fresh-parsley",
+      "creme-fraiche"
+    ]
+  },
+  {
+    "recipe": "breakfast-granola-yoghurt-pots",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "porridge-oats",
+      "maple-syrup",
+      "vegetable-oil",
+      "vanilla"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "breakfast-granola-yoghurt-pots",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "porridge-oats",
+      "maple-syrup",
+      "vegetable-oil",
+      "vanilla"
+    ],
+    "after": [
+      "porridge-oats",
+      "maple-syrup",
+      "vegetable-oil",
+      "vanilla",
+      "pumpkin-seeds"
+    ]
+  },
+  {
+    "recipe": "lunch-vegetable-minestrone",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "garlic"
+    ],
+    "after": [
+      "garlic",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "lunch-coronation-chicken-sandwiches",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "bread-slices"
+    ],
+    "after": [
+      "bread-slices",
+      "salad-leaves"
+    ]
+  },
+  {
+    "recipe": "lunch-tuna-white-bean-salad",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "bread-slices"
+    ],
+    "after": [
+      "bread-slices",
+      "salad-leaves"
+    ]
+  },
+  {
+    "recipe": "lunch-black-bean-quesadillas",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "black-beans",
+      "cheddar",
+      "spring-onions",
+      "ground-cumin"
+    ],
+    "after": [
+      "black-beans",
+      "cheddar",
+      "spring-onions",
+      "ground-cumin",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "lunch-falafel-pittas",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "chickpeas",
+      "onion",
+      "ground-cumin",
+      "ground-coriander",
+      "fresh-parsley",
+      "plain-flour"
+    ],
+    "after": [
+      "chickpeas",
+      "onion",
+      "ground-cumin",
+      "ground-coriander",
+      "fresh-parsley",
+      "plain-flour",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "lunch-falafel-pittas",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "pitta-breads",
+      "plain-yoghurt"
+    ],
+    "after": [
+      "pitta-breads",
+      "plain-yoghurt",
+      "salad-leaves"
+    ]
+  },
+  {
+    "recipe": "lunch-greek-salad-flatbread",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "tomatoes",
+      "cucumber"
+    ],
+    "after": [
+      "tomatoes",
+      "cucumber",
+      "red-onion"
+    ]
+  },
+  {
+    "recipe": "lunch-greek-salad-flatbread",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "olives"
+    ],
+    "after": [
+      "olives",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "lunch-greek-salad-flatbread",
+    "task": 4,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "flatbread"
+    ]
+  },
+  {
+    "recipe": "lunch-greek-salad-flatbread",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "feta",
+      "olives"
+    ],
+    "after": [
+      "feta",
+      "olives",
+      "flatbread"
+    ]
+  },
+  {
+    "recipe": "lunch-courgette-feta-fritters",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "plain-yoghurt",
+      "lemon"
+    ],
+    "after": [
+      "plain-yoghurt",
+      "lemon",
+      "salad-leaves"
+    ]
+  },
+  {
+    "recipe": "lunch-beetroot-lentil-salad",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "lentils"
+    ],
+    "after": [
+      "lentils",
+      "cooked-quinoa"
+    ]
+  },
+  {
+    "recipe": "chicken-tikka-masala-rice",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "mango-chutney"
+    ]
+  },
+  {
+    "recipe": "chicken-tikka-masala-rice",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "plain-yoghurt",
+      "chicken-breast"
+    ],
+    "after": [
+      "plain-yoghurt",
+      "chicken-breast",
+      "double-cream"
+    ]
+  },
+  {
+    "recipe": "chicken-katsu-rice",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "plain-flour",
+      "vegetable-oil",
+      "onion",
+      "carrots",
+      "garlic",
+      "fresh-ginger",
+      "curry-powder"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "chicken-katsu-rice",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "chicken-stock",
+      "honey"
+    ],
+    "after": [
+      "chicken-stock",
+      "honey",
+      "soy-sauce"
+    ]
+  },
+  {
+    "recipe": "chicken-katsu-rice",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "chicken-breast",
+      "plain-flour",
+      "breadcrumbs"
+    ],
+    "after": [
+      "chicken-breast",
+      "plain-flour",
+      "breadcrumbs",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "chicken-satay-cucumber-rice",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "peanut-butter",
+      "lime",
+      "honey",
+      "curry-powder",
+      "garlic",
+      "fresh-ginger"
+    ],
+    "after": [
+      "peanut-butter",
+      "lime",
+      "honey",
+      "curry-powder",
+      "garlic",
+      "fresh-ginger",
+      "soy-sauce"
+    ]
+  },
+  {
+    "recipe": "chicken-biryani-one-pan",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "onion",
+      "cardamom"
+    ],
+    "after": [
+      "onion",
+      "cardamom",
+      "cinnamon-stick"
+    ]
+  },
+  {
+    "recipe": "chicken-biryani-one-pan",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "turmeric"
+    ],
+    "after": [
+      "turmeric",
+      "balti-paste"
+    ]
+  },
+  {
+    "recipe": "chicken-biryani-one-pan",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "cardamom"
+    ],
+    "after": [
+      "cardamom",
+      "cinnamon-stick"
+    ]
+  },
+  {
+    "recipe": "chicken-leek-puff-pie",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "mustard",
+      "chicken-thighs"
+    ],
+    "after": [
+      "mustard",
+      "chicken-thighs",
+      "creme-fraiche"
+    ]
+  },
+  {
+    "recipe": "chicken-leek-puff-pie",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "puff-pastry"
+    ],
+    "after": [
+      "puff-pastry",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "turkey-bbq-meatloaf",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "onion",
+      "garlic",
+      "olive-oil",
+      "tomato-puree"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "turkey-bbq-meatloaf",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "garlic",
+      "tomato-puree"
+    ],
+    "after": [
+      "garlic",
+      "tomato-puree",
+      "worcestershire-sauce"
+    ]
+  },
+  {
+    "recipe": "turkey-bbq-meatloaf",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "turkey-mince",
+      "onion",
+      "breadcrumbs"
+    ],
+    "after": [
+      "turkey-mince",
+      "onion",
+      "breadcrumbs",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "turkey-bbq-meatloaf",
+    "task": 7,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "bbq-sauce"
+    ]
+  },
+  {
+    "recipe": "turkey-bbq-meatloaf",
+    "task": 9,
+    "change": "ingredients",
+    "before": [
+      "tomato-puree",
+      "cannellini-beans"
+    ],
+    "after": [
+      "tomato-puree",
+      "cannellini-beans",
+      "bbq-sauce"
+    ]
+  },
+  {
+    "recipe": "chicken-parmesan-spaghetti",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "chicken-breast",
+      "plain-flour",
+      "breadcrumbs"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "chicken-parmesan-spaghetti",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "chicken-breast",
+      "plain-flour",
+      "breadcrumbs"
+    ],
+    "after": [
+      "chicken-breast",
+      "plain-flour",
+      "breadcrumbs",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "chicken-parmesan-spaghetti",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "passata",
+      "garlic"
+    ],
+    "after": [
+      "passata",
+      "garlic",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "chicken-souvlaki-pittas",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "olive-oil",
+      "ground-cumin",
+      "lemon",
+      "garlic"
+    ],
+    "after": [
+      "olive-oil",
+      "ground-cumin",
+      "lemon",
+      "garlic",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "chicken-souvlaki-pittas",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "lemon",
+      "garlic",
+      "greek-yoghurt",
+      "cucumber"
+    ],
+    "after": [
+      "lemon",
+      "garlic",
+      "greek-yoghurt",
+      "cucumber",
+      "tomatoes",
+      "salad-leaves"
+    ]
+  },
+  {
+    "recipe": "chicken-souvlaki-pittas",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "chicken-thighs"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "chicken-souvlaki-pittas",
+    "task": 11,
+    "change": "ingredients",
+    "before": [
+      "chicken-thighs",
+      "greek-yoghurt",
+      "pitta-breads"
+    ],
+    "after": [
+      "chicken-thighs",
+      "greek-yoghurt",
+      "pitta-breads",
+      "salad-leaves"
+    ]
+  },
+  {
+    "recipe": "beef-burgers-wedges",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "vegetable-oil",
+      "potatoes"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "beef-burgers-wedges",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "vegetable-oil",
+      "potatoes"
+    ],
+    "after": [
+      "vegetable-oil",
+      "potatoes",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "beef-burgers-wedges",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "beef-mince",
+      "onion"
+    ],
+    "after": [
+      "beef-mince",
+      "onion",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "beef-burgers-wedges",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "ketchup"
+    ],
+    "after": [
+      "ketchup",
+      "burger-buns"
+    ]
+  },
+  {
+    "recipe": "beef-lasagne",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "tomato-puree",
+      "chopped-tomatoes",
+      "beef-mince"
+    ],
+    "after": [
+      "tomato-puree",
+      "chopped-tomatoes",
+      "beef-mince",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "beef-lasagne",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "milk",
+      "hard-cheese"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "beef-lasagne",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "milk",
+      "hard-cheese"
+    ],
+    "after": [
+      "milk",
+      "hard-cheese",
+      "creme-fraiche"
+    ]
+  },
+  {
+    "recipe": "beef-stroganoff-rice",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "beef-strips",
+      "beef-stock"
+    ],
+    "after": [
+      "beef-strips",
+      "beef-stock",
+      "creme-fraiche",
+      "dijon-mustard"
+    ]
+  },
+  {
+    "recipe": "lamb-lancashire-hotpot",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "diced-lamb",
+      "butter"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "lamb-lancashire-hotpot",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "diced-lamb",
+      "bay-leaves"
+    ],
+    "after": [
+      "diced-lamb",
+      "bay-leaves",
+      "dried-thyme"
+    ]
+  },
+  {
+    "recipe": "beef-ale-puff-pie",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "diced-beef",
+      "bay-leaves"
+    ],
+    "after": [
+      "diced-beef",
+      "bay-leaves",
+      "dried-thyme"
+    ]
+  },
+  {
+    "recipe": "beef-ale-puff-pie",
+    "task": 10,
+    "change": "ingredients",
+    "before": [
+      "puff-pastry"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "beef-ale-puff-pie",
+    "task": 11,
+    "change": "ingredients",
+    "before": [
+      "puff-pastry"
+    ],
+    "after": [
+      "puff-pastry",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "beef-meatballs-spaghetti",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "beef-mince",
+      "breadcrumbs",
+      "hard-cheese",
+      "onion"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "beef-meatballs-spaghetti",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "beef-mince",
+      "breadcrumbs",
+      "hard-cheese",
+      "onion"
+    ],
+    "after": [
+      "beef-mince",
+      "breadcrumbs",
+      "hard-cheese",
+      "onion",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "beef-meatballs-spaghetti",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "fish-pie-cheddar-mash",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "potatoes",
+      "milk",
+      "butter"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "fish-pie-cheddar-mash",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "milk",
+      "butter",
+      "plain-flour",
+      "spring-onions"
+    ],
+    "after": [
+      "milk",
+      "butter",
+      "plain-flour",
+      "spring-onions",
+      "dijon-mustard"
+    ]
+  },
+  {
+    "recipe": "prawn-pea-paella",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "garlic"
+    ],
+    "after": [
+      "garlic",
+      "smoked-paprika"
+    ]
+  },
+  {
+    "recipe": "prawn-pea-paella",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes",
+      "veg-stock"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "veg-stock",
+      "paella-rice"
+    ]
+  },
+  {
+    "recipe": "prawn-pea-paella",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes",
+      "veg-stock"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "veg-stock",
+      "paella-rice"
+    ]
+  },
+  {
+    "recipe": "prawn-pea-paella",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "raw-prawns",
+      "frozen-peas"
+    ],
+    "after": [
+      "raw-prawns",
+      "frozen-peas",
+      "paella-rice"
+    ]
+  },
+  {
+    "recipe": "prawn-pea-paella",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "lemon"
+    ],
+    "after": [
+      "lemon",
+      "paella-rice"
+    ]
+  },
+  {
+    "recipe": "pork-schnitzel-potatoes",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "breadcrumbs"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "pork-schnitzel-potatoes",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "breadcrumbs"
+    ],
+    "after": [
+      "breadcrumbs",
+      "dried-sage"
+    ]
+  },
+  {
+    "recipe": "pork-schnitzel-potatoes",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "pork-chops",
+      "breadcrumbs"
+    ],
+    "after": [
+      "pork-chops",
+      "breadcrumbs",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "pork-schnitzel-potatoes",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "butter"
+    ],
+    "after": [
+      "butter",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "sausage-green-lentil-stew",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": [
+      "olive-oil",
+      "pork-sausages"
+    ]
+  },
+  {
+    "recipe": "sausage-green-lentil-stew",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "garlic"
+    ],
+    "after": [
+      "garlic",
+      "dried-thyme"
+    ]
+  },
+  {
+    "recipe": "sausage-green-lentil-stew",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "veg-stock"
+    ],
+    "after": [
+      "veg-stock",
+      "pork-sausages",
+      "green-lentils"
+    ]
+  },
+  {
+    "recipe": "sausage-green-lentil-stew",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "veg-stock"
+    ],
+    "after": [
+      "veg-stock",
+      "green-lentils"
+    ]
+  },
+  {
+    "recipe": "sausage-green-lentil-stew",
+    "task": 7,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "pork-sausages",
+      "green-lentils"
+    ]
+  },
+  {
+    "recipe": "tuna-pea-fishcakes",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "breadcrumbs"
+    ],
+    "after": [
+      "breadcrumbs",
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "tuna-pea-fishcakes",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": [
+      "olive-oil",
+      "salad-leaves",
+      "cherry-tomatoes"
+    ]
+  },
+  {
+    "recipe": "aubergine-caponata-bread",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes",
+      "capers",
+      "raisins",
+      "olives"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "capers",
+      "raisins",
+      "olives",
+      "caster-sugar",
+      "red-wine-vinegar"
+    ]
+  },
+  {
+    "recipe": "spinach-ricotta-cannelloni",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes",
+      "garlic",
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "squash-red-lentil-dhal",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "ground-cumin",
+      "ground-coriander",
+      "turmeric"
+    ],
+    "after": [
+      "ground-cumin",
+      "ground-coriander",
+      "turmeric",
+      "butternut-squash"
+    ]
+  },
+  {
+    "recipe": "squash-red-lentil-dhal",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes",
+      "veg-stock"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "veg-stock",
+      "mango-chutney"
+    ]
+  },
+  {
+    "recipe": "squash-red-lentil-dhal",
+    "task": 4,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "red-lentils",
+      "butternut-squash"
+    ]
+  },
+  {
+    "recipe": "squash-red-lentil-dhal",
+    "task": 6,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "flatbread"
+    ]
+  },
+  {
+    "recipe": "lentil-aubergine-moussaka",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "aubergine",
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "lentil-aubergine-moussaka",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "garlic",
+      "ground-cinnamon"
+    ],
+    "after": [
+      "garlic",
+      "ground-cinnamon",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "lentil-aubergine-moussaka",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes",
+      "veg-stock"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "veg-stock",
+      "green-lentils"
+    ]
+  },
+  {
+    "recipe": "tofu-vegetable-fried-rice",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "vegetable-oil"
+    ],
+    "after": [
+      "vegetable-oil",
+      "firm-tofu"
+    ]
+  },
+  {
+    "recipe": "tofu-vegetable-fried-rice",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "carrots",
+      "garlic"
+    ],
+    "after": [
+      "carrots",
+      "garlic",
+      "spring-onions"
+    ]
+  },
+  {
+    "recipe": "tofu-vegetable-fried-rice",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "cooked-rice",
+      "soy-sauce"
+    ],
+    "after": [
+      "cooked-rice",
+      "soy-sauce",
+      "firm-tofu"
+    ]
+  },
+  {
+    "recipe": "tofu-vegetable-fried-rice",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "vegetable-oil",
+      "sesame-oil"
+    ],
+    "after": [
+      "vegetable-oil",
+      "sesame-oil",
+      "spring-onions"
+    ]
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": [
+      "olive-oil",
+      "portobello"
+    ]
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "spinach",
+      "garlic"
+    ],
+    "after": [
+      "spinach",
+      "garlic",
+      "dried-thyme"
+    ]
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "puff-pastry"
+    ],
+    "after": [
+      "puff-pastry",
+      "portobello"
+    ]
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "spinach"
+    ],
+    "after": [
+      "spinach",
+      "portobello",
+      "stilton"
+    ]
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 8,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 9,
+    "change": "ingredients",
+    "before": [],
+    "after": [
+      "eggs"
+    ]
+  },
+  {
+    "recipe": "rice-chickpea-stuffed-peppers",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "red-pepper",
+      "passata",
+      "garlic",
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "rice-chickpea-stuffed-peppers",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "passata",
+      "garlic"
+    ],
+    "after": [
+      "passata",
+      "garlic",
+      "dried-oregano"
+    ]
+  },
+  {
+    "recipe": "rice-chickpea-stuffed-peppers",
+    "task": 9,
+    "change": "ingredients",
+    "before": [
+      "red-pepper"
+    ],
+    "after": [
+      "red-pepper",
+      "salad-leaves"
+    ]
+  },
+  {
+    "recipe": "broccoli-cheddar-pasta-bake",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "pasta",
+      "broccoli"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "bakery-chocolate-brownies",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "large-eggs"
+    ],
+    "after": [
+      "large-eggs",
+      "caster-sugar"
+    ]
+  },
+  {
+    "recipe": "bakery-lemon-drizzle",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "butter"
+    ],
+    "after": [
+      "butter",
+      "caster-sugar"
+    ]
+  },
+  {
+    "recipe": "bakery-lemon-drizzle",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "lemon"
+    ],
+    "after": [
+      "lemon",
+      "caster-sugar"
+    ]
+  },
+  {
+    "recipe": "bakery-chocolate-chip-cookies",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "butter"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "bakery-chocolate-chip-cookies",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "butter"
+    ],
+    "after": [
+      "butter",
+      "brown-sugar",
+      "caster-sugar"
+    ]
+  },
+  {
+    "recipe": "bakery-chocolate-chip-cookies",
+    "task": 3,
+    "change": "ingredients",
+    "before": [
+      "butter",
+      "plain-flour"
+    ],
+    "after": [
+      "butter",
+      "plain-flour",
+      "bicarb"
+    ]
+  },
+  {
+    "recipe": "bakery-rosemary-focaccia",
+    "task": 6,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "bakery-rosemary-focaccia",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": [
+      "olive-oil",
+      "dried-rosemary"
+    ]
+  },
+  {
+    "recipe": "bakery-victoria-sponge",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "butter",
+      "icing-sugar",
+      "vanilla"
+    ],
+    "after": [
+      "butter",
+      "icing-sugar",
+      "vanilla"
+    ]
+  },
+  {
+    "recipe": "bakery-apple-crumble",
+    "task": 0,
+    "change": "ingredients",
+    "before": [
+      "apples",
+      "ground-cinnamon"
+    ],
+    "after": []
+  },
+  {
+    "recipe": "bakery-apple-crumble",
+    "task": 1,
+    "change": "ingredients",
+    "before": [
+      "apples",
+      "ground-cinnamon"
+    ],
+    "after": [
+      "apples",
+      "ground-cinnamon",
+      "caster-sugar"
+    ]
+  },
+  {
+    "recipe": "bakery-apple-crumble",
+    "task": 4,
+    "change": "ingredients",
+    "before": [
+      "plain-flour",
+      "butter"
+    ],
+    "after": [
+      "plain-flour",
+      "butter",
+      "caster-sugar"
+    ]
+  },
+  {
+    "recipe": "chicken-roast",
+    "task": 10,
+    "change": "wording",
+    "before": "Rest chicken 3 minutes.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest chicken 3 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "tuna-pasta",
+    "task": 9,
+    "change": "wording",
+    "before": "Rest for 5 minutes before serving. Check tinned tuna and mustard product labels for allergens.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes before serving. Check tinned tuna and mustard product labels for allergens. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "mint-lamb-meatballs",
+    "task": 2,
+    "change": "wording",
+    "before": "Shape into 16 similar-sized balls; chill until cooking.",
+    "after": "Shape into 16 similar-sized balls; chill until cooking. To chill, cover and place in the fridge; do not leave it on the worktop."
+  },
+  {
+    "recipe": "greek-lamb-traybake",
+    "task": 10,
+    "change": "wording",
+    "before": "Rest a few minutes, crumble feta over if suitable for the household, and finish with the remaining lemon juice.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest a few minutes, crumble feta over if suitable for the household, and finish with the remaining lemon juice. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "sweet-potato-enchiladas",
+    "task": 9,
+    "change": "wording",
+    "before": "Rest 5 minutes and serve.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes and serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "breakfast-pepper-potato-hash",
+    "task": 1,
+    "change": "wording",
+    "before": "Drain and steam-dry for 3 minutes.",
+    "after": "Drain and steam-dry for 3 minutes. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate."
+  },
+  {
+    "recipe": "breakfast-potato-spinach-frittata",
+    "task": 7,
+    "change": "wording",
+    "before": "Rest 3 minutes; use oven gloves to handle the pan.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 3 minutes; use oven gloves to handle the pan. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "lunch-tuna-white-bean-salad",
+    "task": 5,
+    "change": "wording",
+    "before": "Serve with bread. If preparing ahead, chill the bean mixture and keep leaves separate until serving.",
+    "after": "Serve with bread. If preparing ahead, chill the bean mixture and keep leaves separate until serving. To chill, cover and place in the fridge; do not leave it on the worktop."
+  },
+  {
+    "recipe": "lunch-falafel-pittas",
+    "task": 3,
+    "change": "wording",
+    "before": "Shape into three flat patties per person; chill for 30 minutes to firm up.",
+    "after": "Shape into three flat patties per person; chill for 30 minutes to firm up. To chill, cover and place in the fridge; do not leave it on the worktop."
+  },
+  {
+    "recipe": "chicken-leek-puff-pie",
+    "task": 11,
+    "change": "wording",
+    "before": "Rest pie for 5 minutes, then serve with peas.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest pie for 5 minutes, then serve with peas. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "turkey-bbq-meatloaf",
+    "task": 11,
+    "change": "wording",
+    "before": "Rest for 5 minutes, sprinkle with parsley and slice to serve.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes, sprinkle with parsley and slice to serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "chicken-souvlaki-pittas",
+    "task": 9,
+    "change": "wording",
+    "before": "Rest 5 minutes.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "beef-burgers-wedges",
+    "task": 4,
+    "change": "wording",
+    "before": "Chill for 15 minutes while wedges cook.",
+    "after": "Chill for 15 minutes while wedges cook. To chill, cover and place in the fridge; do not leave it on the worktop."
+  },
+  {
+    "recipe": "beef-lasagne",
+    "task": 11,
+    "change": "wording",
+    "before": "Rest for 10 minutes before serving.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 10 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "beef-ale-puff-pie",
+    "task": 14,
+    "change": "wording",
+    "before": "Rest pie 5 minutes and serve.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest pie 5 minutes and serve. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "fish-pie-cheddar-mash",
+    "task": 2,
+    "change": "wording",
+    "before": "Drain, steam-dry and mash with half the butter and the mash portion of milk.",
+    "after": "Drain, steam-dry and mash with half the butter and one fifth of the measured milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate."
+  },
+  {
+    "recipe": "fish-pie-cheddar-mash",
+    "task": 10,
+    "change": "wording",
+    "before": "Rest for 5 minutes before serving.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 5 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "tuna-pea-fishcakes",
+    "task": 1,
+    "change": "wording",
+    "before": "Drain, steam-dry for 3 minutes and mash with milk.",
+    "after": "Drain, steam-dry for 3 minutes and mash with milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate."
+  },
+  {
+    "recipe": "tuna-pea-fishcakes",
+    "task": 4,
+    "change": "wording",
+    "before": "Shape into flat fishcakes about 2cm thick; chill for 15 minutes if soft.",
+    "after": "Shape into flat fishcakes about 2cm thick; chill for 15 minutes if soft. To chill, cover and place in the fridge; do not leave it on the worktop."
+  },
+  {
+    "recipe": "spinach-ricotta-cannelloni",
+    "task": 11,
+    "change": "wording",
+    "before": "Rest 5 minutes.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "lentil-aubergine-moussaka",
+    "task": 11,
+    "change": "wording",
+    "before": "Rest 10 minutes before slicing.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 10 minutes before slicing. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 10,
+    "change": "wording",
+    "before": "Chill for 15 minutes while oven heats to 200°C fan.",
+    "after": "Chill for 15 minutes while oven heats to 200°C fan. To chill, cover and place in the fridge; do not leave it on the worktop."
+  },
+  {
+    "recipe": "mushroom-spinach-wellingtons",
+    "task": 12,
+    "change": "wording",
+    "before": "Rest 5 minutes before serving.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 5 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "broccoli-cheddar-pasta-bake",
+    "task": 11,
+    "change": "wording",
+    "before": "Rest 3 minutes before serving.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest 3 minutes before serving. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "bakery-apple-crumble",
+    "task": 8,
+    "change": "wording",
+    "before": "Rest for 10 minutes before dividing into six portions; fruit underneath will be very hot.",
+    "after": "Use oven gloves to move the cooked food off the heat onto a heatproof surface. Rest for 10 minutes before dividing into six portions; fruit underneath will be very hot. Resting means leaving it undisturbed before cutting or serving; do not keep cooking it during this wait."
+  },
+  {
+    "recipe": "chicken-katsu-rice",
+    "task": 2,
+    "change": "wording",
+    "before": "Add garlic, ginger and curry powder for 1 minute, then stir in the sauce portion of flour for 1 minute.",
+    "after": "Add garlic, ginger and curry powder for 1 minute, then stir in one quarter of the measured flour (reserve the other three quarters for coating) for 1 minute."
+  },
+  {
+    "recipe": "fish-pie-cheddar-mash",
+    "task": 2,
+    "change": "wording",
+    "before": "Drain, steam-dry and mash with half the butter and the mash portion of milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate.",
+    "after": "Drain, steam-dry and mash with half the butter and one fifth of the measured milk. Steam-dry means leave the drained potatoes in the warm pan off the heat, uncovered, so surface water can evaporate."
+  },
+  {
+    "recipe": "fish-pie-cheddar-mash",
+    "task": 5,
+    "change": "wording",
+    "before": "Stir in flour for 1 minute, then gradually whisk in the sauce portion of milk.",
+    "after": "Stir in flour for 1 minute, then gradually whisk in the remaining four fifths of the milk."
+  },
+  {
+    "recipe": "tuna-pea-fishcakes",
+    "task": 6,
+    "change": "wording",
+    "before": "Heat the frying portion of oil in a non-stick pan over medium heat.",
+    "after": "Heat two thirds of the measured oil (reserve the final third for the salad) in a non-stick pan over medium heat."
+  },
+  {
+    "recipe": "bakery-lemon-drizzle",
+    "task": 2,
+    "change": "wording",
+    "before": "Beat butter with the cake portion of sugar for 3–5 minutes until pale.",
+    "after": "Beat butter with 225g caster sugar (reserve 85g for the drizzle) for 3–5 minutes until pale."
+  },
+  {
+    "recipe": "bakery-lemon-drizzle",
+    "task": 8,
+    "change": "wording",
+    "before": "Mix the drizzle sugar with lemon juice.",
+    "after": "Mix the reserved 85g caster sugar with lemon juice."
+  },
+  {
+    "recipe": "bakery-rosemary-focaccia",
+    "task": 1,
+    "change": "wording",
+    "before": "Add the dough portion of oil and 375ml lukewarm water.",
+    "after": "Add two fifths of the measured oil and 375ml lukewarm water."
+  },
+  {
+    "recipe": "bakery-rosemary-focaccia",
+    "task": 4,
+    "change": "wording",
+    "before": "Oil a 25 × 35cm shallow metal tin with the tin portion of oil.",
+    "after": "Oil a 25 × 35cm shallow metal tin with one fifth of the measured oil."
+  },
+  {
+    "recipe": "bakery-victoria-sponge",
+    "task": 2,
+    "change": "wording",
+    "before": "Beat the cake portion of butter with caster sugar until pale.",
+    "after": "Beat 200g softened butter (reserve 100g for the filling) with caster sugar until pale."
+  },
+  {
+    "recipe": "bakery-apple-crumble",
+    "task": 1,
+    "change": "wording",
+    "before": "Put sliced apples in a baking dish about 20 × 25cm with the smaller portion of sugar, cinnamon and 2 tbsp water.",
+    "after": "Put sliced apples in a baking dish about 20 × 25cm with 30g caster sugar (reserve 110g for the topping), cinnamon and 2 tbsp water."
+  },
+  {
+    "recipe": "bakery-apple-crumble",
+    "task": 4,
+    "change": "wording",
+    "before": "Stir in the topping sugar.",
+    "after": "Stir in the reserved 110g caster sugar."
+  },
+  {
+    "recipe": "chicken-fajitas",
+    "task": 0,
+    "change": "wording",
+    "before": "Mix paprika, cumin, half the fajita seasoning and a spoon of oil.",
+    "after": "Mix the measured smoked paprika and cumin with half the fajita seasoning and half the measured olive oil in a bowl. Reserve the remaining seasoning and oil for the vegetables."
+  },
+  {
+    "recipe": "chicken-fajitas",
+    "task": 6,
+    "change": "wording",
+    "before": "Add remaining oil, peppers and onion to the pan.",
+    "after": "Add the remaining half of the measured oil, the sliced peppers and onion, and the reserved half of the fajita seasoning to the pan."
+  },
+  {
+    "recipe": "lunch-greek-salad-flatbread",
+    "task": 2,
+    "change": "ingredients",
+    "before": [
+      "olive-oil"
+    ],
+    "after": [
+      "olive-oil",
+      "red-wine-vinegar"
+    ]
+  },
+  {
+    "recipe": "aubergine-caponata-bread",
+    "task": 5,
+    "change": "ingredients",
+    "before": [
+      "chopped-tomatoes",
+      "capers",
+      "raisins",
+      "olives",
+      "caster-sugar"
+    ],
+    "after": [
+      "chopped-tomatoes",
+      "capers",
+      "raisins",
+      "olives",
+      "caster-sugar",
+      "red-wine-vinegar"
+    ]
+  },
+  {
+    "recipe": "beef-burgers-wedges",
+    "task": 8,
+    "change": "ingredients",
+    "before": [
+      "ketchup"
+    ],
+    "after": [
+      "ketchup",
+      "salad-leaves",
+      "tomatoes"
+    ]
+  },
+  {
+    "recipe": "beef-lasagne",
+    "task": 7,
+    "change": "ingredients",
+    "before": [
+      "mozzarella",
+      "hard-cheese"
+    ],
+    "after": [
+      "mozzarella",
+      "hard-cheese",
+      "lasagne-sheets"
+    ]
+  }
+]
