@@ -6,7 +6,7 @@ vm.createContext(sandbox);
 const html=fs.readFileSync('index.html','utf8');
 for(const m of html.matchAll(/<script(?: src="([^"]+)")?>([\s\S]*?)<\/script>/g)){
  let code=m[1]?fs.readFileSync(m[1].split('?')[0],'utf8'):m[2];
- code=code.replace('const initial=location.hash.slice(1);',`window.testApi={recipes:RECIPES,resolve:recipeById,tasks:guideTasks,render:renderBeginnerTask,shop:shopIngredients,getState:()=>state,show:showRecipe,validate:validateImport,defaults:defaultState,setPortions:n=>guideServings=n};return;const initial=location.hash.slice(1);`);
+ code=code.replace('const initial=location.hash.slice(1);',`window.testApi={recipes:RECIPES,resolve:recipeById,tasks:guideTasks,render:renderBeginnerTask,shop:shopIngredients,getState:()=>state,show:showRecipe,validate:validateImport,defaults:defaultState,favourites:()=>{filter='Favourites';return recipeResults()},setPortions:n=>guideServings=n};return;const initial=location.hash.slice(1);`);
  vm.runInContext(code,sandbox);sandbox.CookIllustrations=sandbox.window.CookIllustrations;
 }
 const a=sandbox.window.testApi,b=sandbox.window.CookBreakfast;
@@ -34,6 +34,7 @@ const shop=a.shop();
 assert.equal(shop.find(i=>i.id==='pork-sausages').qty,10);
 assert.equal(shop.find(i=>i.id==='back-bacon').qty,2);
 assert.equal(shop.find(i=>i.id==='eggs').qty,8);
+a.getState().favorites=[first];assert(a.favourites().includes(first));
 const backup=a.validate({...a.defaults(),version:1,plan:a.getState().plan});assert.equal(backup.plan.Monday.id,first);assert.equal(backup.plan.Tuesday.id,second);
 a.show(first,'Monday');assert(elements['modal-root'].innerHTML.includes('For 2 people: 6 sausages, 2 bacon rashers, 4 eggs'));
 // Real change handler must change only this plan entry and preserve the servings.
