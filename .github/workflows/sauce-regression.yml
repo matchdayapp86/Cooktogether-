@@ -12,6 +12,8 @@ jobs:
           node-version: '22'
       - name: Optional sauce data and JavaScript syntax
         run: node tests/optional-sauces.cjs
+      - name: Breakfast choices, cooking methods and shopping totals
+        run: node tests/breakfasts.cjs
       - name: Core traybake and timer regression
         run: node tests/traybake-timers.cjs
       - name: Illustration placement regression
