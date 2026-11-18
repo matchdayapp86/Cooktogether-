@@ -35332,7 +35332,7 @@ function renderBeginnerTask(r,index){
  const instructions=(Array.isArray(t.how)&&t.how.length?t.how:t.skills.filter(k=>!preparationSkills.has(k)||illustrationKeys.includes(k)||(k==='pepper'&&illustrationKeys.some(v=>v.startsWith('pepper-')))).map(k=>k==='mix'?relevantMixHelp(t.instructions):BEGINNER_TECHNIQUES[k])).filter(Boolean);
  const amounts=beginnerIngredientRows(r,t,guideServings);
  return `<section class="beginner-task" id="guide-current-instruction"><div class="beginner-task-heading"><span class="eyebrow">TASK ${index+1} OF ${guideTaskCount(r)}</span><h3>${esc(scaledInstruction(t.title,r,guideServings))}</h3></div>${heat?`<p class="beginner-heat">Heat: <strong>${esc(heat)}</strong></p>`:''}
- <div class="beginner-amounts-reminder"><span>Ingredient amounts are further down this page.</span><button type="button" data-action="guide-jump-amounts">${amounts?'View amounts ↓':'View all ingredients ↓'}</button></div>
+ <div class="beginner-amounts-reminder"><span>${amounts?'Ingredient amounts are further down this page.':'Need to check another recipe ingredient amount?'}</span><button type="button" data-action="guide-jump-amounts">${amounts?'View amounts ↓':'View all ingredients ↓'}</button></div>
  <div class="illustrated-action"><div class="beginner-do"><h4>Do this</h4>${renderGuideActions(text)}</div>${CookIllustrations.render(illustrationKeys)}</div>
  ${instructions.length?`<div class="beginner-how"><h4>How to do it</h4>${instructions.map(info=>`<section><strong>${esc(info.title)}</strong><ol>${info.actions.map(a=>`<li>${esc(a)}</li>`).join('')}</ol></section>`).join('')}</div>`:''}
  ${t.check?`<div class="beginner-check"><strong>Check before moving on</strong><p>${esc(scaledInstruction(t.check,r,guideServings))}</p></div>`:''}
