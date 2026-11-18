@@ -35299,6 +35299,29 @@ function beginnerIngredientRows(r,task,portions){
  return `<section class="beginner-amounts" id="guide-task-amounts" tabindex="-1" aria-label="Ingredient amounts for this task"><h4>Measured recipe amounts</h4><p>These are recipe totals for ${portions} ${r.fixedBatch&&!r.batchNote?'pieces per batch':'portions'}. Use only the share named in this task; do not add the total again.</p><ul>${items.map(i=>`<li><strong>${esc(i[1])}</strong><span>${ingredientAmount(i[2]*portions/r.servings,i[3])}</span></li>`).join('')}</ul></section>`;
 }
 function renderGlobalBeginnerTimers(){const root=document.getElementById('beginner-global-timers');if(root)root.innerHTML=guideId?'':renderBeginnerTimers();}
+// Choose technique help using the actual action, rather than a broad imported "mix" tag.
+// This avoids showing ingredient-specific advice for unrelated recipes (e.g. fish parcels).
+function relevantMixHelp(instruction){
+ const s=String(instruction||'');
+ if(/\bwhisk\b|\bbeat\b/i.test(s))return {title:'Whisk until combined',actions:[
+   'Use the bowl or jug and utensil named in the step. Whisk in steady circles, reaching the bottom and sides.',
+   'Stop when the ingredients look evenly combined. Follow the recipe if it requires a particular thickness or texture.'
+ ]};
+ if(/\bfold (?:in|through)\b|\bfold\b[^.!?]{0,70}\b(?:into|through)\b/i.test(s))return {title:'Fold the ingredients through gently',actions:[
+   'Use a large spoon or spatula to lift some of the mixture from underneath and turn it over the ingredients being added.',
+   'Repeat gently until distributed. Stop when the step says the ingredients are combined; avoid unnecessary stirring.'
+ ]};
+ if(/\b(?:toss|coat)\b/i.test(s))return {title:'Toss until evenly coated',actions:[
+   'Use a bowl or tray large enough for the food to move without spilling. Add only the quantities named in this step.',
+   'Use a spoon, spatula or clean tongs to lift and turn the pieces so the coating reaches their surfaces.',
+   'Spread the food out again if the step calls for roasting or frying in a single layer.'
+ ]};
+ if(/\b(?:mix|stir|combine)\b/i.test(s))return {title:'Mix evenly',actions:[
+   'Use the bowl, jug or pan named in the step and add the ingredients listed in the step.',
+   'Stir from the bottom and around the edges until evenly combined, then stop. Follow any specific texture or timing cue in the recipe.'
+ ]};
+ return null;
+}
 function renderBeginnerTask(r,index){
  const t=currentBeginnerTask(r,index);if(!t)return '';
  const text=scaledInstruction(t.instructions,r,guideServings),heat=taskHeat(text),reminders=reminderOptions(text);
@@ -35306,7 +35329,7 @@ function renderBeginnerTask(r,index){
  // Old imported skill tags can describe ingredients that are already prepared.
  // Keep instruction help only when that technique is actually performed here.
  const preparationSkills=new Set(['dice','slice-onion','garlic','pepper','potato-prep','grate','rice','milk-sauce']);
- const instructions=(Array.isArray(t.how)&&t.how.length?t.how:t.skills.filter(k=>!preparationSkills.has(k)||illustrationKeys.includes(k)||(k==='pepper'&&illustrationKeys.some(v=>v.startsWith('pepper-')))).map(k=>BEGINNER_TECHNIQUES[k])).filter(Boolean);
+ const instructions=(Array.isArray(t.how)&&t.how.length?t.how:t.skills.filter(k=>!preparationSkills.has(k)||illustrationKeys.includes(k)||(k==='pepper'&&illustrationKeys.some(v=>v.startsWith('pepper-')))).map(k=>k==='mix'?relevantMixHelp(t.instructions):BEGINNER_TECHNIQUES[k])).filter(Boolean);
  const amounts=beginnerIngredientRows(r,t,guideServings);
  return `<section class="beginner-task" id="guide-current-instruction"><div class="beginner-task-heading"><span class="eyebrow">TASK ${index+1} OF ${guideTaskCount(r)}</span><h3>${esc(scaledInstruction(t.title,r,guideServings))}</h3></div>${heat?`<p class="beginner-heat">Heat: <strong>${esc(heat)}</strong></p>`:''}
  <div class="beginner-amounts-reminder"><span>Ingredient amounts are further down this page.</span><button type="button" data-action="guide-jump-amounts">${amounts?'View amounts ↓':'View all ingredients ↓'}</button></div>
