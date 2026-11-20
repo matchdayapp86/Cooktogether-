@@ -49,7 +49,7 @@
     if (index < 2) return Math.round(value).toLocaleString('en-GB');
     const digits = index === 8 ? 2 : 1;
     const threshold = 10 ** -digits;
-    if (value > 0 && value < threshold) return '&lt;' + threshold + ' g';
+    if (value > 0 && value < threshold) return '<' + threshold + ' g';
     return value.toLocaleString('en-GB', {maximumFractionDigits:digits}) + ' g';
   }
 
@@ -57,7 +57,7 @@
     return '<table><thead><tr><th scope="col">Nutrient</th>' +
       columns.map(([label]) => '<th scope="col">' + html(label) + '</th>').join('') +
       '</tr></thead><tbody>' + fields.map((label, i) =>
-        '<tr><th scope="row">' + label + '</th>' + columns.map(([, values]) => '<td>' + format(values[i], i) + '</td>').join('') + '</tr>'
+        '<tr><th scope="row">' + label + '</th>' + columns.map(([, values]) => '<td>' + html(format(values[i], i)) + '</td>').join('') + '</tr>'
       ).join('') + '</tbody></table>';
   }
 
@@ -101,5 +101,28 @@
       '</details>';
   }
 
-  window.CookNutrition = {calculate, render};
+  const sortOptions = {
+    protein: ['Most protein', 2, -1, 'protein'],
+    fibre: ['Most fibre', 7, -1, 'fibre'],
+    calories: ['Fewest calories', 0, 1, 'kcal'],
+    salt: ['Least salt', 8, 1, 'salt']
+  };
+
+  function sortRecipes(recipes, key) {
+    const [, index, direction, label] = sortOptions[key];
+    return recipes.map(recipe => ({
+      recipe,
+      value: perServing(calculate(recipe, recipe.servings).batch, recipe.servings)[index]
+    })).sort((a, b) => {
+      if (a.value === null) return b.value === null ? 0 : 1;
+      if (b.value === null) return -1;
+      return direction * (a.value - b.value);
+    }).map(({recipe, value}) => ({
+      recipe,
+      nutritionLabel: value === null ? (index === 0 ? 'Calories' : label[0].toUpperCase() + label.slice(1)) + ' estimate unavailable' :
+        format(value, index) + ' ' + label + ' per serving'
+    }));
+  }
+
+  window.CookNutrition = {calculate, render, sortOptions, sortRecipes};
 })();
