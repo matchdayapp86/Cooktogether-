@@ -58,4 +58,23 @@ const scaled = {servings: 1, ingredients: [['chickpeas', 'Chickpeas', 1, 'tin'],
 const lines = calculate(scaled, 1).ingredients;
 assert.equal(lines[0].amount, 240);
 assert.equal(lines[1].amount, 500);
+for (const [key, [, index, direction]] of Object.entries(CookNutrition.sortOptions)) {
+  const ranked = CookNutrition.sortRecipes([edgeCase, ...recipes], key);
+  assert.equal(ranked.length, recipes.length + 1);
+  assert.match(ranked.find(item => item.recipe === edgeCase).nutritionLabel, /estimate unavailable/);
+  let previous = null;
+  let hasUnknown = false;
+  for (const {recipe, nutritionLabel} of ranked) {
+    const batch = calculate(recipe, recipe.servings).batch;
+    if (batch[index] === null) {
+      hasUnknown = true;
+      continue;
+    }
+    assert(!hasUnknown, key + ' sorted a missing estimate before a known value');
+    const current = batch[index] / recipe.servings;
+    if (previous !== null) assert((current - previous) * direction >= 0, key + ' out of order');
+    assert.match(nutritionLabel, /per serving$/);
+    previous = current;
+  }
+}
 console.log('Nutrition checked for ' + recipes.length + ' recipes and ' + Object.keys(sauces).length + ' optional sauces.');
