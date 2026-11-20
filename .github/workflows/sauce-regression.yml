@@ -20,3 +20,5 @@ jobs:
         run: node tests/traybake-timers.cjs
       - name: Illustration placement regression
         run: node tests/illustrations.cjs && node tests/task-illustrations.cjs
+      - name: Nutrition coverage and scaling
+        run: node tests/nutrition.cjs

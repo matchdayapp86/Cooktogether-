@@ -59,3 +59,9 @@ task renderer, portion scaling, reorder resilience, and prepared-ingredient guar
 - Optional phone notifications can be enabled only by a user tap. They use `timer-alert-sw.js` for notification display and reopening the app; the service worker is **not** a background timer scheduler.
 - Android and other mobile browsers throttle or suspend JavaScript and sound after switching apps or locking the screen. Notifications, audio and vibration may be delayed or blocked, especially if the site is closed. These features **do not** guarantee an on-time background alarm; use the phone's Clock timer for important cooking reminders until a native app provides alarm scheduling.
 - Run `node tests/traybake-timers.cjs` for the onion/glaze and timed midpoint-reminder regression checks and `node tests/browser.cjs` for volume-control UI checks in a browser-enabled environment.
+
+## Recipe nutrition
+
+Open **Nutrition estimates** on a recipe to see the values for one serving, the selected batch and each ingredient. An optional sauce has its own comparison. Amounts come from the recipe and may use representative edible weights or drained pack sizes. An unavailable nutrient is displayed as a dash and is never counted as zero in totals.
+
+The reference for each ingredient appears in the app and in `nutrition-data.js`. This uses the [UK Composition of Foods Integrated Dataset (CoFID), 2021](https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid) (Public Health England, Crown copyright), [USDA Standard Reference Release 28](https://fdc.nal.usda.gov/download-datasets/) and representative product labels. These are ingredient-based estimates. Actual brands, edible weights, unmeasured seasoning and cooking losses can change the result. Run `node tests/nutrition.cjs` after adding recipes, ingredient units or sauces.
