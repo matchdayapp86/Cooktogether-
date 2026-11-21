@@ -4,7 +4,8 @@
   color: #193628;
 }
 .home-preview h1,
-.home-preview h2 {
+.home-preview h2,
+.home-preview h3 {
   font-family: Georgia, 'Times New Roman', serif;
   letter-spacing: -.025em;
   line-height: 1.12;
@@ -38,7 +39,7 @@
   font-size: .82rem;
   font-weight: 700;
 }
-.home-preview h2 {
+.home-preview h3 {
   margin: 7px 0 11px;
   font-size: clamp(1.35rem, 5vw, 1.9rem);
 }
@@ -88,3 +89,26 @@
 @media (max-height: 680px) and (max-width: 880px) {
   .home-preview-photo { height: clamp(100px, 20svh, 132px); }
 }
+
+.home-today { margin: 0 0 8px; }
+.home-today .btn { text-align: left; }
+.home-diners { margin-bottom: 10px; }
+.home-diners summary, .food-preferences summary {
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.home-diners summary strong { margin-inline-start: 8px; }
+.home-diner-options { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 0 12px 12px; }
+.home-slide { touch-action: pan-y; animation: home-slide-in .22s ease-out; }
+.home-slide-controls { display: flex; justify-content: space-between; align-items: center; padding: 0 12px 8px; }
+.home-slide-controls .btn { min-width: 44px; min-height: 44px; }
+.home-slide-count { font-variant-numeric: tabular-nums; }
+.food-preferences { border-top: 1px solid #d9d6c9; }
+.food-preferences-form { display: grid; gap: 12px; padding: 0 12px 14px; max-width: 440px; }
+.food-preferences-form fieldset { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.food-preferences-form .text-field { display: block; width: 100%; }
+.home-inspiration-heading { margin: 10px 0 8px; font-size: 1.35rem; }
+.home-preview-illustration { display: grid; place-items: center; font-size: 3rem; }
+
+@keyframes home-slide-in { from { opacity: .35; transform: translateX(12px); } }
+@media (prefers-reduced-motion: reduce) { .home-slide { animation: none; } }
