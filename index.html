@@ -589,6 +589,7 @@ body.picker-open{overflow:hidden}
   <title>Cook Together v0.26 — Your household kitchen</title>
 <link rel="stylesheet" href="illustrations.css?v=20261117e">
 <link rel="stylesheet" href="sauce-options.css?v=20261117d">
+<link rel="stylesheet" href="home-preview.css">
 <style>.breakfast-options{padding:18px;margin:18px 0;border:1px solid #c9ddd1;border-radius:16px;background:#f0f6f0}.breakfast-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.breakfast-fields label{font-weight:700;display:grid;gap:7px}.breakfast-options p{font-size:.92rem}</style>
 <style>
 .recipe-nutrition{margin:16px 0;padding:14px;border:1px solid var(--line,#ddd);border-radius:12px}
@@ -35497,6 +35498,9 @@ function ingredientPreparationHelp(r,i,portions){
   const ic=(n)=>`<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">${iconPaths[n]||iconPaths.sparkle}</svg>`;
   const navItems=[['home','Your kitchen','home'],['tonight','Cook tonight','sparkle'],['recipes','Find recipes','book'],['school','Cooking School','book'],['planner','Meal planner','calendar'],['shopping','Shopping list','cart'],['pantry','My pantry','pantry'],['household','Household','people'],['settings','Settings','settings']];
   const mobileItems=['home','recipes','planner','shopping','pantry','household'];
+  const homeLayoutKey='cook-together-home-layout';
+  let previewHome=false;
+  try{previewHome=localStorage.getItem(homeLayoutKey)==='preview'}catch{}
   const esc=(v)=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const pounds=n=>'£'+Number(n||0).toFixed(2);
   const recipePrice=(r,n=r.servings)=>r.cost>0?'~'+pounds(r.cost*n/r.servings)+'*':'Not priced';
@@ -35675,7 +35679,8 @@ function ingredientPreparationHelp(r,i,portions){
   function recipeCard(r,nutritionLabel=''){const fav=state.favorites.includes(r.id);return `<article class="recipe-card" data-action="recipe" data-id="${esc(r.id)}" tabindex="0" role="group" aria-label="${esc(r.title)} recipe, tap to open"><div class="recipe-picture theme-${r.theme}"><span class="food" role="img" aria-label="${esc(r.title)}">${r.emoji}</span><button type="button" class="icon-btn heart ${fav?'is-favourite':''}" data-action="favorite" data-id="${r.id}" aria-label="${fav?'Remove from':'Add to'} favourites">${ic('heart')}</button></div><div class="recipe-content"><button class="recipe-open" data-action="recipe" data-id="${r.id}"><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p></button><div class="recipe-tags"><span class="pill category-pill">${esc(r.mealType||r.category||'Recipe')}</span>${r.tags.slice(0,1).map(t=>`<span class="pill ${t==='Budget'?'peach':''}">${esc(t)}</span>`).join('')}</div><div class="recipe-meta"><span>⏱ ${r.time} min · ${r.servings} portions</span><strong>${recipePrice(r)}</strong></div>${nutritionLabel?`<p class="recipe-nutrition-metric">${esc(nutritionLabel)}</p>`:''}<p class="recipe-flavour">${esc(r.flavour||'')}</p></div></article>`}
   function renderNav(){
     document.getElementById('desktop-nav').innerHTML=navItems.map(([id,label,icon])=>`<button type="button" class="nav-button ${page===id?'active':''}" data-page="${id}" ${page===id?'aria-current="page"':''}>${ic(icon)}${esc(label)}</button>`).join('');
-    document.getElementById('mobile-nav').innerHTML=navItems.filter(i=>mobileItems.includes(i[0])).map(([id,label,icon])=>`<button type="button" class="${page===id?'active':''}" data-page="${id}" ${page===id?'aria-current="page"':''}>${ic(icon)}<span>${esc(label==='Your kitchen'?'Home':label==='Find recipes'?'Recipes':label==='Meal planner'?'Plan':label==='Shopping list'?'Shop':label==='My pantry'?'Pantry':label)}</span></button>`).join('');
+    const visibleMobileItems=page==='home'&&previewHome?['home','school','settings']:mobileItems;
+    document.getElementById('mobile-nav').innerHTML=navItems.filter(i=>visibleMobileItems.includes(i[0])).map(([id,label,icon])=>`<button type="button" class="${page===id?'active':''}" data-page="${id}" ${page===id?'aria-current="page"':''}>${ic(icon)}<span>${esc(label==='Your kitchen'?'Home':label==='Find recipes'?'Recipes':label==='Meal planner'?'Plan':label==='Shopping list'?'Shop':label==='My pantry'?'Pantry':label)}</span></button>`).join('');
     document.getElementById('breadcrumb').textContent=(navItems.find(n=>n[0]===page)||navItems[0])[1];
   }
   const votedCount=id=>Object.values(state.votes?.[id]||{}).filter(Boolean).length;
@@ -35972,6 +35977,43 @@ function ingredientPreparationHelp(r,i,portions){
     const c=document.getElementById('school-count');if(c)c.textContent=n+' '+(n===1?'lesson':'lessons')+' · Tap one to learn';
   }
   function renderHome(){
+    return previewHome?renderPreviewHome():renderClassicHome();
+  }
+  function renderPreviewHome(){
+    const day=currentDay();
+    const plannedRecipe=recipeById(state.plan[day]?.id);
+    const recipe=plannedRecipe||recipeById('ginger-chicken-rice');
+    const cooked=plannedRecipe&&state.cooked?.[day];
+    const label=plannedRecipe?(cooked?'Cooked today':'Today’s meal'):'Need an idea for tea?';
+    const action=plannedRecipe?(cooked?'plan-open':'guide-start'):'recipe';
+    const actionText=plannedRecipe&&!cooked?'Start cook-along':'View recipe';
+    const photos={'ginger-chicken-rice':'ginger-chicken-rice.webp','chicken-roast':'chicken-roast.webp'};
+    const photo=photos[recipe?.id];
+    const shortcuts=[
+      ['Recipes','book','go-recipes'],
+      ['Meal planner','calendar','go-planner'],
+      ['Shopping list','cart','go-shopping']
+    ];
+    return `<section class="home-preview" aria-labelledby="home-preview-title">
+      <h1 id="home-preview-title">CookTogether</h1>
+      ${recipe?`<article class="home-preview-feature">
+        ${photo?`<img class="home-preview-photo" src="assets/home/${photo}" alt="" width="465" height="260">`:''}
+        <div class="home-preview-content">
+          <span class="home-preview-label">${label}</span>
+          <h2>${esc(recipe.title)}</h2>
+          ${btn(actionText,action,`data-id="${esc(recipe.id)}"${plannedRecipe?` data-day="${day}"`:''}`,'home-preview-cta')}
+        </div>
+      </article>`:''}
+      <nav class="home-preview-shortcuts" aria-label="Kitchen shortcuts">
+        ${shortcuts.map(([title,icon,action])=>btn(`${ic(icon)}<span>${title}</span><span aria-hidden="true">›</span>`,action,'','home-preview-shortcut')).join('')}
+      </nav>
+      <div class="home-preview-secondary">
+        ${btn('My pantry','go-pantry','','btn btn-plain btn-sm')}
+        ${btn('Ideas from my pantry','go-tonight','','btn btn-plain btn-sm')}
+      </div>
+    </section>`;
+  }
+  function renderClassicHome(){
     return `<section class="beginner-home"><div class="eyebrow">COOK TOGETHER</div><h1>What would you like to do?</h1><p>You don’t know how to cook? We’ll show you.</p><div class="beginner-home-choices"><button type="button" data-action="go-recipes" class="beginner-home-choice"><span aria-hidden="true">🍳</span><span><strong>Find a meal</strong><small>Choose a recipe and cook along.</small></span><b aria-hidden="true">→</b></button><button type="button" data-action="go-planner" class="beginner-home-choice"><span aria-hidden="true">📅</span><span><strong>Plan meals</strong><small>Choose what’s on the menu.</small></span><b aria-hidden="true">→</b></button><button type="button" data-action="home-stock" class="beginner-home-choice"><span aria-hidden="true">🛒</span><span><strong>Shopping &amp; pantry</strong><small>Check what you have and what to buy.</small></span><b aria-hidden="true">→</b></button></div><div class="beginner-home-secondary">${btn('Cooking School','go-school','','btn btn-plain btn-sm')}${btn('Ideas from my pantry','go-tonight','','btn btn-plain btn-sm')}</div></section>`;
   }
   function mealSection(r){return r.mealType||'Dinner';}
@@ -36182,7 +36224,7 @@ function ingredientPreparationHelp(r,i,portions){
     save();render();toast(p.name+' added to pantry');
   }
   function renderHousehold(){return `${pageHead('BETTER TOGETHER','Your household','The people you plan and cook with.',btn(ic('settings')+' Settings','go-settings','','btn'))}<div class="setting-block"><div class="section-heading"><h2>${esc(state.name)}</h2><span class="badge-soft">Local demo</span></div><p>You can add names here to personalise this demo. You can vote for meals under “Cook tonight” by selecting a household name. Votes are saved on this phone only. Real invitations, accounts and automatic synchronisation across phones require a future backend.</p><div class="members">${state.members.map((name,i)=>`<div class="member"><div class="member-avatar">${esc(name.trim().slice(0,1).toUpperCase()||'?')}</div><span>${esc(name)}<small>${i===0?'This device':'Demo member'}</small></span>${i>0?`<button class="icon-btn" data-action="remove-member" data-index="${i}" aria-label="Remove ${esc(name)}" style="width:28px;height:28px">${ic('trash')}</button>`:''}</div>`).join('')}</div><form id="add-member-form" style="margin-top:18px;max-width:440px"><label class="field-label" for="member-name">Add a household member (demo)</label><div class="form-row"><input class="text-field" name="name" id="member-name" maxlength="40" required placeholder="First name"> <button class="btn btn-primary" type="submit">${ic('plus')} Add</button></div></form></div><div class="setting-block"><h3>Share your meal plan</h3><p>Copy a plain-text summary and send it in your family's usual messaging app. Edits will not sync automatically between devices.</p>${btn(ic('download')+' Copy weekly plan','copy-plan','','btn btn-primary')} ${btn('♥ Family meal choices','go-tonight','','btn')}</div>`}
-  function renderSettings(){return `${pageHead('MAKE IT YOURS','Settings','Adjust the defaults that work for your home.')}<div class="setting-block"><h3>Weekly dinner budget</h3><p>Set an indicative budget for dinners on your plan. This does not track all groceries or actual receipts.</p><div class="settings-control"><label class="field-label" for="budget">Weekly target (£)</label><input class="text-field" id="budget" inputmode="decimal" type="number" min="1" max="2000" step="1" value="${esc(state.budget)}"></div></div><div class="setting-block"><h3>Default portions</h3><p>New meals will use this number of portions unless you choose something different.</p><div class="settings-control"><label class="field-label" for="servings">Portions per meal</label><select id="servings" class="select-field">${Array.from({length:12},(_,i)=>i+1).map(n=>`<option ${n===state.servings?'selected':''} value="${n}">${n} ${n===1?'portion':'portions'}</option>`).join('')}</select></div></div><div class="setting-block"><h3>Kitchen name</h3><div class="settings-control"><label class="field-label" for="kitchen-name">Household name</label><input class="text-field" id="kitchen-name" maxlength="48" value="${esc(state.name)}"></div></div><div class="setting-block"><h3>Export or restore demo data</h3><p>All your demo data, including pantry amounts, family choices and cooked meal marks, lives in this browser. Download a backup as JSON, or restore an earlier backup. Do not store secrets or personal medical information here.</p><div style="display:flex;gap:10px;flex-wrap:wrap">${btn(ic('download')+' Download backup','export','','btn')}<label class="btn" for="import-file">Restore backup <input id="import-file" type="file" accept="application/json,.json" style="display:none"></label></div></div><div class="setting-block"><h3>Start fresh</h3><p>This clears demo meals, shopping ticks, pantry stock and names from this browser.</p>${btn(ic('trash')+' Reset demo data','reset','','btn btn-danger')}</div><div class="notice"><strong>Privacy:</strong> No app server receives your data in this demonstration. Links to external supermarkets open their own websites with separate privacy terms.</div>`}
+  function renderSettings(){return `${pageHead('MAKE IT YOURS','Settings','Adjust the defaults that work for your home.')}<div class="setting-block"><h3>Homepage layout</h3><p>${previewHome?'You’re using the preview homepage.':'Try a new homepage with today’s meal and three quick shortcuts.'}</p>${btn(previewHome?'Switch to classic homepage':'Try the new homepage','toggle-home-layout','','btn btn-primary')}</div><div class="setting-block"><h3>Weekly dinner budget</h3><p>Set an indicative budget for dinners on your plan. This does not track all groceries or actual receipts.</p><div class="settings-control"><label class="field-label" for="budget">Weekly target (£)</label><input class="text-field" id="budget" inputmode="decimal" type="number" min="1" max="2000" step="1" value="${esc(state.budget)}"></div></div><div class="setting-block"><h3>Default portions</h3><p>New meals will use this number of portions unless you choose something different.</p><div class="settings-control"><label class="field-label" for="servings">Portions per meal</label><select id="servings" class="select-field">${Array.from({length:12},(_,i)=>i+1).map(n=>`<option ${n===state.servings?'selected':''} value="${n}">${n} ${n===1?'portion':'portions'}</option>`).join('')}</select></div></div><div class="setting-block"><h3>Kitchen name</h3><div class="settings-control"><label class="field-label" for="kitchen-name">Household name</label><input class="text-field" id="kitchen-name" maxlength="48" value="${esc(state.name)}"></div></div><div class="setting-block"><h3>Export or restore demo data</h3><p>All your demo data, including pantry amounts, family choices and cooked meal marks, lives in this browser. Download a backup as JSON, or restore an earlier backup. Do not store secrets or personal medical information here.</p><div style="display:flex;gap:10px;flex-wrap:wrap">${btn(ic('download')+' Download backup','export','','btn')}<label class="btn" for="import-file">Restore backup <input id="import-file" type="file" accept="application/json,.json" style="display:none"></label></div></div><div class="setting-block"><h3>Start fresh</h3><p>This clears demo meals, shopping ticks, pantry stock and names from this browser.</p>${btn(ic('trash')+' Reset demo data','reset','','btn btn-danger')}</div><div class="notice"><strong>Privacy:</strong> No app server receives your data in this demonstration. Links to external supermarkets open their own websites with separate privacy terms.</div>`}
   function render(){const categoryScroll=document.querySelector('.filters-row .filter-pills')?.scrollLeft||0;renderNav();document.getElementById('app').innerHTML=({home:renderHome,tonight:renderTonight,recipes:renderRecipes,school:renderSchool,planner:renderPlanner,shopping:renderShopping,pantry:renderPantry,household:renderHousehold,settings:renderSettings}[page]||renderHome)();const categoryRow=document.querySelector('.filters-row .filter-pills');if(categoryRow)categoryRow.scrollLeft=categoryScroll;renderGlobalBeginnerTimers();document.title='Cook Together · '+(navItems.find(n=>n[0]===page)||navItems[0])[1];}
   function navigate(next){if(!navItems.some(n=>n[0]===next))next='home';page=next;if(location.hash!=='#'+next)location.hash=next;render();window.scrollTo({top:0,behavior:'instant'});document.getElementById('app').focus({preventScroll:true});}
   function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3200)}
@@ -36836,6 +36878,17 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     if(ev.target.id==='cook-review-backdrop'){closeCookReview();return}
     const el=ev.target.closest('[data-action]');if(!el)return;
     const act=el.dataset.action,id=el.dataset.id,day=el.dataset.day;
+    if(act==='toggle-home-layout'){
+      previewHome=!previewHome;
+      let saved=true;
+      try{
+        if(previewHome)localStorage.setItem(homeLayoutKey,'preview');
+        else localStorage.removeItem(homeLayoutKey);
+      }catch{saved=false}
+      navigate('home');
+      if(!saved)toast('Browser storage is unavailable. Your homepage choice is temporary.');
+      return;
+    }
     if(act.startsWith('go-')){closeModal();navigate(({ 'go-planner':'planner','go-recipes':'recipes','go-shopping':'shopping','go-settings':'settings','go-pantry':'pantry','go-tonight':'tonight','go-school':'school' })[act]||'home');return}
     if(act==='home-stock'){document.getElementById('modal-root').innerHTML=`<div class="modal-overlay" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="stock-choice-title"><button type="button" class="modal-x" data-action="close-modal" aria-label="Close">×</button><div class="modal-body"><h2 id="stock-choice-title">Shopping &amp; pantry</h2><div class="beginner-home-choices">${btn('🛒 Shopping list','go-shopping','','btn btn-primary')}${btn('🥕 My pantry','go-pantry','','btn')}</div></div></section></div>`;document.querySelector('.modal-x')?.focus();return}
     if(act==='beginner-start-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),seconds=Number(el.dataset.seconds);if(task&&index===guideTaskIndexForStep(r,guideProgress())&&reminderOptions(scaledInstruction(task.instructions,r,guideServings)).some(o=>o.seconds===seconds))startBeginnerTimer(r,task,index,seconds);return}

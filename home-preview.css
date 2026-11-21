@@ -1,0 +1,90 @@
+.home-preview {
+  max-width: 540px;
+  margin: 0 auto;
+  color: #193628;
+}
+.home-preview h1,
+.home-preview h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -.025em;
+  line-height: 1.12;
+}
+.home-preview h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.65rem, 6vw, 2.2rem);
+}
+.home-preview-feature {
+  overflow: hidden;
+  border: 1px solid #d9d6c9;
+  border-radius: 20px;
+  background: #fffaf0;
+  box-shadow: 0 5px 18px #263c2612;
+}
+.home-preview-photo {
+  display: block;
+  width: 100%;
+  height: clamp(124px, 24svh, 220px);
+  object-fit: cover;
+}
+.home-preview-content {
+  padding: 13px 15px 15px;
+}
+.home-preview-label {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 12px;
+  background: #f7dda1;
+  color: #352a13;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.home-preview h2 {
+  margin: 7px 0 11px;
+  font-size: clamp(1.35rem, 5vw, 1.9rem);
+}
+.home-preview-cta {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #17452f;
+  border-radius: 10px;
+  background: #17452f;
+  color: white;
+  font-weight: 750;
+}
+.home-preview-cta:hover { background: #236045; }
+.home-preview-shortcuts {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+.home-preview-shortcut {
+  display: grid;
+  grid-template-columns: 23px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  min-height: 46px;
+  padding: 8px 13px;
+  border: 1px solid #d9d6c9;
+  border-radius: 12px;
+  background: #fffcf5;
+  color: inherit;
+  font-weight: 700;
+  text-align: left;
+}
+.home-preview-shortcut:hover { background: #edf2e6; }
+.home-preview-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  margin-top: 4px;
+}
+.home-preview-secondary button { min-height: 44px; }
+@media (max-width: 880px) {
+  .main-shell:has(.home-preview) > main { padding-top: 13px; }
+  .main-shell:has(.home-preview) > .topbar { height: 48px; }
+  .main-shell:has(.home-preview) .mobile-brand { visibility: hidden; }
+}
+@media (max-height: 680px) and (max-width: 880px) {
+  .home-preview-photo { height: clamp(100px, 20svh, 132px); }
+}
