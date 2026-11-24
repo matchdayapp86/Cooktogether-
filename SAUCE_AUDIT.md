@@ -195,3 +195,7 @@ The disposition reflects whether an **additional** sauce is justified. Unchanged
 | 114 | Rosemary focaccia — makes 12 pieces | Keep as written — extra sauce not appropriate |
 | 115 | Victoria sponge — makes 10 slices | Keep as written — extra sauce not appropriate |
 | 116 | Bramley apple crumble — serves 6 | Offer optional: Warm vanilla custard |
+
+## 24 November addition
+
+Lentil cottage pie with cheesy mash brings the primary recipe count to 117. Its lentil and mushroom filling already includes a thick stock-based sauce, so it needs no separate sauce.

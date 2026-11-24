@@ -30,9 +30,9 @@ const recipeStart=html.indexOf('window.COOK_RECIPES = ')+ 'window.COOK_RECIPES =
 const recipeEnd=html.indexOf(';'+String.fromCharCode(10)+'window.COOK_LEGACY_RECIPES',recipeStart);
 assert(recipeStart>0&&recipeEnd>recipeStart,'Cannot audit primary recipes');
 const recipes=JSON.parse(html.slice(recipeStart,recipeEnd));
-assert.equal(recipes.length,116,'Recipe inventory changed; refresh the audit');
+assert.equal(recipes.length,117,'Recipe inventory changed; refresh the audit');
 assert(ids.every(id=>recipes.some(r=>r.id===id)),'Optional sauce assigned to missing recipe');
-assert(!Object.keys(sauces).some(id=>['salmon-traybake','fish-pie-cheddar-mash','pork-chops','lamb-koftas','pesto-chicken','chicken-fajitas','chicken-tikka-masala-rice'].includes(id)),'Existing sauce duplicated');
+assert(!Object.keys(sauces).some(id=>['salmon-traybake','fish-pie-cheddar-mash','pork-chops','lamb-koftas','pesto-chicken','chicken-fajitas','chicken-tikka-masala-rice','lentil-cottage-pie'].includes(id)),'Existing sauce duplicated');
 assert(Object.keys(sauces).length===14,'Expected 14 optional sauces');
 assert.match(sauces['chicken-roast'].steps.join(' '),/raw chicken/i,'Raw chicken marinade protection missing');
 assert.match(html,/"id": "chicken-roast"[\s\S]{0,8500}?"time": 55/,'Original traybake cooking time changed');
