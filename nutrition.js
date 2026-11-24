@@ -36,7 +36,7 @@
   }
 
   function calculate(recipe, portions, sauce) {
-    const ingredients = recipe.ingredients.filter(i => i[2] > 0).map(i => ingredient(...i.slice(0, 4), portions / recipe.servings));
+    const ingredients = recipe.ingredients.filter(i => i[2] > 0 && !i[5]).map(i => ingredient(...i.slice(0, 4), portions / recipe.servings));
     const extras = (sauce?.ingredients || []).map(([name, quantity, unit]) => {
       const label = name.replace(/ \((?:extra|vegetarian)\)$/i, '').toLowerCase();
       return ingredient(data.sauceKeys[label], name, quantity, unit, portions / 4);
