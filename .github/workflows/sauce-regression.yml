@@ -16,6 +16,8 @@ jobs:
         run: node tests/breakfasts.cjs
       - name: Entire recipe catalogue and action reminders
         run: node tests/recipe-audit.cjs
+      - name: New dinners and slow cooker section
+        run: node tests/november-recipes.cjs
       - name: Core traybake and timer regression
         run: node tests/traybake-timers.cjs
       - name: Illustration placement regression
