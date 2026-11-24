@@ -629,7 +629,7 @@ body.picker-open{overflow:hidden}
 <script src="assets/techniques/catalog-extra.js?v=20261117c"></script>
 <script src="illustration-ui.js?v=20261117e"></script>
 <script src="illustration-action-matching.js?v=20261117d"></script>
-<script src="illustration-task-matching.js?v=20261124-apple-sugar"></script>
+<script src="illustration-task-matching.js?v=20261124-apple-gravy"></script>
 <script src="sauce-options.js?v=20261117c"></script>
 <script>
 // Cook Together v0.4 · independently authored development recipes; NOT yet kitchen-tested. All costs illustrative.
@@ -12948,7 +12948,15 @@ window.COOK_RECIPES = [
       [
         "brown-sugar",
         "Brown sugar (optional)",
-        1.5,
+        1,
+        "tsp",
+        "Cupboard",
+        true
+      ],
+      [
+        "honey",
+        "Honey (optional)",
+        1,
         "tsp",
         "Cupboard",
         true
@@ -12959,7 +12967,7 @@ window.COOK_RECIPES = [
       "Mix pork mince with grated apple, sage, breadcrumbs and half the onion. Shape into 16 similarly sized meatballs, using clean utensils. Wash your hands after handling raw pork.",
       "Heat the oil in a deep pan. Brown the meatballs all over in batches, then set them aside. Soften the remaining onion in the pan for 5 minutes. As the onion starts to soften, put the saucepan of potatoes and cold water on the hob over high heat.",
       "Return the meatballs to the pan and add the stock and Dijon mustard. When the potato water boils, lower the heat and simmer the potatoes for 15–18 minutes, until a fork slides easily into the centre of a chunk. Move straight on once the potatoes are simmering so both pans cook together. Bring the gravy to a gentle simmer and cover. The meatballs take about 15–18 minutes in total.",
-      "Cut the apple reserved for the gravy into roughly 1 cm cubes. When the first 11-minute meatball simmer ends, stir in the apple and, for a slightly sweeter gravy, 1.5 tsp brown sugar (optional). Cover the pan and simmer for 4 minutes. While the apple finishes cooking, check the potatoes. When a fork slides into the centre easily, drain the potatoes, let the steam escape briefly and mash with the butter. Cover the mash to keep it warm. After the apple has simmered, check that the largest meatball is thoroughly cooked through to the centre. Continue simmering and recheck if it needs longer. Taste the gravy, then serve the meatballs and gravy over the mash. Cool leftovers promptly."
+      "Cut the apple reserved for the gravy into roughly 1 cm cubes. When the first 11-minute meatball simmer ends, stir in the apple, cover the pan and simmer for 4 minutes. While the apple finishes cooking, check the potatoes. When a fork slides into the centre easily, drain the potatoes, let the steam escape briefly and mash with the butter. Cover the mash to keep it warm. After the apple has simmered, check that the largest meatball is thoroughly cooked through to the centre. Continue simmering and recheck if it needs longer. Taste the gravy just before serving. If it needs a little sweetness, stir in 1 tsp of brown sugar or honey, whichever you have. Serve the meatballs and gravy over the mash. Cool leftovers promptly."
     ],
     "category": "Pork",
     "flavour": "Apple keeps the pork juicy and sage gives a classic savoury note; browning adds depth.",
@@ -12982,14 +12990,15 @@ window.COOK_RECIPES = [
       "onion": "Peel and finely dice onion; use half in the pork mixture, save the rest for the sauce.",
       "pork-mince": "Prepare the grated apple, onion and seasonings first. Take pork mince from the fridge to weigh, mix and roll even meatballs; cook promptly, or chill shaped meatballs until ready. Cook thoroughly and wash hands after handling.",
       "breadcrumbs": "Measure dry breadcrumbs to bind the meatballs.",
-      "brown-sugar": "If you want a slightly sweeter gravy, measure the amount shown and add it with the diced apple."
+      "brown-sugar": "Use this or honey if the gravy needs sweetening at the end.",
+      "honey": "Use this or brown sugar if the gravy needs sweetening at the end."
     },
     "methodBeforeBeginner": [
       "Peel the potatoes and cut them into roughly 2.5 cm chunks. Put them in a saucepan and cover with cold water until you need them. Wash and core the apples. Finely grate half for the meatball mixture and set the rest aside for the gravy. Peel and finely dice the onion.",
       "Mix pork mince with grated apple, sage, breadcrumbs and half the onion. Shape into 16 similarly sized meatballs, using clean utensils. Wash your hands after handling raw pork.",
       "Heat the oil in a deep pan. Brown the meatballs all over in batches, then set them aside. Soften the remaining onion in the pan for 5 minutes. As the onion starts to soften, put the saucepan of potatoes and cold water on the hob over high heat.",
       "Return the meatballs to the pan and add the stock and Dijon mustard. When the potato water boils, lower the heat and simmer the potatoes for 15–18 minutes, until a fork slides easily into the centre of a chunk. Move straight on once the potatoes are simmering so both pans cook together. Bring the gravy to a gentle simmer and cover. The meatballs take about 15–18 minutes in total.",
-      "Cut the apple reserved for the gravy into roughly 1 cm cubes. When the first 11-minute meatball simmer ends, stir in the apple and, for a slightly sweeter gravy, 1.5 tsp brown sugar (optional). Cover the pan and simmer for 4 minutes. While the apple finishes cooking, check the potatoes. When a fork slides into the centre easily, drain the potatoes, let the steam escape briefly and mash with the butter. Cover the mash to keep it warm. After the apple has simmered, check that the largest meatball is thoroughly cooked through to the centre. Continue simmering and recheck if it needs longer. Taste the gravy, then serve the meatballs and gravy over the mash. Cool leftovers promptly."
+      "Cut the apple reserved for the gravy into roughly 1 cm cubes. When the first 11-minute meatball simmer ends, stir in the apple, cover the pan and simmer for 4 minutes. While the apple finishes cooking, check the potatoes. When a fork slides into the centre easily, drain the potatoes, let the steam escape briefly and mash with the butter. Cover the mash to keep it warm. After the apple has simmered, check that the largest meatball is thoroughly cooked through to the centre. Continue simmering and recheck if it needs longer. Taste the gravy just before serving. If it needs a little sweetness, stir in 1 tsp of brown sugar or honey, whichever you have. Serve the meatballs and gravy over the mash. Cool leftovers promptly."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -13140,8 +13149,7 @@ window.COOK_RECIPES = [
       {
         "title": "Dice and add the apple to the gravy",
         "uses": [
-          "apples",
-          "brown-sugar"
+          "apples"
         ],
         "skills": [],
         "check": "The apple cubes are about 1 cm across. Add them when the first meatball reminder sounds.",
@@ -13150,13 +13158,15 @@ window.COOK_RECIPES = [
           "Saucepan or frying pan already in use"
         ],
         "sourceStage": 4,
-        "instructions": "Cut the apple reserved for the gravy into roughly 1 cm cubes. When the first 11-minute meatball simmer ends, stir in the apple and, for a slightly sweeter gravy, 1.5 tsp brown sugar (optional). Cover the pan and simmer for 4 minutes."
+        "instructions": "Cut the apple reserved for the gravy into roughly 1 cm cubes. When the first 11-minute meatball simmer ends, stir in the apple, cover the pan and simmer for 4 minutes."
       },
       {
-        "title": "Mash the potatoes and serve",
+        "title": "Mash the potatoes, taste the gravy and serve",
         "uses": [
           "potatoes",
-          "butter"
+          "butter",
+          "brown-sugar",
+          "honey"
         ],
         "skills": [
           "drain",
@@ -13171,7 +13181,7 @@ window.COOK_RECIPES = [
           "Clean serving spoon"
         ],
         "sourceStage": 4,
-        "instructions": "While the apple finishes cooking, check the potatoes. When a fork slides into the centre easily, drain the potatoes, let the steam escape briefly and mash with the butter. Cover the mash to keep it warm. After the apple has simmered, check that the largest meatball is thoroughly cooked through to the centre. Continue simmering and recheck if it needs longer. Taste the gravy, then serve the meatballs and gravy over the mash. Cool leftovers promptly."
+        "instructions": "While the apple finishes cooking, check the potatoes. When a fork slides into the centre easily, drain the potatoes, let the steam escape briefly and mash with the butter. Cover the mash to keep it warm. After the apple has simmered, check that the largest meatball is thoroughly cooked through to the centre. Continue simmering and recheck if it needs longer. Taste the gravy just before serving. If it needs a little sweetness, stir in 1 tsp of brown sugar or honey, whichever you have. Serve the meatballs and gravy over the mash. Cool leftovers promptly."
       }
     ]
   },

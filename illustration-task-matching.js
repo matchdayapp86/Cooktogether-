@@ -84,7 +84,7 @@
   },
   {
     "recipeId": "pork-apple-meatballs",
-    "instruction": "Cut the apple reserved for the gravy into roughly 1 cm cubes. When the first 11-minute meatball simmer ends, stir in the apple and, for a slightly sweeter gravy, 1.5 tsp brown sugar (optional). Cover the pan and simmer for 4 minutes.",
+    "instruction": "Cut the apple reserved for the gravy into roughly 1 cm cubes. When the first 11-minute meatball simmer ends, stir in the apple, cover the pan and simmer for 4 minutes.",
     "keys": [
       "apple-dice"
     ]
