@@ -579,6 +579,9 @@ body.picker-open{overflow:hidden}
 #guide-timer-rack{flex:0 0 auto;max-height:none;overflow:visible;min-height:0}#guide-timer-rack .beginner-timers,#beginner-global-timers .beginner-timers{padding:0;margin:0;display:flex;flex-direction:column;max-height:40dvh;overflow:hidden}#beginner-global-timers{max-height:none;overflow:visible}#guide-timer-rack .beginner-timers{border-radius:0}.beginner-timer-bar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:10px;width:100%;flex-shrink:0;min-height:56px;box-sizing:border-box;border:0;background:#fff8e9;color:#244c3d;padding:8px 14px;text-align:left;font:inherit}.beginner-timer-summary{min-width:0;display:grid;gap:2px}.beginner-timer-summary strong{font-size:12px}.beginner-timer-summary>span{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.beginner-timer-bar output{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}.beginner-timer-view{font-size:12px;font-weight:800;white-space:nowrap;text-decoration:underline}.beginner-timer-bar.timer-due{background:#ffebd6;color:#923d1d}.beginner-timer-details{min-height:0;max-height:min(30dvh,260px);overflow-y:auto;overscroll-behavior:contain;padding:10px 14px;border-top:1px solid #e7d8ad}.beginner-timer-sound-note{font-size:11px;line-height:1.45;margin:10px 0 0;color:#76684a}.beginner-timer-details .beginner-timer-controls button{min-height:40px}
 .filters-row .filter-pills{display:flex;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;max-width:100%;min-width:0;width:100%;padding:3px 0 8px;scrollbar-width:thin;scrollbar-color:#b6c9bb transparent;overscroll-behavior-x:contain}.filters-row .filter-btn{flex:0 0 auto;white-space:nowrap}.picker-top{min-width:0}.picker-scroll{position:relative;z-index:0}
 
+.beginner-alarm-settings-toggle{min-height:44px}
+.beginner-alarm-settings-toggle::after{content:"";display:inline-block;width:.45em;height:.45em;margin-left:.6em;border:solid currentColor;border-width:0 2px 2px 0;transform:translateY(-.15em) rotate(45deg)}
+.beginner-alarm-settings-toggle[aria-expanded=true]::after{transform:translateY(.1em) rotate(225deg)}
 .beginner-timer-settings{display:grid;gap:7px;padding:11px 12px;margin:9px 0 12px;border:1px solid #d6e5d8;background:#f6faf5;border-radius:12px}
 .beginner-timer-settings label{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#275941;font-size:13px;font-weight:750}
 .beginner-timer-settings input[type=range]{width:100%;min-height:36px;accent-color:#207453;cursor:pointer}
@@ -23787,7 +23790,7 @@ window.COOK_RECIPES = [
       [
         "chicken-breast",
         "Boneless chicken breast",
-        600.0,
+        600,
         "g",
         "Meat"
       ],
@@ -23801,84 +23804,84 @@ window.COOK_RECIPES = [
       [
         "eggs",
         "Medium eggs",
-        2.0,
+        2,
         "whole",
         "Chilled"
       ],
       [
         "breadcrumbs",
         "Breadcrumbs",
-        120.0,
+        120,
         "g",
         "Cupboard"
       ],
       [
         "vegetable-oil",
         "Vegetable oil",
-        3.0,
+        3,
         "tbsp",
         "Cupboard"
       ],
       [
         "onion",
         "Onion",
-        1.0,
+        1,
         "whole",
         "Fresh produce"
       ],
       [
         "carrots",
         "Carrots",
-        1.0,
+        1,
         "whole",
         "Fresh produce"
       ],
       [
         "garlic",
         "Garlic cloves",
-        2.0,
+        2,
         "whole",
         "Fresh produce"
       ],
       [
         "fresh-ginger",
         "Fresh ginger",
-        15.0,
+        15,
         "g",
         "Fresh produce"
       ],
       [
         "curry-powder",
         "Mild curry powder",
-        1.0,
+        1,
         "tbsp",
         "Cupboard"
       ],
       [
         "chicken-stock",
         "Chicken stock",
-        500.0,
+        500,
         "ml",
         "Cupboard"
       ],
       [
         "soy-sauce",
         "Reduced-salt soy sauce",
-        1.0,
+        1,
         "tbsp",
         "Cupboard"
       ],
       [
         "honey",
         "Honey",
-        1.0,
+        1,
         "tbsp",
         "Cupboard"
       ],
       [
         "rice",
         "Basmati rice",
-        300.0,
+        300,
         "g",
         "Cupboard"
       ],
@@ -23894,12 +23897,12 @@ window.COOK_RECIPES = [
     "steps": [
       "Heat oven to 200°C fan. Soften onion and carrot in one third of the oil for 8 minutes. Add garlic, ginger and curry powder for 1 minute, then stir in one quarter of the measured flour (reserve the other three quarters for coating) for 1 minute.",
       "Gradually add stock, soy and honey. Simmer for 15–20 minutes until carrot is tender; blend with a stick blender off the heat if you want a smooth sauce. For a creamier sauce, stir in up to 60ml canned coconut milk a little at a time, tasting as you go. Warm gently if needed.",
-      "Dip chicken in the coating flour, then egg, then breadcrumbs. Discard coating leftovers. Brush with remaining oil and lay on a lined tray.",
+      "Use chicken breasts about 1 cm thick. If a breast is thicker, place it between two sheets of baking paper and gently flatten it with a rolling pin, working from the thickest part outwards. Keep each breast in one piece. Dip each piece in the coating flour, then the beaten egg, then the breadcrumbs. Discard the baking paper and any leftover coating that touched raw chicken. Brush with remaining oil and lay on a lined tray.",
       "Bake for 20–25 minutes, turning halfway, until crisp and cooked through. Check thickest parts with a clean probe: 75°C for 30 seconds. Cook rice following pack instructions while chicken bakes.",
-      "Slice chicken with a clean knife and serve over rice with the hot sauce alongside to keep the coating crisp."
+      "Once the chicken is cooked through, transfer it to a clean board and slice it into strips with a clean knife. Serve over rice with the hot curry sauce alongside to keep the coating crisp."
     ],
     "prep": {
-      "chicken-breast": "Slice horizontally into thin cutlets about 1cm thick; keep chilled.",
+      "chicken-breast": "Keep chilled until the coating step. Flatten thick breasts to about 1 cm, then coat and bake each breast in one piece. Save the slicing for the serving step, once the chicken is cooked through.",
       "plain-flour": "Use one quarter for the sauce; reserve the remaining three quarters for coating.",
       "eggs": "Beat in a shallow bowl.",
       "breadcrumbs": "Use panko breadcrumbs.",
@@ -23942,9 +23945,9 @@ window.COOK_RECIPES = [
     "methodBeforeBeginner": [
       "Heat oven to 200°C fan. Soften onion and carrot in one third of the oil for 8 minutes. Add garlic, ginger and curry powder for 1 minute, then stir in one quarter of the measured flour (reserve the other three quarters for coating) for 1 minute.",
       "Gradually add stock, soy and honey. Simmer for 15–20 minutes until carrot is tender; blend with a stick blender off the heat if you want a smooth sauce. For a creamier sauce, stir in up to 60ml canned coconut milk a little at a time, tasting as you go. Warm gently if needed.",
-      "Dip chicken in the coating flour, then egg, then breadcrumbs. Discard coating leftovers. Brush with remaining oil and lay on a lined tray.",
+      "Use chicken breasts about 1 cm thick. If a breast is thicker, place it between two sheets of baking paper and gently flatten it with a rolling pin, working from the thickest part outwards. Keep each breast in one piece. Dip each piece in the coating flour, then the beaten egg, then the breadcrumbs. Discard the baking paper and any leftover coating that touched raw chicken. Brush with remaining oil and lay on a lined tray.",
       "Bake for 20–25 minutes, turning halfway, until crisp and cooked through. Check thickest parts with a clean probe: 75°C for 30 seconds. Cook rice following pack instructions while chicken bakes.",
-      "Slice chicken with a clean knife and serve over rice with the hot sauce alongside to keep the coating crisp."
+      "Once the chicken is cooked through, transfer it to a clean board and slice it into strips with a clean knife. Serve over rice with the hot curry sauce alongside to keep the coating crisp."
     ],
     "instructionVersion": 29,
     "beginnerTasks": [
@@ -24030,7 +24033,7 @@ window.COOK_RECIPES = [
         "instructions": "Simmer for 15–20 minutes until carrot is tender; blend with a stick blender off the heat if you want a smooth sauce. For a creamier sauce, stir in up to 60ml canned coconut milk a little at a time, tasting as you go. Warm gently if needed."
       },
       {
-        "title": "Dip chicken in the coating flour, then egg, then breadcrumbs.…",
+        "title": "Flatten thick chicken breasts and coat each piece",
         "uses": [
           "chicken-breast",
           "plain-flour",
@@ -24040,14 +24043,16 @@ window.COOK_RECIPES = [
         "skills": [
           "coat"
         ],
-        "check": "The pieces are evenly coated; coatings used on raw food are not reused.",
+        "check": "Each breast is about 1 cm thick, still in one piece and evenly coated in breadcrumbs.",
         "tools": [
+          "Baking paper",
+          "Rolling pin",
           "Shallow bowls",
           "Tongs",
           "Separate raw-food area"
         ],
         "sourceStage": 2,
-        "instructions": "Dip chicken in the coating flour, then egg, then breadcrumbs. Discard coating leftovers."
+        "instructions": "Use chicken breasts about 1 cm thick. If a breast is thicker, place it between two sheets of baking paper and gently flatten it with a rolling pin, working from the thickest part outwards. Keep each breast in one piece. Dip each piece in the coating flour, then the beaten egg, then the breadcrumbs. Discard the baking paper and any leftover coating that touched raw chicken."
       },
       {
         "title": "Brush with remaining oil and lay on a lined tray",
@@ -24101,19 +24106,20 @@ window.COOK_RECIPES = [
         "instructions": "Cook rice following pack instructions while chicken bakes."
       },
       {
-        "title": "Slice chicken with a clean knife and serve over rice with the…",
+        "title": "Slice the cooked chicken and serve",
         "uses": [
           "chicken-breast",
           "rice"
         ],
         "skills": [],
-        "check": "The food has the cut and size stated here and is ready for the next action.",
+        "check": "The chicken is cooked through before slicing and the curry sauce is served alongside.",
         "tools": [
-          "Non-slip board and knife",
+          "Clean chopping board",
+          "Clean knife",
           "Clean serving spoon"
         ],
         "sourceStage": 4,
-        "instructions": "Slice chicken with a clean knife and serve over rice with the hot sauce alongside to keep the coating crisp."
+        "instructions": "Once the chicken is cooked through, transfer it to a clean board and slice it into strips with a clean knife. Serve over rice with the hot curry sauce alongside to keep the coating crisp."
       }
     ]
   },
@@ -35603,6 +35609,11 @@ try{
 }catch{}
 let beginnerLastAlarmAt=0;
 let beginnerTimersExpanded=false;
+let beginnerAlarmSettingsExpanded=false;
+function setBeginnerTimersExpanded(expanded){
+ beginnerTimersExpanded=expanded;
+ if(!expanded)beginnerAlarmSettingsExpanded=false;
+}
 const beginnerAlarmNodes=new Map();
 let announcedBeginnerTimers=new Set(beginnerTimers.filter(t=>t.alertedAt===t.deadline).map(t=>t.id));
 function saveBeginnerTimers(){try{localStorage.setItem(BEGINNER_TIMER_KEY,JSON.stringify(beginnerTimers));}catch{}}
@@ -35693,7 +35704,7 @@ function extendBeginnerTimer(id,minutes){
  delete t.alertedAt;announcedBeginnerTimers.delete(id);saveBeginnerTimers();stopDueAlarmIfAllStopped();refreshBeginnerTimerPanels();
 }
 function dismissBeginnerTimer(id){
- stopBeginnerAlarm(id);closeBeginnerNotification(id);beginnerTimers=beginnerTimers.filter(t=>t.id!==id);announcedBeginnerTimers.delete(id);if(!beginnerTimers.length)beginnerTimersExpanded=false;saveBeginnerTimers();stopDueAlarmIfAllStopped();refreshBeginnerTimerPanels();
+ stopBeginnerAlarm(id);closeBeginnerNotification(id);beginnerTimers=beginnerTimers.filter(t=>t.id!==id);announcedBeginnerTimers.delete(id);if(!beginnerTimers.length)setBeginnerTimersExpanded(false);saveBeginnerTimers();stopDueAlarmIfAllStopped();refreshBeginnerTimerPanels();
 }
 function timerText(t,now=Date.now()){
  const left=Math.max(0,Math.ceil((t.deadline-now)/1000));if(!left)return 'Time to check';
@@ -35713,7 +35724,22 @@ function renderBeginnerTimers(){
        window.Notification.permission==='denied' ? '<small>Phone alerts blocked in browser settings</small>' :
        '<button type="button" class="btn btn-sm" data-action="beginner-enable-notifications">Enable phone notifications</button>')
     : '<small>Phone notifications unavailable in this browser</small>';
- return `<aside class="beginner-timers" aria-label="Your cooking reminders"><button type="button" class="beginner-timer-bar ${due?'timer-due':''}" data-action="beginner-toggle-timers" aria-expanded="${beginnerTimersExpanded}" aria-controls="beginner-timer-details" aria-label="${beginnerTimersExpanded?'Hide':'View'} cooking timers"><span class="beginner-timer-summary"><strong>⏱ ${count}</strong><span title="${esc(next.title)}">${esc(next.title)}</span></span><output data-beginner-timer="${esc(next.id)}" aria-label="Time remaining for ${esc(next.title)}">${timerText(next,now)}</output><span class="beginner-timer-view">${beginnerTimersExpanded?'Close ↑':'View ↓'}</span></button>${beginnerTimersExpanded?`<div id="beginner-timer-details" class="beginner-timer-details"><div class="beginner-timer-heading"><strong>Cooking reminders</strong><button type="button" class="btn btn-sm" data-action="beginner-test-alarm">Test alarm</button></div><div class="beginner-timer-settings"><label for="beginner-alarm-volume">🔊 Alarm volume <strong id="beginner-alarm-volume-value">${beginnerAlarmVolume}%</strong></label><input type="range" id="beginner-alarm-volume" min="0" max="100" step="5" value="${beginnerAlarmVolume}" aria-label="Cooking alarm volume"><div class="beginner-phone-alerts">${notifyControls}</div></div>${[...beginnerTimers].sort((a,b)=>a.deadline-b.deadline).map(t=>`<section class="beginner-running-timer ${t.deadline<=now?'timer-due':''}" data-timer-card="${esc(t.id)}" aria-label="Timer: ${esc(t.title)}"><div class="beginner-timer-label"><strong>${esc(t.title)}</strong><small>${esc(t.recipeTitle||recipeById(t.recipeId)?.title||'Cooking timer')}</small></div><output data-beginner-timer="${esc(t.id)}" aria-label="Time remaining for ${esc(t.title)}">${timerText(t,now)}</output><div class="beginner-timer-controls">${[1,2,3].map(m=>`<button type="button" data-action="beginner-extend-timer" data-timer-id="${esc(t.id)}" data-minutes="${m}" aria-label="Add ${m} ${m===1?'minute':'minutes'} to ${esc(t.title)}">+${m} min</button>`).join('')}<button type="button" class="beginner-timer-stop" data-action="beginner-stop-timer" data-timer-id="${esc(t.id)}" aria-label="Stop timer for ${esc(t.title)}">Stop</button></div></section>`).join('')}<p class="beginner-timer-sound-note">${soundReady?'Three-ding alarm enabled.':'Tap Test alarm to enable and check sound.'} Use Test alarm and turn up your phone's media volume too. The three-note alarm repeats until stopped while the browser permits it. Phone notifications are optional and may be delayed or missed while the page is in the background, closed or the phone is locked; use your phone's Clock app for a dependable backup.</p></div>`:''}<span id="beginner-timer-announcement" class="sr-only" role="status" aria-live="assertive"></span></aside>`;
+ const alarmSettings=`
+   <div class="beginner-timer-heading">
+     <strong>Cooking reminders</strong>
+     <button type="button" class="btn btn-sm beginner-alarm-settings-toggle"
+       data-action="beginner-toggle-alarm-settings" aria-expanded="${beginnerAlarmSettingsExpanded}" aria-controls="beginner-alarm-settings">Alarm settings</button>
+   </div>
+   <div id="beginner-alarm-settings" ${beginnerAlarmSettingsExpanded?'':'hidden'}>
+     <div class="beginner-timer-settings">
+       <label for="beginner-alarm-volume">Alarm volume <strong id="beginner-alarm-volume-value">${beginnerAlarmVolume}%</strong></label>
+       <input type="range" id="beginner-alarm-volume" min="0" max="100" step="5" value="${beginnerAlarmVolume}" aria-label="Cooking alarm volume">
+       <button type="button" class="btn btn-sm" data-action="beginner-test-alarm">Test alarm</button>
+       <div class="beginner-phone-alerts">${notifyControls}</div>
+       <p class="beginner-timer-sound-note">${soundReady?'Three-ding alarm enabled.':'Tap Test alarm to enable and check sound.'} Use Test alarm and turn up your phone's media volume too. The three-note alarm repeats until stopped while the browser permits it. Phone notifications are optional and may be delayed or missed while the page is in the background, closed or the phone is locked; use your phone's Clock app for a dependable backup.</p>
+     </div>
+   </div>`;
+ return `<aside class="beginner-timers" aria-label="Your cooking reminders"><button type="button" class="beginner-timer-bar ${due?'timer-due':''}" data-action="beginner-toggle-timers" aria-expanded="${beginnerTimersExpanded}" aria-controls="beginner-timer-details" aria-label="${beginnerTimersExpanded?'Hide':'View'} cooking timers"><span class="beginner-timer-summary"><strong>⏱ ${count}</strong><span title="${esc(next.title)}">${esc(next.title)}</span></span><output data-beginner-timer="${esc(next.id)}" aria-label="Time remaining for ${esc(next.title)}">${timerText(next,now)}</output><span class="beginner-timer-view">${beginnerTimersExpanded?'Close ↑':'View ↓'}</span></button>${beginnerTimersExpanded?`<div id="beginner-timer-details" class="beginner-timer-details">${alarmSettings}${[...beginnerTimers].sort((a,b)=>a.deadline-b.deadline).map(t=>`<section class="beginner-running-timer ${t.deadline<=now?'timer-due':''}" data-timer-card="${esc(t.id)}" aria-label="Timer: ${esc(t.title)}"><div class="beginner-timer-label"><strong>${esc(t.title)}</strong><small>${esc(t.recipeTitle||recipeById(t.recipeId)?.title||'Cooking timer')}</small></div><output data-beginner-timer="${esc(t.id)}" aria-label="Time remaining for ${esc(t.title)}">${timerText(t,now)}</output><div class="beginner-timer-controls">${[1,2,3].map(m=>`<button type="button" data-action="beginner-extend-timer" data-timer-id="${esc(t.id)}" data-minutes="${m}" aria-label="Add ${m} ${m===1?'minute':'minutes'} to ${esc(t.title)}">+${m} min</button>`).join('')}<button type="button" class="beginner-timer-stop" data-action="beginner-stop-timer" data-timer-id="${esc(t.id)}" aria-label="Stop timer for ${esc(t.title)}">Stop</button></div></section>`).join('')}</div>`:''}<span id="beginner-timer-announcement" class="sr-only" role="status" aria-live="assertive"></span></aside>`;
 }
 function refreshBeginnerTimerPanels(){
  const active=document.activeElement,action=active?.dataset?.action,timerId=active?.dataset?.timerId,minutes=active?.dataset?.minutes;
@@ -35721,7 +35747,9 @@ function refreshBeginnerTimerPanels(){
  const rack=document.getElementById('guide-timer-rack');if(rack)rack.innerHTML=renderBeginnerTimers();
  renderGlobalBeginnerTimers();
  const panel=document.getElementById('beginner-timer-details');if(panel)panel.scrollTop=scrollTop;
- if(action&&action.startsWith('beginner-')){
+ if(active?.id==='beginner-alarm-volume'&&beginnerAlarmSettingsExpanded){
+  document.getElementById('beginner-alarm-volume')?.focus({preventScroll:true});
+ }else if(action&&action.startsWith('beginner-')){
   const buttons=[...document.querySelectorAll('[data-action]')];
   const same=buttons.find(b=>b.dataset.action===action&&b.dataset.timerId===timerId&&b.dataset.minutes===minutes);
   (same||buttons.find(b=>b.dataset.action==='beginner-toggle-timers'))?.focus({preventScroll:true});
@@ -37349,7 +37377,8 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     if(act==='home-stock'){document.getElementById('modal-root').innerHTML=`<div class="modal-overlay" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="stock-choice-title"><button type="button" class="modal-x" data-action="close-modal" aria-label="Close">×</button><div class="modal-body"><h2 id="stock-choice-title">Shopping &amp; pantry</h2><div class="beginner-home-choices">${btn('🛒 Shopping list','go-shopping','','btn btn-primary')}${btn('🥕 My pantry','go-pantry','','btn')}</div></div></section></div>`;document.querySelector('.modal-x')?.focus();return}
     if(act==='beginner-start-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),seconds=Number(el.dataset.seconds);if(task&&index===guideTaskIndexForStep(r,guideProgress())&&reminderOptions(scaledInstruction(task.instructions,r,guideServings)).some(o=>o.seconds===seconds))startBeginnerTimer(r,task,index,seconds);return}
     if(act==='beginner-packet-timer'){if(!guideId)return;const r=recipeById(guideId),index=Number(el.dataset.taskIndex),task=currentBeginnerTask(r,index),minutes=Number(document.getElementById('beginner-packet-minutes')?.value);if(!task||index!==guideTaskIndexForStep(r,guideProgress()))return;if(!Number.isFinite(minutes)||minutes<0.5||minutes>180){toast('Enter your packet time between 0.5 and 180 minutes');return}startBeginnerTimer(r,task,index,minutes*60);return}
-    if(act==='beginner-toggle-timers'){beginnerTimersExpanded=!beginnerTimersExpanded;refreshBeginnerTimerPanels();return}
+    if(act==='beginner-toggle-timers'){setBeginnerTimersExpanded(!beginnerTimersExpanded);refreshBeginnerTimerPanels();return}
+    if(act==='beginner-toggle-alarm-settings'){beginnerAlarmSettingsExpanded=!beginnerAlarmSettingsExpanded;refreshBeginnerTimerPanels();return}
     if(act==='beginner-stop-timer'){dismissBeginnerTimer(el.dataset.timerId);return}
     if(act==='beginner-extend-timer'){extendBeginnerTimer(el.dataset.timerId,Number(el.dataset.minutes));return}
     if(act==='beginner-enable-notifications'){enableBeginnerNotifications();return}
@@ -37597,7 +37626,8 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
     if(document.getElementById('illustration-dialog')?.open)return; // Native dialog owns Escape and focus while enlarged.
     if((e.key==='Enter'||e.key===' ')&&e.target.matches('.recipe-card[data-action=recipe],.suggest-card[data-action=recipe],.compact-day[data-action=recipe]')){e.preventDefault();showRecipe(e.target.dataset.id);return;}
 
-    if(e.key==='Escape'&&beginnerTimersExpanded){beginnerTimersExpanded=false;refreshBeginnerTimerPanels();document.querySelector('[data-action=beginner-toggle-timers]')?.focus({preventScroll:true});e.preventDefault();return}
+    if(e.key==='Escape'&&beginnerAlarmSettingsExpanded){beginnerAlarmSettingsExpanded=false;refreshBeginnerTimerPanels();document.querySelector('[data-action=beginner-toggle-alarm-settings]')?.focus({preventScroll:true});e.preventDefault();return}
+    if(e.key==='Escape'&&beginnerTimersExpanded){setBeginnerTimersExpanded(false);refreshBeginnerTimerPanels();document.querySelector('[data-action=beginner-toggle-timers]')?.focus({preventScroll:true});e.preventDefault();return}
     if(e.key==='Escape'&&cookReviewDay){closeCookReview();e.preventDefault();return}
     if(e.key==='Escape'&&guideId){exitGuide(true);e.preventDefault();return}
     if(e.key==='Escape'){if(document.getElementById('stock-check-backdrop')){document.getElementById('modal-root').innerHTML='';e.preventDefault()}else if(document.getElementById('pantry-backdrop')){closePantryModal();e.preventDefault()}else if(pickerDay){closeMealPicker();e.preventDefault()}else if(modalRecipe){closeModal();e.preventDefault()}return}
