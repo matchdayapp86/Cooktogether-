@@ -8127,11 +8127,11 @@
     ],
     "steps": [
       "This is a fixed batch for four people. Use a slow cooker around 3.5–4.5 litres only if this quantity meets its manual minimum and maximum fill levels; aim for roughly half to two-thirds full. Do not double the batch in the same pot. Follow the manual for preheating. Start cooking straight after loading: do not use a delayed start. Use fully thawed meat from the fridge, never frozen meat. Use commercially canned, ready-cooked beans wherever listed; never substitute raw dried kidney beans. Set an appliance timer or phone alarm too: a webpage reminder may not sound while the page is closed or the phone suspends it.",
-      "Onion: Peel and finely dice. Garlic: Peel and crush with a garlic press, or finely chop. Carrots: Peel and cut into small 1cm cubes. Prepare these before handling raw meat. Keep ingredients for finishing and side dishes covered in the fridge until their steps; hold peeled side-dish potatoes covered in cold water in the fridge, then drain before cooking.",
-      "On a separate board, cut the meat into 3cm cubes. Keep it chilled until the pan is ready. Wash hands, knife and board afterwards; do not wash raw meat.",
-      "Heat the measured olive oil in a large heavy pan over medium-high heat. Add the meat in a single layer, in batches if necessary, and brown for 5–7 minutes, turning regularly. Move to a plate; it is not fully cooked yet and must return to the pan.",
-      "Put the prepared root vegetables at the bottom of the cooker. Add browned meat and juices, onion and garlic. Add all the other ingredients listed for this task, including the measured liquid. Drain and rinse any canned beans first. Stir carefully and fit the lid. Do not put the ceramic insert directly on a hob.",
-      "Set the slow cooker to LOW and cook for 6 hours with the lid on. Do not use WARM to cook raw food. Avoid repeatedly lifting the lid. At the end, check the meat and the centre of the dish. Check the thickest centre with a clean food thermometer: at least 75°C maintained for 30 seconds. If it is below that, cook longer and check again. The timer is only a reminder. Meat must also be tender to a fork; continue on LOW and check again if still firm.",
+      "Peel and finely dice the onion. Peel and crush the garlic. Peel the carrots and cut them into 1 cm cubes. Halve the apricots. Drain and rinse the chickpeas.",
+      "Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when the pan is ready for browning. Wash your hands after handling raw chicken.",
+      "Heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs in a single layer for 5–7 minutes per batch, turning to colour both sides. Transfer them to a plate while you finish browning. They will finish cooking in the slow cooker.",
+      "Put the diced carrots at the bottom of the slow cooker. Add the browned thighs and their juices, then the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. Spoon some of the liquid over the thighs and fit the lid.",
+      "Set the slow cooker to LOW and cook for about 6 hours with the lid on. Do not use WARM to cook raw food. Check the thickest part of the largest thighs with a clean food thermometer. It should reach at least 75°C for 30 seconds. If the chicken is below temperature or still firm, carry on cooking and check again.",
       "Near serving time, put couscous in a heatproof bowl. Add the amount of boiling water on its packet, cover for the stated standing time, then fluff with a fork.",
       "Serve the finished dish with the prepared side. Cool leftovers in small portions and refrigerate promptly; follow the food-safety guidance for storage and reheating."
     ],
@@ -8148,47 +8148,49 @@
         "sourceStage": 0
       },
       {
-        "title": "Prepare the vegetables first",
+        "title": "Prepare the vegetables, apricots and chickpeas",
         "uses": [
           "onion",
           "garlic",
-          "carrots"
+          "carrots",
+          "dried-apricots",
+          "chickpeas"
         ],
-        "instructions": "Onion: Peel and finely dice. Garlic: Peel and crush with a garlic press, or finely chop. Carrots: Peel and cut into small 1cm cubes. Prepare these before handling raw meat. Keep ingredients for finishing and side dishes covered in the fridge until their steps; hold peeled side-dish potatoes covered in cold water in the fridge, then drain before cooking.",
-        "check": "The vegetables are prepared and kept separate from raw meat.",
+        "instructions": "Peel and finely dice the onion. Peel and crush the garlic. Peel the carrots and cut them into 1 cm cubes. Halve the apricots. Drain and rinse the chickpeas.",
+        "check": "The vegetables, apricots and chickpeas are ready before you handle the chicken.",
         "skills": [],
         "tools": [
           "Non-slip board",
           "Knife",
-          "Garlic press or grater where needed"
+          "Garlic press",
+          "Sieve"
         ],
         "sourceStage": 1
       },
       {
-        "title": "Prepare the meat",
+        "title": "Get the whole chicken thighs ready",
         "uses": [
           "chicken-thighs"
         ],
-        "instructions": "On a separate board, cut the meat into 3cm cubes. Keep it chilled until the pan is ready. Wash hands, knife and board afterwards; do not wash raw meat.",
-        "check": "Pieces are the stated size; raw-meat equipment is set aside for cleaning.",
+        "instructions": "Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when the pan is ready for browning. Wash your hands after handling raw chicken.",
+        "check": "The thighs are whole and ready to go into the pan.",
         "skills": [],
         "tools": [
-          "Separate board",
-          "Knife"
+          "Tongs"
         ],
         "sourceStage": 2
       },
       {
-        "title": "Brown the meat",
+        "title": "Brown the whole chicken thighs",
         "uses": [
           "chicken-thighs",
           "olive-oil"
         ],
-        "instructions": "Heat the measured olive oil in a large heavy pan over medium-high heat. Add the meat in a single layer, in batches if necessary, and brown for 5–7 minutes, turning regularly. Move to a plate; it is not fully cooked yet and must return to the pan.",
-        "check": "Surfaces have browned; the meat still needs the following cooking stage.",
+        "instructions": "Heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs in a single layer for 5–7 minutes per batch, turning to colour both sides. Transfer them to a plate while you finish browning. They will finish cooking in the slow cooker.",
+        "check": "Both sides have some colour. Carry on to the slow cooker straight away.",
         "skills": [],
         "tools": [
-          "Heavy pan",
+          "Heavy frying pan",
           "Tongs",
           "Plate"
         ],
@@ -8197,9 +8199,10 @@
       {
         "title": "Load the cooker",
         "uses": [
+          "carrots",
+          "chicken-thighs",
           "onion",
           "garlic",
-          "carrots",
           "chickpeas",
           "dried-apricots",
           "ground-cumin",
@@ -8207,8 +8210,8 @@
           "chopped-tomatoes",
           "chicken-stock"
         ],
-        "instructions": "Put the prepared root vegetables at the bottom of the cooker. Add browned meat and juices, onion and garlic. Add all the other ingredients listed for this task, including the measured liquid. Drain and rinse any canned beans first. Stir carefully and fit the lid. Do not put the ceramic insert directly on a hob.",
-        "check": "The listed ingredients are in the pot, within its fill limits.",
+        "instructions": "Put the diced carrots at the bottom of the slow cooker. Add the browned thighs and their juices, then the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. Spoon some of the liquid over the thighs and fit the lid.",
+        "check": "The ingredients are in the slow cooker and within its fill limits.",
         "skills": [],
         "tools": [
           "Slow cooker",
@@ -8221,8 +8224,8 @@
         "uses": [
           "chicken-thighs"
         ],
-        "instructions": "Set the slow cooker to LOW and cook for 6 hours with the lid on. Do not use WARM to cook raw food. Avoid repeatedly lifting the lid. At the end, check the meat and the centre of the dish. Check the thickest centre with a clean food thermometer: at least 75°C maintained for 30 seconds. If it is below that, cook longer and check again. The timer is only a reminder. Meat must also be tender to a fork; continue on LOW and check again if still firm.",
-        "check": "The dish is hot throughout and its meat or vegetables are fully tender.",
+        "instructions": "Set the slow cooker to LOW and cook for about 6 hours with the lid on. Do not use WARM to cook raw food. Check the thickest part of the largest thighs with a clean food thermometer. It should reach at least 75°C for 30 seconds. If the chicken is below temperature or still firm, carry on cooking and check again.",
+        "check": "The chicken is cooked through and fork-tender.",
         "skills": [],
         "tools": [
           "Slow cooker",
@@ -8258,7 +8261,7 @@
       }
     ],
     "prep": {
-      "chicken-thighs": "Keep refrigerated; use a separate board for raw meat and wash hands and utensils afterwards. Do not wash raw meat.",
+      "chicken-thighs": "Keep the boneless, skinless thighs whole and chilled until browning.",
       "onion": "Peel and finely dice.",
       "garlic": "Peel and crush with a garlic press, or finely chop.",
       "olive-oil": "Measure the amount shown.",
@@ -8286,7 +8289,8 @@
       "cooking": "Check the thickest centre with a clean food thermometer: at least 75°C maintained for 30 seconds. If it is below that, cook longer and check again. The timer is only a reminder. Keep raw meat and its utensils separate from ready-to-eat food."
     },
     "references": [
-      "https://www.bbcgoodfood.com/recipes/slow-cooker-chicken-casserole"
+      "https://www.bbcgoodfood.com/recipes/slow-cooker-chicken-casserole",
+      "https://www.bbcgoodfood.com/recipes/slow-cooker-chicken-chasseur"
     ],
     "reference": "https://www.bbcgoodfood.com/recipes/slow-cooker-chicken-casserole",
     "cookingMethod": "Slow Cooker",
