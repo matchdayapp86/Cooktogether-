@@ -8128,9 +8128,9 @@
     "steps": [
       "This is a fixed batch for four people. Use a slow cooker around 3.5–4.5 litres only if this quantity meets its manual minimum and maximum fill levels; aim for roughly half to two-thirds full. Do not double the batch in the same pot. Follow the manual for preheating. Start cooking straight after loading: do not use a delayed start. Use fully thawed meat from the fridge, never frozen meat. Use commercially canned, ready-cooked beans wherever listed; never substitute raw dried kidney beans. Set an appliance timer or phone alarm too: a webpage reminder may not sound while the page is closed or the phone suspends it.",
       "Peel and finely dice the onion. Peel and crush the garlic. Peel the carrots and cut them into 1 cm cubes. Halve the apricots. Drain and rinse the chickpeas.",
-      "Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when the pan is ready for browning. Wash your hands after handling raw chicken.",
-      "Heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs in a single layer for 5–7 minutes per batch, turning to colour both sides. Transfer them to a plate while you finish browning. They will finish cooking in the slow cooker.",
-      "Put the diced carrots at the bottom of the slow cooker. Add the browned thighs and their juices, then the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. Spoon some of the liquid over the thighs and fit the lid.",
+      "Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when you are ready to load the slow cooker or to brown them first. Wash your hands after handling raw chicken.",
+      "You can put the raw thighs straight into the slow cooker. For extra colour and flavour, heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs for 5–7 minutes per batch, turning to colour both sides, then move straight on to load the cooker.",
+      "Put the diced carrots at the bottom of the slow cooker. Add the whole thighs straight from the fridge, or add the browned thighs and any juices if you chose to brown them. Add the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. If you skipped browning, add the measured olive oil now. Spoon some of the liquid over the thighs and fit the lid.",
       "Set the slow cooker to LOW and cook for about 6 hours with the lid on. Do not use WARM to cook raw food. Check the thickest part of the largest thighs with a clean food thermometer. It should reach at least 75°C for 30 seconds. If the chicken is below temperature or still firm, carry on cooking and check again.",
       "Near serving time, put couscous in a heatproof bowl. Add the amount of boiling water on its packet, cover for the stated standing time, then fluff with a fork.",
       "Serve the finished dish with the prepared side. Cool leftovers in small portions and refrigerate promptly; follow the food-safety guidance for storage and reheating."
@@ -8172,8 +8172,8 @@
         "uses": [
           "chicken-thighs"
         ],
-        "instructions": "Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when the pan is ready for browning. Wash your hands after handling raw chicken.",
-        "check": "The thighs are whole and ready to go into the pan.",
+        "instructions": "Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when you are ready to load the slow cooker or to brown them first. Wash your hands after handling raw chicken.",
+        "check": "The thighs are whole and ready for the cooker.",
         "skills": [],
         "tools": [
           "Tongs"
@@ -8181,13 +8181,13 @@
         "sourceStage": 2
       },
       {
-        "title": "Brown the whole chicken thighs",
+        "title": "Optional: brown the whole thighs",
         "uses": [
           "chicken-thighs",
           "olive-oil"
         ],
-        "instructions": "Heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs in a single layer for 5–7 minutes per batch, turning to colour both sides. Transfer them to a plate while you finish browning. They will finish cooking in the slow cooker.",
-        "check": "Both sides have some colour. Carry on to the slow cooker straight away.",
+        "instructions": "You can put the raw thighs straight into the slow cooker. For extra colour and flavour, heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs for 5–7 minutes per batch, turning to colour both sides, then move straight on to load the cooker.",
+        "check": "Go straight to the next step, whether you browned the thighs or kept them raw.",
         "skills": [],
         "tools": [
           "Heavy frying pan",
@@ -8208,9 +8208,10 @@
           "ground-cumin",
           "ground-cinnamon",
           "chopped-tomatoes",
-          "chicken-stock"
+          "chicken-stock",
+          "olive-oil"
         ],
-        "instructions": "Put the diced carrots at the bottom of the slow cooker. Add the browned thighs and their juices, then the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. Spoon some of the liquid over the thighs and fit the lid.",
+        "instructions": "Put the diced carrots at the bottom of the slow cooker. Add the whole thighs straight from the fridge, or add the browned thighs and any juices if you chose to brown them. Add the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. If you skipped browning, add the measured olive oil now. Spoon some of the liquid over the thighs and fit the lid.",
         "check": "The ingredients are in the slow cooker and within its fill limits.",
         "skills": [],
         "tools": [
@@ -8261,7 +8262,7 @@
       }
     ],
     "prep": {
-      "chicken-thighs": "Keep the boneless, skinless thighs whole and chilled until browning.",
+      "chicken-thighs": "Keep the boneless, skinless thighs whole and chilled until you are ready to cook.",
       "onion": "Peel and finely dice.",
       "garlic": "Peel and crush with a garlic press, or finely chop.",
       "olive-oil": "Measure the amount shown.",

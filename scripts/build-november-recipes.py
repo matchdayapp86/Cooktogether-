@@ -185,22 +185,22 @@ for r in recipes:
    if t['title']=='Cook on LOW' and r['category']=='Vegetarian':t['instructions']=t['instructions'].replace('all roots and lentils, where present,','the vegetables and red lentils' if any(i[0]=='red-lentils' for i in r['ingredients']) else 'the vegetables')
   r['family']='This fixed batch serves four. Use the stated cooker capacity and manual fill limits. Cook extra batches separately, not by doubling quantities in the same pot.'
   if r['id']=='slow-chicken-apricot':
-   r['prep']['chicken-thighs']='Keep the boneless, skinless thighs whole and chilled until browning.'
+   r['prep']['chicken-thighs']='Keep the boneless, skinless thighs whole and chilled until you are ready to cook.'
    r['beginnerTasks'][1:6]=[
     task('Prepare the vegetables, apricots and chickpeas','onion garlic carrots dried-apricots chickpeas',
          'Peel and finely dice the onion. Peel and crush the garlic. Peel the carrots and cut them into 1 cm cubes. Halve the apricots. Drain and rinse the chickpeas.',
          'The vegetables, apricots and chickpeas are ready before you handle the chicken.',
          ['Non-slip board','Knife','Garlic press','Sieve']),
     task('Get the whole chicken thighs ready','chicken-thighs',
-         'Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when the pan is ready for browning. Wash your hands after handling raw chicken.',
-         'The thighs are whole and ready to go into the pan.',
+         'Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when you are ready to load the slow cooker or to brown them first. Wash your hands after handling raw chicken.',
+         'The thighs are whole and ready for the cooker.',
          ['Tongs']),
-    task('Brown the whole chicken thighs','chicken-thighs olive-oil',
-         'Heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs in a single layer for 5–7 minutes per batch, turning to colour both sides. Transfer them to a plate while you finish browning. They will finish cooking in the slow cooker.',
-         'Both sides have some colour. Carry on to the slow cooker straight away.',
+    task('Optional: brown the whole thighs','chicken-thighs olive-oil',
+         'You can put the raw thighs straight into the slow cooker. For extra colour and flavour, heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs for 5–7 minutes per batch, turning to colour both sides, then move straight on to load the cooker.',
+         'Go straight to the next step, whether you browned the thighs or kept them raw.',
          ['Heavy frying pan','Tongs','Plate']),
-    task('Load the cooker','carrots chicken-thighs onion garlic chickpeas dried-apricots ground-cumin ground-cinnamon chopped-tomatoes chicken-stock',
-         'Put the diced carrots at the bottom of the slow cooker. Add the browned thighs and their juices, then the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. Spoon some of the liquid over the thighs and fit the lid.',
+    task('Load the cooker','carrots chicken-thighs onion garlic chickpeas dried-apricots ground-cumin ground-cinnamon chopped-tomatoes chicken-stock olive-oil',
+         'Put the diced carrots at the bottom of the slow cooker. Add the whole thighs straight from the fridge, or add the browned thighs and any juices if you chose to brown them. Add the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. If you skipped browning, add the measured olive oil now. Spoon some of the liquid over the thighs and fit the lid.',
          'The ingredients are in the slow cooker and within its fill limits.',
          ['Slow cooker','Spoon']),
     task('Cook on LOW','chicken-thighs',
