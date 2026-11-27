@@ -199,3 +199,7 @@ The disposition reflects whether an **additional** sauce is justified. Unchanged
 ## 24 November addition
 
 Lentil cottage pie with cheesy mash brings the primary recipe count to 117. Its lentil and mushroom filling already includes a thick stock-based sauce, so it needs no separate sauce.
+
+## 27 November addition
+
+Chicken Poondu Milagu Kuzhambu with rice brings the primary recipe count to 118. The tamarind, garlic and black pepper gravy is part of the main cook-along.
