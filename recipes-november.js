@@ -8029,15 +8029,14 @@
     "time": 410,
     "servings": 4,
     "cost": 0,
-    "description": "Apricots add gentle sweetness to a cumin-spiced chicken stew. Slow cooker: LOW for 6 hours, plus preparation and finishing. Fixed four-portion batch.",
+    "description": "Apricots add gentle sweetness to a cumin-spiced chicken stew. Slow cooker: LOW for 6 hours, plus preparation and finishing. Serve with mash or oven wedges. Fixed four-portion batch.",
     "tags": [
       "Chicken",
       "Slow Cooker",
       "New to test"
     ],
     "allergens": [
-      "Celery (check stock)",
-      "Wheat"
+      "Celery (check stock)"
     ],
     "ingredients": [
       [
@@ -8064,7 +8063,7 @@
       [
         "olive-oil",
         "Olive oil",
-        1,
+        2,
         "tbsp",
         "Cupboard"
       ],
@@ -8118,22 +8117,22 @@
         "Cupboard"
       ],
       [
-        "couscous",
-        "Couscous",
-        250,
+        "potatoes",
+        "Floury potatoes",
+        800,
         "g",
-        "Cupboard"
+        "Fresh produce"
       ]
     ],
     "steps": [
       "This is a fixed batch for four people. Use a slow cooker around 3.5–4.5 litres only if this quantity meets its manual minimum and maximum fill levels; aim for roughly half to two-thirds full. Do not double the batch in the same pot. Follow the manual for preheating. Start cooking straight after loading: do not use a delayed start. Use fully thawed meat from the fridge, never frozen meat. Use commercially canned, ready-cooked beans wherever listed; never substitute raw dried kidney beans. Set an appliance timer or phone alarm too: a webpage reminder may not sound while the page is closed or the phone suspends it.",
       "Peel and finely dice the onion. Peel and crush the garlic. Peel the carrots and cut them into 1 cm cubes. Halve the apricots. Drain and rinse the chickpeas.",
       "Keep the boneless, skinless chicken thighs whole. Take them out of the fridge when you are ready to load the slow cooker or to brown them first. Wash your hands after handling raw chicken.",
-      "You can put the raw thighs straight into the slow cooker. For extra colour and flavour, heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs for 5–7 minutes per batch, turning to colour both sides, then move straight on to load the cooker.",
-      "Put the diced carrots at the bottom of the slow cooker. Add the whole thighs straight from the fridge, or add the browned thighs and any juices if you chose to brown them. Add the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. If you skipped browning, add the measured olive oil now. Spoon some of the liquid over the thighs and fit the lid.",
-      "Set the slow cooker to LOW and cook for about 6 hours with the lid on. Do not use WARM to cook raw food. Check the thickest part of the largest thighs with a clean food thermometer. It should reach at least 75°C for 30 seconds. If the chicken is below temperature or still firm, carry on cooking and check again.",
-      "Near serving time, put couscous in a heatproof bowl. Add the amount of boiling water on its packet, cover for the stated standing time, then fluff with a fork.",
-      "Serve the finished dish with the prepared side. Cool leftovers in small portions and refrigerate promptly; follow the food-safety guidance for storage and reheating."
+      "You can put the raw thighs straight into the slow cooker. For extra colour and flavour, heat 1 tbsp of the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs for 5–7 minutes per batch, turning to colour both sides, then move straight on to load the cooker.",
+      "Put the diced carrots at the bottom of the slow cooker. Add the whole thighs straight from the fridge, or add the browned thighs and any juices if you chose to brown them. Add the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. If you skipped browning, add 1 tbsp of the olive oil now. Spoon some of the liquid over the thighs and fit the lid.",
+      "Set the slow cooker to LOW and cook for about 6 hours with the lid on. Do not use WARM to cook raw food. Once the cooker is running, read the next step so you know when to start your side. When the chicken is due to finish, check it as follows. Check the thickest part of the largest thighs with a clean food thermometer. It should reach at least 75°C for 30 seconds. If the chicken is below temperature or still firm, carry on cooking and check again.",
+      "Choose either mash or wedges and start your side while the chicken finishes. For wedges, allow about three quarters of an hour including prep and preheating. Heat the oven to 180°C fan. Scrub the potatoes and cut them lengthways into wedges about 2 cm thick at the widest point. Toss with the tablespoon of olive oil reserved for the side and spread in one layer on a lined tray. Roast for 25–30 minutes, turning halfway through, until golden and tender. For mash, allow about half an hour including prep. Peel the potatoes, cut them into 2.5 cm chunks and cover them with cold water in a saucepan. Bring to the boil, then simmer for 15–20 minutes until a fork slides in easily. Save a little cooking water, drain the potatoes and let them steam-dry briefly. Mash with the tablespoon of olive oil reserved for the side and add a splash of the cooking water if needed.",
+      "Serve the chicken and its sauce with your mash or wedges. Cool leftovers in small portions and refrigerate promptly; follow the food-safety guidance for storage and reheating."
     ],
     "beginnerTasks": [
       {
@@ -8186,7 +8185,7 @@
           "chicken-thighs",
           "olive-oil"
         ],
-        "instructions": "You can put the raw thighs straight into the slow cooker. For extra colour and flavour, heat the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs for 5–7 minutes per batch, turning to colour both sides, then move straight on to load the cooker.",
+        "instructions": "You can put the raw thighs straight into the slow cooker. For extra colour and flavour, heat 1 tbsp of the olive oil in a heavy frying pan over medium-high heat. Brown the whole thighs for 5–7 minutes per batch, turning to colour both sides, then move straight on to load the cooker.",
         "check": "Go straight to the next step, whether you browned the thighs or kept them raw.",
         "skills": [],
         "tools": [
@@ -8211,7 +8210,7 @@
           "chicken-stock",
           "olive-oil"
         ],
-        "instructions": "Put the diced carrots at the bottom of the slow cooker. Add the whole thighs straight from the fridge, or add the browned thighs and any juices if you chose to brown them. Add the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. If you skipped browning, add the measured olive oil now. Spoon some of the liquid over the thighs and fit the lid.",
+        "instructions": "Put the diced carrots at the bottom of the slow cooker. Add the whole thighs straight from the fridge, or add the browned thighs and any juices if you chose to brown them. Add the onion, garlic, chickpeas, apricots, cumin, cinnamon, tomatoes and stock. If you skipped browning, add 1 tbsp of the olive oil now. Spoon some of the liquid over the thighs and fit the lid.",
         "check": "The ingredients are in the slow cooker and within its fill limits.",
         "skills": [],
         "tools": [
@@ -8225,7 +8224,7 @@
         "uses": [
           "chicken-thighs"
         ],
-        "instructions": "Set the slow cooker to LOW and cook for about 6 hours with the lid on. Do not use WARM to cook raw food. Check the thickest part of the largest thighs with a clean food thermometer. It should reach at least 75°C for 30 seconds. If the chicken is below temperature or still firm, carry on cooking and check again.",
+        "instructions": "Set the slow cooker to LOW and cook for about 6 hours with the lid on. Do not use WARM to cook raw food. Once the cooker is running, read the next step so you know when to start your side. When the chicken is due to finish, check it as follows. Check the thickest part of the largest thighs with a clean food thermometer. It should reach at least 75°C for 30 seconds. If the chicken is below temperature or still firm, carry on cooking and check again.",
         "check": "The chicken is cooked through and fork-tender.",
         "skills": [],
         "tools": [
@@ -8235,23 +8234,25 @@
         "sourceStage": 5
       },
       {
-        "title": "Prepare couscous",
+        "title": "Choose mash or oven wedges",
         "uses": [
-          "couscous"
+          "potatoes",
+          "olive-oil"
         ],
-        "instructions": "Near serving time, put couscous in a heatproof bowl. Add the amount of boiling water on its packet, cover for the stated standing time, then fluff with a fork.",
-        "check": "Grains are tender.",
+        "instructions": "Choose either mash or wedges and start your side while the chicken finishes. For wedges, allow about three quarters of an hour including prep and preheating. Heat the oven to 180°C fan. Scrub the potatoes and cut them lengthways into wedges about 2 cm thick at the widest point. Toss with the tablespoon of olive oil reserved for the side and spread in one layer on a lined tray. Roast for 25–30 minutes, turning halfway through, until golden and tender. For mash, allow about half an hour including prep. Peel the potatoes, cut them into 2.5 cm chunks and cover them with cold water in a saucepan. Bring to the boil, then simmer for 15–20 minutes until a fork slides in easily. Save a little cooking water, drain the potatoes and let them steam-dry briefly. Mash with the tablespoon of olive oil reserved for the side and add a splash of the cooking water if needed.",
+        "check": "The mash is soft and smooth, or the wedges are golden and tender in the middle.",
         "skills": [],
         "tools": [
-          "Heatproof bowl",
-          "Fork"
+          "Non-slip board, knife and fork",
+          "Oven tray and spatula for wedges",
+          "Saucepan, colander and masher for mash"
         ],
         "sourceStage": 6
       },
       {
         "title": "Finish and serve",
         "uses": [],
-        "instructions": "Serve the finished dish with the prepared side. Cool leftovers in small portions and refrigerate promptly; follow the food-safety guidance for storage and reheating.",
+        "instructions": "Serve the chicken and its sauce with your mash or wedges. Cool leftovers in small portions and refrigerate promptly; follow the food-safety guidance for storage and reheating.",
         "check": "The food is fully cooked and served hot.",
         "skills": [],
         "tools": [
@@ -8265,7 +8266,7 @@
       "chicken-thighs": "Keep the boneless, skinless thighs whole and chilled until you are ready to cook.",
       "onion": "Peel and finely dice.",
       "garlic": "Peel and crush with a garlic press, or finely chop.",
-      "olive-oil": "Measure the amount shown.",
+      "olive-oil": "Measure 1 tbsp for the chicken and set aside a second tablespoon for your chosen potato side.",
       "carrots": "Peel and cut into small 1cm cubes.",
       "chickpeas": "Use ready-cooked canned beans. Drain and rinse, then weigh the amount shown; buy enough tins to provide that drained weight.",
       "dried-apricots": "Cut each apricot in half with clean kitchen scissors.",
@@ -8273,16 +8274,15 @@
       "ground-cinnamon": "Measure the amount shown.",
       "chopped-tomatoes": "Measure the amount shown.",
       "chicken-stock": "Measure prepared liquid, not dry stock powder; make stock to the packet dilution.",
-      "couscous": "Measure the amount shown."
+      "potatoes": "Choose floury potatoes such as Maris Piper. Prepare them in the side step while the slow cooker finishes."
     },
     "flavour": "Apricots add gentle sweetness to a cumin-spiced chicken stew.",
     "family": "This fixed batch serves four. Use the stated cooker capacity and manual fill limits. Cook extra batches separately, not by doubling quantities in the same pot.",
-    "reviewStatus": "Research-informed development recipe — not kitchen-tested by CookTogether",
+    "reviewStatus": "Home tester found the original quantities and timings accurate on 26 November 2026. The potato sides are not kitchen-tested with this recipe yet.",
     "instructionVersion": 31,
     "safety": {
       "recipeAllergens": [
-        "Celery (check stock)",
-        "Wheat"
+        "Celery (check stock)"
       ],
       "checkLabels": [
         "Read every sauce, stock, bread and seasoning label; brands and substitutions can change allergens."
