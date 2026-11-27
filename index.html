@@ -6384,7 +6384,8 @@ window.COOK_RECIPES = [
     "tags": [
       "Vegetarian",
       "Vegan",
-      "Budget"
+      "Budget",
+      "Curry"
     ],
     "allergens": [
       "Spice blend allergens vary"
@@ -11053,7 +11054,8 @@ window.COOK_RECIPES = [
     "description": "Soft paneer cubes in a richly spiced tomato sauce with sweet peas and warm rice.",
     "tags": [
       "Vegetarian",
-      "Family dinner"
+      "Family dinner",
+      "Curry"
     ],
     "allergens": [
       "Milk (paneer and yoghurt)"
@@ -13536,7 +13538,8 @@ window.COOK_RECIPES = [
     "description": "Golden cauliflower florets in a gently spiced, creamy tomato-lentil sauce.",
     "tags": [
       "Vegan",
-      "Budget"
+      "Budget",
+      "Curry"
     ],
     "allergens": [
       "Potential spice-blend allergens"
@@ -23467,7 +23470,8 @@ window.COOK_RECIPES = [
     "tags": [
       "Dinner",
       "Chicken",
-      "New to test"
+      "New to test",
+      "Curry"
     ],
     "allergens": [
       "Milk",
@@ -23777,7 +23781,8 @@ window.COOK_RECIPES = [
     "tags": [
       "Dinner",
       "Chicken",
-      "New to test"
+      "New to test",
+      "Curry"
     ],
     "allergens": [
       "Egg",
@@ -27386,7 +27391,8 @@ window.COOK_RECIPES = [
     "tags": [
       "Dinner",
       "Lamb",
-      "New to test"
+      "New to test",
+      "Curry"
     ],
     "allergens": [
       "Milk"
@@ -30838,7 +30844,8 @@ window.COOK_RECIPES = [
       "Dinner",
       "Vegan",
       "New to test",
-      "Vegetarian"
+      "Vegetarian",
+      "Curry"
     ],
     "allergens": [
       "Wheat",
@@ -35764,7 +35771,7 @@ window.COOK_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sat
 
 </script>
 <script src="breakfast-options.js?v=20261118a"></script>
-<script src="recipes-november.js?v=20261127-apricot-sides"></script>
+<script src="recipes-november.js?v=20261127-curries"></script>
 <script src="nutrition-data.js?v=20261127-poondu"></script>
 <script src="nutrition.js?v=20261124a"></script>
 <script>
@@ -36836,7 +36843,7 @@ function ingredientPreparationHelp(r,i,portions){
   function renderNutritionSort(){
     return `<div class="recipe-nutrition-sort" id="recipe-nutrition-controls"><label for="recipe-nutrition-sort">Sort by</label><select id="recipe-nutrition-sort" class="select-field">${Object.entries(window.CookNutrition.sortOptions).map(([key,[label]])=>`<option value="${key}" ${key===nutritionSort?'selected':''}>${label}</option>`).join('')}</select><p>Estimates per serving for the standard recipe before optional extras.</p></div>`;
   }
-  function renderRecipes(){return `${pageHead('THE GOOD STUFF','Find something delicious',`${RECIPES.length} flavour-first family recipes with full cooking methods. Development recipes awaiting kitchen testing.`,btn(ic('calendar')+' View your plan','go-planner','','btn'))}<div class="school-recipes-link"><span aria-hidden="true">🎓</span><span><strong>New to cooking?</strong><small>Learn techniques before choosing a recipe.</small></span>${btn('Cooking School →','go-school','','btn btn-primary btn-sm')}</div><div class="filters-row"><label class="search-box">${ic('search')}<input id="recipe-search" aria-label="Search recipes" placeholder="Search meals or ingredients" value="${esc(search)}"></label><div class="filter-pills">${['All','Nutrition','Breakfast','Lunch','Dinner','Bakery','Lamb','Chicken','Beef','Vegetarian','Fish','Pork','Vegan','Quick','Budget','New to test','Favourites'].map(t=>t==='Nutrition'?`<button type="button" id="recipe-nutrition-toggle" class="filter-btn ${nutritionBrowse?'active':''}" data-action="nutrition-browse" aria-pressed="${nutritionBrowse}">Nutrition</button>`:`<button class="filter-btn ${filter===t?'active':''}" data-action="filter" data-filter="${esc(t)}">${esc(t)}</button>`).join('')}</div></div>${nutritionBrowse?renderNutritionSort():''}<div id="recipe-results" class="recipes-grid">${recipeResults()}</div><div class="notice" style="margin-top:24px"><strong>Recipe development status:</strong> All ${RECIPES.length} recipes are development recipes, not independently kitchen-tested by Cook Together. New recipes have references for cross-checking techniques, but are not licensed copies. *Prices are indicative placeholders, not live basket quotes. Check all real food labels, dietary needs and current prices.</div>`}
+  function renderRecipes(){return `${pageHead('THE GOOD STUFF','Find something delicious',`${RECIPES.length} flavour-first family recipes with full cooking methods. Development recipes awaiting kitchen testing.`,btn(ic('calendar')+' View your plan','go-planner','','btn'))}<div class="school-recipes-link"><span aria-hidden="true">🎓</span><span><strong>New to cooking?</strong><small>Learn techniques before choosing a recipe.</small></span>${btn('Cooking School →','go-school','','btn btn-primary btn-sm')}</div><div class="filters-row"><label class="search-box">${ic('search')}<input id="recipe-search" aria-label="Search recipes" placeholder="Search meals or ingredients" value="${esc(search)}"></label><div class="filter-pills">${['All','Curry','Nutrition','Breakfast','Lunch','Dinner','Bakery','Lamb','Chicken','Beef','Vegetarian','Fish','Pork','Vegan','Quick','Budget','New to test','Favourites'].map(t=>t==='Nutrition'?`<button type="button" id="recipe-nutrition-toggle" class="filter-btn ${nutritionBrowse?'active':''}" data-action="nutrition-browse" aria-pressed="${nutritionBrowse}">Nutrition</button>`:`<button type="button" class="filter-btn ${filter===t?'active':''}" data-action="filter" data-filter="${esc(t)}" aria-pressed="${filter===t}">${esc(t==='Curry'?'Curries':t)}</button>`).join('')}</div></div>${nutritionBrowse?renderNutritionSort():''}<div id="recipe-results" class="recipes-grid">${recipeResults()}</div><div class="notice" style="margin-top:24px"><strong>Recipe development status:</strong> All ${RECIPES.length} recipes are development recipes, not independently kitchen-tested by Cook Together. New recipes have references for cross-checking techniques, but are not licensed copies. *Prices are indicative placeholders, not live basket quotes. Check all real food labels, dietary needs and current prices.</div>`}
   // A sauce belongs to the day/recipe, not to a detached manually entered shopping item.
   let saucePromptDay=null;
   function closePlanSaucePrompt(){saucePromptDay=null;document.getElementById('modal-root').innerHTML=''}
@@ -37538,15 +37545,13 @@ const FOCUS_VISUALS = {"peppers":{"src":"data:image/webp;base64,UklGRl4dAABXRUJQ
   }
   function showRecipe(id,day){renderGlobalBeginnerTimers();const r=recipeById(id);if(!r)return;modalRecipe=id;const activeDay=day&&state.plan[day]?.id===id?day:null;const previewKey=id+'|'+(activeDay||'recipe');if(previewKey!==recipePreviewKey){recipePreviewKey=previewKey;recipePreviewPortions=activeDay?state.plan[activeDay].servings:r.servings;}if(r.fixedBatch)recipePreviewPortions=r.servings;const recipePortions=recipePreviewPortions;const defaultDay=pendingDay||orderedDays().find(d=>!state.plan[d])||currentDay();document.getElementById('modal-root').innerHTML=`<div class="modal-overlay" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-x" type="button" data-action="close-modal" aria-label="Close recipe">×</button><div class="modal-top theme-${r.theme}"><span class="food">${r.emoji}</span></div><div class="modal-body"><div class="eyebrow">${r.tags.slice(0,2).map(esc).join(' · ')}</div><h2 id="modal-title">${esc(r.title)}</h2><p>${esc(r.description)}</p><p class="recipe-flavour-intro"><strong>What gives it flavour:</strong> ${esc(r.flavour||'')}</p><div class="summary-strip"><span class="badge-soft">⏱ ${recipeDuration(r)}</span><label class="recipe-serving-control">${r.fixedBatch?'Batch yield':'People eating'} <select id="recipe-view-portions" aria-label="${r.fixedBatch?'Fixed batch yield':'Number of people eating'}" ${r.fixedBatch?'disabled':''}>${(r.fixedBatch?[r.servings]:Array.from({length:12},(_,i)=>i+1)).map(n=>`<option value="${n}" ${n===recipePortions?'selected':''}>${n}</option>`).join('')}</select></label><span class="badge-soft">${recipePrice(r,recipePortions)} total</span><span class="badge-soft">${r.cost>0?recipePrice(r,1)+' per person':'Price check pending'}</span></div><p class="recipe-portions-note">${r.fixedBatch?(r.batchNote||'This is a fixed baking batch. Ingredient quantities are not automatically scaled down, because small fractions can make the bake unreliable.') :'Amounts below update for the number of people eating.'} ${activeDay?(state.cooked?.[activeDay]?'This dinner is already recorded as cooked.':'Changing people also updates your planned portions and shopping list.'):'Add to your weekly plan to include these amounts in shopping.'}</p>${window.CookBreakfast?.controls(r,recipePortions)||''}<div class="recipe-cook-cta"><div><strong>🍳 Cook along, step by step</strong><p>Start with a Get Ready checklist, then cook one step at a time. Extra technique help is optional and amounts match your portions.</p></div><button type="button" class="btn btn-primary" data-action="guide-start" data-id="${esc(r.id)}" ${activeDay?`data-day="${activeDay}"`:``}>▶ ${state.cookAlong?.[(activeDay||'recipe')+'|'+r.id]?.step?'Resume':'Let’s Cook · Start'}</button></div>${renderRecipeSauceCard(r,recipePortions)}${renderRecipeNutrition(r,recipePortions,activeDay)}${safetyPanel(r)}<div class="modal-cols"><div><h3>Ingredients</h3><p class="ingredient-note">Amounts update for people eating tonight. Preparation notes show how to get ingredients ready. Basic salt, pepper and water are not always automatically shopped; check labels and use-by dates.</p><ul class="ingredients-list prepared-list">${r.ingredients.map(i=>preparedIngredient(r,i,recipePortions)).join('')}</ul></div><div><h3>How to make it</h3><ol class="steps-list">${r.steps.map(s=>`<li>${esc(scaledInstruction(s,r,recipePortions))}</li>`).join('')}</ol></div></div><div class="recipe-quality-box"><div class="quality-eyebrow">FLAVOUR FIRST · DEVELOPMENT RECIPE</div><h3>Why this tastes better</h3><p>${esc(r.flavour||'')}</p><h3>Make it work for your family</h3><p>${esc(r.family||'')}</p><p class="quality-warning">Not yet kitchen-tested by Cook Together. Published technique comparisons are not proof this exact recipe has been tested. Cooking times are guides; check doneness and quantities for your equipment. Estimated prices are placeholders, not live quotes.</p>${r.reference?`<p class="quality-reference"><strong>Published method reference:</strong> <a href="${r.reference}" target="_blank" rel="noopener noreferrer">View source ↗</a>. Link for checking technique, not a copy or endorsement.</p>${(r.references||[]).slice(1).map(url=>`<p class="quality-reference"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Additional method comparison ↗</a></p>`).join('')}`:''}</div><div class="recipe-feedback"><h3>Cooked it? Would you make it again?</h3><p>Tell us what your household thought. Feedback stays on this device in this demo.</p><div class="feedback-actions"><button type="button" class="feedback-btn ${state.feedback?.[r.id]?.verdict==='yes'?'feedback-active':''}" data-action="feedback-yes" data-id="${r.id}" aria-pressed="${state.feedback?.[r.id]?.verdict==='yes'}">👍 Yes, again</button><button type="button" class="feedback-btn ${state.feedback?.[r.id]?.verdict==='no'?'feedback-active':''}" data-action="feedback-no" data-id="${r.id}" aria-pressed="${state.feedback?.[r.id]?.verdict==='no'}">👎 Needs work</button></div><label class="field-label" for="feedback-notes">What would you change?</label><textarea id="feedback-notes" rows="2" maxlength="500" placeholder="More sauce, less spice, family loved it…">${esc(state.feedback?.[r.id]?.notes||'')}</textarea><button type="button" class="btn btn-sm" data-action="feedback-save" data-id="${r.id}">Save my feedback</button></div><div class="modal-footer"><div class="modal-control"><div><label for="meal-day" class="field-label">Choose day</label><select class="select-field" id="meal-day">${orderedDays().map(d=>`<option ${d===defaultDay?'selected':''}>${d}</option>`).join('')}</select></div><div><label for="meal-portions" class="field-label">Portions</label><select class="select-field" id="meal-portions" ${r.fixedBatch?'disabled':''}>${(r.fixedBatch?[r.servings]:Array.from({length:12},(_,i)=>i+1)).map(n=>`<option value="${n}" ${n===recipePortions?'selected':''}>${n}</option>`).join('')}</select></div></div><button class="btn btn-primary" data-action="add-meal" data-id="${r.id}">${ic('plus')} Add to my week</button></div></div></section></div>`;document.querySelector('.modal-x')?.focus();}
   // Accessible, mobile-first meal picker for a particular day. It reuses the existing recipe catalogue.
-  const pickerChips=[['All',`All ${RECIPES.length}`],['Breakfast',`Breakfast · ${RECIPES.filter(r=>mealSection(r)==='Breakfast').length}`],['Lunch',`Lunch · ${RECIPES.filter(r=>mealSection(r)==='Lunch').length}`],['Dinner',`Dinner · ${RECIPES.filter(r=>mealSection(r)==='Dinner').length}`],['Bakery',`Bakery · ${RECIPES.filter(r=>mealSection(r)==='Bakery').length}`],['Slow Cooker',`Slow Cooker · ${RECIPES.filter(r=>r.tags.includes('Slow Cooker')).length}`],['Lamb',`Lamb · ${RECIPES.filter(r=>categoryMatch(r,'Lamb')).length}`],['Chicken',`Chicken · ${RECIPES.filter(r=>categoryMatch(r,'Chicken')).length}`],['Beef',`Beef · ${RECIPES.filter(r=>categoryMatch(r,'Beef')).length}`],['Vegetarian',`Vegetarian · ${RECIPES.filter(r=>categoryMatch(r,'Vegetarian')).length}`],['Fish',`Fish · ${RECIPES.filter(r=>categoryMatch(r,'Fish')).length}`],['Pork',`Pork · ${RECIPES.filter(r=>categoryMatch(r,'Pork')).length}`],['Vegan',`Vegan · ${RECIPES.filter(r=>categoryMatch(r,'Vegan')).length}`],['Quick','Quick'],['Budget','Budget'],['New to test',`New to test · ${RECIPES.filter(r=>r.tags.includes('New to test')).length}`],['Favourites','♥ Saved'],['Family','♥ Family picks']];
+  const pickerChips=[['All',`All ${RECIPES.length}`],['Curry',`Curries · ${RECIPES.filter(r=>r.tags.includes('Curry')).length}`],['Breakfast',`Breakfast · ${RECIPES.filter(r=>mealSection(r)==='Breakfast').length}`],['Lunch',`Lunch · ${RECIPES.filter(r=>mealSection(r)==='Lunch').length}`],['Dinner',`Dinner · ${RECIPES.filter(r=>mealSection(r)==='Dinner').length}`],['Bakery',`Bakery · ${RECIPES.filter(r=>mealSection(r)==='Bakery').length}`],['Slow Cooker',`Slow Cooker · ${RECIPES.filter(r=>r.tags.includes('Slow Cooker')).length}`],['Lamb',`Lamb · ${RECIPES.filter(r=>categoryMatch(r,'Lamb')).length}`],['Chicken',`Chicken · ${RECIPES.filter(r=>categoryMatch(r,'Chicken')).length}`],['Beef',`Beef · ${RECIPES.filter(r=>categoryMatch(r,'Beef')).length}`],['Vegetarian',`Vegetarian · ${RECIPES.filter(r=>categoryMatch(r,'Vegetarian')).length}`],['Fish',`Fish · ${RECIPES.filter(r=>categoryMatch(r,'Fish')).length}`],['Pork',`Pork · ${RECIPES.filter(r=>categoryMatch(r,'Pork')).length}`],['Vegan',`Vegan · ${RECIPES.filter(r=>categoryMatch(r,'Vegan')).length}`],['Quick','Quick'],['Budget','Budget'],['New to test',`New to test · ${RECIPES.filter(r=>r.tags.includes('New to test')).length}`],['Favourites','♥ Saved'],['Family','♥ Family picks']];
   function filteredPickerRecipes(){
     const q=pickerQuery.trim().toLocaleLowerCase('en-GB');
     return RECIPES.filter(r=>{
       const matches=pickerFilter==='All'||
         (pickerFilter==='Quick'&&r.time<=30)||
-        (pickerFilter==='Slow Cooker'&&r.tags.includes('Slow Cooker'))||
-        (pickerFilter==='Budget'&&r.tags.includes('Budget'))||
-        (pickerFilter==='New to test'&&r.tags.includes('New to test'))||
+        (['Curry','Slow Cooker','Budget','New to test'].includes(pickerFilter)&&r.tags.includes(pickerFilter))||
         (['Breakfast','Lunch','Dinner','Bakery'].includes(pickerFilter)&&mealSection(r)===pickerFilter)||
         (['Lamb','Chicken','Beef','Vegetarian','Fish','Pork','Vegan'].includes(pickerFilter)&&categoryMatch(r,pickerFilter))||
         (pickerFilter==='Favourites'&&state.favorites.includes(r.id))||

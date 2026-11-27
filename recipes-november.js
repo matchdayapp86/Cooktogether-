@@ -4978,7 +4978,8 @@
     "description": "A rich coconut curry scented with lemongrass, ginger and warm spices. A development recipe with ingredient amounts for four people; use the portion selector to adjust.",
     "tags": [
       "Beef",
-      "New to test"
+      "New to test",
+      "Curry"
     ],
     "allergens": [
       "Soya",
@@ -5246,7 +5247,8 @@
     "description": "A mild, thick curry with tender beef and soft root vegetables. A development recipe with ingredient amounts for four people; use the portion selector to adjust.",
     "tags": [
       "Beef",
-      "New to test"
+      "New to test",
+      "Curry"
     ],
     "allergens": [
       "Wheat",
@@ -10503,7 +10505,8 @@
     "tags": [
       "Vegetarian",
       "Slow Cooker",
-      "New to test"
+      "New to test",
+      "Curry"
     ],
     "allergens": [
       "Celery (check stock)"

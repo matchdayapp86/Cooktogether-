@@ -212,6 +212,10 @@ for r in recipes:
  for n,t in enumerate(r['beginnerTasks']):t['sourceStage']=n
  r['steps']=[t['instructions'] for t in r['beginnerTasks']]
 
+for recipe in recipes:
+ if recipe['id'] in {'beef-coconut-lemongrass', 'beef-japanese-style-curry', 'slow-sweet-potato-chickpea'}:
+  recipe['tags'].append('Curry')
+
 assert len(recipes)==45,len(recipes)
 Path('recipes-november.js').write_text('/* 45 original development recipes. Not kitchen-tested. */\n(()=>{\n const additions='+json.dumps(recipes,ensure_ascii=False,indent=2)+';\n const existing=new Set(window.COOK_RECIPES.map(r=>r.id));\n for(const recipe of additions){if(existing.has(recipe.id))throw new Error("Duplicate recipe: "+recipe.id);window.COOK_RECIPES.push(recipe);existing.add(recipe.id);}\n})();\n')
 print('Built',len(recipes),'recipes and',sum(len(r['beginnerTasks']) for r in recipes),'tasks')

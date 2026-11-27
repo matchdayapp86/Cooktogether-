@@ -18,6 +18,18 @@ assert.equal(new Set(a.recipes.map(r=>r.id)).size,a.recipes.length);
 assert.equal(new Set(a.recipes.map(r=>r.title.toLowerCase())).size,a.recipes.length);
 assert.equal(a.picker('Slow Cooker').length,15);
 const browse=a.browse('Slow Cooker');for(const r of slow)assert(browse.includes(r.id));assert(!browse.includes('data-id="chicken-roast"'));
+const curryIds = [
+  'chickpea-curry', 'paneer-pea-masala', 'roasted-cauliflower-lentils',
+  'chicken-tikka-masala-rice', 'chicken-katsu-rice', 'lamb-keema-peas',
+  'squash-red-lentil-dhal', 'chicken-poondu-milagu-kuzhambu',
+  'beef-coconut-lemongrass', 'beef-japanese-style-curry', 'slow-sweet-potato-chickpea'
+];
+assert.deepEqual(Array.from(a.picker('Curry'), r => r.id), curryIds);
+assert.deepEqual(Array.from(a.browse('Curry').matchAll(/<article[^>]*data-id="([^"]+)"/g), match => match[1]), curryIds);
+assert(a.picker('Chicken').some(r => r.id === 'chicken-poondu-milagu-kuzhambu'));
+assert(a.picker('Vegetarian').some(r => r.id === 'paneer-pea-masala'));
+assert(a.picker('Slow Cooker').some(r => r.id === 'slow-sweet-potato-chickpea'));
+
 let missingNutrition=new Set();
 for(const r of added){
  assert(r.ingredients.every(i=>i[2]>0&&Number.isFinite(i[2])));
